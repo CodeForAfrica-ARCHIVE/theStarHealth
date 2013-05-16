@@ -1,2 +1,2 @@
 <h1>StarHealth</h1>
- health application/ site that will give the readers a one stop health solution integrating  national health program statistics, already existing open data and mined newspaper reports. 
+A suite of applications including news aggregation around healthcare in Kenya
