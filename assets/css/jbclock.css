@@ -1,0 +1,70 @@
+.clock {
+    width:535px;
+    margin:0 auto;
+    height: 160px;
+}
+
+.clock_days {
+    float:left;
+    width:122px;
+    margin-right: 15px;
+    position: relative;
+}
+.clock_hours {
+    float:left;
+    width:122px;
+    margin-right: 15px;
+    position: relative;
+}
+.clock_minutes {
+    float:left;
+    width:122px;
+    margin-right: 15px;
+    position: relative;
+}
+.clock_seconds {
+    float:left;
+    width:122px;
+    position: relative;
+}
+
+.bgLayer {
+    background-image:url("../img/clock_bg.png");
+    width:122px;
+    height:122px;
+    background-repeat: no-repeat;
+}
+
+.val {
+    margin:0;
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    line-height: 122px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 35px;
+    color:#333;
+    font-weight: bold;
+    /*text-shadow: 1px 1px 1px #8cc63f;*/
+    text-align: center;
+}
+
+.type_days,
+.type_hours,
+.type_minutes,
+.type_seconds {
+    /*font-family: Arial, Helvetica, sans-serif;*/
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    /*background:#64b5d1;*/
+    padding:5px;
+    text-align: center;
+    margin:0 auto;
+   	/*margin-top:10px;*/
+    display: table;
+    text-transform: uppercase;
+    /*text-shadow: 1px 1px 1px #8cc63f;*/
+}
