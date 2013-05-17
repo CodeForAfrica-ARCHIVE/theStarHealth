@@ -6140,3 +6140,12 @@ a.badge:focus {
 .affix {
   position: fixed;
 }
+.header_widget{
+	text-align:center;
+	padding:10px;
+	
+}
+.header_widget .description{
+	
+	height:60px;
+}
