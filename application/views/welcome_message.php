@@ -57,4 +57,50 @@
 			</div>
 		</div>
 	</div>
+	<div class="row-fluid">
+		<div class="span3 sidebar_widget2">
+			<img src="<?php echo base_url();?>assets/img/c4k_logo.png" width="90px">
+			<br />
+			<br />
+			The data driven journalism + tools in StarHealth section were kickstarted by Code4Kenya
+			<hr />
+			Feed Filters
+			<table class="table table-striped">
+				<tbody>
+					<tr>
+						<td>All</td>
+					</tr>
+					<tr>
+						<td>News</td>
+					</tr>
+					<tr>
+						<td>Features</td>
+					</tr>
+					<tr>
+						<td>Opinion</td>
+					</tr>
+					<tr>
+						<td>Resources</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="span6">
+			<h3>Story Feed</h3>
+		</div>
+		<div class="span3 sidebar_widget2">
+			<h4>The Star App Store</h4>
+			<h4>Stay in Touch</h4>
+			<hr />
+			<div class="social_media_icons">
+				<img src="<?php echo base_url();?>assets/icons/facebook.png">
+				<img src="<?php echo base_url();?>assets/icons/twitter.png">
+				<img src="<?php echo base_url();?>assets/icons/rss.png">
+			</div>
+			<hr />
+			<a class="twitter-timeline" href="https://twitter.com/TheStarKenya" data-widget-id="336091571755827200">Tweets by @TheStarKenya</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+		</div>
+	</div>
 </div>
