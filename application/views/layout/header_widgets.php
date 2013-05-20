@@ -4,10 +4,32 @@
 		<h4>Dodgy Doctors</h4>
 		<div class="description">Check to see if your doctor is registered and free from malpratice</div>
 		 <div class="search_menu input-append">
-          	<input type="text" placeholder="search" class="search">
-          	<button class='btn add-on'>
-        		<i class="icon-search"></i>
-    		</button>
+		 	 	<?php
+			session_start();
+			?>
+			<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/jquery.autocomplete.css" />
+			<script type="text/javascript" src="<?php echo base_url();?>assets/ajax-autocomplete/jquery.js"></script>
+			<script type='text/javascript' src='<?php echo base_url();?>assets/js/jquery.autocomplete.js'></script>
+		 		<script type="text/javascript">
+			$().ready(function() {
+				$("#course").autocomplete("<?php echo base_url();?>/index.php/dodgy/data", {
+					width: 260,
+					matchContains: true,
+					//mustMatch: true,
+					//minChars: 0,
+					//multiple: true,
+					//highlight: false,
+					//multipleSeparator: ",",
+					selectFirst: false
+				});
+			});
+			</script>
+					
+					<input type="text" placeholder="search" class="search" name="course" id="course" />
+					<button class='btn add-on' onClick="">
+        				<i class="icon-search"></i>
+    				</button>
+			
           	</div>
 		</div>
 		<div class="span3 header_widget">
