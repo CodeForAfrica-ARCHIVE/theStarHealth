@@ -7,10 +7,11 @@
 		 	 	<?php
 			session_start();
 			?>
-			<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/jquery.autocomplete.css" />
+			<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/jquery.autocomplete.css">
 			<script type="text/javascript" src="<?php echo base_url();?>assets/ajax-autocomplete/jquery.js"></script>
+		
 			<script type='text/javascript' src='<?php echo base_url();?>assets/js/jquery.autocomplete.js'></script>
-		 		<script type="text/javascript">
+		 	<script type="text/javascript">
 			$().ready(function() {
 				$("#course").autocomplete("<?php echo base_url();?>/index.php/dodgy/data", {
 					width: 260,
@@ -26,11 +27,26 @@
 			</script>
 					
 					<input type="text" placeholder="search" class="search" name="course" id="course" />
-					<button class='btn add-on' onClick="">
+					<button class='btn add-on' href="#myModal" role="button" class="btn" data-toggle="modal">
         				<i class="icon-search"></i>
     				</button>
 			
           	</div>
+          	
+			<!-- Modal -->
+			<div id="myModal" style="text-align:justify !important;" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			  <div class="modal-header">
+			    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+			    <h3 id="myModalLabel">Modal header</h3>
+			  </div>
+			  <div class="modal-body">
+			    <p>One fine body…</p>
+			  </div>
+			  <div class="modal-footer">
+			    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+			    <button class="btn btn-primary">Save changes</button>
+			  </div>
+			</div>
 		</div>
 		<div class="span3 header_widget">
 		<h4>Am I Covered</h4>
