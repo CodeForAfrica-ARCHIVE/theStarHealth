@@ -26,6 +26,8 @@ class Facilities extends CI_Controller {
 							abbr.id,
 							abbr.abbr,
 							sh_facilities.id,
+							sh_facilities.name,
+							sh_facilities.Geolocation,
 							sh_facilities.Facility,
 							sh_facilities.County");
 		$this->db->from("abbr");
@@ -34,6 +36,9 @@ class Facilities extends CI_Controller {
 		
 		$result = $this->db->get();
 		$facilities = $result->result_array();
-		print_r($facilities);
+		foreach($facilities as $facility){
+			print "<a href='https://maps.google.com/maps?q=".$facility['Geolocation']."+(".$facility['name'].")' target='_blank'>".$facility['name']."</a><br />";		
+		}
+		
 	}
 }
