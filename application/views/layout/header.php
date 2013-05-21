@@ -12,7 +12,7 @@
     <link href="<?php echo base_url();?>assets/css/bootstrap-responsive.css" rel="stylesheet">
     <link href="<?php echo base_url();?>assets/css/docs.css" rel="stylesheet">
     <link href="<?php echo base_url();?>assets/js/google-code-prettify/prettify.css" rel="stylesheet">
-
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
       <script src="<?php echo base_url();?>assets/js/html5shiv.js"></script>

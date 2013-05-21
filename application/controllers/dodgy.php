@@ -21,6 +21,29 @@ class Dodgy extends CI_Controller {
 
 	}
 	public function search(){
+		$name = $_POST['name'];
 		
+		$this->db->select("*");
+		$this->db->from("sh_practitioners");
+		$this->db->where("Names", $name);
+		
+		$result = $this->db->get();
+		
+		$docs = $result->result_array();
+		
+		$total = 0;
+		foreach($docs as $doc){
+			$total++;
+			print "<p>";
+			print "Name: ".$doc['Title'].' '.$doc['Names'];
+			print "<br />";
+			print "Reg No: ".$doc['RegNo'];
+			print "<br />";
+			print "Specialty :".$doc['Specialty'];
+			print "</p>";
+		}
+		if($total<1){
+			print "No registered doctor found with that name!";
+		}
 	}
 }

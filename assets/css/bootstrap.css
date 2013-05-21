@@ -223,7 +223,7 @@ textarea {
 
 body {
   margin: 0;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 20px;
   color: #333333;
@@ -6155,4 +6155,17 @@ a.badge:focus {
 .sidebar_widget2{
 	text-align:center;
 }
+.sidebar_widget.down{
+	height:100px;
+}
+.sidebar_widget {
+background-color: #e1e1e1;
+padding: 10px;
+margin-bottom: 15px;
+}
+.newsfeed{
+	background-color: #e1e1e1;
+padding: 10px;
+margin-bottom: 15px;
+height:100%;
 }

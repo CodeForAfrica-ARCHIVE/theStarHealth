@@ -4,10 +4,10 @@
 			<div class="sidebar_widget">
 				<h4>Backstory</h4>
 			</div>
-			<div class="sidebar_widget">
+			<div class="sidebar_widget down">
 				<h5>The story so far</h5>
 			</div>
-			<div class="sidebar_widget">
+			<div class="sidebar_widget down">
 				<h5>Evidence Dossier</h5>
 			</div>
 		</div>
@@ -49,15 +49,15 @@
 			<div class="sidebar_widget">
 				<h4>Help Desk</h4>
 			</div>
-			<div class="sidebar_widget">
+			<div class="sidebar_widget down">
 				<h5>Help lines + support groups</h5>
 			</div>
-			<div class="sidebar_widget">
+			<div class="sidebar_widget down">
 				<h5>Other Resources</h5>
 			</div>
 		</div>
 	</div>
-	<div class="row-fluid">
+	<div class="row-fluid" style="height:600px;">
 		<div class="span3 sidebar_widget2">
 			<img src="<?php echo base_url();?>assets/img/c4k_logo.png" width="90px">
 			<br />
@@ -85,7 +85,7 @@
 				</tbody>
 			</table>
 		</div>
-		<div class="span6">
+		<div class="span6 newsfeed">
 			<h3>Story Feed</h3>
 		</div>
 		<div class="span3 sidebar_widget2">

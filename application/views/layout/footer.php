@@ -12,7 +12,7 @@
     <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
      <script src="<?php echo base_url();?>assets/js/jquery.js"></script>
      <script>
-     	var jq2 = $.noConflict();
+     	var jq191 = $.noConflict();
      </script>
      
     <script src="<?php echo base_url();?>assets/js/bootstrap-transition.js"></script>

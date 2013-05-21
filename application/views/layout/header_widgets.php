@@ -4,12 +4,12 @@
 		<h4>Dodgy Doctors</h4>
 		<div class="description">Check to see if your doctor is registered and free from malpratice</div>
 		 <div class="search_menu input-append">
-		 	 	<?php
+		 	<?php
 			session_start();
 			?>
 			<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/jquery.autocomplete.css">
 			<script type="text/javascript" src="<?php echo base_url();?>assets/ajax-autocomplete/jquery.js"></script>
-		
+
 			<script type='text/javascript' src='<?php echo base_url();?>assets/js/jquery.autocomplete.js'></script>
 		 	<script type="text/javascript">
 			$().ready(function() {
@@ -27,7 +27,41 @@
 			</script>
 					
 					<input type="text" placeholder="search" class="search" name="course" id="course" />
-					<button class='btn add-on' href="#myModal" role="button" class="btn" data-toggle="modal">
+					<script>
+					function get_XmlHttp() {
+	 
+				  var xmlHttp = null;
+			
+				  if(window.XMLHttpRequest) {	
+					xmlHttp = new XMLHttpRequest();
+				  }
+				  else if(window.ActiveXObject) {
+					xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+				  }
+			
+				return xmlHttp;
+				}
+				
+				function ajaxrequest(file) {
+				  var request =  get_XmlHttp();
+				  document.getElementById("mybox").innerHTML = "";
+				  document.getElementById("loading").style.display = 'block';
+				  var the_data = 'name='+document.getElementById("course").value;
+				  request.open("POST", file, true);
+					
+				  request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+				  request.send(the_data);
+				  
+				  request.onreadystatechange = function() {
+				  if (request.readyState == 4) {
+				      document.getElementById("mybox").innerHTML = request.responseText;
+					  document.getElementById("loading").style.display='none';
+				    }
+				  }
+				
+				}
+					</script>
+					<button class='btn add-on' href="#myModal" role="button" class="btn" data-toggle="modal" onclick="ajaxrequest('<?php echo base_url();?>index.php/dodgy/search')">
         				<i class="icon-search"></i>
     				</button>
 			
@@ -37,14 +71,21 @@
 			<div id="myModal" style="text-align:justify !important;" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			  <div class="modal-header">
 			    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-			    <h3 id="myModalLabel">Modal header</h3>
+			    <h3 id="myModalLabel"></h3>
 			  </div>
 			  <div class="modal-body">
-			    <p>One fine body…</p>
+			    <p>
+			    	<div class="loading" style="text-align:center" id="loading">
+			    		<img src="<?php echo base_url();?>assets/img/indicator.gif">
+					</div>			
+					<div id="mybox">
+             
+        			</div>    	
+			    </p>
 			  </div>
 			  <div class="modal-footer">
 			    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-			    <button class="btn btn-primary">Save changes</button>
+			 
 			  </div>
 			</div>
 		</div>
@@ -72,9 +113,23 @@
 		<h4>Nearest Specialist</h4>
 		<div class="description">Find the nearest specialist doctor or health facility</div>
 		 <div class="search_menu input-append">
-          	<input type="text" placeholder="search" class="search">
-          	<button class='btn add-on'>
-        		<i class="icon-search"></i>
+		 	<script type="text/javascript">
+			$().ready(function() {
+				$("#specialist").autocomplete("<?php echo base_url();?>/index.php/facilities/data", {
+					width: 260,
+					matchContains: true,
+					//mustMatch: true,
+					//minChars: 0,
+					//multiple: true,
+					//highlight: false,
+					//multipleSeparator: ",",
+					selectFirst: false
+				});
+			});
+			</script>
+          	<input type="text" placeholder="search" class="specialist" id="specialist">
+          	<button class='btn add-on' href="#myModal" role="button" class="btn" data-toggle="modal" onclick="ajaxrequest('<?php echo base_url();?>index.php/facilities/search')">
+        				<i class="icon-search"></i>
     		</button>
           	</div>
 		</div>
