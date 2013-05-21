@@ -21,6 +21,19 @@ class Facilities extends CI_Controller {
 
 	}
 	public function search(){
+		$name = $_POST['name'];
+		$this->db->select("abbr.full,
+							abbr.id,
+							abbr.abbr,
+							sh_facilities.id,
+							sh_facilities.Facility,
+							sh_facilities.County");
+		$this->db->from("abbr");
+		$this->db->join("sh_facilities", "abbr.id=sh_facilities.Facility");
+		$this->db->where("abbr.full", $name);
 		
+		$result = $this->db->get();
+		$facilities = $result->result_array();
+		print_r($facilities);
 	}
 }

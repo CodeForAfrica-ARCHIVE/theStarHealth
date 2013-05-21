@@ -60,6 +60,23 @@
 				  }
 				
 				}
+				function specialists_request(file){
+					var request = get_XmlHttp();
+					document.getElementById("mybox").innerHTML = "";
+					document.getElementById("loading").style.display = 'block';
+					var the_data = 'name='+document.getElementById("specialist").value;
+					request.open("POST", file, true);
+						
+					request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+					request.send(the_data);
+					  
+					request.onreadystatechange = function() {
+					if (request.readyState == 4) {
+					      document.getElementById("mybox").innerHTML = request.responseText;
+						  document.getElementById("loading").style.display='none';
+					    }
+					  }
+				}
 					</script>
 					<button class='btn add-on' href="#myModal" role="button" class="btn" data-toggle="modal" onclick="ajaxrequest('<?php echo base_url();?>index.php/dodgy/search')">
         				<i class="icon-search"></i>
@@ -128,7 +145,7 @@
 			});
 			</script>
           	<input type="text" placeholder="search" class="specialist" id="specialist">
-          	<button class='btn add-on' href="#myModal" role="button" class="btn" data-toggle="modal" onclick="ajaxrequest('<?php echo base_url();?>index.php/facilities/search')">
+          	<button class='btn add-on' href="#myModal" role="button" class="btn" data-toggle="modal" onclick="specialists_request('<?php echo base_url();?>index.php/facilities/search')">
         				<i class="icon-search"></i>
     		</button>
           	</div>
