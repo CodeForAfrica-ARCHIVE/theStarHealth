@@ -36,9 +36,60 @@ class Facilities extends CI_Controller {
 		
 		$result = $this->db->get();
 		$facilities = $result->result_array();
+		
+		
+		print "<select onchange=\"filter_location('".$name."');\" id='county'>";
+		$sql = "select DISTINCT County as county from sh_facilities";
+		$rsd = mysql_query($sql);
+		while($rs = mysql_fetch_array($rsd)) {
+			print "<option value='".$rs['county']."'>".$rs['county']."</option>";
+		}
+		print "</select>";
+		print "<br />";
+		
 		foreach($facilities as $facility){
-			print "<a href='https://maps.google.com/maps?q=".$facility['Geolocation']."+(".$facility['name'].")' target='_blank'>".$facility['name']."</a><br />";		
+			$filtered_name = str_replace(')', '', str_replace('(', '', $facility['name']));
+			print "<a href='https://maps.google.com/maps?q=".$facility['Geolocation']."+(".$filtered_name.")' target='_blank'>".$facility['name']."</a> - ".$facility['County']."<br />";		
+		}
+		if(count($facilities)==0){
+			print "No facilities found";
 		}
 		
+	}
+	public function filter_county(){
+		$name = $_POST['name'];
+		$county = $_POST['county'];
+		$this->db->select("abbr.full,
+							abbr.id,
+							abbr.abbr,
+							sh_facilities.id,
+							sh_facilities.name,
+							sh_facilities.Geolocation,
+							sh_facilities.Facility,
+							sh_facilities.County");
+		$this->db->from("abbr");
+		$this->db->join("sh_facilities", "abbr.id=sh_facilities.Facility");
+		$this->db->where("abbr.full", $name);
+		$this->db->where("sh_facilities.County", $county);
+		
+		$result = $this->db->get();
+		$facilities = $result->result_array();
+		
+		print "<select onchange=\"filter_location('".$name."');\" id='county'>";
+		$sql = "select DISTINCT County as county from sh_facilities";
+		$rsd = mysql_query($sql);
+		while($rs = mysql_fetch_array($rsd)) {
+			print "<option value='".$rs['county']."'>".$rs['county']."</option>";
+		}
+		print "</select>";
+		print "<br />";
+		
+		foreach($facilities as $facility){
+			$filtered_name = str_replace(')', '', str_replace('(', '', $facility['name']));
+			print "<a href='https://maps.google.com/maps?q=".$facility['Geolocation']."+(".$filtered_name.")' target='_blank'>".$facility['name']."</a> - ".$facility['County']."<br />";		
+		}
+		if(count($facilities)==0){
+			print "No facilities found";
+		}	
 	}
 }

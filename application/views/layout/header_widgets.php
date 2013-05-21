@@ -25,9 +25,8 @@
 				});
 			});
 			</script>
-					
-					<input type="text" placeholder="search" class="search" name="course" id="course" />
-					<script>
+			<input type="text" placeholder="search" class="search" name="course" id="course" />
+			<script>
 					function get_XmlHttp() {
 	 
 				  var xmlHttp = null;
@@ -77,10 +76,32 @@
 					    }
 					  }
 				}
-					</script>
-					<button class='btn add-on' href="#myModal" role="button" class="btn" data-toggle="modal" onclick="ajaxrequest('<?php echo base_url();?>index.php/dodgy/search')">
-        				<i class="icon-search"></i>
-    				</button>
+				function filter_location(facility){
+					var request = get_XmlHttp();
+					var file = "<?php echo base_url();?>index.php/facilities/filter_county";
+					var county = document.getElementById('county').selectedOptions[0].text;
+										
+					document.getElementById("mybox").innerHTML = "";
+					document.getElementById("loading").style.display = 'block';
+					
+					var the_data = "name="+facility+"&county="+county;
+					//var the_data = "name=1&county=2";
+					request.open("POST", file, true);
+						
+					request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+					request.send(the_data);
+					  
+					request.onreadystatechange = function() {
+					if (request.readyState == 4) {
+					      document.getElementById("mybox").innerHTML = request.responseText;
+						  document.getElementById("loading").style.display='none';
+					    }
+					  }
+				}
+				</script>
+				<button class='btn add-on' href="#myModal" role="button" class="btn" data-toggle="modal" onclick="ajaxrequest('<?php echo base_url();?>index.php/dodgy/search')">
+        			<i class="icon-search"></i>
+    			</button>
 			
           	</div>
           	
