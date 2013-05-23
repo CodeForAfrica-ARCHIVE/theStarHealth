@@ -5968,6 +5968,9 @@ a.badge:focus {
 .carousel-inner > .item > a > img {
   display: block;
   line-height: 1;
+
+max-height: 328px;
+min-width: 600px;
 }
 
 .carousel-inner > .active,
@@ -6183,8 +6186,8 @@ font-size: 1.8em;
 text-align: center;
 }
 tr:hover{
-	background-color:#333333;
-	color:#fff;
+	
+	color:#0044CC;
 	cursor:pointer;
 	cursor:hand;
 }

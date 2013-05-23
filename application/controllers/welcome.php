@@ -5,22 +5,24 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
 		$data['title'] = "Welcome";
-		$this->db->select("*");
-		$this->db->from("news");
-		$this->db->where("featured", 1);
 		
-		$result = $this->db->get();
-		$news = $result->result_array();
+		$this->load->model('welcome_m');
 		
-		$this->db->select("*");
-		$this->db->from("news");
-		$this->db->where("featured", 0);
-		$result = $this->db->get();
-		$more_news = $result->result_array();
+		if(isset($_GET['cat'])){
+			$cat = $_GET['cat'];			
+		}else{
+			$cat = 0;
+		}
+		$data['news'] = $this->welcome_m->get_featured($cat, 1);
 		
-		$data['news'] = $news;
-		$data['more_news'] = $more_news;
+		if($cat==0){
+			$data['more_news'] = $this->welcome_m->get_all();
+		}else{
+			$data['more_news'] = $this->welcome_m->get_featured($cat, 0);
+		}
+	
 		
+			
 		$this->load->view('layout/header.php', $data);	
 		$this->load->view('layout/header_widgets.php');
 		$this->load->view('welcome_message', $data);

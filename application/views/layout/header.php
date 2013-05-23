@@ -41,16 +41,16 @@
           </div>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li class="active">
+              <li>
                 <a href="<?php echo base_url()?>">Home</a>
               </li>
-              <li class="">
-                <a href="">About</a>
+              <li>
+                <a href="<?php echo base_url()?>index.php/about">About</a>
               </li>
-              <li class="">
+              <li>
                 <a href="">Bogus Drs</a>
               </li>
-           <li class="">
+           	<li>
                 <a href="">Hospital Deaths</a>
               </li>
             </ul>

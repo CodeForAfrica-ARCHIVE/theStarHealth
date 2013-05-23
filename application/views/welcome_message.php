@@ -94,19 +94,19 @@
 			<table class="table table-striped" data-provides="rowlink">
 				<tbody>
 					<tr>
-						<td><a href="<?php echo base_url();?>">All</a></td>
+						<td><a href="<?php echo base_url();?>">All</a><i class="icon-chevron-right" style="float:right"></i></td>
 					</tr>
 					<tr>
-						<td><a href="<?php echo base_url();?>?cat=doctors">Doctors</a></td>
+						<td><a href="<?php echo base_url();?>?cat=1">Latest</a></td>
 					</tr>
 					<tr>
-						<td><a href="<?php echo base_url();?>?cat=hospitals">Hospitals</a></td>
+						<td><a href="<?php echo base_url();?>?cat=2">Features</a></td>
 					</tr>
 					<tr>
-						<td><a href="<?php echo base_url();?>?cat=nhif">NHIF</a></td>
+						<td><a href="<?php echo base_url();?>?cat=3">Opinion</a></td>
 					</tr>
 					<tr>
-						<td><a href="<?php echo base_url();?>?cat=drugs">Drugs</a></td>
+						<td><a href="<?php echo base_url();?>?cat=4">News</a></td>
 					</tr>
 				</tbody>
 			</table>
