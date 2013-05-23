@@ -76,6 +76,23 @@
 					    }
 					  }
 				}
+				function nhif(file){
+					var request = get_XmlHttp();
+					document.getElementById("mybox").innerHTML = "";
+					document.getElementById("loading").style.display = 'block';
+					var the_data = 'amount='+document.getElementById("nhif").value;
+					request.open("POST", file, true);
+						
+					request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+					request.send(the_data);
+					  
+					request.onreadystatechange = function() {
+					if (request.readyState == 4) {
+					      document.getElementById("mybox").innerHTML = request.responseText;
+						  document.getElementById("loading").style.display='none';
+					    }
+					  }
+				}
 				function filter_location(facility){
 					var request = get_XmlHttp();
 					var file = "<?php echo base_url();?>index.php/facilities/filter_county";
@@ -85,6 +102,28 @@
 					document.getElementById("loading").style.display = 'block';
 					
 					var the_data = "name="+facility+"&county="+county;
+					//var the_data = "name=1&county=2";
+					request.open("POST", file, true);
+						
+					request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+					request.send(the_data);
+					  
+					request.onreadystatechange = function() {
+					if (request.readyState == 4) {
+					      document.getElementById("mybox").innerHTML = request.responseText;
+						  document.getElementById("loading").style.display='none';
+					    }
+					  }
+				}
+				function filter_town(amount){
+					var request = get_XmlHttp();
+					var file = "<?php echo base_url();?>index.php/nhif/filter_town";
+					var county = document.getElementById('town').selectedOptions[0].text;
+										
+					document.getElementById("mybox").innerHTML = "";
+					document.getElementById("loading").style.display = 'block';
+					
+					var the_data = "amount="+amount+"&town="+county;
 					//var the_data = "name=1&county=2";
 					request.open("POST", file, true);
 						
@@ -131,8 +170,8 @@
 		<h4>Am I Covered</h4>
 		<div class="description">Can you afford the treatment? Check if NHIF will cover the costs</div>
 		 <div class="search_menu input-append">
-          	<input type="text" placeholder="search" class="search">
-          	<button class='btn add-on'>
+          	<input type="text" placeholder="search" class="search" id="nhif">
+          	<button class='btn add-on' href="#myModal" role="button" class="btn" data-toggle="modal" onclick="nhif('<?php echo base_url();?>index.php/nhif')">
         		<i class="icon-search"></i>
     		</button>
           	</div>

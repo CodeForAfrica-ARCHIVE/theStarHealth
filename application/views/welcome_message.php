@@ -6,6 +6,10 @@
 			</div>
 			<div class="sidebar_widget down">
 				<h5>The story so far</h5>
+				<?php
+				$description = substr($news[0]['content'], 0, 200).'... ';
+                		print $news[0]['title']."<br/>";
+				  ?>
 			</div>
 			<div class="sidebar_widget bottom">
 				<h5>Evidence Dossier</h5>
@@ -15,32 +19,49 @@
 		<div class="span6">
 			<div id="myCarousel" class="carousel slide">
                 <ol class="carousel-indicators">
-                  <li data-target="#myCarousel" data-slide-to="0" class=""></li>
-                  <li data-target="#myCarousel" data-slide-to="1" class=""></li>
-                  <li data-target="#myCarousel" data-slide-to="2" class="active"></li>
+                	<?php
+                		$item = 0;
+						print '<li data-target="#myCarousel" data-slide-to="'.$item.'" class="active"></li>';
+						$item++;
+						$total = 0;
+                		foreach($news as $news_label){
+	                		if($total>0){
+	            			print '<li data-target="#myCarousel" data-slide-to="'.$item.'" class=""></li>';
+							$item++;
+							}
+							$total++;
+                		}
+                	?>
                 </ol>
                 <div class="carousel-inner">
-                  <div class="item">
-                    <img src="assets/img/bootstrap-mdo-sfmoma-01.jpg" alt="">
+                	<?php
+                	$description = substr($news[0]['content'], 0, 200).'... ';
+                		print '<div class="item active"><img src="'.base_url().'assets/thumbs/'.$news[0]['thumb'].'" alt="">
                     <div class="carousel-caption">
-                      <h4>First Thumbnail label</h4>
-                      <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                      <h4>'.$news[0]['title'].'</h4>
+                      <p>'.$description.'</p>
                     </div>
-                  </div>
-                  <div class="item">
-                    <img src="assets/img/bootstrap-mdo-sfmoma-02.jpg" alt="">
+                  </div>';
+				  	$item = 0;
+						$item++;
+						$total = 0;
+                		foreach($news as $news_item){
+	                		if($total>0){
+	           			$description = substr($news_item['content'], 0, 200).'... ';
+                		print '<div class="item"><img src="'.base_url().'assets/thumbs/'.$news_item['thumb'].'" alt="">
                     <div class="carousel-caption">
-                      <h4>Second Thumbnail label</h4>
-                      <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                      <h4>'.$news_item['title'].'</h4>
+                      <p>'.$description.'</p>
                     </div>
-                  </div>
-                  <div class="item active">
-                    <img src="assets/img/bootstrap-mdo-sfmoma-03.jpg" alt="">
-                    <div class="carousel-caption">
-                      <h4>Third Thumbnail label</h4>
-                      <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                    </div>
-                  </div>
+                  </div>';
+	                		$item++;
+							
+							}
+						$total++;
+                		}
+                	?>
+    
+                  
                 </div>
                 <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
                 <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
@@ -70,31 +91,43 @@
 			The data driven journalism + tools in StarHealth section were kickstarted by Code4Kenya
 			<hr />
 			Feed Filters
-			<table class="table table-striped">
+			<table class="table table-striped" data-provides="rowlink">
 				<tbody>
 					<tr>
-						<td>All</td>
+						<td><a href="<?php echo base_url();?>">All</a></td>
 					</tr>
 					<tr>
-						<td>News</td>
+						<td><a href="<?php echo base_url();?>?cat=doctors">Doctors</a></td>
 					</tr>
 					<tr>
-						<td>Features</td>
+						<td><a href="<?php echo base_url();?>?cat=hospitals">Hospitals</a></td>
 					</tr>
 					<tr>
-						<td>Opinion</td>
+						<td><a href="<?php echo base_url();?>?cat=nhif">NHIF</a></td>
 					</tr>
 					<tr>
-						<td>Resources</td>
+						<td><a href="<?php echo base_url();?>?cat=drugs">Drugs</a></td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
 		<div class="span6 newsfeed">
 			<h3>Story Feed</h3>
+			<?php
+			$items=0;
+			  	foreach($more_news as $item){
+			  		if($items<6){
+			  		$description = substr($item['content'], 0, 100).'... ';
+			  		print "<strong>".$item['title']."</strong><br />";
+					print $description."<br />";
+					$items++;
+					}
+			  	}
+				?>
 		</div>
 		<div class="span3 sidebar_widget2">
 			<h4>The Star App Store</h4>
+			<a href="https://play.google.com/store/apps/details?id=dk.i2m.mobile.starreports" target="_blank"><img src="<?php echo base_url()?>assets/img/star_reports.png" width="30px"></a>
 			<h4>Stay in Touch</h4>
 			<hr />
 			<div class="social_media_icons">
