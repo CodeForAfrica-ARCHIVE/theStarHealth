@@ -7,8 +7,9 @@
 			<div class="sidebar_widget down">
 				<h5>The story so far</h5>
 			</div>
-			<div class="sidebar_widget down">
+			<div class="sidebar_widget bottom">
 				<h5>Evidence Dossier</h5>
+				<a href="http://data.the-star.co.ke">Ckan</a>
 			</div>
 		</div>
 		<div class="span6">
@@ -50,16 +51,20 @@
 				<h4>Help Desk</h4>
 			</div>
 			<div class="sidebar_widget down">
-				<h5>Help lines + support groups</h5>
+				<h5>Help lines</h5>
+				Kenya police - 053801053<br />
+				<a href="http://www.medicalboard.co.ke/">Kenya Medical Board</a> - +254 20 2724938<br />
+				<a href="http://www.publichealth.go.ke/">Ministry of Health</a> - +254-20-2717077<br />
+				<a href="http://www.nckenya.com/">Nursing Council of Kenya</a> - +254 20 3873556
 			</div>
-			<div class="sidebar_widget down">
+			<div class="sidebar_widget bottom">
 				<h5>Other Resources</h5>
 			</div>
 		</div>
 	</div>
 	<div class="row-fluid" style="height:600px;">
 		<div class="span3 sidebar_widget2">
-			<img src="<?php echo base_url();?>assets/img/c4k_logo.png" width="90px">
+			<img src="<?php echo base_url();?>assets/img/c4k_logo.png" id="c4k_partner">
 			<br />
 			<br />
 			The data driven journalism + tools in StarHealth section were kickstarted by Code4Kenya

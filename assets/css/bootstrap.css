@@ -6156,16 +6156,28 @@ a.badge:focus {
 	text-align:center;
 }
 .sidebar_widget.down{
-	height:100px;
+	height:138px;
+	font-size:0.8em;
+	
 }
+
 .sidebar_widget {
 background-color: #e1e1e1;
 padding: 10px;
 margin-bottom: 15px;
+}
+.bottom{
+	height:70px;
+	font-size:0.8em;
+padding-bottom:0;
 }
 .newsfeed{
 	background-color: #e1e1e1;
 padding: 10px;
 margin-bottom: 15px;
 height:100%;
+}
+.sidebar_widget h4 {
+font-size: 1.8em;
+text-align: center;
 }
