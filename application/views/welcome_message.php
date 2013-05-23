@@ -94,19 +94,19 @@
 			<table class="table table-striped" data-provides="rowlink">
 				<tbody>
 					<tr>
-						<td><a href="<?php echo base_url();?>">All</a><i class="icon-chevron-right" style="float:right"></i></td>
+						<td><a href="<?php echo base_url();?>">All</a><?php if(isset($_GET['cat'])&&($_GET['cat'])!=0){} else{ print '<i class="icon-chevron-right" style="float:right"></i>';}?></td>
 					</tr>
 					<tr>
-						<td><a href="<?php echo base_url();?>?cat=1">Latest</a></td>
+						<td><a href="<?php echo base_url();?>?cat=1">Latest</a><?php if(isset($_GET['cat'])&&($_GET['cat'])==1){ print '<i class="icon-chevron-right" style="float:right"></i>';}?></i></td>
 					</tr>
 					<tr>
-						<td><a href="<?php echo base_url();?>?cat=2">Features</a></td>
+						<td><a href="<?php echo base_url();?>?cat=2">Features</a><?php if(isset($_GET['cat'])&&($_GET['cat'])==2){ print '<i class="icon-chevron-right" style="float:right"></i>';}?></i></td>
 					</tr>
 					<tr>
-						<td><a href="<?php echo base_url();?>?cat=3">Opinion</a></td>
+						<td><a href="<?php echo base_url();?>?cat=3">Opinion</a><?php if(isset($_GET['cat'])&&($_GET['cat'])==3){ print '<i class="icon-chevron-right" style="float:right"></i>';}?></i></td>
 					</tr>
 					<tr>
-						<td><a href="<?php echo base_url();?>?cat=4">News</a></td>
+						<td><a href="<?php echo base_url();?>?cat=4">News</a><?php if(isset($_GET['cat'])&&($_GET['cat'])==4){ print '<i class="icon-chevron-right" style="float:right"></i>';}?></i></td>
 					</tr>
 				</tbody>
 			</table>
