@@ -13,7 +13,7 @@ class Nhif extends CI_Controller {
 		$result = $this->db->get();
 		 * */
 		
-		$result = $this->db->query("select * from nhif where Rate>=$amount");
+		$result = $this->db->query("select * from nhif where Rate<=$amount AND Rate!=''");
 		$facilities = $result->result_array();
 		
 		
@@ -24,8 +24,9 @@ class Nhif extends CI_Controller {
 			print "<option value='".$rs['town']."'>".$rs['town']."</option>";
 		}
 		print "</select>";
-		print "<br />";
-		echo $amount;
+		print "<br /><strong>";
+		echo "Hospitals that cover KSH ".$amount." or less";
+		print "</strong><br />";
 		foreach($facilities as $facility){
 			
 			print $facility['Name'].' - '.$facility['Rate']."<br />";
@@ -45,7 +46,7 @@ class Nhif extends CI_Controller {
 		
 		$result = $this->db->get();
 		 * */
-		$result = $this->db->query("select * from nhif where Rate>=$amount and Town='$town'");
+		$result = $this->db->query("select * from nhif where Rate<=$amount and Town='$town' AND Rate!=''");
 		$facilities = $result->result_array();
 		
 		
@@ -56,8 +57,9 @@ class Nhif extends CI_Controller {
 			print "<option value='".$rs['town']."'>".$rs['town']."</option>";
 		}
 		print "</select>";
-		print "<br />";
-		
+		print "<br /><strong>";
+		echo "Hospitals in ".$town." that cover KSH ".$amount." or less";
+		print "</strong><br />";
 		foreach($facilities as $facility){
 			
 			print $facility['Name']." - ".$facility['Rate']."<br />";

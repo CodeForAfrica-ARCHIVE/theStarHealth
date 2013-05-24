@@ -25,7 +25,7 @@
 				});
 			});
 			</script>
-			<input type="text" placeholder="search" class="search" name="course" id="course" />
+			<input type="text" placeholder="Start typing doctor's name" class="search" name="course" id="course" />
 			<script>
 					function get_XmlHttp() {
 	 
@@ -168,9 +168,9 @@
 		</div>
 		<div class="span3 header_widget">
 		<h4>Am I Covered</h4>
-		<div class="description">Can you afford the treatment? Check if NHIF will cover the costs</div>
+		<div class="description">Find out which hospitals your NHIF card will cover</div>
 		 <div class="search_menu input-append">
-          	<input type="text" placeholder="search" class="search" id="nhif">
+          	<input type="text" placeholder="Enter NHIF payment" class="search" id="nhif">
           	<button class='btn add-on' href="#myModal" role="button" class="btn" data-toggle="modal" onclick="nhif('<?php echo base_url();?>index.php/nhif')">
         		<i class="icon-search"></i>
     		</button>
@@ -180,8 +180,8 @@
 		<h4>What Should it Cost?</h4>
 		<div class="description">Check to see if you are being overcharged for your prescription medicine</div>
 		 <div class="search_menu input-append">
-          	<input type="text" placeholder="search" class="search">
-          	<button class='btn add-on'>
+          	<input type="text" placeholder="Enter name of drug" class="search">
+          	<button class='btn add-on' onClick="alert('Pending dataset. Come back soon!');">
         		<i class="icon-search"></i>
     		</button>
           	</div>
@@ -204,7 +204,7 @@
 				});
 			});
 			</script>
-          	<input type="text" placeholder="search" class="specialist" id="specialist">
+          	<input type="text" placeholder="Start typing speciality's name" class="specialist" id="specialist">
           	<button class='btn add-on' href="#myModal" role="button" class="btn" data-toggle="modal" onclick="specialists_request('<?php echo base_url();?>index.php/facilities/search')">
         				<i class="icon-search"></i>
     		</button>
