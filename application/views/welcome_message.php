@@ -8,7 +8,7 @@
 				<h5>The story so far</h5>
 				<?php
 				$description = substr($news[0]['content'], 0, 200).'... ';
-                		print $news[0]['title']."<br/>";
+                		print "<a href='".base_url()."index.php/article?id=".$news[0]['id']."'>".$news[0]['title']."</a><br/>";
 				  ?>
 			</div>
 			<div class="sidebar_widget bottom">
@@ -38,8 +38,8 @@
                 	$description = substr($news[0]['content'], 0, 200).'... ';
                 		print '<div class="item active"><img src="'.base_url().'assets/thumbs/'.$news[0]['thumb'].'" alt="">
                     <div class="carousel-caption">
-                      <h4>'.$news[0]['title'].'</h4>
-                      <p>'.$description.'</p>
+                      <h4><a href="'.base_url().'index.php/article?id='.$news[0]['id'].'">'.$news[0]['title'].'</a></h4>
+                      <p><a href="'.base_url().'index.php/article?id='.$news[0]['id'].'">'.$description.'</a></p>
                     </div>
                   </div>';
 				  	$item = 0;
@@ -118,8 +118,8 @@
 			  	foreach($more_news as $item){
 			  		if($items<6){
 			  		$description = substr($item['content'], 0, 100).'... ';
-			  		print "<strong>".$item['title']."</strong><br />";
-					print $description."<br />";
+			  		print "<strong><a href='".base_url()."index.php/article?id=".$item['id']."'>".$item['title']."</a></strong><br />";
+					print "<a href='".base_url()."index.php/article?id=".$item['id']."'>".$description."</a><br />";
 					$items++;
 					}
 			  	}

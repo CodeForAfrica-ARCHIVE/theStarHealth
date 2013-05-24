@@ -6191,3 +6191,9 @@ tr:hover{
 	cursor:pointer;
 	cursor:hand;
 }
+.carousel-inner a{
+	color:#fff;
+}
+.newsfeed a{
+	color:#000;
+}
