@@ -85,7 +85,7 @@
 	</div>
 	<div class="row-fluid" style="height:600px;">
 		<div class="span3 sidebar_widget2">
-			<img src="<?php echo base_url();?>assets/img/c4k_logo.png" id="c4k_partner">
+			<a href="http://code4kenya.org" target="_blank"><img src="<?php echo base_url();?>assets/img/c4k_logo.png" id="c4k_partner"></a>
 			<br />
 			<br />
 			The data driven journalism + tools in StarHealth section were kickstarted by Code4Kenya
