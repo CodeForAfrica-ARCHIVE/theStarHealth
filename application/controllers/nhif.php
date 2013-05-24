@@ -12,7 +12,8 @@ class Nhif extends CI_Controller {
 		
 		$result = $this->db->get();
 		 * */
-		$result = $this->db->query("select * from nhif where rate>'$amount' or rate='$amount'");
+		
+		$result = $this->db->query("select * from nhif where Rate>=$amount");
 		$facilities = $result->result_array();
 		
 		
@@ -24,10 +25,10 @@ class Nhif extends CI_Controller {
 		}
 		print "</select>";
 		print "<br />";
-		
+		echo $amount;
 		foreach($facilities as $facility){
 			
-			print $facility['Name']."<br />";
+			print $facility['Name'].' - '.$facility['Rate']."<br />";
 			}
 		if(count($facilities)==0){
 			print "No facilities found";
@@ -44,7 +45,7 @@ class Nhif extends CI_Controller {
 		
 		$result = $this->db->get();
 		 * */
-		$result = $this->db->query("select * from nhif where rate>'$amount' or rate='$amount' and Town='$town'");
+		$result = $this->db->query("select * from nhif where Rate>=$amount and Town='$town'");
 		$facilities = $result->result_array();
 		
 		
@@ -59,7 +60,7 @@ class Nhif extends CI_Controller {
 		
 		foreach($facilities as $facility){
 			
-			print $facility['Name']." - ".$facility['Town']."<br />";
+			print $facility['Name']." - ".$facility['Rate']."<br />";
 			}
 		if(count($facilities)==0){
 			print "No facilities found";
