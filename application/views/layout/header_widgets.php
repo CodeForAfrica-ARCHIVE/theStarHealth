@@ -1,8 +1,9 @@
-<div class="container" style="margin-top:30px;">
+<div class="container" style="margin-top:80px;">
 	<div class="row-fluid">
-		<div class="span3 header_widget">
+		<div class="span4 header_widget">
+		<i class="icon-user-md icon-4x"></i>
 		<h4>Dodgy Doctors</h4>
-		<div class="description">Check to see if your doctor is registered and free from malpratice</div>
+		<div class="description">Check to see if your doctor is registered and free from malpractice</div>
 		 <div class="search_menu input-append">
 		 	<?php
 			session_start();
@@ -166,7 +167,8 @@
 			  </div>
 			</div>
 		</div>
-		<div class="span3 header_widget">
+		<div class="span4 header_widget">
+		<i class="icon-credit-card icon-4x"></i>
 		<h4>Am I Covered</h4>
 		<div class="description">Find out which hospitals your NHIF card will cover</div>
 		 <div class="search_menu input-append">
@@ -176,7 +178,8 @@
     		</button>
           	</div>
 		</div>
-		<div class="span3 header_widget">
+		<!-- <div class="span3 header_widget">
+		<i class="icon-money icon-4x"></i>
 		<h4>What Should it Cost?</h4>
 		<div class="description">Check to see if you are being overcharged for your prescription medicine</div>
 		 <div class="search_menu input-append">
@@ -185,8 +188,9 @@
         		<i class="icon-search"></i>
     		</button>
           	</div>
-		</div>
-		<div class="span3 header_widget">
+		</div> -->
+		<div class="span4 header_widget">
+		<i class="icon-location-arrow icon-4x"></i>
 		<h4>Nearest Specialist</h4>
 		<div class="description">Find the nearest specialist doctor or health facility</div>
 		 <div class="search_menu input-append">

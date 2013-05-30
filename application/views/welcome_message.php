@@ -61,7 +61,6 @@
 						$total++;
                 		}
                 	?>
-    
                   
                 </div>
                 <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>

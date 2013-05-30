@@ -5,7 +5,38 @@
   Special styles for presenting Bootstrap's documentation and examples
 */
 
+/* Custom CSS */
 
+.container,
+.navbar-static-top .container,
+.navbar-fixed-top .container,
+.navbar-fixed-bottom .container {
+  width: 960px !important;
+}
+
+body > .navbar .brand {
+  height: 60px !important;
+  margin-right: 0px !important;
+}
+
+.brand img {
+  margin-left: 20px !important;
+  height: auto !important;
+}
+
+.navbar .search_menu {
+  margin-bottom: -40px !important;
+  margin-top: 50px !important;
+}
+
+.navbar-inverse .navbar-inner {
+  background-color: #24408F;
+}
+
+.nav li a {
+  color: #fff !important;
+  font-size: 20px;
+}
 
 /* Body and structure
 -------------------------------------------------- */
@@ -20,8 +51,6 @@ h3 code {
   font-size: 14px;
   font-weight: normal;
 }
-
-
 
 /* Tweak navbar brand link to be super sleek
 -------------------------------------------------- */

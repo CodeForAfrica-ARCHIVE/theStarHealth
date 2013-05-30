@@ -6143,22 +6143,27 @@ display:none;
 .affix {
   position: fixed;
 }
+
 .header_widget{
 	text-align:center;
 	padding:10px;
 	font-size:0.9em;
 	
 }
+
 .header_widget .description{
 	
 	height:45px;
 }
+
 .social_media_icons img{
 	width:35px;
 }
+
 .sidebar_widget2{
 	text-align:center;
 }
+
 .sidebar_widget.down{
 	height:138px;
 	font-size:0.9em;
@@ -6166,34 +6171,39 @@ display:none;
 }
 
 .sidebar_widget {
-background-color: #e1e1e1;
-padding: 10px;
-margin-bottom: 15px;
+  background-color: #e1e1e1;
+  padding: 10px;
+  margin-bottom: 15px;
 }
+
 .bottom{
 	height:70px;
 	font-size:0.9em;
-padding-bottom:0;
+  padding-bottom:0;
 }
+
 .newsfeed{
 	background-color: #e1e1e1;
-padding: 10px;
-margin-bottom: 15px;
-height:100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  height:100%;
 }
+
 .sidebar_widget h4 {
-font-size: 1.8em;
-text-align: center;
+  font-size: 1.8em;
+  text-align: center;
 }
+
 tr:hover{
-	
 	color:#0044CC;
 	cursor:pointer;
 	cursor:hand;
 }
+
 .carousel-inner a{
 	color:#fff;
 }
+
 .newsfeed a{
 	color:#000;
 }
