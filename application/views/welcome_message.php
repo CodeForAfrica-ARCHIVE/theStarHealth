@@ -34,6 +34,7 @@
                 	?>
                 </ol>
                 <div class="carousel-inner">
+                	
                 	<?php
                 	$description = substr($news[0]['content'], 0, 200).'... ';
                 		print '<div class="item active"><img src="'.base_url().'assets/thumbs/'.$news[0]['thumb'].'" alt="">
