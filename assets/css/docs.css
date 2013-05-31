@@ -6,12 +6,48 @@
 */
 
 /* Custom CSS */
+body {
+  background: #F3F3F3;
+}
 
-.container,
-.navbar-static-top .container,
-.navbar-fixed-top .container,
-.navbar-fixed-bottom .container {
+h4 {
+  font-family: 'Merriweather Sans', sans-serif;
+  font-weight: 400;
+}
+
+h6 {
+  font-size: 16px;
+  margin: 0 0;
+}
+
+div {
+  font-family: 'Open Sans';
+}
+
+.container {
+  background: #fff !important;
+  border: 1px #DDDDDD solid;
   width: 960px !important;
+}
+
+.row-fluid {
+  width: 98%;
+  padding: 10px;
+}
+
+@media (min-width:1200px) {
+  .row-fluid {
+    width: 98%;
+  }
+}
+
+.navbar-fixed-top {
+  position: absolute !important;
+}
+
+body > .navbar {
+  margin: auto;
+  width: 960px;
 }
 
 body > .navbar .brand {
@@ -27,16 +63,82 @@ body > .navbar .brand {
 .navbar .search_menu {
   margin-bottom: -40px !important;
   margin-top: 50px !important;
+  margin-right: 20px !important;
 }
 
-.navbar-inverse .navbar-inner {
-  background-color: #24408F;
+.navbar-fixed-top .navbar-inner .container {
+  background-color: #24408F !important;
+  border: none !important;
+}
+
+.navbar-bottom .navbar-inner .container{
+  background: #000000 !important;
+  border: none !important;
+  color: #fff;
+  margin-left: -20px;
 }
 
 .nav li a {
   color: #fff !important;
-  font-size: 20px;
+  font-family: 'Merriweather Sans', sans-serif;
 }
+
+.row-header {
+  border-bottom: 1px #145077 solid;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.row-header h3, .row-header h4 {
+  font-family: 'Inder', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 0;
+}
+
+.sidebar_widget.down {
+  height: auto;
+}
+
+.sidebar_widget {
+  background-color: transparent !important;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+
+.helpline {
+  color: #333;
+  text-decoration: none !important;
+}
+
+.newsfeed {
+  background-color: transparent !important;
+  padding: 0;
+}
+
+.newsfeed h6 {
+  color: #24408F;
+  font-weight: normal;
+  text-align: center;
+}
+
+.stories {
+  text-align: left;
+}
+
+.stories h5 {
+  color: #145077;
+  /*font-family: serif;*/
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0 0;
+}
+
+.stories hr {
+
+}
+
 
 /* Body and structure
 -------------------------------------------------- */

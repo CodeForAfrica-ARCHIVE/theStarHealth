@@ -13,6 +13,8 @@
     <link href="<?php echo base_url();?>assets/css/docs.css" rel="stylesheet">
     <link href="<?php echo base_url();?>assets/js/google-code-prettify/prettify.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Inder' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Merriweather+Sans:400,300,700' rel='stylesheet' type='text/css'>
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -31,12 +33,11 @@
   <body data-spy="scroll" data-target=".bs-docs-sidebar">
   	<div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
-
         <div class="container" style="margin-top:-30px;">
           <div class="brand">
             <a href="<?php echo base_url();?>"><img src="<?php echo base_url();?>assets/img/logo.png"></a>
           </div>
-          <div class="search_menu input-append">
+          <div class="navbar-search search_menu input-append">
             <input type="text" placeholder="search" class="search">
               <button class='btn add-on'>
                 <i class="icon-search"></i>

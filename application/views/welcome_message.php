@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="row-fluid">
 		<div class="span3">
-			<div class="sidebar_widget">
+			<div class="sidebar_widget row-header">
 				<h4>Backstory</h4>
 			</div>
 			<div class="sidebar_widget down">
@@ -36,25 +36,25 @@
                 <div class="carousel-inner">
                 	
                 	<?php
-                	$description = substr($news[0]['content'], 0, 200).'... ';
+                	$description = substr($news[0]['content'], 0, 120).'... ';
                 		print '<div class="item active"><img src="'.base_url().'assets/thumbs/'.$news[0]['thumb'].'" alt="">
-                    <div class="carousel-caption">
-                      <h4><a href="'.base_url().'index.php/article?id='.$news[0]['id'].'">'.$news[0]['title'].'</a></h4>
-                      <p><a href="'.base_url().'index.php/article?id='.$news[0]['id'].'">'.$description.'</a></p>
-                    </div>
-                  </div>';
+				                    <div class="carousel-caption">
+				                      <h6><a href="'.base_url().'index.php/article?id='.$news[0]['id'].'">'.$news[0]['title'].'</a></h6>
+				                      <p><a href="'.base_url().'index.php/article?id='.$news[0]['id'].'">'.$description.'</a></p>
+				                    </div>
+				                </div>';
 				  	$item = 0;
 						$item++;
 						$total = 0;
                 		foreach($news as $news_item){
 	                		if($total>0){
-	           			$description = substr($news_item['content'], 0, 200).'... ';
+	           			$description = substr($news_item['content'], 0, 120).'... ';
                 		print '<div class="item"><img src="'.base_url().'assets/thumbs/'.$news_item['thumb'].'" alt="">
-                    <div class="carousel-caption">
-                      <h4>'.$news_item['title'].'</h4>
-                      <p>'.$description.'</p>
-                    </div>
-                  </div>';
+				                    <div class="carousel-caption">
+				                      <h6>'.$news_item['title'].'</h6>
+				                      <p>'.$description.'</p>
+				                    </div>
+		                	 	</div>';
 	                		$item++;
 							
 							}
@@ -68,15 +68,27 @@
               </div>
 		</div>
 		<div class="span3">
-			<div class="sidebar_widget">
+			<div class="sidebar_widget row-header">
 				<h4>Help Desk</h4>
 			</div>
 			<div class="sidebar_widget down">
 				<h5>Help lines</h5>
-				Kenya police - 053801053<br />
-				<a href="http://www.medicalboard.co.ke/">Kenya Medical Board</a> - +254 20 2724938<br />
-				<a href="http://www.publichealth.go.ke/">Ministry of Health</a> - +254-20-2717077<br />
-				<a href="http://www.nckenya.com/">Nursing Council of Kenya</a> - +254 20 3873556
+				<p>Kenya Police</p>
+				<p>
+					<i class="icon-phone icon-2x" style="margin-right:5px"></i> 
+					<a class="helpline" href="tel:053801053">053801053</a></p>
+				<p><a href="http://www.medicalboard.co.ke/">Kenya Medical Board</a></p>
+				<p>
+					<i class="icon-phone icon-2x" style="margin-right:5px"></i> 
+					<a class="helpline" href="tel:+254 20 2724938"> +254 20 2724938</a></p>
+				<p><a href="http://www.publichealth.go.ke/">Ministry of Health</a></p>
+				<p>
+					<i class="icon-phone icon-2x" style="margin-right:5px"></i>
+					<a class="helpline" href="tel:+254 20 2717077"> +254 20 2717077</a></p>
+				<p><a href="http://www.nckenya.com/">Nursing Council of Kenya</a></p>
+				<p>
+					<i class="icon-phone icon-2x" style="margin-right:5px"></i> 
+					<a class="helpline" href="tel:+254 20 3873556">+254 20 3873556</a></p>
 			</div>
 			<div class="sidebar_widget bottom">
 				<h5>Other Resources</h5>
@@ -85,12 +97,19 @@
 	</div>
 	<div class="row-fluid" style="height:600px;">
 		<div class="span3 sidebar_widget2">
-			<a href="http://code4kenya.org" target="_blank"><img src="<?php echo base_url();?>assets/img/c4k_logo.png" id="c4k_partner"></a>
+			<div class="row-header"><h4>Major Stories</h4></div>
+				<div class="stories">
+					<h5>Headline</h5>
+					<img src="<?php echo base_url()?>assets/img/star_reports.png" style="float:right">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+				</div>
+				<br />
+				<div class="stories">
+					<h5>Headline</h5>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+				</div>
 			<br />
-			<br />
-			The data driven journalism + tools in StarHealth section were kickstarted by Code4Kenya
-			<hr />
-			Feed Filters
+			<div class="row-header"><h4>Feed Filters</h4></div>
 			<table class="table table-striped" data-provides="rowlink">
 				<tbody>
 					<tr>
@@ -112,31 +131,42 @@
 			</table>
 		</div>
 		<div class="span6 newsfeed">
-			<h3>Story Feed</h3>
+			<div class="row-header"><h3>Other Health News</h3></div>
+			<h6>A round-up of the all the latest health news from theStar</h6>
+			<br />
 			<?php
 			$items=0;
 			  	foreach($more_news as $item){
 			  		if($items<6){
 			  		$description = substr($item['content'], 0, 100).'... ';
 			  		print "<strong><a href='".base_url()."index.php/article?id=".$item['id']."'>".$item['title']."</a></strong><br />";
-					print "<a href='".base_url()."index.php/article?id=".$item['id']."'>".$description."</a><br />";
+					print "<a href='".base_url()."index.php/article?id=".$item['id']."'>".$description."</a><br /><br />";
 					$items++;
 					}
 			  	}
 				?>
 		</div>
 		<div class="span3 sidebar_widget2">
-			<h4>The Star App Store</h4>
-			<a href="https://play.google.com/store/apps/details?id=dk.i2m.mobile.starreports" target="_blank"><img src="<?php echo base_url()?>assets/img/star_reports.png" width="30px"></a>
-			<h4>Stay in Touch</h4>
+			<div class="row-header"><h4>App Store</h4></div>
+			<p>Download the Star's mobile Apps, eBooks, and other tools.</p>
+			<a href="https://play.google.com/store/apps/details?id=dk.i2m.mobile.starreports" target="_blank"><img src="<?php echo base_url()?>assets/img/android-icon.png"></a>
 			<hr />
+			<a href="http://code4kenya.org" target="_blank"><img style="height: 80px" src="<?php echo base_url();?>assets/img/c4k_logo.png" id="c4k_partner"></a>
+			<br />
+			The data driven journalism + tools in StarHealth section were kickstarted by Code4Kenya
+			<hr />
+			<a href="http://github.com/CodeForAfrica"><img src="<?php echo base_url(); ?>assets/img/GitHub-Mark-32px.png" id="github_icon"></a>
+			<a href="http://github.com/ckan"><img style="height:32px;margin-left:25px" src="<?php echo base_url(); ?>assets/img/ckan.jpeg" id="ckan_icon"></a>
+			<p>The code & data for this page are open source. You can re-use it by visiting the above repositories.</p>
+			<br />
+			<br />
+			<div class="row-header"><h4>Stay in Touch</h4></div>
 			<div class="social_media_icons">
 				<img src="<?php echo base_url();?>assets/icons/facebook.png">
-				<img src="<?php echo base_url();?>assets/icons/twitter.png">
+				<a href="https://twitter.com/TheStarKenya"><img src="<?php echo base_url();?>assets/icons/twitter.png"></a>
 				<img src="<?php echo base_url();?>assets/icons/rss.png">
 			</div>
-			<hr />
-			<a class="twitter-timeline" href="https://twitter.com/TheStarKenya" data-widget-id="336091571755827200">Tweets by @TheStarKenya</a>
+			<!-- <a class="twitter-timeline" href="https://twitter.com/TheStarKenya" data-widget-id="336091571755827200">Tweets by @TheStarKenya</a> -->
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
 		</div>
