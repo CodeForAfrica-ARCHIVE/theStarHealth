@@ -194,7 +194,7 @@ $('div#share-popup".$items."').hide();
 					
 			  		print "<h4><a href='".base_url()."index.php/article?id=".$item['id']."'>".$item['title']."</a></h4>";
 					print "<p href='".base_url()."index.php/article?id=".$item['id']."'>".$description."</p><br />";
-					print '<div style="font-size:0.8em;color:#24408F;font-weight:bold">Posted '.$lapse.'&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Category: <a href="'.base_url().'index.php/archive?cat='.$item['cat_id'].'">'.$item['cat_name'].'</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a id="share-trigger'.$items.'">Share<i class="icon-share"></i></a>';
+					print '<div class="article-meta">Posted '.$lapse.'&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Category: <a href="'.base_url().'index.php/archive?cat='.$item['cat_id'].'">'.$item['cat_name'].'</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a id="share-trigger'.$items.'">Share<i class="icon-share-alt" style="margin-left: 5px"></i></a>';
 					print "<div id='share-popup".$items."' style='display:inline'>
 					<script>
 					$(function() {
@@ -224,16 +224,16 @@ $('div#share-popup".$items."').hide();
 			<br />
 			The data driven journalism + tools in StarHealth section were kickstarted by Code4Kenya
 			<hr />
-			<a href="http://github.com/CodeForAfrica"><img src="<?php echo base_url(); ?>assets/img/GitHub-Mark-32px.png" id="github_icon"></a>
-			<a href="http://github.com/ckan"><img style="height:32px;margin-left:25px" src="<?php echo base_url(); ?>assets/img/ckan.jpeg" id="ckan_icon"></a>
+			<a href="http://github.com/CodeForAfrica"><img src="<?php echo base_url(); ?>assets/img/GitHub-Mark-32px.png" id="cfa_icon"></a>
+			<a href="http://github.com/ckan"><img style="height:32px;margin-left:25px" src="<?php echo base_url(); ?>assets/img/github.png" id="ckan_icon"></a>
 			<p>The code & data for this page are open source. You can re-use it by visiting the above repositories.</p>
 			<br />
 			<br />
 			<div class="row-header"><h4>Stay in Touch</h4></div>
 			<div class="social_media_icons">
-				<img src="<?php echo base_url();?>assets/icons/facebook.png">
-				<a href="https://twitter.com/TheStarKenya"><img src="<?php echo base_url();?>assets/icons/twitter.png"></a>
-				<img src="<?php echo base_url();?>assets/icons/rss.png">
+				<img src="<?php echo base_url();?>assets/img/facebook.png" style="height:32px;width:32px">
+				<a href="https://twitter.com/TheStarKenya"><img src="<?php echo base_url();?>assets/img/twitter.png" style="height:32px;width:32px"></a>
+				<img src="<?php echo base_url();?>assets/img/rss.png" style="height:32px;width:32px">
 			</div>
 			<!-- <a class="twitter-timeline" href="https://twitter.com/TheStarKenya" data-widget-id="336091571755827200">Tweets by @TheStarKenya</a> -->
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>

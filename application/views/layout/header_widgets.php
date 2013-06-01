@@ -177,8 +177,8 @@
         		<i class="icon-search"></i>
     		</button>
           	</div> -->
-			<input type="text" placeholder="Minimum rate">
-			<input type="text" placeholder="Maximum rate">
+			<input type="text" placeholder="Minimum rate" class="rate">
+			<input type="text" placeholder="Maximum rate" class="rate">
 			<select>
 			<option>Select county</option>
 			

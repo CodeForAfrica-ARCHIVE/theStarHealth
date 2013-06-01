@@ -31,6 +31,15 @@ div {
   font-family: 'Open Sans';
 }
 
+input, button, select, textarea {
+  font-family: 'Alef', sans-serif;
+}
+
+select {
+  margin-left: 5px;
+  width: 185px;
+}
+
 .container {
   background: #fff !important;
   border: 1px #DDDDDD solid;
@@ -139,6 +148,14 @@ body > .navbar .brand {
   margin: 0;
 }
 
+.rate {
+  width: 100px;
+}
+
+.btn {
+  margin-bottom: 10px;
+}
+
 .row-header {
   border-bottom: 6px #bdc3c7 solid;
   border-top: 6px #bdc3c7 solid;
@@ -216,6 +233,12 @@ body > .navbar .brand {
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 10px;
+}
+
+.article-meta {
+  font-family: 'Sintony', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
 }
 
 /* Body and structure
