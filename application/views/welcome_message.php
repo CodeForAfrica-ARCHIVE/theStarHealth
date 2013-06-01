@@ -92,7 +92,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="row-fluid" style="height:600px;">
+	<div class="row-fluid" style="min-height:600px;">
 		<div class="span3 sidebar_widget2">
 			<div class="row-header"><h4>Major Stories</h4></div>
 				<div class="stories">
@@ -132,6 +132,12 @@
 			<h6>A round-up of the all the latest health news from theStar <i class="icon-arrow-down" style="margin-left: 10px"></i></h6>
 			<br />
 			<?php
+				function first_paragraph($content) {
+
+						$pos = strpos($content, '[p]');
+						return substr($content, 0, $pos);
+					   
+					}
 			$items=0;
 			  	foreach($more_news as $item){
 			  		if($items<6){
@@ -160,8 +166,8 @@
 					else
 					$lapse .=  "few seconds ago";
 					//end timeplay
-			  		
-					$description = substr($item['content'], 0, 200).'... ';
+
+					$description = first_paragraph($item['content']);
 					print '<div style="float:right;font-size:0.7em;color:green">'.$lapse.'</div>';
 			  		print "<h4><a href='".base_url()."index.php/article?id=".$item['id']."'>".$item['title']."</a></h4>";
 					print "<p href='".base_url()."index.php/article?id=".$item['id']."'>".$description."</p><br />";

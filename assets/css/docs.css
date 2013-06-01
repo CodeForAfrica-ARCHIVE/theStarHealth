@@ -239,11 +239,11 @@ body > .navbar {
   font-size: 17px;
 }
 .navbar li{
-	line-height:40px;
+  line-height:40px;
 }
 .navbar .search_menu{
-	float:right;
-	margin-top:15px;
+  float:right;
+  margin-top:15px;
 }
 .input-append button.add-on {
     height: inherit !important;
@@ -262,7 +262,7 @@ body > .navbar .brand {
           transition: all .2s linear;
 }
 .brand img{
-	height:40px;
+  height:40px;
 }
 body > .navbar .brand:hover {
   text-decoration: none;
