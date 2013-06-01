@@ -138,7 +138,34 @@
 			$items=0;
 			  	foreach($more_news as $item){
 			  		if($items<6){
-			  		$description = substr($item['content'], 0, 100).'... ';
+					//timeplay
+					$days = floor($item['TimeSpent'] / (60 * 60 * 24)); 
+					
+					$remainder = $item['TimeSpent'] % (60 * 60 * 24);
+					$hours = floor($remainder / (60 * 60));
+					$remainder = $remainder % (60 * 60);
+					$minutes = floor($remainder / 60);
+					$seconds = $remainder % 60;
+
+					if($days > 0) {
+					//$oldLocale = setlocale(LC_TIME, 'pt_BR');
+					$item['timestamp'] = strftime("%b %#d %Y", $item['timestamp']);
+					$lapse = $item['timestamp'];
+					// setlocale(LC_TIME, $oldLocale);
+					}
+						
+					elseif($days == 0 && $hours == 0 && $minutes == 0)
+					$lapse .= "few seconds ago";						
+					elseif($hours)
+					$lapse .=  $hours.' hours ago';
+					elseif($days == 0 && $hours == 0)
+					$lapse .=  $minutes.' minutes ago';
+					else
+					$lapse .=  "few seconds ago";
+					//end timeplay
+			  		
+					$description = substr($item['content'], 0, 100).'... ';
+					print '<div style="float:right;font-size:0.7em;color:green">'.$lapse.'</div>';
 			  		print "<strong><a href='".base_url()."index.php/article?id=".$item['id']."'>".$item['title']."</a></strong><br />";
 					print "<a href='".base_url()."index.php/article?id=".$item['id']."'>".$description."</a><br /><br />";
 					$items++;
