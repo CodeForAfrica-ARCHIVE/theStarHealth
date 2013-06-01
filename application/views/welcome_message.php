@@ -102,17 +102,55 @@
 	<div class="row-fluid" style="min-height:600px;">
 		<div class="span3 sidebar_widget2">
 			<div class="row-header"><h4>Major Stories</h4></div>
-				<div class="stories">
-					<h5>Headline</h5>
-					<img src="<?php echo base_url()?>assets/img/star_reports.png" style="float:right;margin:2px">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-				</div>
-				<br />
-				<div class="stories">
-					<h5>Headline</h5>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-				</div>
-			<br />
+			<style type="text/css">
+				.accordion-inner a{
+					color:#000;
+				}
+			</style>
+			<?php
+			$first_one = $featured[0];
+			$description = first_paragraph($first_one['content']);
+			print '<div class="accordion" id="accordion2" style="font-size:0.9em;text-align:left;">
+                <div class="accordion-group">
+                  <div class="accordion-heading">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#'.$first_one['id'].'">
+                      '.$first_one['title'].'
+                    </a>
+                  </div>
+                  <div id="'.$first_one['id'].'" class="accordion-body in collapse" style="height: auto;">
+                    <div class="accordion-inner">
+					<a href="'.base_url().'index.php/article?id='.$first_one['id'].'"><img src="'.base_url().'assets/thumbs/'.$first_one['thumb'].'" alt="">
+                    '.$description.'</a>
+                    </div>
+                  </div>
+                </div>
+              </div>';
+			  $total=0;
+			foreach($featured as $featured_item){
+	            if($total>1){
+	           	$description = first_paragraph($featured_item['content']);
+                //print '<tr><td><a href="'.base_url()."index.php/article?id=".$featured_item['id'].'">'.$featured_item['title'].'</a></td></tr>';
+				print '<div class="accordion" id="accordion2" style="font-size:0.9em;text-align:left">
+                <div class="accordion-group">
+                  <div class="accordion-heading">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#'.$featured_item['id'].'">
+                      '.$featured_item['title'].'
+                    </a>
+                  </div>
+                  <div id="'.$featured_item['id'].'" class="accordion-body collapse" style="height: 0px;">
+                    <div class="accordion-inner">
+					<a href="'.base_url().'index.php/article?id='.$featured_item['id'].'"><img src="'.base_url().'assets/thumbs/'.$featured_item['thumb'].'" alt="">
+                    '.$description.'</a>
+                    </div>
+                  </div>
+                </div>
+              </div>';
+			  
+			  }
+			  $total++;
+			  }
+			  ?>
+			
 			<div class="row-header"><h4>Feed Filters</h4></div>
 			<table class="table table-striped" data-provides="rowlink">
 				<tbody>

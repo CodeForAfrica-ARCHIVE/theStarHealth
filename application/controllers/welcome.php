@@ -20,7 +20,8 @@ class Welcome extends CI_Controller {
 		}else{
 			$data['more_news'] = $this->welcome_m->get_featured($cat, 0);
 		}
-	
+		
+		$data['featured'] = $this->welcome_m->get_all_featured();
 		
 			
 		$this->load->view('layout/header.php', $data);	
