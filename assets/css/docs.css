@@ -11,8 +11,15 @@ body {
 }
 
 h4 {
-  font-family: 'Merriweather Sans', sans-serif;
-  font-weight: 400;
+  font-family: 'Sintony', sans-serif;
+  font-weight: 700;
+}
+
+h5 {
+  color: #666666;
+  font-family: 'Alef',sans-serif;
+  font-size: 18px;
+  font-weight: 700;
 }
 
 h6 {
@@ -60,41 +67,95 @@ body > .navbar .brand {
   height: auto !important;
 }
 
+.navbar-inverse .navbar-inner .navigation-main {
+  background: #ffffff !important; /* Old browsers */
+  background: -moz-linear-gradient(top, #ffffff 0%, #f6f6f6 100%) !important; /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#f6f6f6)) !important; /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #ffffff 0%,#f6f6f6 100%) !important; /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #ffffff 0%,#f6f6f6 100%) !important; /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #ffffff 0%,#f6f6f6 100%) !important; /* IE10+ */
+  background: linear-gradient(to bottom, #ffffff 0%,#f6f6f6 100%) !important; /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=0 ) !important; /* IE6-9 */
+}
+
+.navbar-inverse .nav .active > a, .navbar-inverse .nav .active > a:hover, .navbar-inverse .nav .active > a:focus {
+    background: #FFFFFF !important;
+}
+
+.navbar-fixed-top .navbar-inner .top-cont {
+  background-color: #24408F !important;
+  border: none !important;
+  height: 100px;
+  overflow: hidden;
+}
+
+.navbar-bottom .navbar-inner .container{
+  background: #000000 !important;
+  border: none !important;
+  color: #FFFFFF;
+  margin-left: -20px;
+}
+
+.navbar .nav {
+  overflow: hidden;
+}
+
+.navbar li {
+  line-height: 35px !important;
+}
+
 .navbar .search_menu {
   margin-bottom: -40px !important;
   margin-top: 50px !important;
   margin-right: 20px !important;
 }
 
-.navbar-fixed-top .navbar-inner .container {
-  background-color: #24408F !important;
-  border: none !important;
-}
-
-.navbar-bottom .navbar-inner .container{
-  background: #000000 !important;
-  border: none !important;
-  color: #fff;
-  margin-left: -20px;
+.nav {
+  height: 50px;
 }
 
 .nav li a {
-  color: #fff !important;
-  font-family: 'Merriweather Sans', sans-serif;
+  color: #666666 !important;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 20px;
+  line-height: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: center;
+}
+
+.nav li a:hover {
+  background: #DDDDDD !important;
+}
+
+.navbar-inverse .brand, .navbar-inverse .nav > li > a {
+  text-shadow: none !important;
+}
+
+.navbar .divider-vertical {
+  border-left: 1px #bdc3c7 solid !important;
+  border-right: 1px #bdc3c7 solid !important;
+  height: 50px !important;
+  margin: 0;
 }
 
 .row-header {
-  border-bottom: 1px #145077 solid;
+  border-bottom: 6px #bdc3c7 solid;
+  border-top: 6px #bdc3c7 solid;
   margin-bottom: 10px;
-  padding-bottom: 10px;
   text-align: center;
 }
 
 .row-header h3, .row-header h4 {
-  font-family: 'Inder', sans-serif;
-  font-size: 16px;
+  font-family: 'Sintony', sans-serif;
+  font-size: 22px;
   font-weight: bold;
   line-height: 0;
+  padding: 15px;
+}
+
+.row-header h3:after , .row-header h4:after {
+  content: " »";
 }
 
 .sidebar_widget.down {
@@ -118,27 +179,44 @@ body > .navbar .brand {
 }
 
 .newsfeed h6 {
-  color: #24408F;
-  font-weight: normal;
+  color: #666666;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 20px;
+  font-weight: 300;
   text-align: center;
 }
 
+.newsfeed h6 i {
+  color: #24408F;
+}
+
+.newsfeed h4 {
+  font-family: 'Sintony', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.newsfeed p {
+  color: #666666;
+  font-family: 'Domine', serif;
+  font-size: 14px;
+  font-weight: 400;
+}
+
 .stories {
+  font-family: Georgia, serif;
+  font-size: 13px;
   text-align: left;
 }
 
 .stories h5 {
   color: #145077;
-  /*font-family: serif;*/
-  font-size: 16px;
+  font-family: 'Domine', sans-serif;
+  font-size: 20px;
   font-weight: bold;
-  margin: 0 0;
+  margin-bottom: 10px;
 }
-
-.stories hr {
-
-}
-
 
 /* Body and structure
 -------------------------------------------------- */
@@ -161,11 +239,11 @@ body > .navbar {
   font-size: 17px;
 }
 .navbar li{
-	line-height:40px;
+  line-height:40px;
 }
 .navbar .search_menu{
-	float:right;
-	margin-top:15px;
+  float:right;
+  margin-top:15px;
 }
 .input-append button.add-on {
     height: inherit !important;
@@ -184,7 +262,7 @@ body > .navbar .brand {
           transition: all .2s linear;
 }
 .brand img{
-	height:40px;
+  height:40px;
 }
 body > .navbar .brand:hover {
   text-decoration: none;

@@ -1,4 +1,4 @@
-<div class="container" style="margin-top:80px;">
+<div class="container" style="margin-top:87px;">
 	<div class="row-fluid">
 		<div class="span4 header_widget">
 		<i class="icon-user-md icon-4x"></i>
