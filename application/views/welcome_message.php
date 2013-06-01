@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" style="margin-top: 5px; margin-bottom: 5px;">
 	<div class="row-fluid">
 		<div class="span3">
 			<div class="sidebar_widget row-header">
@@ -90,9 +90,6 @@
 					<i class="icon-phone icon-2x" style="margin-right:5px"></i> 
 					<a class="helpline" href="tel:+254 20 3873556">+254 20 3873556</a></p>
 			</div>
-			<div class="sidebar_widget bottom">
-				<h5>Other Resources</h5>
-			</div>
 		</div>
 	</div>
 	<div class="row-fluid" style="height:600px;">
@@ -100,7 +97,7 @@
 			<div class="row-header"><h4>Major Stories</h4></div>
 				<div class="stories">
 					<h5>Headline</h5>
-					<img src="<?php echo base_url()?>assets/img/star_reports.png" style="float:right">
+					<img src="<?php echo base_url()?>assets/img/star_reports.png" style="float:right;margin:2px">
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 				</div>
 				<br />
@@ -132,7 +129,7 @@
 		</div>
 		<div class="span6 newsfeed">
 			<div class="row-header"><h3>Other Health News</h3></div>
-			<h6>A round-up of the all the latest health news from theStar</h6>
+			<h6>A round-up of the all the latest health news from theStar <i class="icon-arrow-down" style="margin-left: 10px"></i></h6>
 			<br />
 			<?php
 			$items=0;
@@ -164,10 +161,10 @@
 					$lapse .=  "few seconds ago";
 					//end timeplay
 			  		
-					$description = substr($item['content'], 0, 100).'... ';
+					$description = substr($item['content'], 0, 200).'... ';
 					print '<div style="float:right;font-size:0.7em;color:green">'.$lapse.'</div>';
-			  		print "<strong><a href='".base_url()."index.php/article?id=".$item['id']."'>".$item['title']."</a></strong><br />";
-					print "<a href='".base_url()."index.php/article?id=".$item['id']."'>".$description."</a><br /><br />";
+			  		print "<h4><a href='".base_url()."index.php/article?id=".$item['id']."'>".$item['title']."</a></h4>";
+					print "<p href='".base_url()."index.php/article?id=".$item['id']."'>".$description."</p><br />";
 					$items++;
 					}
 			  	}
