@@ -171,12 +171,21 @@
 		<i class="icon-credit-card icon-4x"></i>
 		<h4>Am I Covered</h4>
 		<div class="description">Find out which hospitals your NHIF card will cover</div>
-		 <div class="search_menu input-append">
+		 <!--<div class="search_menu input-append">
           	<input type="text" placeholder="Enter NHIF payment" class="search" id="nhif">
           	<button class='btn add-on' href="#myModal" role="button" class="btn" data-toggle="modal" onclick="nhif('<?php echo base_url();?>index.php/nhif')">
         		<i class="icon-search"></i>
     		</button>
-          	</div>
+          	</div> -->
+			<input type="text" placeholder="Minimum rate">
+			<input type="text" placeholder="Maximum rate">
+			<select>
+			<option>Select county</option>
+			
+			</select>
+			<button class='btn add-on'>
+			<i class="icon-search"></i>
+			</button>
 		</div>
 		<!-- <div class="span3 header_widget">
 		<i class="icon-money icon-4x"></i>
@@ -193,7 +202,7 @@
 		<i class="icon-location-arrow icon-4x"></i>
 		<h4>Nearest Specialist</h4>
 		<div class="description">Find the nearest specialist doctor or health facility</div>
-		 <div class="search_menu input-append">
+		 <div class="search_menu">
 		 	<script type="text/javascript">
 			$().ready(function() {
 				$("#specialist").autocomplete("<?php echo base_url();?>/index.php/facilities/data", {
@@ -209,6 +218,10 @@
 			});
 			</script>
           	<input type="text" placeholder="Start typing speciality's name" class="specialist" id="specialist">
+			<select>
+			<option>Select county</option>
+			
+			</select>
           	<button class='btn add-on' href="#myModal" role="button" class="btn" data-toggle="modal" onclick="specialists_request('<?php echo base_url();?>index.php/facilities/search')">
         				<i class="icon-search"></i>
     		</button>

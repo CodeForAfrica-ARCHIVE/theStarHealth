@@ -7,13 +7,20 @@
 			<div class="sidebar_widget down">
 				<h5>The story so far</h5>
 				<?php
-				$description = substr($news[0]['content'], 0, 200).'... ';
-                		print "<a href='".base_url()."index.php/article?id=".$news[0]['id']."'>".$news[0]['title']."</a><br/>";
+					function first_paragraph($content) {
+
+						$pos = strpos($content, '[p]');
+						return substr($content, 0, $pos);
+					   
+					}
+					$description = first_paragraph($news[0]['content']);
+                	print "<a href='".base_url()."index.php/article?id=".$news[0]['id']."'>".$news[0]['title']."</a><br/>";
+					//print $description;
 				  ?>
 			</div>
 			<div class="sidebar_widget bottom">
 				<h5>Evidence Dossier</h5>
-				<a href="http://data.the-star.co.ke">Ckan</a>
+				<a href="http://data.the-star.co.ke">Data repository</a>
 			</div>
 		</div>
 		<div class="span6">
@@ -132,12 +139,7 @@
 			<h6>A round-up of the all the latest health news from theStar <i class="icon-arrow-down" style="margin-left: 10px"></i></h6>
 			<br />
 			<?php
-				function first_paragraph($content) {
-
-						$pos = strpos($content, '[p]');
-						return substr($content, 0, $pos);
-					   
-					}
+			
 			$items=0;
 			  	foreach($more_news as $item){
 			  		if($items<6){
@@ -192,7 +194,7 @@ $('div#share-popup".$items."').hide();
 					
 			  		print "<h4><a href='".base_url()."index.php/article?id=".$item['id']."'>".$item['title']."</a></h4>";
 					print "<p href='".base_url()."index.php/article?id=".$item['id']."'>".$description."</p><br />";
-					print '<div style="font-size:0.8em;color:#24408F;font-weight:bold">Posted '.$lapse.'&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Category: <a href="'.base_url().'archive?cat='.$item['cat_id'].'">'.$item['cat_name'].'</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a id="share-trigger'.$items.'">Share<i class="icon-share"></i></a>';
+					print '<div style="font-size:0.8em;color:#24408F;font-weight:bold">Posted '.$lapse.'&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Category: <a href="'.base_url().'index.php/archive?cat='.$item['cat_id'].'">'.$item['cat_name'].'</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a id="share-trigger'.$items.'">Share<i class="icon-share"></i></a>';
 					print "<div id='share-popup".$items."' style='display:inline'>
 					<script>
 					$(function() {
