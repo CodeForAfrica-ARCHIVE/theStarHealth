@@ -263,7 +263,7 @@ $('div#share-popup".$items."').hide();
 			The data driven journalism + tools in StarHealth section were kickstarted by Code4Kenya
 			<hr />
 			<a href="http://github.com/CodeForAfrica"><img src="<?php echo base_url(); ?>assets/img/GitHub-Mark-32px.png" id="cfa_icon"></a>
-			<a href="http://github.com/ckan"><img style="height:32px;margin-left:25px" src="<?php echo base_url(); ?>assets/img/github.png" id="ckan_icon"></a>
+			<a href="http://data.the-star.co.ke"><img style="height:32px;margin-left:25px" src="<?php echo base_url(); ?>assets/img/ckan.jpeg" id="ckan_icon"></a>
 			<p>The code & data for this page are open source. You can re-use it by visiting the above repositories.</p>
 			<br />
 			<br />
