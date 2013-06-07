@@ -4,7 +4,7 @@
 			<div class="sidebar_widget row-header">
 				<h4>Backstory</h4>
 			</div>
-			<div class="sidebar_widget down">
+			<div class="sidebar_widget down backstory">
 				<h5>The story so far</h5>
 				<?php
 					function first_paragraph($content) {
@@ -18,7 +18,8 @@
 					//print $description;
 				  ?>
 			</div>
-			<div class="sidebar_widget bottom">
+			<br />
+			<div class="sidebar_widget bottom evidence">
 				<h5>Evidence Dossier</h5>
 				<a href="http://data.the-star.co.ke">Data repository</a>
 			</div>
@@ -78,24 +79,32 @@
 			<div class="sidebar_widget row-header">
 				<h4>Help Desk</h4>
 			</div>
-			<div class="sidebar_widget down">
+			<div class="sidebar_widget down helpline">
 				<h5>Help lines</h5>
-				<p>Kenya Police</p>
+
+				<h6>Kenya Police</h6>
 				<p>
 					<i class="icon-phone icon-2x" style="margin-right:5px"></i> 
-					<a class="helpline" href="tel:053801053">053801053</a></p>
-				<p><a href="http://www.medicalboard.co.ke/">Kenya Medical Board</a></p>
+					<a href="tel:053801053">053801053</a>
+				</p>
+
+				<h6><a href="http://www.medicalboard.co.ke/">Kenya Medical Board</a></h6>
 				<p>
 					<i class="icon-phone icon-2x" style="margin-right:5px"></i> 
-					<a class="helpline" href="tel:+254 20 2724938"> +254 20 2724938</a></p>
-				<p><a href="http://www.publichealth.go.ke/">Ministry of Health</a></p>
+					<a href="tel:+254 20 2724938"> +254 20 2724938</a>
+				</p>
+
+				<h6><a href="http://www.publichealth.go.ke/">Ministry of Health</a></h6>
 				<p>
 					<i class="icon-phone icon-2x" style="margin-right:5px"></i>
-					<a class="helpline" href="tel:+254 20 2717077"> +254 20 2717077</a></p>
-				<p><a href="http://www.nckenya.com/">Nursing Council of Kenya</a></p>
+					<a href="tel:+254 20 2717077"> +254 20 2717077</a>
+				</p>
+
+				<h6><a href="http://www.nckenya.com/">Nursing Council of Kenya</a></h6>
 				<p>
 					<i class="icon-phone icon-2x" style="margin-right:5px"></i> 
-					<a class="helpline" href="tel:+254 20 3873556">+254 20 3873556</a></p>
+					<a href="tel:+254 20 3873556">+254 20 3873556</a>
+				</p>
 			</div>
 		</div>
 	</div>
@@ -110,17 +119,17 @@
 			<?php
 			$first_one = $featured[0];
 			$description = first_paragraph($first_one['content']);
-			print '<div class="accordion" id="accordion2" style="font-size:0.9em;text-align:left;">
+			print '<div class="accordion" id="accordion2">
                 <div class="accordion-group">
                   <div class="accordion-heading">
                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#'.$first_one['id'].'">
-                      '.$first_one['title'].'
+                    	'.$first_one['title'].'<i class="icon-chevron-sign-down"></i>
                     </a>
                   </div>
                   <div id="'.$first_one['id'].'" class="accordion-body in collapse" style="height: auto;">
                     <div class="accordion-inner">
-					<a href="'.base_url().'index.php/article?id='.$first_one['id'].'"><img src="'.base_url().'assets/thumbs/'.$first_one['thumb'].'" alt="">
-                    '.$description.'</a>
+					<p><a href="'.base_url().'index.php/article?id='.$first_one['id'].'"><img src="'.base_url().'assets/thumbs/'.$first_one['thumb'].'" alt="">
+                    '.$description.'</a></p>
                     </div>
                   </div>
                 </div>
@@ -130,17 +139,17 @@
 	            if($total>1){
 	           	$description = first_paragraph($featured_item['content']);
                 //print '<tr><td><a href="'.base_url()."index.php/article?id=".$featured_item['id'].'">'.$featured_item['title'].'</a></td></tr>';
-				print '<div class="accordion" id="accordion2" style="font-size:0.9em;text-align:left">
+				print '<div class="accordion" id="accordion2">
                 <div class="accordion-group">
                   <div class="accordion-heading">
                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#'.$featured_item['id'].'">
-                      '.$featured_item['title'].'
+                      '.$featured_item['title'].'<i class="icon-chevron-sign-down"></i>
                     </a>
                   </div>
                   <div id="'.$featured_item['id'].'" class="accordion-body collapse" style="height: 0px;">
                     <div class="accordion-inner">
-					<a href="'.base_url().'index.php/article?id='.$featured_item['id'].'"><img src="'.base_url().'assets/thumbs/'.$featured_item['thumb'].'" alt="">
-                    '.$description.'</a>
+					<p><a href="'.base_url().'index.php/article?id='.$featured_item['id'].'"><img src="'.base_url().'assets/thumbs/'.$featured_item['thumb'].'" alt="">
+                    '.$description.'</a></p>
                     </div>
                   </div>
                 </div>
@@ -150,24 +159,26 @@
 			  $total++;
 			  }
 			  ?>
+
+		  	<br /><br />
 			
 			<div class="row-header"><h4>Feed Filters</h4></div>
-			<table class="table table-striped" data-provides="rowlink">
+			<table class="table table-striped feed-filters" data-provides="rowlink">
 				<tbody>
 					<tr>
-						<td><a href="<?php echo base_url();?>">All</a><?php if(isset($_GET['cat'])&&($_GET['cat'])!=0){} else{ print '<i class="icon-chevron-right" style="float:right"></i>';}?></td>
+						<td><a href="<?php echo base_url();?>">All</a><?php if(isset($_GET['cat'])&&($_GET['cat'])!=0){} else{ print '<i class="icon-chevron-right"></i>';}?></td>
 					</tr>
 					<tr>
-						<td><a href="<?php echo base_url();?>?cat=1">Latest</a><?php if(isset($_GET['cat'])&&($_GET['cat'])==1){ print '<i class="icon-chevron-right" style="float:right"></i>';}?></i></td>
+						<td><a href="<?php echo base_url();?>?cat=1">Latest</a><?php if(isset($_GET['cat'])&&($_GET['cat'])==1){ print '<i class="icon-chevron-right"></i>';}?></i></td>
 					</tr>
 					<tr>
-						<td><a href="<?php echo base_url();?>?cat=2">Features</a><?php if(isset($_GET['cat'])&&($_GET['cat'])==2){ print '<i class="icon-chevron-right" style="float:right"></i>';}?></i></td>
+						<td><a href="<?php echo base_url();?>?cat=2">Features</a><?php if(isset($_GET['cat'])&&($_GET['cat'])==2){ print '<i class="icon-chevron-right"></i>';}?></i></td>
 					</tr>
 					<tr>
-						<td><a href="<?php echo base_url();?>?cat=3">Opinion</a><?php if(isset($_GET['cat'])&&($_GET['cat'])==3){ print '<i class="icon-chevron-right" style="float:right"></i>';}?></i></td>
+						<td><a href="<?php echo base_url();?>?cat=3">Opinion</a><?php if(isset($_GET['cat'])&&($_GET['cat'])==3){ print '<i class="icon-chevron-right"></i>';}?></i></td>
 					</tr>
 					<tr>
-						<td><a href="<?php echo base_url();?>?cat=4">News</a><?php if(isset($_GET['cat'])&&($_GET['cat'])==4){ print '<i class="icon-chevron-right" style="float:right"></i>';}?></i></td>
+						<td><a href="<?php echo base_url();?>?cat=4">News</a><?php if(isset($_GET['cat'])&&($_GET['cat'])==4){ print '<i class="icon-chevron-right"></i>';}?></i></td>
 					</tr>
 				</tbody>
 			</table>
@@ -210,25 +221,28 @@
 					$description = first_paragraph($item['content']);
 
 					print "<style type='text/css'>div#share-popup".$items." {
-						
 						position: absolute;
 						max-width: 200px;
-						padding: 10px;
-						background: grey;
+						margin-left: 5px;
+						padding-top: 10px;
+						padding-left: 5px;
+						padding-right:5px;
+						padding-bottom: 5px;
+						background: #fefefe;
+						border: 1px #d1d1d1 solid;
 						font-size: 12px;
 					}	</style>";
 					print "<script>
 					$('body').click(function(){
-$('div#share-popup".$items."').hide();
-});
+						$('div#share-popup".$items."').hide();
+						});
 					$(function() {
 					  $('a#share-trigger".$items."').hover(function() {
 						$('div#share-popup".$items."').show();
 						}, function() {
-						$('div#share-popup".$items."').show();
+						$('div#share-popup".$items."').hide();
 					  });
 					});</script>";
-					
 					
 			  		print "<h4><a href='".base_url()."index.php/article?id=".$item['id']."'>".$item['title']."</a></h4>";
 					print "<p href='".base_url()."index.php/article?id=".$item['id']."'>".$description."</p><br />";
@@ -263,7 +277,7 @@ $('div#share-popup".$items."').hide();
 			The data driven journalism + tools in StarHealth section were kickstarted by Code4Kenya
 			<hr />
 			<a href="http://github.com/CodeForAfrica"><img src="<?php echo base_url(); ?>assets/img/GitHub-Mark-32px.png" id="cfa_icon"></a>
-			<a href="http://data.the-star.co.ke"><img style="height:32px;margin-left:25px" src="<?php echo base_url(); ?>assets/img/ckan.jpeg" id="ckan_icon"></a>
+			<a href="http://data.the-star.co.ke"><img style="height:32px;margin-left:25px" src="<?php echo base_url(); ?>assets/img/github.png" id="ckan_icon"></a>
 			<p>The code & data for this page are open source. You can re-use it by visiting the above repositories.</p>
 			<br />
 			<br />

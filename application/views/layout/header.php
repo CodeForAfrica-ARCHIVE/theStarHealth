@@ -21,11 +21,16 @@
     <![endif]-->
 
     <!-- Le fav and touch icons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo base_url();?>assets/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo base_url();?>assets/ico/apple-touch-icon-114-precomposed.png">
-      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo base_url();?>assets/ico/apple-touch-icon-72-precomposed.png">
-                    <link rel="apple-touch-icon-precomposed" href="<?php echo base_url();?>assets/ico/apple-touch-icon-57-precomposed.png">
-                                   <link rel="shortcut icon" href="<?php echo base_url();?>assets/ico/favicon.png">
+    <!-- <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo base_url();?>assets/ico/apple-touch-icon-144-precomposed.png"> -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo base_url();?>assets/ico/starhealth-favicon-144.png">
+    <!-- <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo base_url();?>assets/ico/apple-touch-icon-114-precomposed.png"> -->
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo base_url();?>assets/ico/starhealth-favicon-114.png">
+      <!-- <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo base_url();?>assets/ico/apple-touch-icon-72-precomposed.png"> -->
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo base_url();?>assets/ico/starhealth-favicon-72.png">
+                    <!-- <link rel="apple-touch-icon-precomposed" href="<?php echo base_url();?>assets/ico/apple-touch-icon-57-precomposed.png"> -->
+                    <link rel="apple-touch-icon-precomposed" href="<?php echo base_url();?>assets/ico/starhealth-favicon-57.png">
+                                   <!-- <link rel="shortcut icon" href="<?php echo base_url();?>assets/ico/favicon.png"> -->
+                                   <link rel="shortcut icon" href="<?php echo base_url(); ?>assets/ico/starhealth-favicon-32.png">
   </head>
 
   <body data-spy="scroll" data-target=".bs-docs-sidebar">
@@ -36,7 +41,7 @@
             <a href="<?php echo base_url();?>"><img src="<?php echo base_url();?>assets/img/logo.png"></a>
           </div>
           <div class="navbar-search search_menu input-append">
-            <input type="text" placeholder="search" class="search">
+            <input type="text" placeholder="Search" class="search">
               <button class='btn add-on'>
                 <i class="icon-search"></i>
               </button>
@@ -57,12 +62,12 @@
               <li>
                 <a href="<?php echo base_url()?>index.php/about">About</a>
               </li>
-              <li class="divider-vertical">
+              <!-- <li class="divider-vertical">
                 <a href="">Bogus Drs</a>
               </li>
            	  <li>
                 <a href="">Hospital Deaths</a>
-              </li>
+              </li> -->
             </ul>
           </div>
         </div>
