@@ -22,7 +22,9 @@ class Dodgy extends CI_Controller {
 	}
 	public function search(){
 		$name = $_POST['name'];
-		
+		if($name==''){
+			print "Please enter a name!";
+		}else{
 		$this->db->select("*");
 		$this->db->from("sh_practitioners");
 		$this->db->where("Names", $name);
@@ -45,5 +47,6 @@ class Dodgy extends CI_Controller {
 		if($total<1){
 			print "No registered doctor found with that name!";
 		}
+	}
 	}
 }

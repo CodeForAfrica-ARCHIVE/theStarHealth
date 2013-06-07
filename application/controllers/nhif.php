@@ -5,19 +5,23 @@ class Nhif extends CI_Controller {
 	public function index()
 	{
 		
-		$amount = $_POST['amount'];
-		/*$this->db->select("*");
-		$this->db->from("nhif");
-		$this->db->where("abbr.full", $name);
+		$max = $_POST['max'];
+		$min = $_POST['min'];
+		$town = $_POST['town'];
 		
-		$result = $this->db->get();
-		 * */
+		if(($max=='')||($min=='')){
+			print "Please enter both maximum and minimum values";
+		}else{
+		if($town=="Select town"){
+			$result = $this->db->query("select * from nhif where Rate<=$max AND Rate>=$min AND Rate!=''");
+	
+		}
+		else{
+			$result = $this->db->query("select * from nhif where Rate<=$max AND Rate>=$min AND Town='$town' AND Rate!=''");
 		
-		$result = $this->db->query("select * from nhif where Rate<=$amount AND Rate!=''");
+		}
 		$facilities = $result->result_array();
-		
-		
-		print "<select onchange=\"filter_town('".$amount."');\" id='town'>";
+		print "<!-- <select onchange=\"filter_town('');\" id='town'>";
 		$sql = "select DISTINCT Town as town from nhif where town !=''";
 		$rsd = mysql_query($sql);
 		while($rs = mysql_fetch_array($rsd)) {
@@ -26,7 +30,7 @@ class Nhif extends CI_Controller {
 		print "</select>";
 		print "<br /><strong>";
 		echo "Hospitals that cover KSH ".$amount." or less";
-		print "</strong><br />";
+		print "</strong><br />-->";
 		foreach($facilities as $facility){
 			
 			print $facility['Name'].' - '.$facility['Rate']."<br />";
@@ -34,7 +38,7 @@ class Nhif extends CI_Controller {
 		if(count($facilities)==0){
 			print "No facilities found";
 		}
-		
+		}
 	}
 	public function filter_town(){
 		

@@ -52,4 +52,12 @@ class Welcome_m extends CI_Model {
 	$result = $this->db->get();
 	return $result->result_array();
    }
+   public function get_towns(){
+   	$this->db->select("*");
+	$this->db->from("nhif");
+	$this->db->where("Town !=", "");
+	$this->db->group_by("Town");
+	$result = $this->db->get();
+	return $result->result_array();
+   }
 }

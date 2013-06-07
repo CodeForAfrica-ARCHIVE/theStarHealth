@@ -24,6 +24,7 @@ class Welcome extends CI_Controller {
 		$data['featured'] = $this->welcome_m->get_all_featured();
 		
 		$data['counties'] = $this->welcome_m->get_facilities_counties();
+		$data['towns'] = $this->welcome_m->get_towns();
 		
 		$this->load->view('layout/header.php', $data);	
 		$this->load->view('layout/header_widgets.php', $data);

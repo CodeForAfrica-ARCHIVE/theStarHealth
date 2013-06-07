@@ -24,31 +24,41 @@ class Facilities extends CI_Controller {
 		$name = $_POST['name'];
 		$county = strtoupper($_POST['county']);
 		
-		if($county != "SELECT COUNTY"){
+		if($name==''){
+			print "You didn't enter a facility type";
+		}else{
+		if($county == "SELECT COUNTY"){
+			print $name." in all counties";
+			
+			$this->db->select("abbr.*,sh_facilities.*");
+			$this->db->from("abbr");
+			$this->db->join("sh_facilities", "abbr.id=sh_facilities.Facility");
+			$this->db->where("abbr.full", $name);
+			
+		}else{
+			print $name." in ".$county." county";
+			
 			$this->db->select("abbr.*,sh_facilities.*");
 			$this->db->from("abbr");
 			$this->db->join("sh_facilities", "abbr.id=sh_facilities.Facility");
 			$this->db->where("abbr.full", $name);
 			$this->db->where("sh_facilities.County", $county);
-		}else{
-			$this->db->select("abbr.*,sh_facilities.*");
-			$this->db->from("abbr");
-			$this->db->join("sh_facilities", "abbr.id=sh_facilities.Facility");
-			$this->db->where("abbr.full", $name);
 		}
+		
 		
 		
 		$result = $this->db->get();
 		$facilities = $result->result_array();
 		
 		
-		print "<select onchange=\"filter_location('".$name."');\" id='county'>";
+		
+		print "<!-- <select onchange=\"filter_location('".$name."');\" id='county'>";
 		$sql = "select DISTINCT County as county from sh_facilities";
 		$rsd = mysql_query($sql);
 		while($rs = mysql_fetch_array($rsd)) {
 			print "<option value='".$rs['county']."'>".$rs['county']."</option>";
 		}
-		print "</select>";
+		print "</select>-->";
 		print "<br />";
 		
 		foreach($facilities as $facility){
@@ -56,7 +66,12 @@ class Facilities extends CI_Controller {
 			print "<a href='https://maps.google.com/maps?q=".$facility['Geolocation']."+(".$filtered_name.")' target='_blank'>".$facility['name']."</a> - ".$facility['County']."<br />";		
 		}
 		if(count($facilities)==0){
+			if($name==''){
+				print "missing values";
+			}else{
 			print "No facilities found";
+			}
+		}
 		}
 		
 	}

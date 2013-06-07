@@ -83,7 +83,13 @@
 					var request = get_XmlHttp();
 					document.getElementById("mybox").innerHTML = "";
 					document.getElementById("loading").style.display = 'block';
-					var the_data = 'amount='+document.getElementById("nhif").value;
+					
+					var max = document.getElementById("max").value;
+					var min = document.getElementById("min").value;
+					var county = document.getElementById("town").selectedOptions[0].text;
+					
+					var the_data = "max="+max+"&min="+min+"&town="+county;
+					
 					request.open("POST", file, true);
 						
 					request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -179,17 +185,17 @@
         		<i class="icon-search"></i>
     		</button>
           	</div> -->
-			<input type="text" placeholder="Minimum rate" class="rate">
-			<input type="text" placeholder="Maximum rate" class="rate">
-			<select>
-			<option>Select county</option>
+			<input type="text" placeholder="Minimum rate" class="rate" id="min">
+			<input type="text" placeholder="Maximum rate" class="rate" id="max">
+			<select id="town">
+			<option>Select town</option>
 			<?php 
-			foreach($counties as $county){
-				print "<option>".$county['county']."</option>";	
+			foreach($towns as $town){
+				print "<option>".$town['Town']."</option>";	
 			}
 			?>
 			</select>
-			<button class='btn add-on'>
+			<button class='btn add-on' href="#myModal" role="button" class="btn" data-toggle="modal" onclick="nhif('<?php echo base_url();?>index.php/nhif')">
 			<i class="icon-search"></i>
 			</button>
 		</div>
