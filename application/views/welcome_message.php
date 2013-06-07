@@ -4,7 +4,12 @@
 			<div class="sidebar_widget row-header">
 				<h4>Backstory</h4>
 			</div>
-			<div class="sidebar_widget down backstory">
+			<div class="sidebar_widget down backstory" style="font-size:0.8em">
+				<h5>Overview</h5>
+				<?php
+					print "<img src='".base_url()."assets/thumbs/".$news[0]['sofar_thumbnail']."' width='100%'>";
+					print $news[0]['overview'];
+				?>
 				<h5>The story so far</h5>
 				<?php
 					function first_paragraph($content) {
@@ -13,9 +18,15 @@
 						return substr($content, 0, $pos);
 					   
 					}
-					$description = first_paragraph($news[0]['content']);
-                	print "<a href='".base_url()."index.php/article?id=".$news[0]['id']."'>".$news[0]['title']."</a><br/>";
+					//$description = first_paragraph($news[0]['content']);
+                	/*print "<a href='".base_url()."index.php/article?id=".$news[0]['id']."'>".$news[0]['title']."</a><br/>";
 					//print $description;
+					 * */
+					 print "<table class='table table-striped' data-provides='rowlink'>";
+					 foreach($sofar as $item){
+					 	print "<tr><td><a href='".base_url()."index.php/article?id=".$item['id']."'>".$item['title']."</a></td></tr>";
+					 }
+					 print "</table>";
 				  ?>
 			</div>
 			<br />

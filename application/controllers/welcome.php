@@ -15,6 +15,8 @@ class Welcome extends CI_Controller {
 		}
 		$data['news'] = $this->welcome_m->get_featured($cat, 1);
 		
+		$data['sofar'] = $this->welcome_m->get_story_sofar($data['news'][0]['id']);
+		
 		if($cat==0){
 			$data['more_news'] = $this->welcome_m->get_all();
 		}else{

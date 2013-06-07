@@ -60,4 +60,15 @@ class Welcome_m extends CI_Model {
 	$result = $this->db->get();
 	return $result->result_array();
    }
+   public function get_story_sofar($parent){
+   	$this->db->select("*, UNIX_TIMESTAMP() - timestamp AS TimeSpent, timestamp");
+	$this->db->from("news");
+
+	$this->db->where("parent", $parent);
+	
+	
+	$result = $this->db->get();
+	return $result->result_array();
+
+   }
 }
