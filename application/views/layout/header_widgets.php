@@ -3,8 +3,8 @@
 		<div class="span4 header_widget">
 		<i class="icon-user-md icon-4x"></i>
 		<h4>Dodgy Doctors</h4>
-		<div class="description">Check to see if your doctor is registered and free from malpractice</div>
-		 <div class="search_menu input-append">
+		<div class="description">Check to see if your doctor is registered, their certified area of practice <br/>and whether they are free from malpractice</div>
+		 <div class="search_menu input-append" style="margin-top:40px;">
 		 	<?php
 			session_start();
 			?>
@@ -63,8 +63,10 @@
 				function specialists_request(file){
 					var request = get_XmlHttp();
 					document.getElementById("mybox").innerHTML = "";
+					var county = document.getElementById("county_s").selectedOptions[0].text;
+					var name = document.getElementById("specialist").value;
 					document.getElementById("loading").style.display = 'block';
-					var the_data = 'name='+document.getElementById("specialist").value;
+					var the_data = 'name='+name+'&county='+county;
 					request.open("POST", file, true);
 						
 					request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -181,7 +183,11 @@
 			<input type="text" placeholder="Maximum rate" class="rate">
 			<select>
 			<option>Select county</option>
-			
+			<?php 
+			foreach($counties as $county){
+				print "<option>".$county['county']."</option>";	
+			}
+			?>
 			</select>
 			<button class='btn add-on'>
 			<i class="icon-search"></i>
@@ -218,9 +224,13 @@
 			});
 			</script>
           	<input type="text" placeholder="Start typing speciality's name" class="specialist" id="specialist">
-			<select>
+			<select id="county_s">
 			<option>Select county</option>
-			
+			<?php 
+			foreach($counties as $county){
+				print "<option>".$county['county']."</option>";	
+			}
+			?>
 			</select>
           	<button class='btn add-on' href="#myModal" role="button" class="btn" data-toggle="modal" onclick="specialists_request('<?php echo base_url();?>index.php/facilities/search')">
         				<i class="icon-search"></i>

@@ -45,4 +45,11 @@ class Welcome_m extends CI_Model {
 	$news = $result->result_array();
 	return $news;
  }
+   public function get_facilities_counties(){
+   	$this->db->select("*");
+   	$this->db->from("counties");
+	
+	$result = $this->db->get();
+	return $result->result_array();
+   }
 }
