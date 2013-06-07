@@ -91,31 +91,39 @@
 				<h4>Help Desk</h4>
 			</div>
 			<div class="sidebar_widget down helpline">
-				<h5>Help lines</h5>
-
-				<h6>Kenya Police</h6>
-				<p>
-					<i class="icon-phone icon-2x" style="margin-right:5px"></i> 
-					<a href="tel:053801053">053801053</a>
-				</p>
-
-				<h6><a href="http://www.medicalboard.co.ke/">Kenya Medical Board</a></h6>
-				<p>
-					<i class="icon-phone icon-2x" style="margin-right:5px"></i> 
-					<a href="tel:+254 20 2724938"> +254 20 2724938</a>
-				</p>
-
-				<h6><a href="http://www.publichealth.go.ke/">Ministry of Health</a></h6>
-				<p>
-					<i class="icon-phone icon-2x" style="margin-right:5px"></i>
-					<a href="tel:+254 20 2717077"> +254 20 2717077</a>
-				</p>
-
-				<h6><a href="http://www.nckenya.com/">Nursing Council of Kenya</a></h6>
-				<p>
-					<i class="icon-phone icon-2x" style="margin-right:5px"></i> 
-					<a href="tel:+254 20 3873556">+254 20 3873556</a>
-				</p>
+				<?php
+					
+				if(count($helplines)>0){
+					print "<h5>Help lines</h5>";
+				foreach($helplines as $helpline){
+					print "<h6>".$helpline['h_name']."</h6>";
+					print "<p>
+					<i class='icon-phone icon-2x' style='margin-right:5px'></i>
+					<a href='tel:".$helpline['h_number']."'>".$helpline['h_number']."</a>
+					</p>";
+				}
+				}
+				if(count($supportgroups)>0){
+					print "<h5>Support Groups</h5>";
+				foreach($supportgroups as $supportgroup){
+					print "<h6>".$supportgroup['sg_name']."</h6>";
+					print "<p>
+					<i class='icon-phone icon-2x' style='margin-right:5px'></i>
+					<a href='tel:".$supportgroup['sg_number']."'>".$supportgroup['sg_number']."</a>
+					</p>";
+				}
+				}
+				if(count($socialmedias)>0){
+					print "<h5>Social Media</h5>";
+				foreach($socialmedias as $socialmedia){
+					print "<p>
+					<i class='icon-phone icon-2x' style='margin-right:5px'></i>
+					<a href='".$socialmedias['sm_link']."'>".$socialmedias['sm_name']."</a>
+					</p>";
+				}
+				}
+				?>
+			
 			</div>
 		</div>
 	</div>

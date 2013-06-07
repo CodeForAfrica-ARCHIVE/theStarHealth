@@ -71,4 +71,31 @@ class Welcome_m extends CI_Model {
 	return $result->result_array();
 
    }
+   public function get_helplines($story){
+	$this->db->select("h_story.*, helplines.*");
+	$this->db->from("h_story");
+	$this->db->join("helplines", "h_story.helpline_id=helplines.h_id");
+	$this->db->where("story_id", $story);
+	
+	$result = $this->db->get();
+	return $result->result_array();
+   }
+   public function get_supportgroups($story){
+	$this->db->select("sg_story.*, supportgroups.*");
+	$this->db->from("sg_story");
+	$this->db->join("supportgroups", "sg_story.sg_id=supportgroups.sg_id");
+	$this->db->where("story_id", $story);
+	
+	$result = $this->db->get();
+	return $result->result_array();
+   }
+   public function get_socialmedias($story){
+	$this->db->select("sm_story.*, socialmedia.*");
+	$this->db->from("sm_story");
+	$this->db->join("socialmedia", "sm_story.sm_id=socialmedia.sm_id");
+	$this->db->where("story_id", $story);
+	
+	$result = $this->db->get();
+	return $result->result_array();
+   }
 }
