@@ -35,7 +35,7 @@
 				<a href="http://data.the-star.co.ke">Data repository</a>
 			</div>
 		</div>
-		<div class="span6">
+		<div class="span9">
 			<div id="myCarousel" class="carousel slide">
                 <ol class="carousel-indicators">
                 	<?php
@@ -52,7 +52,7 @@
                 		}
                 	?>
                 </ol>
-                <div class="carousel-inner">
+                <div class="carousel-inner" align="center" style="background-color:#000">
                 	
                 	<?php
                 	$description = substr($news[0]['content'], 0, 120).'... ';
@@ -86,42 +86,54 @@
                 <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
               </div>
 		</div>
-		<div class="span3">
+		<div class="span9">
 			<div class="sidebar_widget row-header">
 				<h4>Help Desk</h4>
 			</div>
 			<div class="sidebar_widget down helpline">
 				<?php
 					
-				if(count($helplines)>0){
-					print "<h5>Help lines</h5>";
-				foreach($helplines as $helpline){
+				//if(count($helplines)>0){
+					print "<div class='span4'><h5>Help lines</h5>";
+					foreach($helplines as $helpline){
 					print "<h6>".$helpline['h_name']."</h6>";
 					print "<p>
 					<i class='icon-phone icon-2x' style='margin-right:5px'></i>
 					<a href='tel:".$helpline['h_number']."'>".$helpline['h_number']."</a>
 					</p>";
 				}
+				if(count($helplines)<1){
+					print "No pages listed";
 				}
-				if(count($supportgroups)>0){
-					print "<h5>Support Groups</h5>";
-				foreach($supportgroups as $supportgroup){
+				print "</div>";
+				//}
+				//if(count($supportgroups)>0){
+					print "<div class='span4'><h5>Support Groups</h5>";
+					foreach($supportgroups as $supportgroup){
 					print "<h6>".$supportgroup['sg_name']."</h6>";
 					print "<p>
 					<i class='icon-phone icon-2x' style='margin-right:5px'></i>
 					<a href='tel:".$supportgroup['sg_number']."'>".$supportgroup['sg_number']."</a>
 					</p>";
 				}
+				if(count($supportgroups)<1){
+					print "No groups listed";
 				}
-				if(count($socialmedias)>0){
-					print "<h5>Social Media</h5>";
+				print "</div>";
+				//}
+				//if(count($socialmedias)>0){
+					print "<div class='span4'><h5>Social Media</h5>";
 				foreach($socialmedias as $socialmedia){
 					print "<p>
 					<i class='icon-phone icon-2x' style='margin-right:5px'></i>
 					<a href='".$socialmedias['sm_link']."'>".$socialmedias['sm_name']."</a>
 					</p>";
 				}
+				if(count($socialmedias)<1){
+					print "No pages listed";
 				}
+				print "</div>";
+				//}
 				?>
 			
 			</div>
