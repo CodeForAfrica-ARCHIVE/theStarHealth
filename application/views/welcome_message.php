@@ -192,28 +192,62 @@
 			  ?>
 
 		  	<br /><br />
-			
+			<script src="<?php echo base_url();?>/assets/js/jquery17.min.js"></script>
 			<div class="row-header"><h4>Feed Filters</h4></div>
+			<script>        
+					                  
+                function filter_feed(section) {
+                	document.getElementById("filtered").innerHTML = "";
+                	document.getElementById("chev0").style.display='none';
+                	document.getElementById("chev1").style.display='none';
+					document.getElementById("chev2").style.display='none';
+					document.getElementById("chev3").style.display='none';
+					document.getElementById("chev4").style.display='none';
+					document.getElementById("chev"+section).style.display='block';
+                    var request = $.ajax({
+                        url: "<?php echo base_url();?>index.php/welcome/filter_feed",
+						data: "section="+section,
+                        type: "POST",            
+                        dataType: "html"
+                    });
+ 
+                    request.done(function(msg) {
+                        $("#filtered").html(msg);          
+                    });
+ 
+                    request.fail(function(jqXHR, textStatus) {
+                        alert( "Request failed: " + textStatus );
+                    });
+                }
+             
+        </script>
 			<table class="table table-striped feed-filters">
 				<tbody>
 					<tr>
-						<td><a href="<?php echo base_url();?>">All</a><?php if(isset($_GET['cat'])&&($_GET['cat'])!=0){} else{ print '<i class="icon-chevron-right"></i>';}?></td>
+						<td><a onclick="filter_feed(0);">All</a><i class="icon-chevron-right" id="chev0"></i></td>
 					</tr>
 					<tr>
-						<td><a onclick="filter_feed(1);">Latest</a><?php if(isset($_GET['cat'])&&($_GET['cat'])==1){ print '<i class="icon-chevron-right"></i>';}?></i></td>
+						<td><a onclick="filter_feed(1);">Latest</a><i class="icon-chevron-right" id="chev1"></i></td>
 					</tr>
 					<tr>
-						<td><a onclick="filter_feed(2);">Features</a><?php if(isset($_GET['cat'])&&($_GET['cat'])==2){ print '<i class="icon-chevron-right"></i>';}?></i></td>
+						<td><a onclick="filter_feed(2);">Features</a><i class="icon-chevron-right" id="chev2"></i></td>
 					</tr>
 					<tr>
-						<td><a onclick="filter_feed(3);">Opinion</a><?php if(isset($_GET['cat'])&&($_GET['cat'])==3){ print '<i class="icon-chevron-right"></i>';}?></i></td>
+						<td><a onclick="filter_feed(3);">Opinion</a><i class="icon-chevron-right" id="chev3"></i></td>
 					</tr>
 					<tr>
-						<td><a onclick="filter_feed(4);">News</a><?php if(isset($_GET['cat'])&&($_GET['cat'])==4){ print '<i class="icon-chevron-right"></i>';}?></i></td>
+						<td><a onclick="filter_feed(4);">News</a><i class="icon-chevron-right" id="chev4"></i></td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
+		<script>
+		document.getElementById("chev1").style.display='none';
+		document.getElementById("chev2").style.display='none';
+		document.getElementById("chev3").style.display='none';
+		document.getElementById("chev4").style.display='none';
+		
+		</script>
 		<div class="span6 newsfeed" id="filtered">
 			<div class="row-header"><h3>Other Health News</h3></div>
 			<h6>A round-up of the all the latest health news from theStar <i class="icon-arrow-down" style="margin-left: 10px"></i></h6>

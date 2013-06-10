@@ -102,7 +102,11 @@ class Welcome_m extends CI_Model {
    	$this->db->select("*, UNIX_TIMESTAMP() - timestamp AS TimeSpent, timestamp, categories.*");
 	$this->db->from("news");	
 	$this->db->join("categories", "categories.cat_id=news.category");	
+	if($section=="0"){
+		
+	}else{
 	$this->db->where("news.section", $section);	
+	}
 	$result = $this->db->get();
 	return $result->result_array();
    }

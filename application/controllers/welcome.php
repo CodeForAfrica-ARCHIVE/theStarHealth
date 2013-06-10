@@ -49,6 +49,8 @@ class Welcome extends CI_Controller {
 			$data['title'] = "Opinion";
 		}elseif($section==4){
 			$data['title'] = "News";
+		}else{
+			$data['title'] = "Other Health News";
 		}
 		$this->load->view('filtered', $data);
 	}

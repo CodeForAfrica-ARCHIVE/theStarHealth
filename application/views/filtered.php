@@ -1,5 +1,5 @@
 	<div class="row-header"><h3><?php print "$title";?></h3></div>
-			<h6><i class="icon-arrow-down" style="margin-left: 10px"></i></h6>
+			<h6><?php if($title=="Other Health News"){print "A round-up of the all the latest health news from theStar";}?><i class="icon-arrow-down" style="margin-left: 10px"></i></h6>
 			<br />
 			<?php
 					function first_paragraph($content) {

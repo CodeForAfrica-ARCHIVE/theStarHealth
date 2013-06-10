@@ -124,9 +124,8 @@ body > .navbar .brand {
 }
 
 .navbar .nav {
-  margin-left: -2px;
-  overflow: hidden;
-  padding-left: 10px;
+margin-left: -1px;
+overflow: hidden;
 }
 
 .navbar li {
