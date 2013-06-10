@@ -98,4 +98,12 @@ class Welcome_m extends CI_Model {
 	$result = $this->db->get();
 	return $result->result_array();
    }
+   public function get_filtered_feed($section){
+   	$this->db->select("*, UNIX_TIMESTAMP() - timestamp AS TimeSpent, timestamp, categories.*");
+	$this->db->from("news");	
+	$this->db->join("categories", "categories.cat_id=news.category");	
+	$this->db->where("news.section", $section);	
+	$result = $this->db->get();
+	return $result->result_array();
+   }
 }

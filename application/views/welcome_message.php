@@ -194,27 +194,27 @@
 		  	<br /><br />
 			
 			<div class="row-header"><h4>Feed Filters</h4></div>
-			<table class="table table-striped feed-filters" data-provides="rowlink">
+			<table class="table table-striped feed-filters">
 				<tbody>
 					<tr>
 						<td><a href="<?php echo base_url();?>">All</a><?php if(isset($_GET['cat'])&&($_GET['cat'])!=0){} else{ print '<i class="icon-chevron-right"></i>';}?></td>
 					</tr>
 					<tr>
-						<td><a href="<?php echo base_url();?>?cat=1">Latest</a><?php if(isset($_GET['cat'])&&($_GET['cat'])==1){ print '<i class="icon-chevron-right"></i>';}?></i></td>
+						<td><a onclick="filter_feed(1);">Latest</a><?php if(isset($_GET['cat'])&&($_GET['cat'])==1){ print '<i class="icon-chevron-right"></i>';}?></i></td>
 					</tr>
 					<tr>
-						<td><a href="<?php echo base_url();?>?cat=2">Features</a><?php if(isset($_GET['cat'])&&($_GET['cat'])==2){ print '<i class="icon-chevron-right"></i>';}?></i></td>
+						<td><a onclick="filter_feed(2);">Features</a><?php if(isset($_GET['cat'])&&($_GET['cat'])==2){ print '<i class="icon-chevron-right"></i>';}?></i></td>
 					</tr>
 					<tr>
-						<td><a href="<?php echo base_url();?>?cat=3">Opinion</a><?php if(isset($_GET['cat'])&&($_GET['cat'])==3){ print '<i class="icon-chevron-right"></i>';}?></i></td>
+						<td><a onclick="filter_feed(3);">Opinion</a><?php if(isset($_GET['cat'])&&($_GET['cat'])==3){ print '<i class="icon-chevron-right"></i>';}?></i></td>
 					</tr>
 					<tr>
-						<td><a href="<?php echo base_url();?>?cat=4">News</a><?php if(isset($_GET['cat'])&&($_GET['cat'])==4){ print '<i class="icon-chevron-right"></i>';}?></i></td>
+						<td><a onclick="filter_feed(4);">News</a><?php if(isset($_GET['cat'])&&($_GET['cat'])==4){ print '<i class="icon-chevron-right"></i>';}?></i></td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
-		<div class="span6 newsfeed">
+		<div class="span6 newsfeed" id="filtered">
 			<div class="row-header"><h3>Other Health News</h3></div>
 			<h6>A round-up of the all the latest health news from theStar <i class="icon-arrow-down" style="margin-left: 10px"></i></h6>
 			<br />
@@ -286,7 +286,7 @@
 					</script>";
 					?>
 		<a href="https://twitter.com/share" class="twitter-share-button" data-url="<?php echo base_url()."index.php/article?id=".$item['id'];?>" data-via="the-star">Tweet</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>			
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>			
 					<?php 
 					print "</div>";
 					print '</div>';

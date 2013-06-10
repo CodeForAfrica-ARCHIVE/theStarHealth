@@ -37,6 +37,21 @@ class Welcome extends CI_Controller {
 		$this->load->view('welcome_message', $data);
 		$this->load->view('layout/footer.php');
 	}
+	public function filter_feed(){
+		$section = $_POST['section'];
+		$this->load->model('welcome_m');
+		$data['filtered_feed'] = $this->welcome_m->get_filtered_feed($section);
+		if($section==1){
+			$data['title'] = "Latest";
+		}elseif($section==2){
+			$data['title'] = "Features";
+		}elseif($section==3){
+			$data['title'] = "Opinion";
+		}elseif($section==4){
+			$data['title'] = "News";
+		}
+		$this->load->view('filtered', $data);
+	}
 }
 
 /* End of file welcome.php */
