@@ -192,7 +192,6 @@
 			  ?>
 
 		  	<br /><br />
-			<script src="<?php echo base_url();?>/assets/js/jquery17.min.js"></script>
 			<div class="row-header"><h4>Feed Filters</h4></div>
 			<script>        
 					                  
@@ -204,20 +203,22 @@
 					document.getElementById("chev3").style.display='none';
 					document.getElementById("chev4").style.display='none';
 					document.getElementById("chev"+section).style.display='block';
-                    var request = $.ajax({
-                        url: "<?php echo base_url();?>index.php/welcome/filter_feed",
-						data: "section="+section,
-                        type: "POST",            
-                        dataType: "html"
-                    });
- 
-                    request.done(function(msg) {
-                        $("#filtered").html(msg);          
-                    });
- 
-                    request.fail(function(jqXHR, textStatus) {
-                        alert( "Request failed: " + textStatus );
-                    });
+                   var file = "<?php echo base_url();?>index.php/welcome/filter_feed";
+				
+				  var request =  get_XmlHttp();
+				  document.getElementById("filtered").innerHTML = "";
+				 
+				  var the_data = 'section='+section;
+				  request.open("POST", file, true);
+					
+				  request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+				  request.send(the_data);
+				  
+				  request.onreadystatechange = function() {
+				  if (request.readyState == 4) {
+				      document.getElementById("filtered").innerHTML = request.responseText;
+				    }
+				  }
                 }
              
         </script>
