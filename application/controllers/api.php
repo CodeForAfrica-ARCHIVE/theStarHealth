@@ -8,7 +8,7 @@ class Api extends CI_Controller {
 	}
 	public function get_news(){
 		
-		if(isset($_GET['category'])){
+		if(isset($_GET['category'])&&($_GET['category']!="0")){
 			$type = $_GET['category'];
 			$data['news'] = $this->welcome_m->get_archive($type);
 		}else{

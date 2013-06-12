@@ -1,5 +1,12 @@
 <?php
 header("Content-type: text/xml");
+	function first_paragraph($content) {
+
+						$pos = strpos($content, '[p]');
+						return substr($content, 0, $pos);
+					   
+					}
+	
 $total = 0;
 $Result = "<?xml version='1.0' encoding='utf-8'?>\n<articles>\n";
 
@@ -34,7 +41,7 @@ foreach($news as $article){
 	$Result .= " <news>\n";	
 	$Result .= "<id>".$article['id']."</id>";	
 	$Result .= "<title>".$article['title']."</title>";
-	$Result .= "<description>".$article['content']."</description>";
+	$Result .= "<description>".first_paragraph($article['content'])."</description>";
 	$Result .= "<timestamp>".$lapse."</timestamp>";
 	$Result .= "<category>".$article['cat_name']."</category>";
 	$Result .= "<thumb_url>".base_url()."assets/thumbs/".$article['thumb']."</thumb_url>";
