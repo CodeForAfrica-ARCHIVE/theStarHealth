@@ -17,9 +17,9 @@ class Api extends CI_Controller {
 		
 		$this->load->view('api/show_news', $data);
 	}
-	public function show_news(){
+	public function show_article(){
 		$id = $_GET['id'];
-		$data['news'] = $this->welcome_m->show_news($id);
+		$data['news'] = $this->welcome_m->show_article($id);
 		$this->load->view('api/show_news', $data);
 	}
 }

@@ -45,6 +45,17 @@ class Welcome_m extends CI_Model {
 	$news = $result->result_array();
 	return $news;
  }
+    public function show_article($id){
+ 	
+	$this->db->select("*, UNIX_TIMESTAMP() - timestamp AS TimeSpent, timestamp, categories.*");
+	$this->db->from("news");	
+	$this->db->join("categories", "categories.cat_id=news.category");
+	$this->db->where("id", $id);
+	
+	$result = $this->db->get();
+	$news = $result->result_array();
+	return $news;
+ }
    public function get_facilities_counties(){
    	$this->db->select("*");
    	$this->db->from("counties");
