@@ -35,5 +35,14 @@ class Api_m extends CI_Model {
 	$news = $result->result_array();
 	return $news;
  	}
+	public function get_specialists($specialty, $county){
+	$this->db->select("abbr.*,sh_facilities.*");
+	$this->db->from("abbr");
+	$this->db->join("sh_facilities", "abbr.id=sh_facilities.Facility");
+	$this->db->where("abbr.full", $specialty);
+	$this->db->where("sh_facilities.County", $county);
+	$result = $this->db->get();
+	return $result->result_array();
+	}
 }
 ?>

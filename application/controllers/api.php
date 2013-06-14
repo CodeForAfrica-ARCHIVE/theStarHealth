@@ -29,5 +29,11 @@ class Api extends CI_Controller {
 		$data['facilities'] = $this->api_m->get_nhif_facilities($min, $max, $town);
 		$this->load->view('api/show_nhif', $data);
 	}
+	public function specialists(){
+		$specialty = $_GET['specialty'];
+		$county = $_GET['county'];
+		$data['facilities'] = $this->api_m->get_specialists($specialty, $county);
+		$this->load->view('api/show_specialists', $data);		
+	}
 
 }
