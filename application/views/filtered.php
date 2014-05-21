@@ -11,31 +11,6 @@
 			$items=0;
 			  	foreach($filtered_feed as $item){
 			  		if($items<6){
-					//timeplay
-					$days = floor($item['TimeSpent'] / (60 * 60 * 24)); 
-					
-					$remainder = $item['TimeSpent'] % (60 * 60 * 24);
-					$hours = floor($remainder / (60 * 60));
-					$remainder = $remainder % (60 * 60);
-					$minutes = floor($remainder / 60);
-					$seconds = $remainder % 60;
-
-					if($days > 0) {
-					//$oldLocale = setlocale(LC_TIME, 'pt_BR');
-					$item['timestamp'] = strftime("%b %#d %Y", $item['timestamp']);
-					$lapse = $item['timestamp'];
-					// setlocale(LC_TIME, $oldLocale);
-					}
-						
-					elseif($days == 0 && $hours == 0 && $minutes == 0)
-					$lapse .= "few seconds ago";						
-					elseif($hours)
-					$lapse .=  $hours.' hours ago';
-					elseif($days == 0 && $hours == 0)
-					$lapse .=  $minutes.' minutes ago';
-					else
-					$lapse .=  "few seconds ago";
-					//end timeplay
 
 					$description = first_paragraph($item['content']);
 
