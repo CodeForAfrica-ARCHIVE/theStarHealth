@@ -26,18 +26,11 @@ class Welcome_m extends CI_Model {
 	return $news;
  }
   public function get_all(){
- 	/*
-	$this->db->select("*, UNIX_TIMESTAMP() - timestamp AS TimeSpent, timestamp, categories.*");
-	$this->db->from("news");	
-	$this->db->join("categories", "categories.cat_id=news.category");
-	$result = $this->db->get();
-	$news = $result->result_array();
-	return $news;
-	*/
-	$feed_url = $this->config->item('feed_url');
-	$feed = simplexml_load_file($feed_url);
+	$feed_url = "http://localhost/star-health.xml";//$this->config->item('feed_url');
+	
 	$news = array();
-	if($feed !=null){
+	if(@simplexml_load_file($feed_url)){
+		$feed = simplexml_load_file($feed_url);
 		$items = (array)$feed->channel;
 		$items = $items['item'];
 	
@@ -47,32 +40,36 @@ class Welcome_m extends CI_Model {
 			$newitem['title'] = $item->title;		
 			$newitem['description'] = $this->first_paragraph($item->description);
 			$newitem['link'] = $item->link;
-			$newitem['timestamp'] = $item->pubDate;
+			$timestamp = explode('+', $item->pubDate);
+			$newitem['timestamp'] = $timestamp[0];
 
 			$namespaces = $item->getNameSpaces(true);
 			$dc = $item->children($namespaces['dc']); 
 			$newitem['author'] =$dc->creator;
-		
+				
 			$news[] = $newitem;
 		}
 	}
 	return $news;
  }
 	public function first_paragraph($string){
+		
 		$string = explode("</p>", $string);
 		if(sizeof($string)>0){
 			$newstring = $string[0]."</p>";	
 		}else{
 			//return only first two sentences
-			//first split at ... to retain social media links
-			$string = explode("...", $string);
 			//now split the first bit using fullstops
-			$string2 = explode(". ", $string[0]);
+			$string = explode(". ", $string);
 			//then combine parts
-			$newstring = $string2[0].'. '.$string2[1].'...<br />'.$string[1];
+			if(sizeof($string)>1){
+				$newstring = $string[0].'. '.$string[1];
+			}else{
+				$newstring = $string[0];
+			}
 		}
 		
-		return $newstring;
+		return strip_tags($newstring);
 }
    public function get_archive($cat){
  	
