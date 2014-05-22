@@ -17,9 +17,9 @@ class Frontpage_controller extends CI_Controller {
 		
 		$data['sofar'] = $this->welcome_m->get_story_sofar($data['news'][0]['id']);
 		
-		//$data['helplines'] = $this->welcome_m->get_helplines($data['news'][0]['id']);
-		//$data['supportgroups'] = $this->welcome_m->get_supportgroups($data['news'][0]['id']);
-		//$data['socialmedias'] = $this->welcome_m->get_socialmedias($data['news'][0]['id']);
+		$data['helplines'] = $this->welcome_m->get_helplines($data['news'][0]['id']);
+		$data['supportgroups'] = $this->welcome_m->get_supportgroups($data['news'][0]['id']);
+		$data['socialmedias'] = $this->welcome_m->get_socialmedias($data['news'][0]['id']);
 	
 		if($cat==0){
 			$data['more_news'] = $this->welcome_m->get_all();

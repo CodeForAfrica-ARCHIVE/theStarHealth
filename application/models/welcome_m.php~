@@ -137,7 +137,7 @@ class Welcome_m extends CI_Model {
 	$this->db->join("supportgroups", "sg_story.sg_id=supportgroups.sg_id");
 	$this->db->where("story_id", $story);
 	*/
-	$result = $this->db->get('supportgroup');
+	$result = $this->db->get('supportgroups');
 	return $result->result_array();
    }
    public function get_socialmedias($story){
