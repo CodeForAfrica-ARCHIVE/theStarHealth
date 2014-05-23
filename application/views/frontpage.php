@@ -201,9 +201,8 @@
                 	document.getElementById("chev1").style.display='none';
 					document.getElementById("chev2").style.display='none';
 					document.getElementById("chev3").style.display='none';
-					document.getElementById("chev4").style.display='none';
-					document.getElementById("chev"+section).style.display='block';
-                   var file = "<?php echo base_url();?>index.php/welcome/filter_feed";
+										document.getElementById("chev"+section).style.display='block';
+                   var file = "<?php echo base_url();?>index.php/frontpage_controller/filter_feed";
 				
 				  var request =  get_XmlHttp();
 				  document.getElementById("filtered").innerHTML = "";
@@ -225,19 +224,16 @@
 			<table class="table table-striped feed-filters">
 				<tbody>
 					<tr>
-						<td><a onclick="filter_feed(0);">All</a><i class="icon-chevron-right" id="chev0"></i></td>
+						<td><a onclick="filter_feed(0);">Latest</a><i class="icon-chevron-right" id="chev0"></i></td>
 					</tr>
 					<tr>
-						<td><a onclick="filter_feed(1);">Latest</a><i class="icon-chevron-right" id="chev1"></i></td>
+						<td><a onclick="filter_feed(1);">Features</a><i class="icon-chevron-right" id="chev1"></i></td>
 					</tr>
 					<tr>
-						<td><a onclick="filter_feed(2);">Features</a><i class="icon-chevron-right" id="chev2"></i></td>
+						<td><a onclick="filter_feed(2);">Opinion</a><i class="icon-chevron-right" id="chev2"></i></td>
 					</tr>
 					<tr>
-						<td><a onclick="filter_feed(3);">Opinion</a><i class="icon-chevron-right" id="chev3"></i></td>
-					</tr>
-					<tr>
-						<td><a onclick="filter_feed(4);">News</a><i class="icon-chevron-right" id="chev4"></i></td>
+						<td><a onclick="filter_feed(3);">News</a><i class="icon-chevron-right" id="chev3"></i></td>
 					</tr>
 				</tbody>
 			</table>
@@ -245,9 +241,7 @@
 		<script>
 		document.getElementById("chev1").style.display='none';
 		document.getElementById("chev2").style.display='none';
-		document.getElementById("chev3").style.display='none';
-		document.getElementById("chev4").style.display='none';
-		
+		document.getElementById("chev3").style.display='none';		
 		</script>
 		<div class="span6 newsfeed" id="filtered">
 			<div class="row-header"><h3>Other Health News</h3></div>
@@ -285,7 +279,8 @@
 					  });
 					});</script>";
 					
-			  		print "<h4><a href='".$item['link']."'>".$item['title']."</a></h4>";
+			  		print "<h4>".$item['title']."</h4>";
+print_r($item['tags']);
 					print "<div style='text-align:justify'>".$item['description']."</div><br />";				
 
 

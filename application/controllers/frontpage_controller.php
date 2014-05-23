@@ -8,11 +8,7 @@ class Frontpage_controller extends CI_Controller {
 		
 		$this->load->model('welcome_m');
 		
-		if(isset($_GET['cat'])){
-			$cat = $_GET['cat'];			
-		}else{
-			$cat = 0;
-		}
+
 		$data['news'] = $this->welcome_m->get_featured($cat, 1);
 		
 		$data['sofar'] = $this->welcome_m->get_story_sofar($data['news'][0]['id']);
@@ -21,11 +17,8 @@ class Frontpage_controller extends CI_Controller {
 		$data['supportgroups'] = $this->welcome_m->get_supportgroups($data['news'][0]['id']);
 		$data['socialmedias'] = $this->welcome_m->get_socialmedias($data['news'][0]['id']);
 	
-		if($cat==0){
-			$data['more_news'] = $this->welcome_m->get_all();
-		}else{
-			$data['more_news'] = $this->welcome_m->get_featured($cat, 0);
-		}
+			$data['more_news'] = $this->welcome_m->get_all(null);
+
 		
 		$data['featured'] = $this->welcome_m->get_all_featured();
 		
@@ -42,12 +35,10 @@ class Frontpage_controller extends CI_Controller {
 		$this->load->model('welcome_m');
 		$data['filtered_feed'] = $this->welcome_m->get_filtered_feed($section);
 		if($section==1){
-			$data['title'] = "Latest";
-		}elseif($section==2){
 			$data['title'] = "Features";
-		}elseif($section==3){
+		}elseif($section==2){
 			$data['title'] = "Opinion";
-		}elseif($section==4){
+		}elseif($section==3){
 			$data['title'] = "News";
 		}else{
 			$data['title'] = "Other Health News";

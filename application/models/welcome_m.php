@@ -25,7 +25,7 @@ class Welcome_m extends CI_Model {
 	$news = $result->result_array();
 	return $news;
  }
-  public function get_all(){
+  public function get_all($section=null){
 	$feed_url = "http://localhost/star-health.xml";//$this->config->item('feed_url');
 	
 	$news = array();
@@ -37,21 +37,48 @@ class Welcome_m extends CI_Model {
 
 		foreach($items as $item){
 			$newitem = array();
+			
+			$newitem['link'] = $item->link;
+			
 			$newitem['title'] = $item->title;		
 			$newitem['description'] = $this->first_paragraph($item->description);
-			$newitem['link'] = $item->link;
 			$timestamp = explode('+', $item->pubDate);
 			$newitem['timestamp'] = $timestamp[0];
 
 			$namespaces = $item->getNameSpaces(true);
 			$dc = $item->children($namespaces['dc']); 
 			$newitem['author'] =$dc->creator;
-				
-			$news[] = $newitem;
+					if(($section==null)||($section==0)){
+	$news[] = $newitem;
+}else{
+		
+	//all sections	
+	$sections = array("Latest", "Features", "Opinion", "News");
+	//selected section in array
+	$section = $sections[$section];
+	//tags in article
+	$newitem['tags'] = $this->get_tags($item->link);
+	if(in_array(strtolower($section), $tags)){
+		$news[] = $newitem;
+	}
+}			
+	
+			
 		}
 	}
 	return $news;
  }
+	public function get_tags($s){
+		$s = strip_tags(urldecode($s));
+		$s = str_replace('http://www.the-star.co.ke/', '', $s);
+		$tags = explode(', ', $s);
+		if(in_array('Star Health', $tags)){
+			$tags = array_flip($tags);
+			unset($tags['Star Health']);
+			$tags = array_flip($tags);		
+		}
+		return $tags;
+}
 	public function first_paragraph($string){
 		
 		$string = explode("</p>", $string);
@@ -68,7 +95,7 @@ class Welcome_m extends CI_Model {
 				$newstring = $string[0];
 			}
 		}
-		
+		//TODO: find way to leave some tags like <i>, <b>, <a>...
 		return strip_tags($newstring);
 }
    public function get_archive($cat){
@@ -145,9 +172,12 @@ class Welcome_m extends CI_Model {
 	*/
 	$result = $this->db->get('socialmedia');
 	return $result->result_array();
-   }
+   } 
    public function get_filtered_feed($section){
-   	$this->db->select("*, UNIX_TIMESTAMP() - timestamp AS TimeSpent, timestamp, categories.*");
+	$sections = array("Latest", "Features", "Opinion", "News");
+	$sections = array_flip($sections);
+	  
+	/*$this->db->select("*, UNIX_TIMESTAMP() - timestamp AS TimeSpent, timestamp, categories.*");
 	$this->db->from("news");	
 	$this->db->join("categories", "categories.cat_id=news.category");	
 	if($section=="0"){
@@ -156,6 +186,6 @@ class Welcome_m extends CI_Model {
 	$this->db->where("news.section", $section);	
 	}
 	$result = $this->db->get();
-	return $result->result_array();
+	return $result->result_array();*/
    }
 }
