@@ -148,39 +148,36 @@
 				}
 			</style>
 			<?php
+			$i = 0;
 			$first_one = $featured[0];
-			$description = first_paragraph($first_one['content']);
 			print '<div class="accordion" id="accordion2">
                 <div class="accordion-group">
                   <div class="accordion-heading">
-                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#'.$first_one['id'].'">
-                    	'.$first_one['title'].'<i class="icon-chevron-sign-down"></i>
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#'.$i.'">
+                    	'.strip_tags($first_one['title']).'<i class="icon-chevron-sign-down"></i>
                     </a>
                   </div>
-                  <div id="'.$first_one['id'].'" class="accordion-body in collapse" style="height: auto;">
+                  <div id="'.$i.'" class="accordion-body in collapse" style="height: auto;">
                     <div class="accordion-inner">
-					<p><a href="'.base_url().'index.php/article?id='.$first_one['id'].'"><img src="'.base_url().'assets/thumbs/'.$first_one['thumb'].'" alt="">
-                    '.$description.'</a></p>
+				<p>'.$first_one['description'].'</p>
                     </div>
                   </div>
                 </div>
               </div>';
 			  $total=0;
 			foreach($featured as $featured_item){
-	            if($total>1){
-	           	$description = first_paragraph($featured_item['content']);
-                //print '<tr><td><a href="'.base_url()."index.php/article?id=".$featured_item['id'].'">'.$featured_item['title'].'</a></td></tr>';
-				print '<div class="accordion" id="accordion2">
+	            if(($total>1)&&($total<6)){
+			$i++;
+	           	print '<div class="accordion" id="accordion2">
                 <div class="accordion-group">
                   <div class="accordion-heading">
-                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#'.$featured_item['id'].'">
-                      '.$featured_item['title'].'<i class="icon-chevron-sign-down"></i>
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#'.$i.'">
+                      '.strip_tags($featured_item['title']).'<i class="icon-chevron-sign-down"></i>
                     </a>
                   </div>
-                  <div id="'.$featured_item['id'].'" class="accordion-body collapse" style="height: 0px;">
+                  <div id="'.$i.'" class="accordion-body collapse" style="height: 0px;">
                     <div class="accordion-inner">
-					<p><a href="'.base_url().'index.php/article?id='.$featured_item['id'].'"><img src="'.base_url().'assets/thumbs/'.$featured_item['thumb'].'" alt="">
-                    '.$description.'</a></p>
+				<p>'.$featured_item['description'].'</p>
                     </div>
                   </div>
                 </div>
@@ -252,39 +249,14 @@
 			$items=0;
 			  	foreach($more_news as $item){
 			  		if($items<6){
-					
-					//$description = first_paragraph($item['content']);
 
-					print "<style type='text/css'>div#share-popup".$items." {
-						position: absolute;
-						max-width: 200px;
-						margin-left: 5px;
-						padding-top: 10px;
-						padding-left: 5px;
-						padding-right:5px;
-						padding-bottom: 5px;
-						background: #fefefe;
-						border: 1px #d1d1d1 solid;
-						font-size: 12px;
-					}	</style>";
-					print "<script>
-					$('body').click(function(){
-						$('div#share-popup".$items."').hide();
-						});
-					$(function() {
-					  $('a#share-trigger".$items."').hover(function() {
-						$('div#share-popup".$items."').show();
-						}, function() {
-						$('div#share-popup".$items."').hide();
-					  });
-					});</script>";
 					
 			  		print "<h4>".$item['title']."</h4>";
-print_r($item['tags']);
 					print "<div style='text-align:justify'>".$item['description']."</div><br />";				
 
 
-					print '<div class="article-meta">Posted '.$item['timestamp'].'&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;'; print ucwords(strtolower($item['author'])); 
+						print '<div class="article-meta">Posted '.$item['timestamp'].' | '; print ucwords(strtolower($item['author'])); 
+print '| Posted under '.implode(', ', $item['tags']); 
 					print '</div>';
 					print "<hr />";
 
