@@ -149,17 +149,18 @@
 			</style>
 			<?php
 			$i = 0;
+			if(sizeof($featured)>0){
 			$first_one = $featured[0];
 			print '<div class="accordion" id="accordion2">
                 <div class="accordion-group">
                   <div class="accordion-heading">
                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#'.$i.'">
-                    	'.strip_tags($first_one['title']).'<i class="icon-chevron-sign-down"></i>
+                    	'.$first_one['title'].'<i class="icon-chevron-sign-down"></i>
                     </a>
                   </div>
                   <div id="'.$i.'" class="accordion-body in collapse" style="height: auto;">
                     <div class="accordion-inner">
-				<p>'.$first_one['description'].'</p>
+				<p>'.$first_one['description'].'<br />'. $first_one['more_link'].'</p>
                     </div>
                   </div>
                 </div>
@@ -172,12 +173,12 @@
                 <div class="accordion-group">
                   <div class="accordion-heading">
                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#'.$i.'">
-                      '.strip_tags($featured_item['title']).'<i class="icon-chevron-sign-down"></i>
+                      '.$featured_item['title'].'<i class="icon-chevron-sign-down"></i>
                     </a>
                   </div>
                   <div id="'.$i.'" class="accordion-body collapse" style="height: 0px;">
                     <div class="accordion-inner">
-				<p>'.$featured_item['description'].'</p>
+			<p>'.$featured_item['description'].'<br />'. $first_one['more_link'].'</p>
                     </div>
                   </div>
                 </div>
@@ -186,6 +187,7 @@
 			  }
 			  $total++;
 			  }
+}
 			  ?>
 
 		  	<br /><br />
@@ -209,8 +211,9 @@
 					
 				  request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 				  request.send(the_data);
-				  
+				  document.getElementById("filtered").innerHTML = "<div style='text-align:center'><img src='<?php echo base_url();?>assets/img/preloader.gif'></div>";	
 				  request.onreadystatechange = function() {
+					
 				  if (request.readyState == 4) {
 				      document.getElementById("filtered").innerHTML = request.responseText;
 				    }
@@ -251,12 +254,12 @@
 			  		if($items<6){
 
 					
-			  		print "<h4>".$item['title']."</h4>";
+			  		print "<h4>".$item['link']."</h4>";
 					print "<div style='text-align:justify'>".$item['description']."</div><br />";				
 
 
 						print '<div class="article-meta">Posted '.$item['timestamp'].' | '; print ucwords(strtolower($item['author'])); 
-print '| Posted under '.implode(', ', $item['tags']); 
+print ' | Posted under '.implode(', ', $item['tags']); 
 					print '</div>';
 					print "<hr />";
 

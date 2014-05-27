@@ -16,7 +16,7 @@ class Welcome_m extends CI_Model {
  }
 
   public function get_all($section=null, $featured){
-	$feed_url = "http://localhost/star-health.xml";//$this->config->item('feed_url');
+	$feed_url = base_url().'assets/feed.xml';//$this->config->item('feed_url');
 	
 	$news = array();
 	if(@simplexml_load_file($feed_url)){
@@ -30,10 +30,17 @@ class Welcome_m extends CI_Model {
 			
 			$newitem['link'] = $item->link;
 			
-			$newitem['title'] = $item->title;
+			$link = str_replace('/news/', 'http://the-star.co.ke/news/', $item->title);
+			
+			$link = explode(">", $link);
+			$newitem['more_link'] = $link[0]." target='_blank'>More</a>";
+			$newitem['title'] = strip_tags($item->title);
+			$newitem['link'] = $link[0]." target='_blank'>".$newitem['title']."</a>";
+			
 			$newitem['tags'] = $this->get_tags($item->link);
 			$newitem['description'] = $this->first_paragraph($item->description);
 			$timestamp = explode('+', $item->pubDate);
+			$timestamp = explode('-', $timestamp[0]);
 			$newitem['timestamp'] = $timestamp[0];
 
 			$namespaces = $item->getNameSpaces(true);
@@ -62,10 +69,12 @@ class Welcome_m extends CI_Model {
 		}
 	}
 	return $news;
- }
+ }	
+	
 	public function get_tags($s){
 		$s = strip_tags(urldecode($s));
 		$s = str_replace('http://www.the-star.co.ke/', '', $s);
+		$s = str_replace('http://the-star.co.ke/', '', $s);
 		$tags = explode(', ', $s);
 		if(in_array('Star Health', $tags)){
 			$tags = array_flip($tags);
@@ -156,7 +165,7 @@ class Welcome_m extends CI_Model {
 	$this->db->join("supportgroups", "sg_story.sg_id=supportgroups.sg_id");
 	$this->db->where("story_id", $story);
 	*/
-	$result = $this->db->get('supportgroup');
+	$result = $this->db->get('supportgroups');
 	return $result->result_array();
    }
    public function get_socialmedias($story){
