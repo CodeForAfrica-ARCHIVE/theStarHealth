@@ -30,7 +30,7 @@
 				  ?>
 			</div>
 			<br />
-			<div class="sidebar_widget bottom evidence">
+			<div class="sidebar_widget bottom evidence" style="display:none;">
 				<h5>Evidence Dossier</h5>
 				<a href="http://data.the-star.co.ke">Data repository</a>
 			</div>
