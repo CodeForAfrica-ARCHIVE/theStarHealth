@@ -160,7 +160,7 @@
                   </div>
                   <div id="'.$i.'" class="accordion-body in collapse" style="height: auto;">
                     <div class="accordion-inner">
-				<p>'.$first_one['description'].'<br />'. $first_one['more_link'].'</p>
+				<p>'.$first_one['description'].'<br /><a href="'.$first_one['link'].' target="_blank">More</a></p>
                     </div>
                   </div>
                 </div>
@@ -178,7 +178,7 @@
                   </div>
                   <div id="'.$i.'" class="accordion-body collapse" style="height: 0px;">
                     <div class="accordion-inner">
-			<p>'.$featured_item['description'].'<br />'. $first_one['more_link'].'</p>
+			<p>'.$featured_item['description'].'<br /><a href="'.$featured_item['link'].' target="_blank">More</a></p>
                     </div>
                   </div>
                 </div>
@@ -254,12 +254,12 @@
 			  		if($items<6){
 
 					
-			  		print "<h4>".$item['link']."</h4>";
+			  		print "<h4><a href='".$item['link']." target='_blank'>".$item['title']."</a></h4>";
 					print "<div style='text-align:justify'>".$item['description']."</div><br />";				
 
 
 						print '<div class="article-meta">Posted '.$item['timestamp'].' | '; print ucwords(strtolower($item['author'])); 
-print ' | Posted under '.implode(', ', $item['tags']); 
+print ' | Posted under '.$item['tags']; 
 					print '</div>';
 					print "<hr />";
 

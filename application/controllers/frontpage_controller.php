@@ -42,7 +42,7 @@ class Frontpage_controller extends CI_Controller {
 	}
 	public function run_cron(){
 			
-		$url = "http://www.the-star.co.ke/star-health.xml";
+		$url = "http://mirror.the-star.co.ke/star-health-json";
 		$data = file_get_contents($url);	
 		/*		
 		$ch = curl_init();
@@ -54,7 +54,7 @@ class Frontpage_controller extends CI_Controller {
 		curl_close($ch);
 		*/
 		if($data!=null){
-			file_put_contents(APPPATH.'../assets/feed.xml', $data);	
+			file_put_contents(APPPATH.'../assets/feed.json', $data);	
 		}
 	}
 }

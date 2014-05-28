@@ -16,42 +16,34 @@ class Welcome_m extends CI_Model {
  }
 
   public function get_all($section=null, $featured){
-	$feed_url = base_url().'assets/feed.xml';//$this->config->item('feed_url');
+	$feed_url = base_url().'assets/feed.json';//$this->config->item('feed_url');
 	
 	$news = array();
-	if(@simplexml_load_file($feed_url)){
-		$feed = simplexml_load_file($feed_url);
-		$items = (array)$feed->channel;
-		$items = $items['item'];
 	
-
+		$feed = json_decode(file_get_contents($feed_url, true));
+		
+		$items = $feed->nodes;
+		
 		foreach($items as $item){
+			$item = $item->node;
 			$newitem = array();
-			
-			$newitem['link'] = $item->link;
-			
-			$link = str_replace('/news/', 'http://the-star.co.ke/news/', $item->title);
-			
-			$link = explode(">", $link);
-			$newitem['more_link'] = $link[0]." target='_blank'>More</a>";
-			$newitem['title'] = strip_tags($item->title);
-			$newitem['link'] = $link[0]." target='_blank'>".$newitem['title']."</a>";
-			
-			$newitem['tags'] = $this->get_tags($item->link);
-			$newitem['description'] = $this->first_paragraph($item->description);
-			$timestamp = explode('+', $item->pubDate);
-			$timestamp = explode('-', $timestamp[0]);
-			$newitem['timestamp'] = $timestamp[0];
 
-			$namespaces = $item->getNameSpaces(true);
-			$dc = $item->children($namespaces['dc']); 
-			$newitem['author'] =$dc->creator;
-
+			$newitem['link'] = str_replace('/news/', 'http://the-star.co.ke/news', $item->Path);
+			
+			$newitem['title'] = $item->title;
+			
+			$newitem['tags'] = $item->Tags;
+			$newitem['description'] = $this->first_paragraph($item->Body);
+			
+			$newitem['timestamp'] = $item->Date;
+ 
+			$newitem['author'] =$item->Author;
+			
 			if(($section==null)||($section==0)){
 				$news[] = $newitem;
 				
 			}else{
-				$tags = $this->get_tags($item->link);	
+				$tags = explode(',', $newitem['tags']);	
 				//all sections	
 				$sections = array("Latest", "Features", "Opinion", "News");
 				//selected section in array
@@ -67,7 +59,7 @@ class Welcome_m extends CI_Model {
 				}
 			}	
 		}
-	}
+	
 	return $news;
  }	
 	
@@ -85,20 +77,21 @@ class Welcome_m extends CI_Model {
 }
 	public function first_paragraph($string){
 		
-		$string = explode("</p>", $string);
-		if(sizeof($string)>0){
-			$newstring = $string[0]."</p>";	
-		}else{
+		//$string = explode("</p>", $string);
+		//if(sizeof($string)>0){
+		//	$newstring = $string[0]."</p>";	
+		//}else{
 			//return only first two sentences
 			//now split the first bit using fullstops
-			$string = explode(". ", $string);
+			//$string = explode(". ", str_replace('&nbsp;', ' ', $string[0]));
+			$string = explode(".", $string);
 			//then combine parts
 			if(sizeof($string)>1){
-				$newstring = $string[0].'. '.$string[1];
+				$newstring = $string[0].'. '.$string[1].'.';
 			}else{
 				$newstring = $string[0];
 			}
-		}
+		//}
 		//TODO: find way to leave some tags like <i>, <b>, <a>...
 		return strip_tags($newstring);
 }
