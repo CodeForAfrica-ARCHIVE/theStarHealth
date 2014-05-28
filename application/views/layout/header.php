@@ -40,7 +40,7 @@
           <div class="brand">
             <a href="<?php echo base_url();?>"><img src="<?php echo base_url();?>assets/img/logo.png"></a>
           </div>
-          <div class="navbar-search search_menu input-append">
+          <div class="navbar-search search_menu input-append" style="display:none">
             <input type="text" placeholder="Search" class="search">
               <button class='btn add-on'>
                 <i class="icon-search"></i>

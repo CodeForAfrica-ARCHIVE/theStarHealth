@@ -1,73 +1,109 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 class Welcome_m extends CI_Model {
  
- public function get_featured($cat, $featured){
- 	$this->db->select("*, UNIX_TIMESTAMP() - timestamp AS TimeSpent, timestamp, categories.*");
-	$this->db->from("news");	
-	$this->db->join("categories", "categories.cat_id=news.category");
-	
-	$this->db->where("news.featured", $featured);
-	$this->db->where("news.section", $cat);
-	
-	
-	$result = $this->db->get();
-	$news = $result->result_array();
-	return $news;
- }
 
-  public function get_all($section=null, $featured){
+  public function get_all($section=null){
 	$feed_url = base_url().'assets/feed.json';//$this->config->item('feed_url');
-	
-	$news = array();
-	
+	$news = array();	
 		$feed = json_decode(file_get_contents($feed_url, true));
-		
 		$items = $feed->nodes;
 		
 		foreach($items as $item){
 			$item = $item->node;
-			$newitem = array();
-
-			$newitem['link'] = str_replace('/news/', 'http://the-star.co.ke/news', $item->Path);
 			
-			$newitem['title'] = $item->title;
-			
-			$newitem['tags'] = $item->Tags;
-			$newitem['description'] = $this->first_paragraph($item->Body);
-			
-			$newitem['timestamp'] = $item->Date;
- 
-			$newitem['author'] =$item->Author;
-			
-			if(isset($item->images)){
-				if(trim($item->images)!=''){
-					$newitem['thumb'] = $this->get_thumbnail($item->images); 
-				}else{
-					$newitem['thumb'] = null;
-				}
-			}else{
-				$newitem['thumb'] = null;
-			}
+			$newitem = $this->format_item($item);
+			$tags = explode(',', $newitem['tags']);	
 			
 			if(($section==null)||($section==0)){
-				$news[] = $newitem;
-				
+				if(in_array('Major', $tags)){
+					
+				}elseif(in_array('Featured', $tags)){
+					
+				}else{
+					$news[] = $newitem;
+				}
 			}else{
-				$tags = explode(',', $newitem['tags']);	
+				
 				//all sections	
 				$sections = array("Latest", "Features", "Opinion", "News");
 				//selected section in array
 				$sel_section = $sections[$section];
 				//tags in article
 				if(in_array('Major', $tags)){
-					//skip major stories
-					if($featured==true){
-					$news[] = $newitem;
-					}
+					
 				}elseif(in_array($sel_section, $tags)){
-					$news[] = $newitem;
+						$news[] = $newitem;
 				}
 			}	
+		}
+	
+	return $news;
+ }	
+  public function format_item($item){
+  	$newitem = array();
+
+			$newitem['link'] = str_replace('/news/', 'http://the-star.co.ke/news/', $item->path);
+			
+			$newitem['title'] = $item->title;
+			
+			$newitem['tags'] = $item->Tag;
+			$newitem['description'] = $this->first_paragraph($item->body);
+			
+			$newitem['timestamp'] = $item->created;
+ 
+			$newitem['author'] =$item->field_author;
+			
+			if(isset($item->field_image)){
+				if(trim($item->field_image)!=''){
+					$newitem['thumb'] = $this->get_thumbnail($item->field_image); 
+				}else{
+					$newitem['thumb'] = null;
+				}
+			}else{
+				$newitem['thumb'] = null;
+			}
+			return $newitem;
+  }
+  public function get_featured(){
+	$feed_url = base_url().'assets/feed.json';//$this->config->item('feed_url');
+	$news = array();	
+		$feed = json_decode(file_get_contents($feed_url, true));
+		$items = $feed->nodes;
+		
+
+		foreach($items as $item){
+		
+				$item = $item->node;
+					$newitem = $this->format_item($item);		
+					$tags = explode(',', $newitem['tags']);	
+				
+					if(in_array('Major', $tags)){
+						if($newitem['thumb']!=null){
+							$news[] = $newitem;
+						}
+					}
+				
+			
+		}
+	
+	return $news;
+ }	
+public function get_major(){
+	$feed_url = base_url().'assets/feed.json';//$this->config->item('feed_url');
+	$news = array();	
+		$feed = json_decode(file_get_contents($feed_url, true));
+		$items = $feed->nodes;
+		
+		foreach($items as $item){
+			$item = $item->node;
+				$newitem = $this->format_item($item);		
+				$tags = explode(',', $newitem['tags']);	
+			
+				if(in_array('Major', $tags)){
+
+					$news[] = $newitem;
+				}
+			
 		}
 	
 	return $news;
@@ -156,7 +192,7 @@ class Welcome_m extends CI_Model {
 	return $result->result_array();
 
    }
-   public function get_helplines($story){
+   public function get_helplines(){
 	/*$this->db->select("h_story.*, helplines.*");
 	$this->db->from("h_story");
 	$this->db->join("helplines", "h_story.helpline_id=helplines.h_id");
@@ -165,7 +201,7 @@ class Welcome_m extends CI_Model {
 	$result = $this->db->get('helplines');
 	return $result->result_array();
    }
-   public function get_supportgroups($story){
+   public function get_supportgroups(){
 	/*$this->db->select("sg_story.*, supportgroups.*");
 	$this->db->from("sg_story");
 	$this->db->join("supportgroups", "sg_story.sg_id=supportgroups.sg_id");
@@ -174,7 +210,7 @@ class Welcome_m extends CI_Model {
 	$result = $this->db->get('supportgroups');
 	return $result->result_array();
    }
-   public function get_socialmedias($story){
+   public function get_socialmedias(){
 	/*$this->db->select("sm_story.*, socialmedia.*");
 	$this->db->from("sm_story");
 	$this->db->join("socialmedia", "sm_story.sm_id=socialmedia.sm_id");

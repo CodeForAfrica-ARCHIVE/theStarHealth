@@ -7,26 +7,32 @@
 			<div class="sidebar_widget down backstory" style="font-size:0.8em">
 				<h5>Overview</h5>
 				<?php
-					print "<img src='".base_url()."assets/thumbs/".$news[0]['sofar_thumbnail']."' width='100%'>";
-					print $news[0]['overview'];
+					//print "<img src='".base_url()."assets/thumbs/".$news[0]['sofar_thumbnail']."' width='100%'>";
+					//print $news[0]['overview'];
 				?>
 				<h5>The story so far</h5>
 				<?php
-					function first_paragraph($content) {
+					function first_paragraph($string) {
 
-						$pos = strpos($content, '[p]');
-						return substr($content, 0, $pos);
-					   
+						$string = explode(".", $string);
+						//then combine parts
+						if(sizeof($string)>1){
+							$newstring = $string[0].'. '.$string[1].'.';
+						}else{
+							$newstring = $string[0];
+						}
+					   return $newstring;
 					}
 					//$description = first_paragraph($news[0]['content']);
                 	/*print "<a href='".base_url()."index.php/article?id=".$news[0]['id']."'>".$news[0]['title']."</a><br/>";
 					//print $description;
 					 * */
+					 /*
 					 print "<table class='table table-striped' data-provides='rowlink'>";
 					 foreach($sofar as $item){
 					 	print "<tr><td><a href='".base_url()."index.php/article?id=".$item['id']."'>".$item['title']."</a></td></tr>";
 					 }
-					 print "</table>";
+					 print "</table>";*/
 				  ?>
 			</div>
 			<br />
@@ -38,14 +44,16 @@
 		<div class="span9">
 			<div id="myCarousel" class="carousel slide">
                 <ol class="carousel-indicators">
+                	
                 	<?php
+                	//TODO: Show multiple featured stories + accompanying back stories
                 		$item = 0;
 						print '<li data-target="#myCarousel" data-slide-to="'.$item.'" class="active"></li>';
 						$item++;
 						$total = 0;
-                		foreach($news as $news_label){
+                		foreach($featured as $news_label){
 	                		if($total>0){
-	            			print '<li data-target="#myCarousel" data-slide-to="'.$item.'" class=""></li>';
+	            			//print '<li data-target="#myCarousel" data-slide-to="'.$item.'" class=""></li>';
 							$item++;
 							}
 							$total++;
@@ -55,20 +63,20 @@
                 <div class="carousel-inner" align="center" style="background-color:#000">
                 	
                 	<?php
-                	$description = substr($news[0]['content'], 0, 120).'... ';
-                		print '<div class="item active"><img src="'.base_url().'assets/thumbs/'.$news[0]['thumb'].'" alt="">
+                	$description = first_paragraph($featured[0]['description']);
+                		print '<div class="item active"><img src="'.$featured[0]['thumb'].'" alt="">
 				                    <div class="carousel-caption">
-				                      <h6><a href="'.base_url().'index.php/article?id='.$news[0]['id'].'">'.$news[0]['title'].'</a></h6>
-				                      <p><a href="'.base_url().'index.php/article?id='.$news[0]['id'].'">'.$description.'</a></p>
+				                      <h6><a href="'.$featured[0]['link'].'" target="_blank">'.$featured[0]['title'].'</a></h6>
+				                      <p><a href="'.$featured[0]['link'].'">'.$description.'</a></p>
 				                    </div>
 				                </div>';
 				  	$item = 0;
 						$item++;
 						$total = 0;
-                		foreach($news as $news_item){
+                		foreach($featured as $news_item){
 	                		if($total>0){
-	           			$description = substr($news_item['content'], 0, 120).'... ';
-                		print '<div class="item"><img src="'.base_url().'assets/thumbs/'.$news_item['thumb'].'" alt="">
+	           			$description = substr($news_item['description'], 0, 120).'... ';
+                		print '<div class="item"><img src="'.$news_item['thumb'].'" alt="">
 				                    <div class="carousel-caption">
 				                      <h6>'.$news_item['title'].'</h6>
 				                      <p>'.$description.'</p>
@@ -149,8 +157,8 @@
 			</style>
 			<?php
 			$i = 0;
-			if(sizeof($featured)>0){
-			$first_one = $featured[0];
+			if(sizeof($major)>0){
+			$first_one = $major[0];
 			print '<div class="accordion" id="accordion2">
                 <div class="accordion-group">
                   <div class="accordion-heading">
@@ -170,7 +178,7 @@
                 </div>
               </div>';
 			  $total=0;
-			foreach($featured as $featured_item){
+			foreach($major as $featured_item){
 	            if(($total>1)&&($total<6)){
 			$i++;
 	           	print '<div class="accordion" id="accordion2">

@@ -8,14 +8,15 @@ class Frontpage_controller extends CI_Controller {
 		
 		$this->load->model('welcome_m');
 		
-		$data['news'] = $this->welcome_m->get_featured($cat=0, 1);	
-		$data['sofar'] = $this->welcome_m->get_story_sofar($data['news'][0]['id']);
-		$data['more_news'] = $this->welcome_m->get_all(null, false);
-		$data['featured'] = $this->welcome_m->get_all('featured', true);
+		$data['featured'] = $this->welcome_m->get_featured();
+		$nid = 	0;//$data['featured'][0]['nid'];
+		$data['sofar'] = $this->welcome_m->get_story_sofar($nid);
+		$data['more_news'] = $this->welcome_m->get_all(null);
+		$data['major'] = $this->welcome_m->get_major();
 
-		$data['helplines'] = $this->welcome_m->get_helplines($data['news'][0]['id']);
-		$data['supportgroups'] = $this->welcome_m->get_supportgroups($data['news'][0]['id']);
-		$data['socialmedias'] = $this->welcome_m->get_socialmedias($data['news'][0]['id']);
+		$data['helplines'] = $this->welcome_m->get_helplines();
+		$data['supportgroups'] = $this->welcome_m->get_supportgroups();
+		$data['socialmedias'] = $this->welcome_m->get_socialmedias();
 		
 		$data['counties'] = $this->welcome_m->get_facilities_counties();
 		$data['towns'] = $this->welcome_m->get_towns();
