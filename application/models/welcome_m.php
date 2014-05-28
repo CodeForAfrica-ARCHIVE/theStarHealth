@@ -39,6 +39,16 @@ class Welcome_m extends CI_Model {
  
 			$newitem['author'] =$item->Author;
 			
+			if(isset($item->images)){
+				if(trim($item->images)!=''){
+					$newitem['thumb'] = $this->get_thumbnail($item->images); 
+				}else{
+					$newitem['thumb'] = null;
+				}
+			}else{
+				$newitem['thumb'] = null;
+			}
+			
 			if(($section==null)||($section==0)){
 				$news[] = $newitem;
 				
@@ -62,7 +72,10 @@ class Welcome_m extends CI_Model {
 	
 	return $news;
  }	
-	
+	public function get_thumbnail($thumb){
+		$thumb = explode(',', $thumb);
+		return $thumb[0];
+	}
 	public function get_tags($s){
 		$s = strip_tags(urldecode($s));
 		$s = str_replace('http://www.the-star.co.ke/', '', $s);

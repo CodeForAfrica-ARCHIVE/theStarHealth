@@ -160,7 +160,11 @@
                   </div>
                   <div id="'.$i.'" class="accordion-body in collapse" style="height: auto;">
                     <div class="accordion-inner">
-				<p>'.$first_one['description'].'<br /><a href="'.$first_one['link'].' target="_blank">More</a></p>
+				<p>';
+				if($first_one['thumb']!=null){
+					print "<img src='".$first_one['thumb']."' width='100%'><br />";
+				}
+				print $first_one['description'].'<br /><a href="'.$first_one['link'].' target="_blank">More</a></p>
                     </div>
                   </div>
                 </div>
@@ -178,7 +182,11 @@
                   </div>
                   <div id="'.$i.'" class="accordion-body collapse" style="height: 0px;">
                     <div class="accordion-inner">
-			<p>'.$featured_item['description'].'<br /><a href="'.$featured_item['link'].' target="_blank">More</a></p>
+			<p>';
+				if($featured_item['thumb']!=null){
+					print "<img src='".$featured_item['thumb']."' width='100%'><br />";
+				}
+				print $featured_item['description'].'<br /><a href="'.$featured_item['link'].' target="_blank">More</a></p>
                     </div>
                   </div>
                 </div>
@@ -255,6 +263,9 @@
 
 					
 			  		print "<h4><a href='".$item['link']." target='_blank'>".$item['title']."</a></h4>";
+					if($item['thumb']!=null){
+						print "<img src='".$item['thumb']."' style='width:100px;float:left; margin:10px'><br />";
+					}
 					print "<div style='text-align:justify'>".$item['description']."</div><br />";				
 
 

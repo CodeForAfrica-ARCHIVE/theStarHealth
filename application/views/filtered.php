@@ -7,13 +7,15 @@
 			  	foreach($filtered_feed as $item){
 			  		if($items<6){
 
-					
-			  		print "<h4>".$item['title']."</h4>";
+			  		print "<h4><a href='".$item['link']."' target=''>".$item['title']."</a></h4>";
+				if($item['thumb']!=null){
+						print "<img src='".$item['thumb']."' style='width:100px;float:left; margin:10px'><br />";
+					}
 					print "<div style='text-align:justify'>".$item['description']."</div><br />";				
 
 
 					print '<div class="article-meta">Posted '.$item['timestamp'].' | '; print ucwords(strtolower($item['author'])); 
-print ' | Posted under '.implode(', ', $item['tags']);
+print ' | Posted under '.$item['tags'];
 					print '</div>';
 					print "<hr />";
 
