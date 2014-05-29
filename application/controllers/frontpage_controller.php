@@ -9,6 +9,7 @@ class Frontpage_controller extends CI_Controller {
 		$this->load->model('welcome_m');
 		
 		$data['featured'] = $this->welcome_m->get_featured();
+		$data['overview'] = $data['featured']['0']['description'];
 		$nid = 	0;//$data['featured'][0]['nid'];
 		$data['sofar'] = $this->welcome_m->get_story_sofar($nid);
 		$data['more_news'] = $this->welcome_m->get_all(null);
