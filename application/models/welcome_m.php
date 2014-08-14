@@ -1,7 +1,23 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 class Welcome_m extends CI_Model {
  
-
+public function get_all_news(){
+	$feed_url = base_url().'assets/feed.json';//$this->config->item('feed_url');
+	$news = array();	
+		$feed = json_decode(file_get_contents($feed_url, true));
+		$items = $feed->nodes;
+		
+		foreach($items as $item){
+			$item = $item->node;
+			
+			$newitem = $this->format_item($item);
+			$news[] = $newitem;
+	
+			}	
+		
+	
+	return $news;
+ }
   public function get_all($section=null){
 	$feed_url = base_url().'assets/feed.json';//$this->config->item('feed_url');
 	$news = array();	
@@ -64,6 +80,36 @@ class Welcome_m extends CI_Model {
 			}
 			return $newitem;
   }
+   public function get_story_sofar(){
+		$feed_url = base_url().'assets/feed.json';//$this->config->item('feed_url');
+	$news = array();	
+		$feed = json_decode(file_get_contents($feed_url, true));
+		$items = $feed->nodes;
+		
+
+		foreach($items as $item){
+		
+				$item = $item->node;
+					$newitem = $this->format_item($item);		
+					$tags = explode(',', $newitem['tags']);	
+				
+					if(in_array('Feature-follow-up', $tags)){
+						if($newitem['thumb']!=null){
+							$news[] = $newitem;
+						}
+					}
+				
+			
+		}
+		//Get story so far 
+		foreach($tags as $tag){
+			if(is_numeric($tag)){
+				
+			}
+		}
+	
+	return $news;
+   }
   public function get_featured(){
 	$feed_url = base_url().'assets/feed.json';//$this->config->item('feed_url');
 	$news = array();	
@@ -76,14 +122,20 @@ class Welcome_m extends CI_Model {
 				$item = $item->node;
 					$newitem = $this->format_item($item);		
 					$tags = explode(',', $newitem['tags']);	
-				
-					if(in_array('Major', $tags)){
+
+					if(in_array(' National News', $tags)){
 						if($newitem['thumb']!=null){
 							$news[] = $newitem;
 						}
 					}
 				
 			
+		}
+		//Get story so far 
+		foreach($tags as $tag){
+			if(is_numeric($tag)){
+				
+			}
 		}
 	
 	return $news;
@@ -181,17 +233,7 @@ public function get_major(){
 	$result = $this->db->get();
 	return $result->result_array();
    }
-   public function get_story_sofar($parent){
-   	$this->db->select("*, UNIX_TIMESTAMP() - timestamp AS TimeSpent, timestamp");
-	$this->db->from("news");
 
-	$this->db->where("parent", $parent);
-	
-	
-	$result = $this->db->get();
-	return $result->result_array();
-
-   }
    public function get_helplines(){
 	/*$this->db->select("h_story.*, helplines.*");
 	$this->db->from("h_story");

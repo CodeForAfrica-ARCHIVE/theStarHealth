@@ -9,12 +9,19 @@ class Frontpage_controller extends CI_Controller {
 		$this->load->model('welcome_m');
 		
 		$data['featured'] = $this->welcome_m->get_featured();
-		$data['overview'] = $data['featured']['0']['description'];
-		$nid = 	0;//$data['featured'][0]['nid'];
-		$data['sofar'] = $this->welcome_m->get_story_sofar($nid);
+		$data['overview'] = $data['featured'][1]['description'];
+		$fid = 	'0';//$data['featured'][0]['nid'];
+		$data['sofar'] = $this->welcome_m->get_story_sofar();
 		$data['more_news'] = $this->welcome_m->get_all(null);
 		$data['major'] = $this->welcome_m->get_major();
-
+		
+		//get all news
+		$data['all'] = $this->welcome_m->get_all_news();
+		$data['features'] = $this->welcome_m->get_all(1, false);
+		$data['opinion'] = $this->welcome_m->get_all(2, false);
+		$data['news'] = $this->welcome_m->get_all(3, false);
+		
+		//
 		$data['helplines'] = $this->welcome_m->get_helplines();
 		$data['supportgroups'] = $this->welcome_m->get_supportgroups();
 		$data['socialmedias'] = $this->welcome_m->get_socialmedias();
@@ -22,10 +29,13 @@ class Frontpage_controller extends CI_Controller {
 		$data['counties'] = $this->welcome_m->get_facilities_counties();
 		$data['towns'] = $this->welcome_m->get_towns();
 		
-		$this->load->view('layout/header.php', $data);	
-		$this->load->view('layout/header_widgets.php', $data);
-		$this->load->view('frontpage', $data);
-		$this->load->view('layout/footer.php');
+		//$this->load->view('layout/header.php', $data);	
+		//$this->load->view('layout/header_widgets.php', $data);
+		//$this->load->view('frontpage', $data);
+		//$this->load->view('layout/footer.php');
+		$this->load->view('new_theme', $data);
+		
+		
 	}
 	public function filter_feed(){
 		$section = $_POST['section'];
