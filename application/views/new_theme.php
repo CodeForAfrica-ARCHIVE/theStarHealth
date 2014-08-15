@@ -140,7 +140,8 @@
 				});
 			});
 			</script>
-			<input type="text" placeholder="Start typing doctor's name" class="search form-control" name="course" id="dodgydoc" />
+
+			<input type="text" placeholder="Start typing doctor's name" class="search form-control" name="dodgydoc" id="course" />
 			
 			<script>
 			function get_XmlHttp() {

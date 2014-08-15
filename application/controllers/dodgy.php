@@ -6,47 +6,66 @@ class Dodgy extends CI_Controller {
 	{
 		//$this->load->view('dodgy');
 	}
-	
 	public function data(){
+
+		$q = strtoupper($_GET["q"]);	
+		$key = "AIzaSyCAI2GoGWfLBvgygLKQp5suUk3RCG7r_ME";
+		$table = "1sHohYSC7eaJQ3wenE6-4zrhIYc45lLX_Fb04Hzjo"; 
 		
-		$q = strtolower($_GET["q"]);
-		if (!$q) return;
+		$url = "https://www.googleapis.com/fusiontables/v1/query?sql=";
 		
-		$sql = "select DISTINCT Names as course_name from sh_practitioners where Names LIKE '%$q%'";
-		$rsd = mysql_query($sql);
-		while($rs = mysql_fetch_array($rsd)) {
-			$cname = $rs['course_name'];
-			echo "$cname\n";
+		$sql = "SELECT * FROM ".$table." WHERE Names LIKE '%".$q."%'";
+
+		$page = file_get_contents($url.rawurlencode($sql)."&key=".$key);
+		
+		$data = json_decode($page, TRUE);
+		
+		
+		$rows = $data['rows'];
+		
+		foreach($rows as $row){
+			$cname = $row['2'];
+			echo "$cname\n";		
 		}
 
 	}
+
 	public function search(){
 		$name = $_POST['name'];
 		if($name==''){
 			print "Please enter a name!";
 		}else{
-		$this->db->select("*");
-		$this->db->from("sh_practitioners");
-		$this->db->where("Names", $name);
+			
+		$key = "AIzaSyCAI2GoGWfLBvgygLKQp5suUk3RCG7r_ME";
+		$table = "1sHohYSC7eaJQ3wenE6-4zrhIYc45lLX_Fb04Hzjo"; 
 		
-		$result = $this->db->get();
+		$url = "https://www.googleapis.com/fusiontables/v1/query?sql=";
 		
-		$docs = $result->result_array();
+		$sql = "SELECT * FROM ".$table." WHERE Names = '".$name."'";
+
+		$page = file_get_contents($url.rawurlencode($sql)."&key=".$key);
 		
+		$data = json_decode($page, TRUE);
+		
+		
+		$rows = $data['rows'];
+
 		$total = 0;
-		foreach($docs as $doc){
+		foreach($rows as $doc){
 			$total++;
 			print "<p>";
-			print "Name: ".$doc['Title'].' '.$doc['Names'];
+			print "Name: ".$doc['1'].' '.$doc['2'];
 			print "<br />";
-			print "Reg No: ".$doc['RegNo'];
+			print "Reg No: ".$doc['4'];
 			print "<br />";
-			print "Specialty :".$doc['Specialty'];
+			print "Specialty :".$doc['7'];
 			print "</p>";
 		}
 		if($total<1){
 			print "No registered doctor found with that name!";
 		}
+		}
 	}
-	}
+
 }
+?>
