@@ -140,7 +140,8 @@
 				});
 			});
 			</script>
-			<input type="text" placeholder="Start typing doctor's name" class="search form-control" name="course" id="course" />
+			<input type="text" placeholder="Start typing doctor's name" class="search form-control" name="course" id="dodgydoc" />
+			
 			<script>
 			function get_XmlHttp() {
 	 
@@ -328,21 +329,15 @@
 							<h2 style="color:#ffd57a">Nearest Specialist</h2>
 							<div class="description">Find the nearest specialist doctor or health facility</div>
 							 <div class="search_menu">
-							 	<script type="text/javascript">
-								jq().ready(function() {
-									jq("#specialist").autocomplete("<?php echo base_url();?>/index.php/facilities/data", {
-										width: 260,
-										matchContains: true,
-										//mustMatch: true,
-										//minChars: 0,
-										//multiple: true,
-										//highlight: false,
-										//multipleSeparator: ",",
-										selectFirst: false
-									});
-								});
-								</script>
-					          	<input type="text" placeholder="Start typing speciality's name" class="specialist form-control" id="specialist">
+							 	
+<select id="specialist" class="form-control">
+								<option>Select specialty</option>
+								<?php 
+								foreach($specialties as $sp){
+									print "<option>".$sp['full']."</option>";	
+								}
+								?>
+								</select>
 								<select id="county_s" class="form-control">
 								<option>Select county</option>
 								<?php 

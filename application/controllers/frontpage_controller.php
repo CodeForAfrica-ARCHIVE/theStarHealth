@@ -33,6 +33,9 @@ class Frontpage_controller extends CI_Controller {
 		//$this->load->view('layout/header_widgets.php', $data);
 		//$this->load->view('frontpage', $data);
 		//$this->load->view('layout/footer.php');
+
+
+		$data['specialties'] = $this->welcome_m->get_specialties();
 		$this->load->view('new_theme', $data);
 		
 		

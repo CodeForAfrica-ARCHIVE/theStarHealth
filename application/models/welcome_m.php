@@ -207,6 +207,15 @@ public function get_major(){
 	$news = $result->result_array();
 	return $news;
  }
+
+public function get_specialties(){
+	$this->db->select("*");
+	$this->db->from("abbr");
+	$result = $this->db->get();
+	$specialties = $result->result_array();
+	return $specialties;
+
+}
     public function show_article($id){
  	
 	$this->db->select("*, UNIX_TIMESTAMP() - timestamp AS TimeSpent, timestamp, categories.*");
