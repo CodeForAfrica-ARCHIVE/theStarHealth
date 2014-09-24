@@ -1,23 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 class Welcome_m extends CI_Model {
  
-public function get_all_news(){
-	$feed_url = base_url().'assets/feed.json';//$this->config->item('feed_url');
-	$news = array();	
-		$feed = json_decode(file_get_contents($feed_url, true));
-		$items = $feed->nodes;
-		
-		foreach($items as $item){
-			$item = $item->node;
-			
-			$newitem = $this->format_item($item);
-			$news[] = $newitem;
-	
-			}	
-		
-	
-	return $news;
- }
+
   public function get_all($section=null){
 	$feed_url = base_url().'assets/feed.json';//$this->config->item('feed_url');
 	$news = array();	
@@ -80,36 +64,6 @@ public function get_all_news(){
 			}
 			return $newitem;
   }
-   public function get_story_sofar(){
-		$feed_url = base_url().'assets/feed.json';//$this->config->item('feed_url');
-	$news = array();	
-		$feed = json_decode(file_get_contents($feed_url, true));
-		$items = $feed->nodes;
-		
-
-		foreach($items as $item){
-		
-				$item = $item->node;
-					$newitem = $this->format_item($item);		
-					$tags = explode(',', $newitem['tags']);	
-				
-					if(in_array('Feature-follow-up', $tags)){
-						if($newitem['thumb']!=null){
-							$news[] = $newitem;
-						}
-					}
-				
-			
-		}
-		//Get story so far 
-		foreach($tags as $tag){
-			if(is_numeric($tag)){
-				
-			}
-		}
-	
-	return $news;
-   }
   public function get_featured(){
 	$feed_url = base_url().'assets/feed.json';//$this->config->item('feed_url');
 	$news = array();	
@@ -122,20 +76,14 @@ public function get_all_news(){
 				$item = $item->node;
 					$newitem = $this->format_item($item);		
 					$tags = explode(',', $newitem['tags']);	
-
-					if(in_array(' National News', $tags)){
+				
+					if(in_array('Major', $tags)){
 						if($newitem['thumb']!=null){
 							$news[] = $newitem;
 						}
 					}
 				
 			
-		}
-		//Get story so far 
-		foreach($tags as $tag){
-			if(is_numeric($tag)){
-				
-			}
 		}
 	
 	return $news;
@@ -207,15 +155,6 @@ public function get_major(){
 	$news = $result->result_array();
 	return $news;
  }
-
-public function get_specialties(){
-	$this->db->select("*");
-	$this->db->from("abbr");
-	$result = $this->db->get();
-	$specialties = $result->result_array();
-	return $specialties;
-
-}
     public function show_article($id){
  	
 	$this->db->select("*, UNIX_TIMESTAMP() - timestamp AS TimeSpent, timestamp, categories.*");
@@ -242,7 +181,17 @@ public function get_specialties(){
 	$result = $this->db->get();
 	return $result->result_array();
    }
+   public function get_story_sofar($parent){
+   	$this->db->select("*, UNIX_TIMESTAMP() - timestamp AS TimeSpent, timestamp");
+	$this->db->from("news");
 
+	$this->db->where("parent", $parent);
+	
+	
+	$result = $this->db->get();
+	return $result->result_array();
+
+   }
    public function get_helplines(){
 	/*$this->db->select("h_story.*, helplines.*");
 	$this->db->from("h_story");
