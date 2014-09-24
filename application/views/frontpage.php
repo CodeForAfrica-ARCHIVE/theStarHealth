@@ -129,8 +129,8 @@
 					print "<div class='span4'><h5>Social Media</h5>";
 				foreach($socialmedias as $socialmedia){
 					print "<p>
-					<i class='icon-phone icon-2x' style='margin-right:5px'></i>
-					<a href='".$socialmedias['sm_link']."'>".$socialmedias['sm_name']."</a>
+					<i class='icon-link icon-2x' style='margin-right:5px'></i>
+					<a href='".$socialmedia['sm_link']."'>".$socialmedia['sm_name']."</a>
 					</p>";
 				}
 				if(count($socialmedias)<1){
@@ -168,7 +168,7 @@
 				if($first_one['thumb']!=null){
 					print "<img src='".$first_one['thumb']."' width='100%'><br />";
 				}
-				print $first_one['description'].'<br /><a href="'.$first_one['link'].' target="_blank">More</a></p>
+				print $first_one['description'].'<br /><a href="'.$first_one['link'].'" target="_blank">More</a></p>
                     </div>
                   </div>
                 </div>
@@ -190,7 +190,7 @@
 				if($featured_item['thumb']!=null){
 					print "<img src='".$featured_item['thumb']."' width='100%'><br />";
 				}
-				print $featured_item['description'].'<br /><a href="'.$featured_item['link'].' target="_blank">More</a></p>
+				print $featured_item['description'].'<br /><a href="'.$featured_item['link'].'" target="_blank">More</a></p>
                     </div>
                   </div>
                 </div>
@@ -266,7 +266,7 @@
 			  		if($items<6){
 
 					
-			  		print "<h4><a href='".$item['link']." target='_blank'>".$item['title']."</a></h4>";
+			  		print "<h4><a href='".$item['link']."' target='_blank'>".$item['title']."</a></h4>";
 					if($item['thumb']!=null){
 						print "<img src='".$item['thumb']."' style='width:100px;float:left; margin:10px'><br />";
 					}
