@@ -6144,12 +6144,6 @@ display:none;
   position: fixed;
 }
 
-.header_widget{
-
-	padding:5px;
-	font-size:0.9em;
-	
-}
 .header_widget h4{
     display:inline;
 }
@@ -6169,7 +6163,6 @@ display:none;
 
 .sidebar_widget.down{
 	height:138px;
-	font-size:0.9em;
 	
 }
 

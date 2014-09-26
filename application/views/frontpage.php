@@ -4,7 +4,7 @@
 			<div class="sidebar_widget row-header">
 				<h4>Backstory</h4>
 			</div>
-			<div class="sidebar_widget down backstory" style="font-size:0.8em;text-align:justify;">
+			<div class="sidebar_widget down backstory">
 				<h5>Overview</h5>
 				<?php
 					//print "<img src='".base_url()."assets/thumbs/".$news[0]['sofar_thumbnail']."' width='100%'>";
@@ -36,12 +36,12 @@
 				  ?>
 			</div>
 			<br />
-			<div class="sidebar_widget bottom evidence" style="display:none;">
+			<div class="sidebar_widget bottom evidence">
 				<h5>Evidence Dossier</h5>
 				<a href="http://data.the-star.co.ke">Data repository</a>
 			</div>
 		</div>
-		<div class="span9">
+		<div class="span6">
 			<div id="myCarousel" class="carousel slide">
                 <ol class="carousel-indicators">
                 	<?php
@@ -90,7 +90,7 @@
                 <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
               </div>
 		</div>
-		<div class="span9" style='float:right'>
+		<div class="span3" style='float:right'>
 			<div class="sidebar_widget row-header">
 				<h4>Help Desk</h4>
 			</div>
@@ -98,9 +98,9 @@
 				<?php
 					
 				//if(count($helplines)>0){
-					print "<div class='span4'><h5>Help lines</h5>";
+					print "<div><h5>Help lines</h5>";
 					foreach($helplines as $helpline){
-					print "<h6>".$helpline['h_name']."</h6>";
+					print $helpline['h_name'];
 					print "<p>
 					<i class='icon-phone icon-2x' style='margin-right:5px'></i>
 					<a href='tel:".$helpline['h_number']."'>".$helpline['h_number']."</a>
@@ -112,9 +112,9 @@
 				print "</div>";
 				//}
 				//if(count($supportgroups)>0){
-					print "<div class='span4'><h5>Support Groups</h5>";
+					print "<div><h5>Support Groups</h5>";
 					foreach($supportgroups as $supportgroup){
-					print "<h6>".$supportgroup['sg_name']."</h6>";
+					print "<h2>".$supportgroup['sg_name']."</h2>";
 					print "<p>
 					<i class='icon-phone icon-2x' style='margin-right:5px'></i>
 					<a href='tel:".$supportgroup['sg_number']."'>".$supportgroup['sg_number']."</a>
@@ -126,7 +126,7 @@
 				print "</div>";
 				//}
 				//if(count($socialmedias)>0){
-					print "<div class='span4'><h5>Social Media</h5>";
+					print "<div><h5>Social Media</h5>";
 				foreach($socialmedias as $socialmedia){
 					print "<p>
 					<i class='icon-link icon-2x' style='margin-right:5px'></i>

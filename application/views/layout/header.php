@@ -12,8 +12,7 @@
     <link href="<?php echo base_url();?>assets/css/bootstrap-responsive.css" rel="stylesheet">
     <link href="<?php echo base_url();?>assets/css/docs.css" rel="stylesheet">
     <link href="<?php echo base_url();?>assets/js/google-code-prettify/prettify.css" rel="stylesheet">
-    <link href='http://fonts.googleapis.com/css?family=Domine:400,700|Yanone+Kaffeesatz:400,700,300|Sintony:400,700|Open+Sans:300|Alef:400,700' rel='stylesheet' type='text/css'>
-    <link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
+      <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>      <link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/main.css">
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -78,7 +77,7 @@
                               <li class="">
                                   <a href="#">Local Sports</a>
                               </li>
-                              
+
                               <li class="">
                                   <a href="#">Word Is</a>
                               </li>

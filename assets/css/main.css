@@ -1,13 +1,13 @@
+body{
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.85em !important;
+}
 .header_widgets{
     margin-top: 5px;
 }
 .header_widget h4 {
     font-size: 1.2em;
     margin-left: 5px;
-}
-.header_widget .description{
-    text-align: justify;
-    font-size: 1em;
 }
 .icon-2x{
     font-size: 1.3em;
@@ -31,7 +31,6 @@
 .navbar .nav > li > a {
     height: 25px;
     padding: 15px 10px 10px;
-    font-size: 1.1em;
     color: #FFFFFF;
     font-weight: bold;
 }
@@ -40,4 +39,29 @@
 }
 .navbar .divider-vertical {
     height: 50px;
+}
+.btn{
+    min-height: 30px;
+}
+.helpline h6, .helpline h6 a {
+    color: #004080;
+    font-family: 'Sintony', sans-serif;
+    font-size: 15px;
+}
+.helpline h5{
+    color:#24408F;
+}
+.helpline p a {
+    color: #333;
+    font-family: 'Alef', sans-serif;
+    font-weight: normal;
+}
+
+.helpline i {
+    position: relative;
+    float: left;
+}
+
+.helpline p {
+    margin-bottom: 10px;
 }

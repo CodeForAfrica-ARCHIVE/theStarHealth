@@ -27,10 +27,6 @@ h6 {
   margin: 0 0;
 }
 
-div {
-  font-family: 'Open Sans';
-}
-
 input, button, select, textarea {
   font-family: 'Alef', sans-serif;
 }
@@ -56,11 +52,6 @@ a {
   .row-fluid {
     width: 98%;
   }
-}
-
-
-.header_widget .description {
-  font-size: 14px;
 }
 
 .rate {
@@ -91,13 +82,11 @@ a {
 }
 
 .sidebar_widget.down {
-  font-size: 16px;
   height: auto;
 }
 
 .sidebar_widget {
   background-color: transparent !important;
-  font-size: 16px;
   padding-bottom: 0px;
   padding-top: 0px;
 }
@@ -115,28 +104,6 @@ a {
 .evidence a {
   font-family: 'Alef', sans-serif;
   font-weight: 700;
-}
-
-.helpline h6, .helpline h6 a {
-  color: #004080;
-  font-family: 'Sintony', sans-serif;
-  font-size: 15px;
-}
-
-.helpline p a {
-  color: #333;
-  font-family: 'Alef', sans-serif;
-  font-size: 20px;
-  font-weight: normal;
-}
-
-.helpline i {
-  position: relative;
-  float: left;
-}
-
-.helpline p {
-  margin-bottom: 20px;
 }
 
 .newsfeed {
@@ -225,7 +192,7 @@ a {
 .accordion-heading a {
   color: #515144;
   font-family: 'Yanone Kaffeesatz', sans-serif;
-  font-size: 22px;
+  font-size: 1.1em;
 }
 
 .accordion-inner {
