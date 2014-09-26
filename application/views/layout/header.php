@@ -14,7 +14,7 @@
     <link href="<?php echo base_url();?>assets/js/google-code-prettify/prettify.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Domine:400,700|Yanone+Kaffeesatz:400,700,300|Sintony:400,700|Open+Sans:300|Alef:400,700' rel='stylesheet' type='text/css'>
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
-
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/main.css">
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
       <script src="<?php echo base_url();?>assets/js/html5shiv.js"></script>
@@ -33,46 +33,80 @@
                                    <link rel="shortcut icon" href="<?php echo base_url(); ?>assets/ico/starhealth-favicon-32.png">
   </head>
 
-  <body data-spy="scroll" data-target=".bs-docs-sidebar">
-  	<div class="navbar navbar-inverse navbar-fixed-top">
+  <body data-spy="scroll">
+  <div class="navbar navbar-inverse">
       <div class="navbar-inner">
-        <div class="container top-cont" style="margin-top:-30px;">
-          <div class="brand">
-            <a href="<?php echo base_url();?>"><img src="<?php echo base_url();?>assets/img/logo.png"></a>
-          </div>
-          <div class="navbar-search search_menu input-append" style="display:none">
-            <input type="text" placeholder="Search" class="search">
-              <button class='btn add-on'>
-                <i class="icon-search"></i>
+          <div class="container" style="width:960px">
+              <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
               </button>
-          </div>
-        </div>
+              <a class="brand" href="http://health.the-star.co.ke/"><img src="<?php echo base_url(); ?>assets/img/logo.png"></a>
+              <div class="nav-collapse collapse">
+                  <ul class="nav">
+                      <li class="">
+                          <a href="#">Main Site</a>
+                      </li>
+                      <li class="">
+                          <a href="#">National</a>
+                      </li>
+                      <li class="">
+                          <a href="#">Local</a>
+                      </li>
+                      <li class="">
+                          <a href="#">Business</a>
+                      </li>
+                      <li class="">
+                          <a href="#">Opinions</a>
+                      </li>
+                      <li class="">
+                          <a href="#">Sports</a>
+                      </li>
+                      <li class="">
+                          <a href="#">Lifestyle</a>
+                      </li>
+                      <li class="">
+                          <a href="#">Society</a>
+                      </li>
+                      <li class="divider-vertical"></li>
+                      <li class="dropdown">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown">More <b class="caret"></b></a>
+                          <ul class="dropdown-menu">
+                              <li class="">
 
-        <div class="container navigation-main">
-          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <div class="nav-collapse collapse">
-            <ul class="nav">
-              <li class="divider-vertical">
-                <a href="<?php echo base_url()?>">Home</a>
-              </li>
-              <li>
-                <a href="<?php echo base_url()?>index.php/about">About</a>
-              </li>
-              <!-- <li class="divider-vertical">
-                <a href="">Bogus Drs</a>
-              </li>
-           	  <li>
-                <a href="">Hospital Deaths</a>
-              </li> -->
-            </ul>
+                              <li class="">
+                                  <a href="#">Local Sports</a>
+                              </li>
+                              
+                              <li class="">
+                                  <a href="#">Word Is</a>
+                              </li>
+                              <li class="">
+                                  <a href="#">Weekend</a>
+                              </li>
+                              <li class="">
+                                          <a href="#">Public Ed</a>
+                                      </li>
+                                      <li class="">
+                                          <a href="#">Debate</a>
+                                      </li>
+                                      <li class="">
+                                          <a href="#">Star Live</a>
+                                      </li>
+                                      <li class="">
+                                          <a href="#">SkyCAM</a>
+                                      </li>
+                                      <li class="">
+                                          <a href="#">Online Games</a>
+                                      </li>
+                          </ul>
+                      </li>
+                  </ul>
+              </div>
           </div>
-        </div>
       </div>
-    </div>
+  </div>
 
   
   

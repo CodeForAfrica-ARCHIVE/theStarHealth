@@ -1,4 +1,4 @@
-<div class="container" style="margin-top: 5px; margin-bottom: 5px;">
+<div class="container container-outline" style="margin-top: 5px; margin-bottom: 5px;">
 	<div class="row-fluid">
 		<div class="span3">
 			<div class="sidebar_widget row-header">

@@ -1,0 +1,43 @@
+.header_widgets{
+    margin-top: 5px;
+}
+.header_widget h4 {
+    font-size: 1.2em;
+    margin-left: 5px;
+}
+.header_widget .description{
+    text-align: justify;
+    font-size: 1em;
+}
+.icon-2x{
+    font-size: 1.3em;
+}
+.container-outline{
+
+    background: #fff !important;
+    border: 1px #DDDDDD solid;
+}
+.navbar-inner{
+    background-color: #24408F !important;
+}
+.brand img{
+    height: 40px !important;
+    margin-right: 20px;
+}
+.brand{
+    padding: 0px !important;
+    margin-left: 0px !important;
+}
+.navbar .nav > li > a {
+    height: 25px;
+    padding: 15px 10px 10px;
+    font-size: 1.1em;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+.nav-collapse{
+    float:right;
+}
+.navbar .divider-vertical {
+    height: 50px;
+}

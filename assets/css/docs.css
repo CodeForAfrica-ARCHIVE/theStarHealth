@@ -36,7 +36,6 @@ input, button, select, textarea {
 }
 
 select {
-  margin-left: 5px;
   width: 185px;
 }
 
@@ -45,9 +44,7 @@ a {
 }
 
 .container {
-  background: #fff !important;
-  border: 1px #DDDDDD solid;
-  width: 960px !important;
+  width: 960px;
 }
 
 .row-fluid {
@@ -61,111 +58,6 @@ a {
   }
 }
 
-.navbar-fixed-top {
-  position: absolute !important;
-}
-
-body > .navbar {
-  margin: auto;
-  width: 960px;
-}
-
-body > .navbar .brand {
-  height: 60px !important;
-  margin-right: 0px !important;
-}
-
-.brand img {
-  margin-left: 20px !important;
-  height: auto !important;
-}
-
-.navbar-inverse .navbar-inner .navigation-main {
-  background: #ffffff !important; /* Old browsers */
-  background: -moz-linear-gradient(top, #ffffff 0%, #f6f6f6 100%) !important; /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#f6f6f6)) !important; /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top, #ffffff 0%,#f6f6f6 100%) !important; /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, #ffffff 0%,#f6f6f6 100%) !important; /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, #ffffff 0%,#f6f6f6 100%) !important; /* IE10+ */
-  background: linear-gradient(to bottom, #ffffff 0%,#f6f6f6 100%) !important; /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=0 ) !important; /* IE6-9 */
-}
-
-.navbar-inverse .nav .active > a, .navbar-inverse .nav .active > a:hover, .navbar-inverse .nav .active > a:focus {
-    background: #FFFFFF !important;
-}
-
-.navbar-fixed-top .navbar-inner .top-cont {
-  background-color: #24408F !important;
-  border: none !important;
-  height: 100px;
-  overflow: hidden;
-}
-
-.navbar-bottom .navbar-inner .container{
-  background: #333333 !important;
-  border: none !important;
-  margin-left: -20px;
-}
-
-.navbar-bottom .navbar-inner .container p {
-  color: #CCCCCC;
-  font-size: 12px;
-  margin-left: 10px;
-  margin-top: 5px;
-}
-
-.navbar-bottom a {
-  color: #FFFFFF;
-}
-
-.navbar-bottom a:hover {
-  text-decoration: underline;
-}
-
-.navbar .nav {
-margin-left: -1px;
-overflow: hidden;
-}
-
-.navbar li {
-  line-height: 35px !important;
-}
-
-.navbar .search_menu {
-  margin-bottom: -40px !important;
-  margin-top: 50px !important;
-  margin-right: 20px !important;
-}
-
-.nav {
-  height: 50px;
-}
-
-.nav li a {
-  color: #666666 !important;
-  font-family: 'Yanone Kaffeesatz', sans-serif;
-  font-size: 20px;
-  line-height: 30px;
-  padding-left: 10px;
-  padding-right: 10px;
-  text-align: center;
-}
-
-.nav li a:hover {
-  background: #DDDDDD !important;
-}
-
-.navbar-inverse .brand, .navbar-inverse .nav > li > a {
-  text-shadow: none !important;
-}
-
-.navbar .divider-vertical {
-  border-left: 1px #bdc3c7 solid !important;
-  border-right: 1px #bdc3c7 solid !important;
-  height: 50px !important;
-  margin: 0;
-}
 
 .header_widget .description {
   font-size: 14px;
@@ -367,50 +259,12 @@ overflow: hidden;
 
 body {
   position: relative;
-  padding-top: 40px;
 }
 
 /* Code in headings */
 h3 code {
   font-size: 14px;
   font-weight: normal;
-}
-
-/* Tweak navbar brand link to be super sleek
--------------------------------------------------- */
-
-body > .navbar {
-  font-size: 17px;
-}
-.navbar li{
-  line-height:40px;
-}
-.navbar .search_menu{
-  float:right;
-  margin-top:15px;
-}
-.input-append button.add-on {
-    height: inherit !important;
-}
-/* Change the docs' brand */
-body > .navbar .brand {
-  padding-right: 0;
-  padding-left: 0;
-  margin-right: 20px;
-  float: left;
-  font-weight: bold;
-  color: #000;
-  text-shadow: 0 1px 0 rgba(255,255,255,.1), 0 0 30px rgba(255,255,255,.125);
-  -webkit-transition: all .2s linear;
-     -moz-transition: all .2s linear;
-          transition: all .2s linear;
-}
-.brand img{
-  height:40px;
-}
-body > .navbar .brand:hover {
-  text-decoration: none;
-  text-shadow: 0 1px 0 rgba(255,255,255,.1), 0 0 30px rgba(255,255,255,.4);
 }
 
 
@@ -981,48 +835,12 @@ h2 + .row {
 .bs-docs-example .alert,
 .bs-docs-example .hero-unit,
 .bs-docs-example .pagination,
-.bs-docs-example .navbar,
 .bs-docs-example > .nav,
 .bs-docs-example blockquote {
   margin-bottom: 5px;
 }
 .bs-docs-example .pagination {
   margin-top: 0;
-}
-.bs-navbar-top-example,
-.bs-navbar-bottom-example {
-  z-index: 1;
-  padding: 0;
-  height: 90px;
-  overflow: hidden; /* cut the drop shadows off */
-}
-.bs-navbar-top-example .navbar-fixed-top,
-.bs-navbar-bottom-example .navbar-fixed-bottom {
-  margin-left: 0;
-  margin-right: 0;
-}
-.bs-navbar-top-example {
-  -webkit-border-radius: 0 0 4px 4px;
-     -moz-border-radius: 0 0 4px 4px;
-          border-radius: 0 0 4px 4px;
-}
-.bs-navbar-top-example:after {
-  top: auto;
-  bottom: -1px;
-  -webkit-border-radius: 0 4px 0 4px;
-     -moz-border-radius: 0 4px 0 4px;
-          border-radius: 0 4px 0 4px;
-}
-.bs-navbar-bottom-example {
-  -webkit-border-radius: 4px 4px 0 0;
-     -moz-border-radius: 4px 4px 0 0;
-          border-radius: 4px 4px 0 0;
-}
-.bs-navbar-bottom-example .navbar {
-  margin-bottom: 0;
-}
-form.bs-docs-example {
-  padding-bottom: 19px;
 }
 
 /* Images */
@@ -1234,12 +1052,7 @@ form.bs-docs-example {
 ------------------------- */
 @media (max-width: 980px) {
   /* Unfloat brand */
-  body > .navbar-fixed-top .brand {
-    float: left;
-    margin-left: 0;
-    padding-left: 10px;
-    padding-right: 10px;
-  }
+
 
   /* Inline-block quick links for more spacing */
   .quick-links li {

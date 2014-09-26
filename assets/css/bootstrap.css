@@ -6145,10 +6145,13 @@ display:none;
 }
 
 .header_widget{
-	text-align:center;
-	padding:10px;
+
+	padding:5px;
 	font-size:0.9em;
 	
+}
+.header_widget h4{
+    display:inline;
 }
 
 .header_widget .description{
