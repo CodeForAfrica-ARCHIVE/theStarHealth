@@ -35,7 +35,7 @@
   <body data-spy="scroll">
   <div class="navbar navbar-inverse">
       <div class="navbar-inner">
-          <div class="container" style="width:960px">
+          <div class="container">
               <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
@@ -45,28 +45,28 @@
               <div class="nav-collapse collapse">
                   <ul class="nav">
                       <li class="">
-                          <a href="#">Main Site</a>
+                          <a href="http://the-star.co.ke/" target="_blank">Main Site</a>
                       </li>
                       <li class="">
-                          <a href="#">National</a>
+                          <a href="http://the-star.co.ke/sections/national-news" target="_blank">National</a>
                       </li>
                       <li class="">
-                          <a href="#">Local</a>
+                          <a href="http://the-star.co.ke/sections/local-news" target="_blank">Local</a>
                       </li>
                       <li class="">
-                          <a href="#">Business</a>
+                          <a href="http://the-star.co.ke/sections/business" target="_blank">Business</a>
                       </li>
                       <li class="">
-                          <a href="#">Opinions</a>
+                          <a href="http://the-star.co.ke/sections/opinions" target="_blank">Opinions</a>
                       </li>
                       <li class="">
-                          <a href="#">Sports</a>
+                          <a href="http://the-star.co.ke/sections/sports" target="_blank">Sports</a>
                       </li>
                       <li class="">
-                          <a href="#">Lifestyle</a>
+                          <a href="http://the-star.co.ke/sections/lifestyle" target="_blank">Lifestyle</a>
                       </li>
                       <li class="">
-                          <a href="#">Society</a>
+                          <a href="http://the-star.co.ke/sections/society" target="_blank">Society</a>
                       </li>
                       <li class="divider-vertical"></li>
                       <li class="dropdown">
@@ -75,30 +75,26 @@
                               <li class="">
 
                               <li class="">
-                                  <a href="#">Local Sports</a>
-                              </li>
-
-                              <li class="">
-                                  <a href="#">Word Is</a>
+                                  <a href="http://the-star.co.ke/sections/word" target="_blank">Word Is</a>
                               </li>
                               <li class="">
-                                  <a href="#">Weekend</a>
+                                  <a href="http://the-star.co.ke/sections/weekend" target="_blank">Weekend</a>
                               </li>
                               <li class="">
-                                          <a href="#">Public Ed</a>
-                                      </li>
-                                      <li class="">
-                                          <a href="#">Debate</a>
-                                      </li>
-                                      <li class="">
-                                          <a href="#">Star Live</a>
-                                      </li>
-                                      <li class="">
-                                          <a href="#">SkyCAM</a>
-                                      </li>
-                                      <li class="">
-                                          <a href="#">Online Games</a>
-                                      </li>
+                                  <a href="http://the-star.co.ke/sections/public-editor" target="_blank">Public Ed</a>
+                              </li>
+                              <li class="">
+                                  <a href="http://the-star.co.ke/sections/debate" target="_blank">Debate</a>
+                              </li>
+                              <li class="">
+                                  <a href="http://the-star.co.ke/twitter-feeds" target="_blank">Star Live</a>
+                              </li>
+                              <li class="">
+                                  <a href="http://the-star.co.ke/skycam" target="_blank">SkyCAM</a>
+                              </li>
+                              <li class="">
+                                  <a href="http://the-star.co.ke/goodgame-empire" target="_blank">Online Games</a>
+                              </li>
                           </ul>
                       </li>
                   </ul>

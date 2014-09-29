@@ -216,21 +216,14 @@
 		<h4>Nearest Specialist</h4>
 		<div class="description">Find the nearest specialist doctor or health facility</div>
 		 <div class="search_menu">
-		 	<script type="text/javascript">
-			$().ready(function() {
-				$("#specialist").autocomplete("<?php echo base_url();?>/index.php/facilities/data", {
-					width: 260,
-					matchContains: true,
-					//mustMatch: true,
-					//minChars: 0,
-					//multiple: true,
-					//highlight: false,
-					//multipleSeparator: ",",
-					selectFirst: false
-				});
-			});
-			</script>
-          	<input type="text" placeholder="Start typing speciality's name" class="specialist" id="specialist">
+             <select id="specialist" class="form-control specialist_select">
+                <option>Select specialty</option>
+                <?php
+                 foreach($specialties as $sp){
+                 print "<option>".$sp['full']."</option>";
+		            }
+				?>
+             </select>
 			<select id="county_s">
 			<option>Select county</option>
 			<?php 

@@ -21,7 +21,9 @@ class Frontpage_controller extends CI_Controller {
 		
 		$data['counties'] = $this->welcome_m->get_facilities_counties();
 		$data['towns'] = $this->welcome_m->get_towns();
-		
+
+        $data['specialties'] = $this->welcome_m->get_specialties();
+
 		$this->load->view('layout/header.php', $data);	
 		$this->load->view('layout/header_widgets.php', $data);
 		$this->load->view('frontpage', $data);

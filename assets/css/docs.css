@@ -39,10 +39,6 @@ a {
   color: #24408F;
 }
 
-.container {
-  width: 960px;
-}
-
 .row-fluid {
   width: 98%;
   padding: 10px;
@@ -489,7 +485,7 @@ only screen and (     -o-min-device-pixel-ratio: 2/1) {
     text-align: center;
     padding: 10px 0;
     border-top: 1px solid #e5e5e5;
-    background-color: #242424;;
+    background-color: #000;;
 }
 .footer p {
   margin-bottom: 0;
