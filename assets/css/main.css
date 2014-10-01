@@ -1,9 +1,9 @@
 body{
-    font-family: 'Raleway', sans-serif;
+    font-family: arial,sans-serif;;
     font-size: 0.85em !important;
 }
 .container{
-    max-width: 960px;
+    max-width: 967px;
 }
 .header_widgets{
     margin-top: 5px;
@@ -23,18 +23,14 @@ body{
 .navbar-inner{
     background-color: #24408F !important;
 }
-.brand img{
-    height: 40px !important;
-    margin-right: 20px;
-}
 .brand{
     padding: 0px !important;
     margin-left: 0px !important;
+    height: 59px;
 }
 .navbar .nav > li > a {
     height: 25px;
-    padding: 15px 10px 10px;
-    color: #FFFFFF;
+    padding: 7px 7px 7px;
     font-weight: bold;
 }
 .nav-collapse{
@@ -70,4 +66,82 @@ body{
 }
 .specialist_select{
     width: 230px;
+}
+.sidebar-widget h4{
+    font-family: georgia,serif;
+}
+h4{
+    font-family: "Georgia", serif;
+}
+.brand_header img{
+    height: 59px;
+
+}
+.brand_header{
+    background-color: #24408F;
+    padding: 15px;
+}
+.zone_user{
+    background-color: #ffffff;
+    height: 22px;
+
+    border-top: 3px solid #24408F
+}
+.date_zone{
+    display: inline-block;
+    font-size: 82%;
+    color: #999;
+    padding-left: 10px;
+    padding-right: 10px;
+    width:182px;
+    border: 1px #DDDDDD solid;
+    margin-right: 50px;
+}
+.follow_us{
+    display: inline-block;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 85%;
+    line-height: 1.5;
+    text-transform: uppercase;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-weight: bold;
+}
+.follow_us img{
+    margin-left: 4px;
+}
+.custom-search-box{
+    background: url(http://the-star.co.ke/sites/all/themes/thestar/images/icon-search.png) no-repeat 8px center #FFF;
+    font-size: 115%;
+    font-weight: bold;
+    padding: 0px 0px 0px 24px !important;
+    width: 270px;
+
+    margin-bottom: 0px !important;
+    -webkit-border-radius: 0px !important;
+    -moz-border-radius: 0px !important;
+    border-radius: 0px !important;
+}
+.form-submit{
+    background: #FECD7B;
+    border-radius: 0;
+    border: 1px solid #FECD7B;
+    color: #666;
+    cursor: pointer;
+    font-size: 115%;
+    font-weight: bold;
+    margin-left: 5px;
+    padding-bottom: 1px;
+    padding-top: 1px;
+}
+.navbar-inverse .navbar-inner .navigation-main {
+    border: 1px #DDDDDD solid;
+    background: #ffffff !important;
+    background: -moz-linear-gradient(top, #ffffff 0%, #f6f6f6 100%) !important;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#f6f6f6)) !important;
+    background: -webkit-linear-gradient(top, #ffffff 0%,#f6f6f6 100%) !important;
+    background: -o-linear-gradient(top, #ffffff 0%,#f6f6f6 100%) !important;
+    background: -ms-linear-gradient(top, #ffffff 0%,#f6f6f6 100%) !important;
+    background: linear-gradient(to bottom, #ffffff 0%,#f6f6f6 100%) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=0 ) !important;
 }

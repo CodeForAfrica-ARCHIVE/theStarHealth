@@ -33,15 +33,34 @@
   </head>
 
   <body data-spy="scroll">
-  <div class="navbar navbar-inverse">
+  <div class="container zone_user">
+    <div class="date_zone"><?php echo date('l, M j<\sup>S</\sup> Y');?></div>
+    <div class="follow_us">Follow us
+        <a href="http://www.facebook.com/thestarkenya" title="Facebook" target="_blank"><img src="http://the-star.co.ke/sites/all/themes/thestar/images/social-facebook-16.png"></a>
+        <a href="http://www.twitter.com/thestarkenya" title="Twitter" target="_blank"><img src="http://the-star.co.ke/sites/all/themes/thestar/images/social-twitter-16.png"></a>
+        <a href="/rss.xml" title="RSS"><img src="http://the-star.co.ke/sites/all/themes/thestar/images/social-rss-16.png"></a>
+    </div>
+  </div>
+
+  <div class="container"><div class="brand_header">
+    <a class="brand" href="http://health.the-star.co.ke/"><img src="<?php echo base_url(); ?>assets/img/logo.png"></a>
+          <form class="navbar-search pull-right" action="http://the-star.co.ke/" method="post" id="search-block-form" accept-charset="UTF-8" target="_self"><div><div class="container-inline">
+                          <input title="Enter the terms you wish to search for." class="custom-search-box form-text" placeholder="" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128">
+                          <input type="submit" id="edit-submit" name="op" value="Search" class="form-submit"></div>
+                          <input class="custom-search-selector custom-search-types" type="hidden" name="custom_search_types" value="o-google_cse">
+                          <input type="hidden" name="form_build_id" value="form-odAZzR_CXSGeKQqwh1NfAdXxS5TNZLD1IEK_x9zCvfQ">
+                          <input type="hidden" name="form_id" value="search_block_form">
+          </form>
+  </div></div>
+  <div class="container navbar navbar-inverse">
       <div class="navbar-inner">
-          <div class="container">
+          <div class="container navigation-main">
               <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
               </button>
-              <a class="brand" href="http://health.the-star.co.ke/"><img src="<?php echo base_url(); ?>assets/img/logo.png"></a>
+
               <div class="nav-collapse collapse">
                   <ul class="nav">
                       <li class="">
@@ -68,34 +87,23 @@
                       <li class="">
                           <a href="http://the-star.co.ke/sections/society" target="_blank">Society</a>
                       </li>
-                      <li class="divider-vertical"></li>
-                      <li class="dropdown">
-                          <a href="#" class="dropdown-toggle" data-toggle="dropdown">More <b class="caret"></b></a>
-                          <ul class="dropdown-menu">
-                              <li class="">
-
-                              <li class="">
-                                  <a href="http://the-star.co.ke/sections/word" target="_blank">Word Is</a>
-                              </li>
-                              <li class="">
-                                  <a href="http://the-star.co.ke/sections/weekend" target="_blank">Weekend</a>
-                              </li>
-                              <li class="">
-                                  <a href="http://the-star.co.ke/sections/public-editor" target="_blank">Public Ed</a>
-                              </li>
-                              <li class="">
-                                  <a href="http://the-star.co.ke/sections/debate" target="_blank">Debate</a>
-                              </li>
-                              <li class="">
-                                  <a href="http://the-star.co.ke/twitter-feeds" target="_blank">Star Live</a>
-                              </li>
-                              <li class="">
-                                  <a href="http://the-star.co.ke/skycam" target="_blank">SkyCAM</a>
-                              </li>
-                              <li class="">
-                                  <a href="http://the-star.co.ke/goodgame-empire" target="_blank">Online Games</a>
-                              </li>
-                          </ul>
+                      <li class="">
+                          <a href="http://the-star.co.ke/sections/word" target="_blank">Word Is</a>
+                      </li>
+                      <li class="">
+                          <a href="http://the-star.co.ke/sections/weekend" target="_blank">Weekend</a>
+                      </li>
+                      <li class="">
+                          <a href="http://the-star.co.ke/sections/public-editor" target="_blank">Public Ed</a>
+                      </li>
+                      <li class="">
+                          <a href="http://the-star.co.ke/sections/debate" target="_blank">Debate</a>
+                      </li>
+                      <li class="">
+                          <a href="http://the-star.co.ke/twitter-feeds" target="_blank">Star Live</a>
+                      </li>
+                      <li class="">
+                          <a href="http://the-star.co.ke/skycam" target="_blank">SkyCAM</a>
                       </li>
                   </ul>
               </div>
@@ -103,5 +111,5 @@
       </div>
   </div>
 
-  
+
   

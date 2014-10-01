@@ -38,7 +38,7 @@
 			<br />
 			<div class="sidebar_widget bottom evidence">
 				<h5>Evidence Dossier</h5>
-				<a href="http://data.the-star.co.ke">Data repository</a>
+				<a href="http://africaopendata.org/dataset?q=kenya+health">Data repository</a>
 			</div>
 		</div>
 		<div class="span6">
@@ -88,6 +88,9 @@
                 </div>
                 <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
                 <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+              </div>
+              <div style="text-align: center;font-size: 0.9em">
+               <a href="http://the-star.co.ke/contact" target="_blank"><strong>Tell us more</strong><br/>Do you have more information? Help us improve this story by sharing your experiences/evidence.</a>
               </div>
 		</div>
 		<div class="span3" style='float:right'>
@@ -256,7 +259,7 @@
 		document.getElementById("chev3").style.display='none';		
 		</script>
 		<div class="span6 newsfeed" id="filtered">
-			<div class="row-header"><h3>Other Health News</h3></div>
+			<div class="row-header"><h4>Other Health News</h4></div>
 			<h6>A round-up of the all the latest health news from theStar <i class="icon-arrow-down" style="margin-left: 10px"></i></h6>
 			<br />
 			<?php
@@ -270,7 +273,7 @@
 					if($item['thumb']!=null){
 						print "<img src='".$item['thumb']."' style='width:100px;float:left; margin:10px'><br />";
 					}
-					print "<div style='text-align:justify'>".$item['description']."</div><br />";				
+					print "<div>".$item['description']."</div><br />";
 
 
 						print '<div class="article-meta">Posted '.$item['timestamp'].' | '; print ucwords(strtolower($item['author'])); 
