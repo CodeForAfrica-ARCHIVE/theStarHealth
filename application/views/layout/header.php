@@ -1,3 +1,10 @@
+<?php
+header("Expires: Tue, 01 Jan 2000 00:00:00 GMT");
+header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Cache-Control: post-check=0, pre-check=0", false);
+header("Pragma: no-cache");
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -34,7 +41,7 @@
 
   <body data-spy="scroll">
   <div class="container zone_user">
-    <div class="date_zone"><?php echo date('l, M j<\sup>S</\sup> Y');?></div>
+    <div class="date_zone"><?php date_default_timezone_set("Africa/Nairobi"); echo date('l, M j<\sup>S</\sup> Y');?></div>
     <div class="follow_us">Follow us
         <a href="http://www.facebook.com/thestarkenya" title="Facebook" target="_blank"><img src="http://the-star.co.ke/sites/all/themes/thestar/images/social-facebook-16.png"></a>
         <a href="http://www.twitter.com/thestarkenya" title="Twitter" target="_blank"><img src="http://the-star.co.ke/sites/all/themes/thestar/images/social-twitter-16.png"></a>
@@ -42,16 +49,24 @@
     </div>
   </div>
 
-  <div class="container"><div class="brand_header">
-    <a class="brand" href="http://health.the-star.co.ke/"><img src="<?php echo base_url(); ?>assets/img/logo.png"></a>
-          <form class="navbar-search pull-right" action="http://the-star.co.ke/" method="post" id="search-block-form" accept-charset="UTF-8" target="_self"><div><div class="container-inline">
+  <div class="container">
+      <div class="brand_header">
+          <div class="row">
+              <div class="span4">
+                <a class="brand" href="http://health.the-star.co.ke/"><img src="<?php echo base_url(); ?>assets/img/logo.png"></a>
+              </div>
+              <div class="span5" style="float:right;width:380px !important;margin-top: 15px;">
+              <form class="navbar-search" action="http://the-star.co.ke/" method="post" id="search-block-form" accept-charset="UTF-8" target="_self"><div><div class="container-inline">
                           <input title="Enter the terms you wish to search for." class="custom-search-box form-text" placeholder="" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128">
                           <input type="submit" id="edit-submit" name="op" value="Search" class="form-submit"></div>
                           <input class="custom-search-selector custom-search-types" type="hidden" name="custom_search_types" value="o-google_cse">
                           <input type="hidden" name="form_build_id" value="form-odAZzR_CXSGeKQqwh1NfAdXxS5TNZLD1IEK_x9zCvfQ">
                           <input type="hidden" name="form_id" value="search_block_form">
-          </form>
-  </div></div>
+              </form>
+              </div>
+          </div>
+      </div>
+  </div>
   <div class="container navbar navbar-inverse">
       <div class="navbar-inner">
           <div class="container navigation-main">

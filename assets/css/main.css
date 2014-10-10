@@ -8,6 +8,9 @@ body{
 .header_widgets{
     margin-top: 5px;
 }
+.header_widget{
+    padding: 10px;
+}
 .header_widget h4 {
     font-size: 1.2em;
     margin-left: 5px;
