@@ -14,7 +14,7 @@
 			<script type='text/javascript' src='<?php echo base_url();?>assets/js/jquery.autocomplete.js'></script>
 		 	<script type="text/javascript">
 			$().ready(function() {
-				$("#course").autocomplete("<?php echo base_url();?>/index.php/dodgy/data", {
+				$("#course").autocomplete("<?php echo base_url();?>index.php/dodgy/data", {
 					width: 260,
 					matchContains: true,
 					//mustMatch: true,

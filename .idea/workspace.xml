@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eb075555-a541-4e3b-a7bf-683aa88a8594" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/frontpage.php" afterPath="$PROJECT_DIR$/application/views/frontpage.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/layout/header_widgets.php" afterPath="$PROJECT_DIR$/application/views/layout/header_widgets.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="StarHealth.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,10 +26,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="header_widgets.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="header_widgets.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/views/layout/header_widgets.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="212" column="18" selection-start="8245" selection-end="8245" vertical-scroll-proportion="0.0" vertical-offset="2695" max-vertical-offset="3705">
+            <state line="117" column="43" selection-start="4484" selection-end="4484" vertical-scroll-proportion="0.45762712" vertical-offset="1485" max-vertical-offset="3705">
               <folding />
             </state>
           </provider>
@@ -43,13 +44,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="frontpage.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="frontpage.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/frontpage.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="302" column="18" selection-start="11345" selection-end="11345" vertical-scroll-proportion="0.4937833" vertical-offset="4252" max-vertical-offset="4815">
-              <folding>
-                <element signature="n#style#0;n#img#0;n#a#3;n#div#2;n#div#1;n#div#0;n#!!top" expanded="true" />
-              </folding>
+            <state line="287" column="18" selection-start="10313" selection-end="10313" vertical-scroll-proportion="-4.25" vertical-offset="4203" max-vertical-offset="4815">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -131,13 +130,13 @@
       <list>
         <option value="$PROJECT_DIR$/application/controllers/frontpage_controller.php" />
         <option value="$PROJECT_DIR$/application/models/welcome_m.php" />
-        <option value="$PROJECT_DIR$/application/views/layout/header_widgets.php" />
         <option value="$PROJECT_DIR$/assets/css/docs.css" />
         <option value="$PROJECT_DIR$/assets/css/main.css" />
         <option value="$PROJECT_DIR$/application/views/layout/header.php" />
         <option value="$PROJECT_DIR$/application/views/layout/footer.php" />
         <option value="$PROJECT_DIR$/assets/css/bootstrap.css" />
         <option value="$PROJECT_DIR$/application/views/frontpage.php" />
+        <option value="$PROJECT_DIR$/application/views/layout/header_widgets.php" />
       </list>
     </option>
   </component>
@@ -180,6 +179,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -286,7 +286,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -426,9 +425,7 @@
     <entry file="file://$PROJECT_DIR$/application/views/frontpage.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="281" column="35" selection-start="10269" selection-end="10269" vertical-scroll-proportion="0.0" vertical-offset="3938" max-vertical-offset="4815">
-          <folding>
-            <element signature="n#style#0;n#img#0;n#a#3;n#div#2;n#div#1;n#div#0;n#!!top" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -499,9 +496,7 @@
     <entry file="file://$PROJECT_DIR$/application/views/frontpage.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="92" column="28" selection-start="3426" selection-end="3426" vertical-scroll-proportion="0.0" vertical-offset="1193" max-vertical-offset="4815">
-          <folding>
-            <element signature="n#style#0;n#img#0;n#a#3;n#div#2;n#div#1;n#div#0;n#!!top" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -572,9 +567,7 @@
     <entry file="file://$PROJECT_DIR$/application/views/frontpage.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="146" column="43" selection-start="4882" selection-end="4882" vertical-scroll-proportion="0.0" vertical-offset="2190" max-vertical-offset="4770">
-          <folding>
-            <element signature="n#style#0;n#img#0;n#a#3;n#div#2;n#div#1;n#div#0;n#!!top" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -645,9 +638,7 @@
     <entry file="file://$PROJECT_DIR$/application/views/frontpage.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="54" selection-start="255" selection-end="255" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="4770">
-          <folding>
-            <element signature="n#style#0;n#img#0;n#a#3;n#div#2;n#div#1;n#div#0;n#!!top" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -721,13 +712,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/layout/header_widgets.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="212" column="18" selection-start="8245" selection-end="8245" vertical-scroll-proportion="0.0" vertical-offset="2695" max-vertical-offset="3705">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/layout/header.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="26" selection-start="689" selection-end="689" vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="2025">
@@ -759,10 +743,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/frontpage.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="302" column="18" selection-start="11345" selection-end="11345" vertical-scroll-proportion="0.4937833" vertical-offset="4252" max-vertical-offset="4815">
-          <folding>
-            <element signature="n#style#0;n#img#0;n#a#3;n#div#2;n#div#1;n#div#0;n#!!top" expanded="true" />
-          </folding>
+        <state line="287" column="18" selection-start="10313" selection-end="10313" vertical-scroll-proportion="-4.25" vertical-offset="4203" max-vertical-offset="4815">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/layout/header_widgets.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="117" column="43" selection-start="4484" selection-end="4484" vertical-scroll-proportion="0.45762712" vertical-offset="1485" max-vertical-offset="3705">
+          <folding />
         </state>
       </provider>
     </entry>
