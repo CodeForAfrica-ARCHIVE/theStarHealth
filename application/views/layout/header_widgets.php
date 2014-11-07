@@ -1,9 +1,9 @@
-<div class="container" style="margin-top:87px;">
+<div class="container container-outline header_widgets">
 	<div class="row-fluid">
 		<div class="span4 header_widget">
-		<i class="icon-user-md icon-4x"></i>
+		<i class="icon-user-md icon-2x"></i>
 		<h4>Dodgy Doctors</h4>
-		<div class="description">Check to see if your doctor is registered, their certified area of practice <br/>and whether they are free from malpractice</div>
+		<div class="description">Check to see if your doctor is registered, their certified area of practice and whether they are free from malpractice</div>
 		 <div class="search_menu input-append" style="margin-top:40px;">
 		 	<?php
 			session_start();
@@ -14,7 +14,7 @@
 			<script type='text/javascript' src='<?php echo base_url();?>assets/js/jquery.autocomplete.js'></script>
 		 	<script type="text/javascript">
 			$().ready(function() {
-				$("#course").autocomplete("<?php echo base_url();?>/index.php/dodgy/data", {
+				$("#course").autocomplete("<?php echo base_url();?>index.php/dodgy/data", {
 					width: 260,
 					matchContains: true,
 					//mustMatch: true,
@@ -177,7 +177,7 @@
 			</div>
 		</div>
 		<div class="span4 header_widget">
-		<i class="icon-credit-card icon-4x"></i>
+		<i class="icon-credit-card icon-2x"></i>
 		<h4>Am I Covered</h4>
 		<div class="description">Find out which hospitals your NHIF card will cover</div>
 		 <!--<div class="search_menu input-append">
@@ -212,25 +212,18 @@
           	</div>
 		</div> -->
 		<div class="span4 header_widget">
-		<i class="icon-location-arrow icon-4x"></i>
+		<i class="icon-location-arrow icon-2x"></i>
 		<h4>Nearest Specialist</h4>
 		<div class="description">Find the nearest specialist doctor or health facility</div>
 		 <div class="search_menu">
-		 	<script type="text/javascript">
-			$().ready(function() {
-				$("#specialist").autocomplete("<?php echo base_url();?>/index.php/facilities/data", {
-					width: 260,
-					matchContains: true,
-					//mustMatch: true,
-					//minChars: 0,
-					//multiple: true,
-					//highlight: false,
-					//multipleSeparator: ",",
-					selectFirst: false
-				});
-			});
-			</script>
-          	<input type="text" placeholder="Start typing speciality's name" class="specialist" id="specialist">
+             <select id="specialist" class="form-control specialist_select">
+                <option>Select specialty</option>
+                <?php
+                 foreach($specialties as $sp){
+                 print "<option>".$sp['full']."</option>";
+		            }
+				?>
+             </select>
 			<select id="county_s">
 			<option>Select county</option>
 			<?php 

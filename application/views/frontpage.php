@@ -1,10 +1,10 @@
-<div class="container" style="margin-top: 5px; margin-bottom: 5px;">
+<div class="container container-outline" style="margin-top: 5px; margin-bottom: 5px;">
 	<div class="row-fluid">
 		<div class="span3">
 			<div class="sidebar_widget row-header">
 				<h4>Backstory</h4>
 			</div>
-			<div class="sidebar_widget down backstory" style="font-size:0.8em;text-align:justify;">
+			<div class="sidebar_widget down backstory">
 				<h5>Overview</h5>
 				<?php
 					//print "<img src='".base_url()."assets/thumbs/".$news[0]['sofar_thumbnail']."' width='100%'>";
@@ -36,12 +36,12 @@
 				  ?>
 			</div>
 			<br />
-			<div class="sidebar_widget bottom evidence" style="display:none;">
+			<div class="sidebar_widget bottom evidence">
 				<h5>Evidence Dossier</h5>
-				<a href="http://data.the-star.co.ke">Data repository</a>
+				<a href="http://africaopendata.org/dataset?q=kenya+health">Data repository</a>
 			</div>
 		</div>
-		<div class="span9">
+		<div class="span6">
 			<div id="myCarousel" class="carousel slide">
                 <ol class="carousel-indicators">
                 	<?php
@@ -89,8 +89,11 @@
                 <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
                 <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
               </div>
+              <div style="text-align: center;font-size: 0.9em">
+               <a href="http://the-star.co.ke/contact" target="_blank"><strong>Tell us more</strong><br/>Do you have more information? Help us improve this story by sharing your experiences/evidence.</a>
+              </div>
 		</div>
-		<div class="span9" style='float:right'>
+		<div class="span3" style='float:right'>
 			<div class="sidebar_widget row-header">
 				<h4>Help Desk</h4>
 			</div>
@@ -98,9 +101,9 @@
 				<?php
 					
 				//if(count($helplines)>0){
-					print "<div class='span4'><h5>Help lines</h5>";
+					print "<div><h5>Help lines</h5>";
 					foreach($helplines as $helpline){
-					print "<h6>".$helpline['h_name']."</h6>";
+					print $helpline['h_name'];
 					print "<p>
 					<i class='icon-phone icon-2x' style='margin-right:5px'></i>
 					<a href='tel:".$helpline['h_number']."'>".$helpline['h_number']."</a>
@@ -112,9 +115,9 @@
 				print "</div>";
 				//}
 				//if(count($supportgroups)>0){
-					print "<div class='span4'><h5>Support Groups</h5>";
+					print "<div><h5>Support Groups</h5>";
 					foreach($supportgroups as $supportgroup){
-					print "<h6>".$supportgroup['sg_name']."</h6>";
+					print "<h2>".$supportgroup['sg_name']."</h2>";
 					print "<p>
 					<i class='icon-phone icon-2x' style='margin-right:5px'></i>
 					<a href='tel:".$supportgroup['sg_number']."'>".$supportgroup['sg_number']."</a>
@@ -126,11 +129,11 @@
 				print "</div>";
 				//}
 				//if(count($socialmedias)>0){
-					print "<div class='span4'><h5>Social Media</h5>";
+					print "<div><h5>Social Media</h5>";
 				foreach($socialmedias as $socialmedia){
 					print "<p>
-					<i class='icon-phone icon-2x' style='margin-right:5px'></i>
-					<a href='".$socialmedias['sm_link']."'>".$socialmedias['sm_name']."</a>
+					<i class='icon-link icon-2x' style='margin-right:5px'></i>
+					<a href='".$socialmedia['sm_link']."'>".$socialmedia['sm_name']."</a>
 					</p>";
 				}
 				if(count($socialmedias)<1){
@@ -188,7 +191,9 @@
                     <div class="accordion-inner">
 			<p>';
 				if($featured_item['thumb']!=null){
-					print "<img src='".$featured_item['thumb']."' width='100%'><br />";
+                    $thumb = str_replace("http://the-star.co.ke", "http://www.the-star.co.ke", $featured_item['thumb']);
+
+                    print "<img src='".$thumb."' width='100%'><br />";
 				}
 				print $featured_item['description'].'<br /><a href="'.$featured_item['link'].'" target="_blank">More</a></p>
                     </div>
@@ -256,7 +261,7 @@
 		document.getElementById("chev3").style.display='none';		
 		</script>
 		<div class="span6 newsfeed" id="filtered">
-			<div class="row-header"><h3>Other Health News</h3></div>
+			<div class="row-header"><h4>Other Health News</h4></div>
 			<h6>A round-up of the all the latest health news from theStar <i class="icon-arrow-down" style="margin-left: 10px"></i></h6>
 			<br />
 			<?php
@@ -264,13 +269,13 @@
 			$items=0;
 			  	foreach($more_news as $item){
 			  		if($items<6){
-
+                    $thumb = str_replace("http://the-star.co.ke", "http://www.the-star.co.ke", $item['thumb']);
 					
 			  		print "<h4><a href='".$item['link']."' target='_blank'>".$item['title']."</a></h4>";
 					if($item['thumb']!=null){
-						print "<img src='".$item['thumb']."' style='width:100px;float:left; margin:10px'><br />";
+						print "<img src='".$thumb."' style='width:100px;float:left; margin:10px'><br />";
 					}
-					print "<div style='text-align:justify'>".$item['description']."</div><br />";				
+					print "<div>".$item['description']."</div><br />";
 
 
 						print '<div class="article-meta">Posted '.$item['timestamp'].' | '; print ucwords(strtolower($item['author'])); 
@@ -294,7 +299,7 @@ print ' | Posted under '.$item['tags'];
 			The data driven journalism + tools in StarHealth section were kickstarted by Code4Kenya
 			<hr />
 			<a href="http://github.com/CodeForAfrica"><img src="<?php echo base_url(); ?>assets/img/GitHub-Mark-32px.png" id="cfa_icon"></a>
-			<a href="http://data.the-star.co.ke"><img style="height:32px;margin-left:25px" src="<?php echo base_url(); ?>assets/img/github.png" id="ckan_icon"></a>
+			<a href="http://africaopendata.org/dataset?q=kenya+health"><img style="height:32px;margin-left:25px" src="<?php echo base_url(); ?>assets/img/data.png"></a>
 			<p>The code & data for this page are open source. You can re-use it by visiting the above repositories.</p>
 			<br />
 			<br />

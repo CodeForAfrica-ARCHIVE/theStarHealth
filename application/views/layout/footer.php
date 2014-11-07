@@ -1,14 +1,12 @@
- <div class="navbar navbar-inverse navbar-bottom">
-      <div class="navbar-inner">
-        <div class="container">
+
+        <div class="footer">
 			     <p>
               Copyright (c) 2013 <a href="http://the-star.co.ke" target="_blank">the Star</a> 
               | Built by <a href="http://code4kenya.org" target="_blank">Code4Kenya</a> 
               | Available on <a href="http://github.com/CodeForAfrica/StarHealth" target="_blank">Github</a>
             </p>
         </div>
-      </div>
-    </div>
+
 
   <!-- Le javascript
     ================================================== -->
@@ -40,6 +38,15 @@
     <script src="<?php echo base_url();?>assets/js/application.js"></script>
 
 
+         <script>
+         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
+                +  ga('create', 'UA-44795600-11', 'auto');
+              ga('send', 'pageview');
+
+         </script>
   </body>
 </html>

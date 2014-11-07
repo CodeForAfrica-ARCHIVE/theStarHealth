@@ -1,3 +1,10 @@
+<?php
+header("Expires: Tue, 01 Jan 2000 00:00:00 GMT");
+header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Cache-Control: post-check=0, pre-check=0", false);
+header("Pragma: no-cache");
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -12,9 +19,8 @@
     <link href="<?php echo base_url();?>assets/css/bootstrap-responsive.css" rel="stylesheet">
     <link href="<?php echo base_url();?>assets/css/docs.css" rel="stylesheet">
     <link href="<?php echo base_url();?>assets/js/google-code-prettify/prettify.css" rel="stylesheet">
-    <link href='http://fonts.googleapis.com/css?family=Domine:400,700|Yanone+Kaffeesatz:400,700,300|Sintony:400,700|Open+Sans:300|Alef:400,700' rel='stylesheet' type='text/css'>
-    <link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
-
+      <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>      <link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/main.css">
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
       <script src="<?php echo base_url();?>assets/js/html5shiv.js"></script>
@@ -33,46 +39,92 @@
                                    <link rel="shortcut icon" href="<?php echo base_url(); ?>assets/ico/starhealth-favicon-32.png">
   </head>
 
-  <body data-spy="scroll" data-target=".bs-docs-sidebar">
-  	<div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container top-cont" style="margin-top:-30px;">
-          <div class="brand">
-            <a href="<?php echo base_url();?>"><img src="<?php echo base_url();?>assets/img/logo.png"></a>
-          </div>
-          <div class="navbar-search search_menu input-append" style="display:none">
-            <input type="text" placeholder="Search" class="search">
-              <button class='btn add-on'>
-                <i class="icon-search"></i>
-              </button>
-          </div>
-        </div>
-
-        <div class="container navigation-main">
-          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <div class="nav-collapse collapse">
-            <ul class="nav">
-              <li class="divider-vertical">
-                <a href="<?php echo base_url()?>">Home</a>
-              </li>
-              <li>
-                <a href="<?php echo base_url()?>index.php/about">About</a>
-              </li>
-              <!-- <li class="divider-vertical">
-                <a href="">Bogus Drs</a>
-              </li>
-           	  <li>
-                <a href="">Hospital Deaths</a>
-              </li> -->
-            </ul>
-          </div>
-        </div>
-      </div>
+  <body data-spy="scroll">
+  <div class="container zone_user">
+    <div class="date_zone"><?php date_default_timezone_set("Africa/Nairobi"); echo date('l, M j<\sup>S</\sup> Y');?></div>
+    <div class="follow_us">Follow us
+        <a href="http://www.facebook.com/thestarkenya" title="Facebook" target="_blank"><img src="http://www.the-star.co.ke/sites/all/themes/thestar/images/social-facebook-16.png"></a>
+        <a href="http://www.twitter.com/thestarkenya" title="Twitter" target="_blank"><img src="http://www.the-star.co.ke/sites/all/themes/thestar/images/social-twitter-16.png"></a>
+        <a href="/rss.xml" title="RSS"><img src="http://www.the-star.co.ke/sites/all/themes/thestar/images/social-rss-16.png"></a>
     </div>
+  </div>
 
-  
+  <div class="container">
+      <div class="brand_header">
+          <div class="row">
+              <div class="span4">
+                <a class="brand" href="http://health.the-star.co.ke/"><img src="<?php echo base_url(); ?>assets/img/logo.png"></a>
+              </div>
+              <div class="span5" style="float:right;width:380px !important;margin-top: 15px;">
+              <form class="navbar-search" action="http://www.the-star.co.ke/" method="post" id="search-block-form" accept-charset="UTF-8" target="_self"><div><div class="container-inline">
+                          <input title="Enter the terms you wish to search for." class="custom-search-box form-text" placeholder="" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128">
+                          <input type="submit" id="edit-submit" name="op" value="Search" class="form-submit"></div>
+                          <input class="custom-search-selector custom-search-types" type="hidden" name="custom_search_types" value="o-google_cse">
+                          <input type="hidden" name="form_build_id" value="form-odAZzR_CXSGeKQqwh1NfAdXxS5TNZLD1IEK_x9zCvfQ">
+                          <input type="hidden" name="form_id" value="search_block_form">
+              </form>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="container navbar navbar-inverse">
+      <div class="navbar-inner">
+          <div class="container navigation-main">
+              <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+              </button>
+
+              <div class="nav-collapse collapse">
+                  <ul class="nav">
+                      <li class="">
+                          <a href="http://www.the-star.co.ke/" target="_blank">Main Site</a>
+                      </li>
+                      <li class="">
+                          <a href="http://www.the-star.co.ke/sections/national-news" target="_blank">National</a>
+                      </li>
+                      <li class="">
+                          <a href="http://www.the-star.co.ke/sections/local-news" target="_blank">Local</a>
+                      </li>
+                      <li class="">
+                          <a href="http://www.the-star.co.ke/sections/business" target="_blank">Business</a>
+                      </li>
+                      <li class="">
+                          <a href="http://www.the-star.co.ke/sections/opinions" target="_blank">Opinions</a>
+                      </li>
+                      <li class="">
+                          <a href="http://www.the-star.co.ke/sections/sports" target="_blank">Sports</a>
+                      </li>
+                      <li class="">
+                          <a href="http://www.the-star.co.ke/sections/lifestyle" target="_blank">Lifestyle</a>
+                      </li>
+                      <li class="">
+                          <a href="http://www.the-star.co.ke/sections/society" target="_blank">Society</a>
+                      </li>
+                      <li class="">
+                          <a href="http://www.the-star.co.ke/sections/word" target="_blank">Word Is</a>
+                      </li>
+                      <li class="">
+                          <a href="http://www.the-star.co.ke/sections/weekend" target="_blank">Weekend</a>
+                      </li>
+                      <li class="">
+                          <a href="http://www.the-star.co.ke/sections/public-editor" target="_blank">Public Ed</a>
+                      </li>
+                      <li class="">
+                          <a href="http://www.the-star.co.ke/sections/debate" target="_blank">Debate</a>
+                      </li>
+                      <li class="">
+                          <a href="http://www.the-star.co.ke/twitter-feeds" target="_blank">Star Live</a>
+                      </li>
+                      <li class="">
+                          <a href="http://www.the-star.co.ke/skycam" target="_blank">SkyCAM</a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </div>
+
+
   
