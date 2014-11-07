@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="eb075555-a541-4e3b-a7bf-683aa88a8594" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/frontpage.php" afterPath="$PROJECT_DIR$/application/views/frontpage.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/layout/header.php" afterPath="$PROJECT_DIR$/application/views/layout/header.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="StarHealth.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,7 +37,7 @@
       <file leaf-file-name="header.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/layout/header.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="0" selection-start="3582" selection-end="3582" vertical-scroll-proportion="-7.7916665" vertical-offset="563" max-vertical-offset="2025">
+            <state line="55" column="66" selection-start="3770" selection-end="3770" vertical-scroll-proportion="-10.916667" vertical-offset="563" max-vertical-offset="2025">
               <folding>
                 <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -50,8 +48,10 @@
       <file leaf-file-name="frontpage.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/views/frontpage.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="196" column="17" selection-start="7161" selection-end="7161" vertical-scroll-proportion="0.55516016" vertical-offset="2628" max-vertical-offset="4845">
-              <folding />
+            <state line="74" column="35" selection-start="2741" selection-end="2741" vertical-scroll-proportion="-0.54174757" vertical-offset="1389" max-vertical-offset="4905">
+              <folding>
+                <element signature="n#style#0;n#i#0;n#h6#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -430,7 +430,9 @@
     <entry file="file://$PROJECT_DIR$/application/views/frontpage.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="281" column="35" selection-start="10269" selection-end="10269" vertical-scroll-proportion="0.0" vertical-offset="3938" max-vertical-offset="4815">
-          <folding />
+          <folding>
+            <element signature="n#style#0;n#i#0;n#h6#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -503,7 +505,9 @@
     <entry file="file://$PROJECT_DIR$/application/views/frontpage.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="92" column="28" selection-start="3426" selection-end="3426" vertical-scroll-proportion="0.0" vertical-offset="1193" max-vertical-offset="4815">
-          <folding />
+          <folding>
+            <element signature="n#style#0;n#i#0;n#h6#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -576,7 +580,9 @@
     <entry file="file://$PROJECT_DIR$/application/views/frontpage.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="146" column="43" selection-start="4882" selection-end="4882" vertical-scroll-proportion="0.0" vertical-offset="2190" max-vertical-offset="4770">
-          <folding />
+          <folding>
+            <element signature="n#style#0;n#i#0;n#h6#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -649,7 +655,9 @@
     <entry file="file://$PROJECT_DIR$/application/views/frontpage.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="54" selection-start="255" selection-end="255" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="4770">
-          <folding />
+          <folding>
+            <element signature="n#style#0;n#i#0;n#h6#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -754,7 +762,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/layout/header.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="0" selection-start="3582" selection-end="3582" vertical-scroll-proportion="-7.7916665" vertical-offset="563" max-vertical-offset="2025">
+        <state line="55" column="66" selection-start="3770" selection-end="3770" vertical-scroll-proportion="-10.916667" vertical-offset="563" max-vertical-offset="2025">
           <folding>
             <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
@@ -763,8 +771,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/frontpage.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="196" column="17" selection-start="7161" selection-end="7161" vertical-scroll-proportion="0.55516016" vertical-offset="2628" max-vertical-offset="4845">
-          <folding />
+        <state line="74" column="35" selection-start="2741" selection-end="2741" vertical-scroll-proportion="-0.54174757" vertical-offset="1389" max-vertical-offset="4905">
+          <folding>
+            <element signature="n#style#0;n#i#0;n#h6#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

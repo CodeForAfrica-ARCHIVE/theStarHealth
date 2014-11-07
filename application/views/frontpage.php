@@ -62,7 +62,9 @@
                 <div class="carousel-inner" align="center" style="background-color:#000">
                 	
                 	<?php
-                		print '<div class="item active"><img src="'.$featured[0]['thumb'].'" alt="">
+                    $thumb = str_replace("http://the-star.co.ke", "http://www.the-star.co.ke", $featured[0]['thumb']);
+
+                    print '<div class="item active"><img src="'.$thumb.'" alt="">
 				                    <div class="carousel-caption">
 				                      <h6><a href="'.$featured[0]['link'].'" target="_blank">'.$featured[0]['title'].'</a></h6>
 				                     
@@ -169,7 +171,9 @@
                     <div class="accordion-inner">
 				<p>';
 				if($first_one['thumb']!=null){
-					print "<img src='".$first_one['thumb']."' width='100%'><br />";
+                    $thumb = str_replace("http://the-star.co.ke", "http://www.the-star.co.ke", $first_one['thumb']);
+
+                    print "<img src='".$thumb."' width='100%'><br />";
 				}
 				print $first_one['description'].'<br /><a href="'.$first_one['link'].'" target="_blank">More</a></p>
                     </div>
@@ -189,7 +193,7 @@
                   </div>
                   <div id="'.$i.'" class="accordion-body collapse" style="height: 0px;">
                     <div class="accordion-inner">
-			<p>';
+			    <p>';
 				if($featured_item['thumb']!=null){
                     $thumb = str_replace("http://the-star.co.ke", "http://www.the-star.co.ke", $featured_item['thumb']);
 
