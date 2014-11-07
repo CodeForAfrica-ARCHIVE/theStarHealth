@@ -191,7 +191,9 @@
                     <div class="accordion-inner">
 			<p>';
 				if($featured_item['thumb']!=null){
-					print "<img src='".$featured_item['thumb']."' width='100%'><br />";
+                    $thumb = str_replace("http://the-star.co.ke", "http://www.the-star.co.ke", $featured_item['thumb']);
+
+                    print "<img src='".$thumb."' width='100%'><br />";
 				}
 				print $featured_item['description'].'<br /><a href="'.$featured_item['link'].'" target="_blank">More</a></p>
                     </div>
@@ -267,11 +269,11 @@
 			$items=0;
 			  	foreach($more_news as $item){
 			  		if($items<6){
-
+                    $thumb = str_replace("http://the-star.co.ke", "http://www.the-star.co.ke", $item['thumb']);
 					
 			  		print "<h4><a href='".$item['link']."' target='_blank'>".$item['title']."</a></h4>";
 					if($item['thumb']!=null){
-						print "<img src='".$item['thumb']."' style='width:100px;float:left; margin:10px'><br />";
+						print "<img src='".$thumb."' style='width:100px;float:left; margin:10px'><br />";
 					}
 					print "<div>".$item['description']."</div><br />";
 
