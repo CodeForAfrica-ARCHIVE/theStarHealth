@@ -15,34 +15,35 @@ class Welcome_m extends CI_Model {
 	$news = array();	
 		$feed = json_decode(file_get_contents($feed_url, true));
 		$items = $feed->nodes;
-		
+
+        //skip 6 major stories
+        $majorTotal = 0;
+
 		foreach($items as $item){
 			$item = $item->node;
 			
 			$newitem = $this->format_item($item);
-			$tags = explode(',', $newitem['tags']);	
-			
-			if(($section==null)||($section==0)){
-				if(in_array('Major', $tags)){
-					
-				}elseif(in_array('Featured', $tags)){
-					
-				}else{
-					$news[] = $newitem;
-				}
-			}else{
-				
-				//all sections	
-				$sections = array("Latest", "Features", "Opinion", "News");
-				//selected section in array
-				$sel_section = $sections[$section];
-				//tags in article
-				if(in_array('Major', $tags)){
-					
-				}elseif(in_array($sel_section, $tags)){
-						$news[] = $newitem;
-				}
-			}	
+			$tags = explode(',', $newitem['tags']);
+
+            if(($newitem['thumb']!=null)&&$majorTotal<6){
+                //skip
+            }else{
+                if(($section==null)||($section==0)){
+                    $news[] = $newitem;
+
+                }else{
+
+                    //all sections
+                    $sections = array("Latest", "Features", "Opinion", "News");
+                    //selected section in array
+                    $sel_section = $sections[$section];
+                    //tags in article
+                    if(in_array($sel_section, $tags)){
+                        $news[] = $newitem;
+                    }
+                }
+            }
+
 		}
 	
 	return $news;
@@ -90,47 +91,22 @@ class Welcome_m extends CI_Model {
   public function get_featured(){
 	$feed_url = base_url().'assets/feed.json';//$this->config->item('feed_url');
 	$news = array();	
-		$feed = json_decode(file_get_contents($feed_url, true));
-		$items = $feed->nodes;
-		
+	$feed = json_decode(file_get_contents($feed_url, true));
+	$items = $feed->nodes;
 
 		foreach($items as $item){
 		
 				$item = $item->node;
-					$newitem = $this->format_item($item);		
-					$tags = explode(',', $newitem['tags']);	
-				
-					if(in_array('Major', $tags)){
+					$newitem = $this->format_item($item);
 						if($newitem['thumb']!=null){
 							$news[] = $newitem;
 						}
-					}
-				
-			
-		}
-	
-	return $news;
- }	
-public function get_major(){
-	$feed_url = base_url().'assets/feed.json';//$this->config->item('feed_url');
-	$news = array();	
-		$feed = json_decode(file_get_contents($feed_url, true));
-		$items = $feed->nodes;
-		
-		foreach($items as $item){
-			$item = $item->node;
-				$newitem = $this->format_item($item);		
-				$tags = explode(',', $newitem['tags']);	
-			
-				if(in_array('Major', $tags)){
 
-					$news[] = $newitem;
-				}
-			
 		}
 	
 	return $news;
  }	
+
 	public function get_thumbnail($thumb){
 		$thumb = explode(',', $thumb);
 		return $thumb[0];

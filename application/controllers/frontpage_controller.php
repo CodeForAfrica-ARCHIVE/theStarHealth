@@ -13,7 +13,7 @@ class Frontpage_controller extends CI_Controller {
 		$nid = 	0;//$data['featured'][0]['nid'];
 		$data['sofar'] = $this->welcome_m->get_story_sofar($nid);
 		$data['more_news'] = $this->welcome_m->get_all(null);
-		$data['major'] = $this->welcome_m->get_major();
+		$data['major'] = array_slice($data['featured'], 1);
 
 		$data['helplines'] = $this->welcome_m->get_helplines();
 		$data['supportgroups'] = $this->welcome_m->get_supportgroups();
