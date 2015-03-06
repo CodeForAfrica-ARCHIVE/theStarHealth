@@ -11,8 +11,11 @@
 		curl_close($ch);
 		*/
 
-        if($data!=null){
-			file_put_contents('./assets/feed.json', $data);
-		}
+        //if($data!=null){
+		//	file_put_contents('./assets/feed.json', $data);
+		//}
 
+        print "<pre>";
+        print_r($data);
+        print "</pre>";
 ?>
