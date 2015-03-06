@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eb075555-a541-4e3b-a7bf-683aa88a8594" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/run_cron.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/feed.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/feed.json" afterPath="$PROJECT_DIR$/assets/feed.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/frontpage.php" afterPath="$PROJECT_DIR$/application/views/frontpage.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/frontpage_controller.php" afterPath="$PROJECT_DIR$/application/controllers/frontpage_controller.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/run_cron.php" afterPath="$PROJECT_DIR$/assets/run_cron.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/welcome_m.php" afterPath="$PROJECT_DIR$/application/models/welcome_m.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="StarHealth.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -50,7 +56,7 @@
       <file leaf-file-name="frontpage.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/frontpage.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="298" column="96" selection-start="11022" selection-end="11022" vertical-scroll-proportion="-2.3529413" vertical-offset="4350" max-vertical-offset="4890">
+            <state line="276" column="20" selection-start="10246" selection-end="10246" vertical-scroll-proportion="-3.8235295" vertical-offset="3945" max-vertical-offset="4890">
               <folding>
                 <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
               </folding>
@@ -61,7 +67,7 @@
       <file leaf-file-name="run_cron.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/run_cron.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="49" selection-start="272" selection-end="272" vertical-scroll-proportion="0.32876712" vertical-offset="0" max-vertical-offset="365">
+            <state line="14" column="8" selection-start="378" selection-end="378" vertical-scroll-proportion="0.36206895" vertical-offset="0" max-vertical-offset="580">
               <folding />
             </state>
           </provider>
@@ -88,7 +94,7 @@
       <file leaf-file-name="frontpage_controller.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/frontpage_controller.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="57" selection-start="554" selection-end="554" vertical-scroll-proportion="12.083333" vertical-offset="515" max-vertical-offset="1095">
+            <state line="45" column="5" selection-start="1553" selection-end="1553" vertical-scroll-proportion="-17.291666" vertical-offset="260" max-vertical-offset="840">
               <folding />
             </state>
           </provider>
@@ -106,16 +112,7 @@
       <file leaf-file-name="welcome_m.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/models/welcome_m.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="20" selection-start="1254" selection-end="1254" vertical-scroll-proportion="-7.0588236" vertical-offset="240" max-vertical-offset="3420">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="feed.json" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/feed.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="96" selection-start="0" selection-end="138833" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="90">
+            <state line="39" column="47" selection-start="1173" selection-end="1173" vertical-scroll-proportion="-5.5882354" vertical-offset="300" max-vertical-offset="3450">
               <folding />
             </state>
           </provider>
@@ -139,9 +136,9 @@
         <option value="$PROJECT_DIR$/assets/css/bootstrap.css" />
         <option value="$PROJECT_DIR$/application/views/layout/header_widgets.php" />
         <option value="$PROJECT_DIR$/assets/css/main.css" />
+        <option value="$PROJECT_DIR$/application/views/layout/header.php" />
         <option value="$PROJECT_DIR$/application/controllers/frontpage_controller.php" />
         <option value="$PROJECT_DIR$/application/models/welcome_m.php" />
-        <option value="$PROJECT_DIR$/application/views/layout/header.php" />
         <option value="$PROJECT_DIR$/application/views/frontpage.php" />
         <option value="$PROJECT_DIR$/assets/run_cron.php" />
       </list>
@@ -259,12 +256,12 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="43" y="24" width="1323" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32924962" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924962" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2607338" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -630,13 +627,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/welcome_m.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="20" selection-start="1254" selection-end="1254" vertical-scroll-proportion="-7.0588236" vertical-offset="240" max-vertical-offset="3420">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/layout/header.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="81" column="18" selection-start="5489" selection-end="5489" vertical-scroll-proportion="-1.75" vertical-offset="1173" max-vertical-offset="1785">
@@ -655,32 +645,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/frontpage_controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="5" selection-start="1553" selection-end="1553" vertical-scroll-proportion="-17.291666" vertical-offset="260" max-vertical-offset="840">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/welcome_m.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="47" selection-start="1173" selection-end="1173" vertical-scroll-proportion="-5.5882354" vertical-offset="300" max-vertical-offset="3450">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/frontpage.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="298" column="96" selection-start="11022" selection-end="11022" vertical-scroll-proportion="-2.3529413" vertical-offset="4350" max-vertical-offset="4890">
+        <state line="276" column="20" selection-start="10246" selection-end="10246" vertical-scroll-proportion="-3.8235295" vertical-offset="3945" max-vertical-offset="4890">
           <folding>
             <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/frontpage_controller.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="57" selection-start="554" selection-end="554" vertical-scroll-proportion="12.083333" vertical-offset="515" max-vertical-offset="1095">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/feed.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="96" selection-start="0" selection-end="138833" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="567">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/run_cron.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="49" selection-start="272" selection-end="272" vertical-scroll-proportion="0.32876712" vertical-offset="0" max-vertical-offset="365">
+        <state line="14" column="8" selection-start="378" selection-end="378" vertical-scroll-proportion="0.36206895" vertical-offset="0" max-vertical-offset="580">
           <folding />
         </state>
       </provider>

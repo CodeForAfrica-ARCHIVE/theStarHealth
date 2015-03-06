@@ -272,7 +272,7 @@
 			
 			$items=0;
 			  	foreach($more_news as $item){
-			  		if($items<6){
+			  		if($items<40){
                     $thumb = str_replace("http://the-star.co.ke", "http://www.the-star.co.ke", $item['thumb']);
 					
 			  		print "<h4><a href='".$item['link']."' target='_blank'>".$item['title']."</a></h4>";
