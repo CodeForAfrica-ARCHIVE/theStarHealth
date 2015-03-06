@@ -50,7 +50,7 @@ class Welcome_m extends CI_Model {
   public function format_item($item){
   	$newitem = array();
 
-			$newitem['link'] = str_replace('/news/', 'http://the-star.co.ke/news/', $item->path);
+			$newitem['link'] = str_replace('/article/', 'http://the-star.co.ke/article/', $item->path);
 			
 			$newitem['title'] = $item->title;
 			
