@@ -62,13 +62,28 @@ class Welcome_m extends CI_Model {
 			$newitem['author'] =$item->field_author;
 			
 			if(isset($item->field_image)){
-				if(trim($item->field_image)!=''){
-					$newitem['thumb'] = $this->get_thumbnail($item->field_image); 
-				}else{
-					$newitem['thumb'] = null;
-				}
+
+                    $field_image = $item->field_image;
+
+                    //check if is array
+                    if(is_array($field_image)){
+                        $field_image = $field_image[0];
+                    }
+
+                    if(property_exists($field_image, "src")){
+
+                        $newitem['thumb'] = $field_image->src;
+
+                    }else{
+
+                        $newitem['thumb'] = null;
+                    }
+
+
 			}else{
+
 				$newitem['thumb'] = null;
+
 			}
 			return $newitem;
   }
