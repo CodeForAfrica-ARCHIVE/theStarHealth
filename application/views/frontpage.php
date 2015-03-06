@@ -296,7 +296,7 @@ print ' | Posted under '.$item['tags'];
 		<div class="span3 sidebar_widget2">
 			<div class="row-header"><h4>App Store</h4></div>
 			<p>Download the Star's mobile Apps, eBooks, and other tools.</p>
-			<a href="https://play.google.com/store/apps/details?id=dk.i2m.mobile.starreports" target="_blank"><img src="<?php echo base_url()?>assets/img/android-icon.png"></a>
+			<a href="https://play.google.com/store/apps/details?id=org.codeforafrica.starreports" target="_blank"><img src="<?php echo base_url()?>assets/img/android-icon.png"></a>
 			<hr />
 			<a href="http://code4kenya.org" target="_blank"><img style="height: 80px" src="<?php echo base_url();?>assets/img/c4k_logo.png" id="c4k_partner"></a>
 			<br />

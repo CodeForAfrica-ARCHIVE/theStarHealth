@@ -84,43 +84,25 @@ header("Pragma: no-cache");
                           <a href="http://www.the-star.co.ke/" target="_blank">Main Site</a>
                       </li>
                       <li class="">
-                          <a href="http://www.the-star.co.ke/sections/national-news" target="_blank">National</a>
+                          <a href="http://www.the-star.co.ke/section/news" target="_blank">National</a>
                       </li>
                       <li class="">
-                          <a href="http://www.the-star.co.ke/sections/local-news" target="_blank">Local</a>
+                          <a href="http://www.the-star.co.ke/section/business" target="_blank">Business</a>
                       </li>
                       <li class="">
-                          <a href="http://www.the-star.co.ke/sections/business" target="_blank">Business</a>
+                          <a href="http://www.the-star.co.ke/section/sports" target="_blank">Sports</a>
                       </li>
                       <li class="">
-                          <a href="http://www.the-star.co.ke/sections/opinions" target="_blank">Opinions</a>
+                          <a href="http://www.the-star.co.ke/section/entertainment" target="_blank">Entertainment</a>
                       </li>
                       <li class="">
-                          <a href="http://www.the-star.co.ke/sections/sports" target="_blank">Sports</a>
+                          <a href="http://www.the-star.co.ke/section/opinions" target="_blank">Opinions</a>
                       </li>
                       <li class="">
-                          <a href="http://www.the-star.co.ke/sections/lifestyle" target="_blank">Lifestyle</a>
+                          <a href="http://www.the-star.co.ke/sections/starlife" target="_blank">StarLife</a>
                       </li>
                       <li class="">
-                          <a href="http://www.the-star.co.ke/sections/society" target="_blank">Society</a>
-                      </li>
-                      <li class="">
-                          <a href="http://www.the-star.co.ke/sections/word" target="_blank">Word Is</a>
-                      </li>
-                      <li class="">
-                          <a href="http://www.the-star.co.ke/sections/weekend" target="_blank">Weekend</a>
-                      </li>
-                      <li class="">
-                          <a href="http://www.the-star.co.ke/sections/public-editor" target="_blank">Public Ed</a>
-                      </li>
-                      <li class="">
-                          <a href="http://www.the-star.co.ke/sections/debate" target="_blank">Debate</a>
-                      </li>
-                      <li class="">
-                          <a href="http://www.the-star.co.ke/twitter-feeds" target="_blank">Star Live</a>
-                      </li>
-                      <li class="">
-                          <a href="http://www.the-star.co.ke/skycam" target="_blank">SkyCAM</a>
+                          <a href="http://www.the-star.co.ke/sections/weekend-star" target="_blank">Weekend Star</a>
                       </li>
                   </ul>
               </div>
