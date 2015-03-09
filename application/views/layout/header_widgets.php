@@ -4,7 +4,7 @@
 		<i class="icon-user-md icon-2x"></i>
 		<h4>Dodgy Doctors</h4>
 		<div class="description">Check to see if your doctor is registered, their certified area of practice and whether they are free from malpractice</div>
-		 <div class="search_menu input-append" style="margin-top:40px;">
+		 <div class="search_menu input-append" style="margin-top:45px;">
 		 	<?php
 			session_start();
 			?>
@@ -148,7 +148,7 @@
 					  }
 				}
 				</script>
-				<button class='btn add-on' href="#myModal" role="button" class="btn" data-toggle="modal" onclick="ajaxrequest('<?php echo base_url();?>index.php/dodgy/search')">
+				<button class='btn add-on red_button' href="#myModal" role="button" class="btn" data-toggle="modal" onclick="ajaxrequest('<?php echo base_url();?>index.php/dodgy/search')">
         			<i class="icon-search"></i>
     			</button>
 			
@@ -196,7 +196,7 @@
 			}
 			?>
 			</select>
-			<button class='btn add-on' href="#myModal" role="button" class="btn" data-toggle="modal" onclick="nhif('<?php echo base_url();?>index.php/nhif')">
+			<button class='btn add-on red_button red_button_round' href="#myModal" role="button" class="btn" data-toggle="modal" onclick="nhif('<?php echo base_url();?>index.php/nhif')">
 			<i class="icon-search"></i>
 			</button>
 		</div>
@@ -232,7 +232,7 @@
 			}
 			?>
 			</select>
-          	<button class='btn add-on' href="#myModal" role="button" class="btn" data-toggle="modal" onclick="specialists_request('<?php echo base_url();?>index.php/facilities/search')">
+          	<button class='btn add-on red_button red_button_round' href="#myModal" role="button" class="btn" data-toggle="modal" onclick="specialists_request('<?php echo base_url();?>index.php/facilities/search')">
         				<i class="icon-search"></i>
     		</button>
           	</div>

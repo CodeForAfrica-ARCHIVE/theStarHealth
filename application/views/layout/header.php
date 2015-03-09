@@ -67,21 +67,40 @@ header("Pragma: no-cache");
                 <a class="brand" href="http://health.the-star.co.ke/"><img src="<?php echo base_url(); ?>assets/img/logo.png"></a>
               </div>
               <div class="span4" style="float:right;width:280px !important;">
-              <form class="navbar-search" action="http://www.the-star.co.ke/" method="post" id="search-block-form" accept-charset="UTF-8" target="_self"><div><div class="container-inline">
+              
 <div class="date-section">
 <?php date_default_timezone_set("Africa/Nairobi"); echo date('l, M j<\sup>S</\sup> Y');?>
 </div>
 <div class="input-append">
-<input type="text" placeholder="Type to search..." class="search">
-<button class="btn add-on red_button" role="button">
+<input type="text" placeholder="Type to search..." class="search" id="main_search">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+$('#main_search').keypress(function (e) {
+                if (e.which == 13) {
+                    $('#site_search_submit').click();
+                    return false;    //<---- Add this line
+                }
+            });
+
+            $('#site_search_submit').click(function(){
+
+                if($('#main_search').val().length == 0){
+                    alert('Please enter a search query!');
+                }else{
+                    window.location = "http://the-star.co.ke/search/node/" + $('#main_search').val();
+                }
+
+            });
+});
+</script>
+
+<button class="btn add-on red_button" role="button" id="site_search_submit">
         			<i class="icon-search"></i>
     			</button>
 </div>
                           </div>
-                          <input class="custom-search-selector custom-search-types" type="hidden" name="custom_search_types" value="o-google_cse">
-                          <input type="hidden" name="form_build_id" value="form-odAZzR_CXSGeKQqwh1NfAdXxS5TNZLD1IEK_x9zCvfQ">
-                          <input type="hidden" name="form_id" value="search_block_form">
-              </form>
+                          
               </div>
           </div>
       </div>
@@ -98,7 +117,7 @@ header("Pragma: no-cache");
               <div class="nav-collapse collapse">
                   <ul class="nav">
                       <li class="">
-                          <a href="http://www.the-star.co.ke/sections/news" target="_blank">National</a>
+                          <a href="http://www.the-star.co.ke/sections/news" target="_blank">News</a>
                       </li>
                       <li class="">
                           <a href="http://www.the-star.co.ke/sections/business" target="_blank">Business</a>

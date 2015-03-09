@@ -204,3 +204,9 @@ border-color: #d43f3a !important;
 float: right;
 margin-bottom: 5px;
 }
+.red_button_round{
+	border-radius: 4px;
+	border: 1px solid #ccc;
+	height: 35px;
+	width: 45px;
+}
