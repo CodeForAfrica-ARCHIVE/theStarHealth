@@ -22,6 +22,7 @@ header("Pragma: no-cache");
       <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>      <link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
       <link href='http://fonts.googleapis.com/css?family=Vollkorn' rel='stylesheet' type='text/css'>
       <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/main.css">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,600' rel='stylesheet' type='text/css'>
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
       <script src="<?php echo base_url();?>assets/js/html5shiv.js"></script>
@@ -41,26 +42,42 @@ header("Pragma: no-cache");
   </head>
 
   <body data-spy="scroll">
-  <div class="container zone_user">
-    <div class="date_zone"><?php date_default_timezone_set("Africa/Nairobi"); echo date('l, M j<\sup>S</\sup> Y');?></div>
-    <div class="follow_us">Follow us
-        <a href="http://www.facebook.com/thestarkenya" title="Facebook" target="_blank"><img src="<?php echo base_url(); ?>assets/img/facebook.png" style="height:15px;"></a>
-        <a href="http://www.twitter.com/thestarkenya" title="Twitter" target="_blank"><img src="<?php echo base_url(); ?>assets/img/twitter.png" style="height:15px;"></a>
-        <a href="/rss.xml" title="RSS"><img src="<?php echo base_url(); ?>assets/img/rss.png" style="height:15px;"></a>
-
-    </div>
-  </div>
-
+	  
   <div class="container">
+<header id="topbar">
+	      <div class="container-fluid">
+		  <div class="region region-top-navigation">
+	    <div id="block-menu-menu-radiomenu" class="block block-menu block-odd">
+
+	    
+	  <div class="content">
+	    <ul><li class="first leaf classic-105 mid-1819"><a href="http://www.ustream.tv/channel/classic105-kenya?utm_campaign=JPER&amp;utm_medium=FlashPlayer&amp;utm_source=embed" title="" target="_blank">Classic 105</a></li>
+	<li class="leaf east-fm mid-1822"><a href="http://www.ustream.tv/channel/east-fm?utm_campaign=JPER&amp;utm_medium=FlashPlayer&amp;utm_source=embed" title="" target="_blank">East fm</a></li>
+	<li class="leaf kiss-100 mid-1818"><a href="http://www.ustream.tv/channel/kiss100-kenya?utm_campaign=JPER&amp;utm_medium=FlashPlayer&amp;utm_source=embed" title="" target="_blank">Kiss 100</a></li>
+	<li class="leaf radio-jambo mid-1820"><a href="http://www.ustream.tv/channel/radiojambo-fm?utm_campaign=JPER&amp;utm_medium=FlashPlayer&amp;utm_source=embed" title="" target="_blank">Radio Jambo</a></li>
+	<li class="last leaf xfm mid-1821"><a href="http://www.ustream.tv/channel/xfm-kenya?utm_campaign=JPER&amp;utm_medium=FlashPlayer&amp;utm_source=embed" title="" target="_blank">XFM</a></li>
+	</ul>  </div>
+	</div>
+	  </div>
+	      </div>
+	    </header>
       <div class="brand_header">
           <div class="row">
               <div class="span4">
                 <a class="brand" href="http://health.the-star.co.ke/"><img src="<?php echo base_url(); ?>assets/img/logo.png"></a>
               </div>
-              <div class="span5" style="float:right;width:380px !important;margin-top: 15px;">
+              <div class="span4" style="float:right;width:280px !important;">
               <form class="navbar-search" action="http://www.the-star.co.ke/" method="post" id="search-block-form" accept-charset="UTF-8" target="_self"><div><div class="container-inline">
-                          <input title="Enter the terms you wish to search for." class="custom-search-box form-text" placeholder="" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128">
-                          <input type="submit" id="edit-submit" name="op" value="Search" class="form-submit"></div>
+<div class="date-section">
+<?php date_default_timezone_set("Africa/Nairobi"); echo date('l, M j<\sup>S</\sup> Y');?>
+</div>
+<div class="input-append">
+<input type="text" placeholder="Type to search..." class="search">
+<button class="btn add-on red_button" role="button">
+        			<i class="icon-search"></i>
+    			</button>
+</div>
+                          </div>
                           <input class="custom-search-selector custom-search-types" type="hidden" name="custom_search_types" value="o-google_cse">
                           <input type="hidden" name="form_build_id" value="form-odAZzR_CXSGeKQqwh1NfAdXxS5TNZLD1IEK_x9zCvfQ">
                           <input type="hidden" name="form_id" value="search_block_form">
@@ -81,22 +98,19 @@ header("Pragma: no-cache");
               <div class="nav-collapse collapse">
                   <ul class="nav">
                       <li class="">
-                          <a href="http://www.the-star.co.ke/" target="_blank">Main Site</a>
+                          <a href="http://www.the-star.co.ke/sections/news" target="_blank">National</a>
                       </li>
                       <li class="">
-                          <a href="http://www.the-star.co.ke/section/news" target="_blank">National</a>
+                          <a href="http://www.the-star.co.ke/sections/business" target="_blank">Business</a>
                       </li>
                       <li class="">
-                          <a href="http://www.the-star.co.ke/section/business" target="_blank">Business</a>
+                          <a href="http://www.the-star.co.ke/sections/sports" target="_blank">Sports</a>
                       </li>
                       <li class="">
-                          <a href="http://www.the-star.co.ke/section/sports" target="_blank">Sports</a>
+                          <a href="http://www.the-star.co.ke/sections/entertainment" target="_blank">Entertainment</a>
                       </li>
                       <li class="">
-                          <a href="http://www.the-star.co.ke/section/entertainment" target="_blank">Entertainment</a>
-                      </li>
-                      <li class="">
-                          <a href="http://www.the-star.co.ke/section/opinions" target="_blank">Opinions</a>
+                          <a href="http://www.the-star.co.ke/sections/opinions" target="_blank">Opinions</a>
                       </li>
                       <li class="">
                           <a href="http://www.the-star.co.ke/sections/starlife" target="_blank">StarLife</a>

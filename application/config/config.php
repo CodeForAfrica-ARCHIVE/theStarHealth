@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost/StarHealth/';
+$config['base_url']	= 'http://192.168.21.89/StarHealth/';
 
 /*
 |--------------------------------------------------------------------------

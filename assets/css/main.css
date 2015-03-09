@@ -1,12 +1,18 @@
 body{
-    font-family: arial,sans-serif;;
-    font-size: 0.85em !important;
+
+color: #58585B;
+font-family: Georgia, "Times New Roman", Times, serif;
+font-size: 16px;
+background-color: #E5E4E3;
+background-image: url('../img/topbar.jpg');
+background-repeat: repeat-x;
+background-position: 0 -5px;
 }
 .container{
-    max-width: 967px;
+    max-width: 990px;
 }
 .header_widgets{
-    margin-top: 5px;
+    /*margin-top: 5px;*/
 }
 .header_widget{
     padding: 10px;
@@ -33,12 +39,16 @@ body{
 }
 .navbar .nav > li > a {
     height: 25px;
-    padding: 7px 7px 7px;
-    font-weight: bold;
+padding: 7px 7px 7px;
+/* font-weight: bold; */
+background-color: #404041;
+font-family: 'Open Sans', sans-serif;
+color: #fff;
+text-transform: uppercase;
 }
 .nav-collapse{
-    float:right;
-}
+   /* float:right;
+*/}
 .navbar .divider-vertical {
     height: 50px;
 }
@@ -77,12 +87,12 @@ h4{
     font-family: "Vollkorn", serif;
 }
 .brand_header img{
-    height: 59px;
+    height: 81px;
 
 }
 .brand_header{
-    background-color: #24408F;
-    padding: 15px;
+    background-color: #fff;
+    padding: 5px;
 }
 .zone_user{
     background-color: #ffffff;
@@ -138,7 +148,7 @@ h4{
     padding-top: 1px;
 }
 .navbar-inverse .navbar-inner .navigation-main {
-    border: 1px #DDDDDD solid;
+    /*border: 1px #DDDDDD solid;*/
     background: #ffffff !important;
     background: -moz-linear-gradient(top, #ffffff 0%, #f6f6f6 100%) !important;
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#f6f6f6)) !important;
@@ -147,4 +157,50 @@ h4{
     background: -ms-linear-gradient(top, #ffffff 0%,#f6f6f6 100%) !important;
     background: linear-gradient(to bottom, #ffffff 0%,#f6f6f6 100%) !important;
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=0 ) !important;
+}
+#topbar{
+background-color: #000000;
+border-radius: 0;
+border: none;
+margin-bottom: 0;
+height: 29px;
+}
+#topbar ul {
+float: right !important;
+margin-right: -15px;
+padding-left: 0;
+margin-bottom: 4px;
+list-style: none;
+}
+#topbar ul > li {
+float: left;
+list-style: none;
+line-height: 27px !important;
+
+border-right: solid 1px #FECD8B;
+}
+#topbar ul > li > a {
+font-family: 'Open Sans', sans-serif;
+font-weight: 400;
+font-size: 12px;
+text-transform: uppercase;
+padding-bottom: 5px;
+padding-top: 5px;
+padding-right: 4px;
+padding-left: 4px;
+color: #FECD8B;
+margin-left: 10px;
+}
+#topbar ul > li:last-child {
+    border-right: 0px;
+}
+.red_button{
+
+color: #fff !important;
+background-color: #d9534f !important;
+border-color: #d43f3a !important;
+}
+.date-section{
+float: right;
+margin-bottom: 5px;
 }
