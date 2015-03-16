@@ -26,10 +26,10 @@ class Welcome_m extends CI_Model {
 			$tags = explode(',', $newitem['tags']);
 
 
-            if(($newitem['thumb']!=null)&&($majorTotal<6)){
+            //if(($newitem['thumb']!=null)&&($majorTotal<6)){
                 //skip
-                $majorTotal++;
-            }else{
+           //     $majorTotal++;
+           // }else{
                 if(($section==null)||($section==0)){
                     $news[] = $newitem;
 
@@ -44,7 +44,7 @@ class Welcome_m extends CI_Model {
                         $news[] = $newitem;
                     }
                 }
-            }
+           // }
 
 		}
 	

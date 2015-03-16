@@ -36,6 +36,7 @@ background-position: 0 -5px;
     padding: 0px !important;
     margin-left: 0px !important;
     height: 59px;
+    font-size:5em;
 }
 .navbar .nav > li > a {
     height: 25px;
@@ -209,4 +210,8 @@ margin-bottom: 5px;
 	border: 1px solid #ccc;
 	height: 35px;
 	width: 45px;
+}
+.story_title{
+    font-family: "Vollkorn", serif;
+    margin-top:-5px;
 }

@@ -63,7 +63,7 @@ header("Pragma: no-cache");
 	    </header>
       <div class="brand_header">
           <div class="row">
-              <div class="span4">
+              <div class="span6">
                 <a class="brand" href="http://health.the-star.co.ke/"><img src="<?php echo base_url(); ?>assets/img/logo.png"></a>
               </div>
               <div class="span4" style="float:right;width:280px !important;">

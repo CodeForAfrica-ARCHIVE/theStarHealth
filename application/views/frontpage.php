@@ -42,6 +42,10 @@
 			</div>
 		</div>
 		<div class="span6">
+            <?php
+
+            print '<h3 class="story_title"><a href="'.$featured[0]['link'].'" target="_blank">'.$featured[0]['title'].'</a></h3>';
+            ?>
 			<div id="myCarousel" class="carousel slide">
                 <ol class="carousel-indicators">
                 	<?php
@@ -60,14 +64,14 @@
                 	?>
                 </ol>
                 <div class="carousel-inner" align="center" style="background-color:#000">
-                	
+
                 	<?php
                     $thumb = str_replace("http://the-star.co.ke", "http://www.the-star.co.ke", $featured[0]['thumb']);
-
                     print '<div class="item active"><img src="'.$thumb.'" alt="">
-				                    <div class="carousel-caption">
+
+				                    <div class="carousel-caption style="display:none;"">
 				                      <h6><a href="'.$featured[0]['link'].'" target="_blank">'.$featured[0]['title'].'</a></h6>
-				                     
+
 				                    </div>
 				                </div>';
 				  	$item = 0;
@@ -81,18 +85,18 @@
 				                    </div>
 		                	 	</div>';*/
 	                		$item++;
-							
+
 							}
 						$total++;
                 		}
                 	?>
-                  
+
                 </div>
                 <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
                 <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
               </div>
               <div style="text-align: center;font-size: 0.9em">
-               <a href="http://the-star.co.ke/contact" target="_blank"><strong>Tell us more</strong><br/>Do you have more information? Help us improve this story by sharing your experiences/evidence.</a>
+               <a href="http://www.the-star.co.ke/section/contact-details" target="_blank"><strong>Tell us more</strong><br/>Do you have more information? Help us improve this story by sharing your experiences/evidence.</a>
               </div>
 		</div>
 		<div class="span3" style='float:right'>
@@ -101,7 +105,7 @@
 			</div>
 			<div class="sidebar_widget down helpline">
 				<?php
-					
+
 				//if(count($helplines)>0){
 					print "<div><h5>Help lines</h5>";
 					foreach($helplines as $helpline){
@@ -144,7 +148,7 @@
 				print "</div>";
 				//}
 				?>
-			
+
 			</div>
 		</div>
 	</div>
