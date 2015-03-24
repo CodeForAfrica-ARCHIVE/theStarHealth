@@ -59,11 +59,11 @@ foreach($items as $d){
     //add to articles
     $item->sorted_tags = $tags;
 
+    $articles[] = array("node"=>$item);
 
 }
 
-
-file_put_contents("/home/nick/public_html/StarHealth/assets/feed.json", json_encode(array("nodes"=>$items)));
+file_put_contents("/home/nick/public_html/StarHealth/assets/feed.json", json_encode(array("nodes"=>$articles, "tags"=>$concepts)));
 
 
 function sub_exists($text, $array){

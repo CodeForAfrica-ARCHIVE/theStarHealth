@@ -221,17 +221,16 @@
 					                  
                 function filter_feed(section) {
                 	document.getElementById("filtered").innerHTML = "";
+                    /*
                 	document.getElementById("chev0").style.display='none';
-                	document.getElementById("chev1").style.display='none';
-					document.getElementById("chev2").style.display='none';
-					document.getElementById("chev3").style.display='none';
-										document.getElementById("chev"+section).style.display='block';
+					document.getElementById("chev"+section_id).style.display='block';*/
                    var file = "<?php echo base_url();?>index.php/frontpage_controller/filter_feed";
 				
 				  var request =  get_XmlHttp();
 				  document.getElementById("filtered").innerHTML = "";
 				 
 				  var the_data = 'section='+section;
+
 				  request.open("POST", file, true);
 					
 				  request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -249,17 +248,16 @@
 			<table class="table table-striped feed-filters">
 				<tbody>
 					<tr>
-						<td><a onclick="filter_feed(0);">Latest</a><i class="icon-chevron-right" id="chev0"></i></td>
+						<td><a onclick="filter_feed('All');">All</a></td>
 					</tr>
-					<tr>
-						<td><a onclick="filter_feed(1);">Features</a><i class="icon-chevron-right" id="chev1"></i></td>
-					</tr>
-					<tr>
-						<td><a onclick="filter_feed(2);">Opinion</a><i class="icon-chevron-right" id="chev2"></i></td>
-					</tr>
-					<tr>
-						<td><a onclick="filter_feed(3);">News</a><i class="icon-chevron-right" id="chev3"></i></td>
-					</tr>
+                    <?php
+                    foreach($tags as $k=>$v){
+
+                        print "<tr>
+						<td><a onclick=\"filter_feed('".$k."');\">".$k." (".$v.")</td>
+					</tr>";
+                    }
+                    ?>
 				</tbody>
 			</table>
 		</div>
@@ -287,7 +285,7 @@
 
 
 						print '<div class="article-meta">Posted '.$item['timestamp'].' | '; print ucwords(strtolower($item['author'])); 
-print ' | Posted under '.$item['tags']; 
+//print ' | Posted under '.$item['tags'];
 					print '</div>';
 					print "<hr />";
 

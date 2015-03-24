@@ -135,6 +135,9 @@ $('#main_search').keypress(function (e) {
                           <a href="http://www.the-star.co.ke/sections/starlife" target="_blank">StarLife</a>
                       </li>
                       <li class="">
+                          <a href="http://health.the-star.co.ke">StarHealth</a>
+                      </li>
+                      <li class="">
                           <a href="http://www.the-star.co.ke/sections/weekend-star" target="_blank">Weekend Star</a>
                       </li>
                   </ul>

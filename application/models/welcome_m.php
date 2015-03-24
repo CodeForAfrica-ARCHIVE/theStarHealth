@@ -9,46 +9,46 @@ class Welcome_m extends CI_Model {
         	return $specialties;
 
 }
+  public function get_tags(){
+      $feed_url = base_url().'assets/feed.json';//$this->config->item('feed_url');
+      $feed = json_decode(file_get_contents($feed_url, true));
 
-  public function get_all($section=null){
+      $items = $feed->tags;
+      $items = (array)$items;
+
+      arsort($items);
+
+      return $items;
+  }
+
+  public function get_all($section){
 	$feed_url = base_url().'assets/feed.json';//$this->config->item('feed_url');
 	$news = array();	
-		$feed = json_decode(file_get_contents($feed_url, true));
-		$items = $feed->nodes;
+    $feed = json_decode(file_get_contents($feed_url, true));
+    $items = $feed->nodes;
 
-        //skip 6 major stories
-        $majorTotal = 0;
+    foreach($items as $item){
+        $item = $item->node;
 
-		foreach($items as $item){
-			$item = $item->node;
-			
-			$newitem = $this->format_item($item);
-			$tags = explode(',', $newitem['tags']);
+        $newitem = $this->format_item($item);
+
+        $tags = $newitem['tags'];
 
 
-            //if(($newitem['thumb']!=null)&&($majorTotal<6)){
-                //skip
-           //     $majorTotal++;
-           // }else{
-                if(($section==null)||($section==0)){
-                    $news[] = $newitem;
+        if(($section=="All")){
+            $news[] = $newitem;
 
-                }else{
+        }else{
 
-                    //all sections
-                    $sections = array("Latest", "Features", "Opinion", "News");
-                    //selected section in array
-                    $sel_section = $sections[$section];
-                    //tags in article
-                    if(in_array($sel_section, $tags)){
-                        $news[] = $newitem;
-                    }
-                }
-           // }
+            if(in_array($section, $tags)){
+                $news[] = $newitem;
+            }
 
-		}
-	
-	return $news;
+        }
+
+    }
+
+    return $news;
  }	
   public function format_item($item){
   	$newitem = array();
@@ -57,7 +57,8 @@ class Welcome_m extends CI_Model {
 			
 			$newitem['title'] = $item->title;
 			
-			$newitem['tags'] = $item->Tag;
+			$newitem['tags'] = $item->sorted_tags;
+
 			$newitem['description'] = $this->first_paragraph($item->body);
 			
 			$newitem['timestamp'] = $item->created;
@@ -113,7 +114,7 @@ class Welcome_m extends CI_Model {
 		$thumb = explode(',', $thumb);
 		return $thumb[0];
 	}
-	public function get_tags($s){
+	public function get_tags_old($s){
 		$s = strip_tags(urldecode($s));
 		$s = str_replace('http://www.the-star.co.ke/', '', $s);
 		$s = str_replace('http://the-star.co.ke/', '', $s);
