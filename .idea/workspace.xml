@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eb075555-a541-4e3b-a7bf-683aa88a8594" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/alchemy_processing.php" afterPath="$PROJECT_DIR$/assets/alchemy_processing.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/feed.json" afterPath="$PROJECT_DIR$/assets/feed.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/frontpage.php" afterPath="$PROJECT_DIR$/application/views/frontpage.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/frontpage_controller.php" afterPath="$PROJECT_DIR$/application/controllers/frontpage_controller.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/welcome_m.php" afterPath="$PROJECT_DIR$/application/models/welcome_m.php" />
     </list>
     <ignored path="StarHealth.iws" />
@@ -41,7 +37,7 @@
       <file leaf-file-name="welcome_m.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/models/welcome_m.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="235" column="26" selection-start="6121" selection-end="6121" vertical-scroll-proportion="0.78647685" vertical-offset="3083" max-vertical-offset="4140">
+            <state line="239" column="57" selection-start="6269" selection-end="6269" vertical-scroll-proportion="0.49288255" vertical-offset="3308" max-vertical-offset="4185">
               <folding />
             </state>
           </provider>
@@ -601,7 +597,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/models/welcome_m.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="235" column="26" selection-start="6121" selection-end="6121" vertical-scroll-proportion="0.78647685" vertical-offset="3083" max-vertical-offset="4140">
+        <state line="239" column="57" selection-start="6269" selection-end="6269" vertical-scroll-proportion="0.49288255" vertical-offset="3308" max-vertical-offset="4185">
           <folding />
         </state>
       </provider>

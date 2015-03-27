@@ -232,9 +232,12 @@ class Welcome_m extends CI_Model {
        }
        //sort articles by closeness
 
-       print "<pre>";
-       print_r($articles);
-       print "</pre>";
+       $closeness = array();
+       foreach ($articles as $key => $row)
+       {
+           $closeness[$key] = $row['relevance'];
+       }
+       array_multisort($closeness, SORT_DESC, $articles);
 
        return $articles;
    }
