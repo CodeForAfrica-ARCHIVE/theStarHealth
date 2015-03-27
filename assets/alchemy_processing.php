@@ -4,10 +4,13 @@ $alchemyapi = new AlchemyAPI();
 
 
 $feed_url = "http://www.the-star.co.ke/star-health";
+
 $feed = json_decode(file_get_contents($feed_url, true));
+
 $items = $feed->nodes;
 
 $articles = array();
+
 $concepts = array();
 
 foreach($items as $d){
@@ -16,6 +19,8 @@ foreach($items as $d){
     $response = $alchemyapi->concepts('text',$item->body, null);
 
     $tags = array();
+
+    $weighted_tags = array();
 
     if ($response['status'] == 'OK') {
 
@@ -50,6 +55,9 @@ foreach($items as $d){
                 $tags[] = $concept['text'];
             }
 
+
+            $weighted_tags[$concept['text']] = $concept['relevance'];
+
         }
 
     } else {
@@ -59,9 +67,16 @@ foreach($items as $d){
     //add to articles
     $item->sorted_tags = $tags;
 
+    arsort($weighted_tags);
+
+    $item->weighted_tags = $weighted_tags;
+
     $articles[] = array("node"=>$item);
 
+
 }
+
+
 
 file_put_contents("/home/nick/public_html/StarHealth/assets/feed.json", json_encode(array("nodes"=>$articles, "tags"=>$concepts)));
 
