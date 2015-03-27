@@ -57,6 +57,8 @@ class Welcome_m extends CI_Model {
 
             $newitem['relevance'] = 0;
 
+            $newitem['similar_tags'] = 0;
+
 			$newitem['link'] = "http://the-star.co.ke" . $item->path;//str_replace('/news/', 'http://the-star.co.ke/news/', $item->path);
 			
 			$newitem['title'] = $item->title;
@@ -201,10 +203,6 @@ class Welcome_m extends CI_Model {
 
        $articles = array();
 
-       print "<pre>";
-       print_r($theme);
-       print "</pre>";
-
        $total_tags = count((array)$theme);
 
        foreach($theme as $key=>$value){
@@ -218,10 +216,12 @@ class Welcome_m extends CI_Model {
                    if(!array_key_exists($item['id'], $articles)){
                        //if not added else, add article, set closeness
                        $articles[$item['id']] = $item;
+                       $articles[$item['id']]['similar_tags'] = 0;
+                       $articles[$item['id']]['relevance'] = 0;
                    }
 
                    //edit closeness(average or sum?)
-                   $articles[$item['id']]['relevance'] = $articles[$item['id']]['relevance'] + ($total_tags * $item['theme']->$key);
+                   $articles[$item['id']]['relevance'] = $articles[$item['id']]['relevance'] + $item['theme']->$key;
 
                }
 
