@@ -10,8 +10,11 @@ class Frontpage_controller extends CI_Controller {
 		
 		$data['featured'] = $this->welcome_m->get_featured();
 		$data['overview'] = $data['featured']['0']['description'];
-		$nid = 	0;//$data['featured'][0]['nid'];
-		$data['sofar'] = $this->welcome_m->get_story_sofar($nid);
+
+		$featured_theme = 	$data['featured'][0]['theme'];
+
+		$data['sofar'] = $this->welcome_m->get_story_sofar($featured_theme);
+
 		$data['more_news'] = $this->welcome_m->get_all('All');
 		$data['tags'] = $this->welcome_m->get_tags();
 		$data['major'] = array_slice($data['featured'], 1);

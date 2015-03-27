@@ -11,29 +11,14 @@
 					print $overview;
 				?>
 				<h5>The story so far</h5>
-				<?php
-					function first_paragraph($string) {
+                <?php
+                    print "<ul>";
+                    foreach($sofar as $item){
+                        print '<li><a href="'.$item['link'].'" target="_blank">'.$item['title'].'</a></li>';
+                    }
+                    print "</ul>";
 
-						$string = explode(".", $string);
-						//then combine parts
-						if(sizeof($string)>1){
-							$newstring = $string[0].'. '.$string[1].'.';
-						}else{
-							$newstring = $string[0];
-						}
-					   return $newstring;
-					}
-					//$description = first_paragraph($news[0]['content']);
-                	/*print "<a href='".base_url()."index.php/article?id=".$news[0]['id']."'>".$news[0]['title']."</a><br/>";
-					//print $description;
-					 * */
-					 /*
-					 print "<table class='table table-striped' data-provides='rowlink'>";
-					 foreach($sofar as $item){
-					 	print "<tr><td><a href='".base_url()."index.php/article?id=".$item['id']."'>".$item['title']."</a></td></tr>";
-					 }
-					 print "</table>";*/
-				  ?>
+                ?>
 			</div>
 			<br />
 			<div class="sidebar_widget bottom evidence">
@@ -210,9 +195,9 @@
               </div>';
 			  
 			  }
-			  $total++;
+			     $total++;
 			  }
-}
+            }
 			  ?>
 
 		  	<br /><br />

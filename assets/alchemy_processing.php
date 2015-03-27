@@ -67,16 +67,19 @@ foreach($items as $d){
     //add to articles
     $item->sorted_tags = $tags;
 
+    //sort tags array most popular first
     arsort($weighted_tags);
 
-    $item->weighted_tags = $weighted_tags;
+    foreach($weighted_tags as $key=>$value){
+        //get heaviest item as theme
+        $item->theme = $key;
+        $item->theme_weight = $value;
+        break;
+    }
 
     $articles[] = array("node"=>$item);
 
-
 }
-
-
 
 file_put_contents("/home/nick/public_html/StarHealth/assets/feed.json", json_encode(array("nodes"=>$articles, "tags"=>$concepts)));
 

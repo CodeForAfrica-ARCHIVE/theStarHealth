@@ -53,7 +53,7 @@ class Welcome_m extends CI_Model {
   public function format_item($item){
   	$newitem = array();
 
-			$newitem['link'] = str_replace('/article/', 'http://the-star.co.ke/article/', $item->path);
+			$newitem['link'] = "http://the-star.co.ke" . $item->path;//str_replace('/news/', 'http://the-star.co.ke/news/', $item->path);
 			
 			$newitem['title'] = $item->title;
 			
@@ -64,7 +64,11 @@ class Welcome_m extends CI_Model {
 			$newitem['timestamp'] = $item->created;
  
 			$newitem['author'] =$item->field_author;
-			
+
+            $newitem['theme'] = $item->theme;
+
+            $newitem['theme_weight'] = $item->theme_weight;
+
 			if(isset($item->field_image)){
 
                     $field_image = $item->field_image;
@@ -97,12 +101,16 @@ class Welcome_m extends CI_Model {
 	$feed = json_decode(file_get_contents($feed_url, true));
 	$items = $feed->nodes;
 
-		foreach($items as $item){
-		
+        $i = 0;
+
+        foreach($items as $item){
 				$item = $item->node;
 					$newitem = $this->format_item($item);
 						if($newitem['thumb']!=null){
+
 							$news[] = $newitem;
+
+                            $i++;
 						}
 
 		}
@@ -183,17 +191,21 @@ class Welcome_m extends CI_Model {
 	$result = $this->db->get();
 	return $result->result_array();
    }
-   public function get_story_sofar($parent){
-   	$this->db->select("*, UNIX_TIMESTAMP() - timestamp AS TimeSpent, timestamp");
-	$this->db->from("news");
 
-	$this->db->where("parent", $parent);
-	
-	
-	$result = $this->db->get();
-	return $result->result_array();
+   public function get_story_sofar($theme){
+       $stories = $this->get_all('All');
 
+       $articles = array();
+
+       foreach($stories as $item){
+           if($item['theme']==$theme){
+               $articles[] = $item;
+           }
+       }
+
+       return $articles;
    }
+
    public function get_helplines(){
 	/*$this->db->select("h_story.*, helplines.*");
 	$this->db->from("h_story");

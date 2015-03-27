@@ -4,6 +4,9 @@
     <list default="true" id="eb075555-a541-4e3b-a7bf-683aa88a8594" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/alchemy_processing.php" afterPath="$PROJECT_DIR$/assets/alchemy_processing.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/feed.json" afterPath="$PROJECT_DIR$/assets/feed.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/frontpage.php" afterPath="$PROJECT_DIR$/application/views/frontpage.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/frontpage_controller.php" afterPath="$PROJECT_DIR$/application/controllers/frontpage_controller.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/welcome_m.php" afterPath="$PROJECT_DIR$/application/models/welcome_m.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="StarHealth.iws" />
@@ -27,55 +30,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="bootstrap.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/css/bootstrap.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4561" column="19" selection-start="85811" selection-end="85811" vertical-scroll-proportion="0.0" vertical-offset="69225" max-vertical-offset="92805">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="run_cron.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/run_cron.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="21" selection-start="155" selection-end="172" vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="240">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="alchemy_processing.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/alchemy_processing.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="84" column="16" selection-start="2001" selection-end="2001" vertical-scroll-proportion="0.37037036" vertical-offset="1050" max-vertical-offset="2265">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="feed.json" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/feed.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="161780" selection-start="161780" selection-end="161780" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="90">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="alchemyapi.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/alchemyapi.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="56" selection-start="1280" selection-end="1280" vertical-scroll-proportion="0.0" vertical-offset="615" max-vertical-offset="12060">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="footer.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/layout/footer.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="80" selection-start="1829" selection-end="1830" vertical-scroll-proportion="0.0" vertical-offset="480" max-vertical-offset="870">
+            <state line="77" column="5" selection-start="1934" selection-end="1934" vertical-scroll-proportion="0.45840406" vertical-offset="885" max-vertical-offset="2310">
               <folding />
             </state>
           </provider>
@@ -84,7 +42,34 @@
       <file leaf-file-name="welcome_m.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/models/welcome_m.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="26" selection-start="1013" selection-end="1013" vertical-scroll-proportion="0.0" vertical-offset="398" max-vertical-offset="3465">
+            <state line="47" column="0" selection-start="1171" selection-end="1171" vertical-scroll-proportion="-4.9215684" vertical-offset="454" max-vertical-offset="3645">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="frontpage.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/frontpage.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="45" selection-start="550" selection-end="550" vertical-scroll-proportion="-9.375" vertical-offset="0" max-vertical-offset="4695">
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#h6#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#a#1;n#div#2;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#a#3;n#div#2;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#2;n#div#2;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#a#0;n#div#2;n#div#2;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#1;n#div#2;n#div#2;n#div#1;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="feed.json" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/feed.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="13501" selection-start="13497" selection-end="13501" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="90">
               <folding />
             </state>
           </provider>
@@ -93,25 +78,7 @@
       <file leaf-file-name="frontpage_controller.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/frontpage_controller.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="59" selection-start="500" selection-end="500" vertical-scroll-proportion="0.0" vertical-offset="210" max-vertical-offset="765">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="filtered.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/filtered.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="59" selection-start="56" selection-end="56" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="article_m.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/models/article_m.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="330">
+            <state line="16" column="0" selection-start="469" selection-end="469" vertical-scroll-proportion="-3.745098" vertical-offset="49" max-vertical-offset="810">
               <folding />
             </state>
           </provider>
@@ -140,13 +107,13 @@
         <option value="$PROJECT_DIR$/assets/feed.json" />
         <option value="$PROJECT_DIR$/assets/alchemyapi.php" />
         <option value="$PROJECT_DIR$/application/config/config.php" />
-        <option value="$PROJECT_DIR$/application/models/welcome_m.php" />
         <option value="$PROJECT_DIR$/application/views/filtered.php" />
-        <option value="$PROJECT_DIR$/application/controllers/frontpage_controller.php" />
-        <option value="$PROJECT_DIR$/application/views/frontpage.php" />
         <option value="$PROJECT_DIR$/application/views/layout/header.php" />
         <option value="$PROJECT_DIR$/assets/css/bootstrap.css" />
         <option value="$PROJECT_DIR$/assets/alchemy_processing.php" />
+        <option value="$PROJECT_DIR$/application/controllers/frontpage_controller.php" />
+        <option value="$PROJECT_DIR$/application/views/frontpage.php" />
+        <option value="$PROJECT_DIR$/application/models/welcome_m.php" />
       </list>
     </option>
   </component>
@@ -217,6 +184,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="StarHealth" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="StarHealth" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="application" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -235,7 +216,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
+              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -551,23 +532,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/feed.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="161780" selection-start="161780" selection-end="161780" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="90">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/config/config.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="14" column="1" selection-start="475" selection-end="475" vertical-scroll-proportion="0.4520548" vertical-offset="45" max-vertical-offset="5520" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/welcome_m.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="26" selection-start="1013" selection-end="1013" vertical-scroll-proportion="0.0" vertical-offset="398" max-vertical-offset="3465">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/filtered.php">
@@ -577,28 +544,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/frontpage_controller.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="59" selection-start="500" selection-end="500" vertical-scroll-proportion="0.0" vertical-offset="210" max-vertical-offset="765">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/frontpage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="254" column="0" selection-start="9200" selection-end="9200" vertical-scroll-proportion="0.2962963" vertical-offset="3642" max-vertical-offset="4920" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/layout/header.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="48" column="34" selection-start="3205" selection-end="3205" vertical-scroll-proportion="-0.08994709" vertical-offset="771" max-vertical-offset="2340" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/article_m.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="604">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/bootstrap.css">
@@ -608,9 +556,53 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/article_m.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="604">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/feed.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="13501" selection-start="13497" selection-end="13501" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="562">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/frontpage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="45" selection-start="550" selection-end="550" vertical-scroll-proportion="-9.375" vertical-offset="0" max-vertical-offset="4695">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#h6#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#1;n#div#2;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#3;n#div#2;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#2;n#div#2;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#div#2;n#div#2;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#1;n#div#2;n#div#2;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/frontpage_controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="0" selection-start="469" selection-end="469" vertical-scroll-proportion="-3.745098" vertical-offset="49" max-vertical-offset="810">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/welcome_m.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="0" selection-start="1171" selection-end="1171" vertical-scroll-proportion="-4.9215684" vertical-offset="454" max-vertical-offset="3645">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/assets/alchemy_processing.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="84" column="16" selection-start="2001" selection-end="2001" vertical-scroll-proportion="0.37037036" vertical-offset="1050" max-vertical-offset="2265">
+        <state line="77" column="5" selection-start="1934" selection-end="1934" vertical-scroll-proportion="0.45840406" vertical-offset="885" max-vertical-offset="2310">
           <folding />
         </state>
       </provider>
