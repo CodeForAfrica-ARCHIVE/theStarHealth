@@ -115,7 +115,7 @@ class Welcome_m extends CI_Model {
 							$news[] = $newitem;
 
                             if($i ==0 ){
-                                $news['so_far'] = $this->get_story_so_far($newitem['theme']);
+                                $news['so_far'] = $this->get_story_so_far($newitem['theme'], $newitem['id']);
                             }
                             $i++;
 						}
@@ -198,7 +198,7 @@ class Welcome_m extends CI_Model {
 	return $result->result_array();
    }
 
-   public function get_story_so_far($theme){
+   public function get_story_so_far($theme, $featured_id){
        $stories = $this->get_all('All');
 
        $articles = array();
@@ -208,23 +208,25 @@ class Welcome_m extends CI_Model {
        foreach($theme as $key=>$value){
 
            foreach($stories as $item){
+               //skip the featured one itself
+               if(($featured_id != $item['id'])){
 
-               //check if story has theme
-               if(property_exists($item['theme'], $key)){
+                   //check if story has theme
+                   if(property_exists($item['theme'], $key)){
 
-                   //check if article already added
-                   if(!array_key_exists($item['id'], $articles)){
-                       //if not added else, add article, set closeness
-                       $articles[$item['id']] = $item;
-                       $articles[$item['id']]['similar_tags'] = 0;
-                       $articles[$item['id']]['relevance'] = 0;
+                       //check if article already added
+                       if(!array_key_exists($item['id'], $articles)){
+                           //if not added else, add article, set closeness
+                           $articles[$item['id']] = $item;
+                           $articles[$item['id']]['similar_tags'] = 0;
+                           $articles[$item['id']]['relevance'] = 0;
+                       }
+
+                       //edit closeness(average or sum?)
+                       $articles[$item['id']]['relevance'] = $articles[$item['id']]['relevance'] + $item['theme']->$key;
+
                    }
-
-                   //edit closeness(average or sum?)
-                   $articles[$item['id']]['relevance'] = $articles[$item['id']]['relevance'] + $item['theme']->$key;
-
                }
-
            }
 
            $total_tags--;
