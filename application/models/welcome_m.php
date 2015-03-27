@@ -51,7 +51,11 @@ class Welcome_m extends CI_Model {
     return $news;
  }	
   public function format_item($item){
-  	$newitem = array();
+  	        $newitem = array();
+
+            $newitem['id'] = $item->nid;
+
+            $newitem['relevance'] = 0;
 
 			$newitem['link'] = "http://the-star.co.ke" . $item->path;//str_replace('/news/', 'http://the-star.co.ke/news/', $item->path);
 			
@@ -66,8 +70,6 @@ class Welcome_m extends CI_Model {
 			$newitem['author'] =$item->field_author;
 
             $newitem['theme'] = $item->theme;
-
-            $newitem['theme_weight'] = $item->theme_weight;
 
 			if(isset($item->field_image)){
 
@@ -110,9 +112,11 @@ class Welcome_m extends CI_Model {
 
 							$news[] = $newitem;
 
+                            if($i ==0 ){
+                                $news['so_far'] = $this->get_story_so_far($newitem['theme']);
+                            }
                             $i++;
 						}
-
 		}
 	
 	return $news;
@@ -192,16 +196,45 @@ class Welcome_m extends CI_Model {
 	return $result->result_array();
    }
 
-   public function get_story_sofar($theme){
+   public function get_story_so_far($theme){
        $stories = $this->get_all('All');
 
        $articles = array();
 
-       foreach($stories as $item){
-           if($item['theme']==$theme){
-               $articles[] = $item;
+       print "<pre>";
+       print_r($theme);
+       print "</pre>";
+
+       $total_tags = count((array)$theme);
+
+       foreach($theme as $key=>$value){
+
+           foreach($stories as $item){
+
+               //check if story has theme
+               if(property_exists($item['theme'], $key)){
+
+                   //check if article already added
+                   if(!array_key_exists($item['id'], $articles)){
+                       //if not added else, add article, set closeness
+                       $articles[$item['id']] = $item;
+                   }
+
+                   //edit closeness(average or sum?)
+                   $articles[$item['id']]['relevance'] = $articles[$item['id']]['relevance'] + ($total_tags * $item['theme']->$key);
+
+               }
+
            }
+
+           $total_tags--;
+
        }
+       //sort articles by closeness
+
+       print "<pre>";
+       print_r($articles);
+       print "</pre>";
 
        return $articles;
    }

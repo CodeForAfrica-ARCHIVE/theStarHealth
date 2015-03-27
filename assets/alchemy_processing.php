@@ -70,12 +70,7 @@ foreach($items as $d){
     //sort tags array most popular first
     arsort($weighted_tags);
 
-    foreach($weighted_tags as $key=>$value){
-        //get heaviest item as theme
-        $item->theme = $key;
-        $item->theme_weight = $value;
-        break;
-    }
+    $item->theme = $weighted_tags;
 
     $articles[] = array("node"=>$item);
 

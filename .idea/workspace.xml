@@ -7,7 +7,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/frontpage.php" afterPath="$PROJECT_DIR$/application/views/frontpage.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/frontpage_controller.php" afterPath="$PROJECT_DIR$/application/controllers/frontpage_controller.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/welcome_m.php" afterPath="$PROJECT_DIR$/application/models/welcome_m.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="StarHealth.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,19 +29,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="alchemy_processing.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="alchemy_processing.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/alchemy_processing.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="77" column="5" selection-start="1934" selection-end="1934" vertical-scroll-proportion="0.45840406" vertical-offset="885" max-vertical-offset="2310">
+            <state line="15" column="22" selection-start="273" selection-end="273" vertical-scroll-proportion="-5.625" vertical-offset="90" max-vertical-offset="2235">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="welcome_m.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="welcome_m.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/models/welcome_m.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="0" selection-start="1171" selection-end="1171" vertical-scroll-proportion="-4.9215684" vertical-offset="454" max-vertical-offset="3645">
+            <state line="235" column="26" selection-start="6121" selection-end="6121" vertical-scroll-proportion="0.78647685" vertical-offset="3083" max-vertical-offset="4140">
               <folding />
             </state>
           </provider>
@@ -51,7 +50,7 @@
       <file leaf-file-name="frontpage.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/frontpage.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="45" selection-start="550" selection-end="550" vertical-scroll-proportion="-9.375" vertical-offset="0" max-vertical-offset="4695">
+            <state line="18" column="21" selection-start="687" selection-end="687" vertical-scroll-proportion="-11.25" vertical-offset="0" max-vertical-offset="4725">
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
@@ -69,7 +68,7 @@
       <file leaf-file-name="feed.json" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/feed.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="13501" selection-start="13497" selection-end="13501" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="90">
+            <state line="0" column="6457" selection-start="0" selection-end="198328" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="90">
               <folding />
             </state>
           </provider>
@@ -78,7 +77,7 @@
       <file leaf-file-name="frontpage_controller.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/frontpage_controller.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="0" selection-start="469" selection-end="469" vertical-scroll-proportion="-3.745098" vertical-offset="49" max-vertical-offset="810">
+            <state line="30" column="46" selection-start="1079" selection-end="1079" vertical-scroll-proportion="-7.8627453" vertical-offset="49" max-vertical-offset="780">
               <folding />
             </state>
           </provider>
@@ -565,14 +564,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/feed.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="13501" selection-start="13497" selection-end="13501" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="562">
+        <state line="0" column="6457" selection-start="0" selection-end="198328" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="562">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/frontpage_controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="46" selection-start="1079" selection-end="1079" vertical-scroll-proportion="-7.8627453" vertical-offset="49" max-vertical-offset="780">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/alchemy_processing.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="22" selection-start="273" selection-end="273" vertical-scroll-proportion="-5.625" vertical-offset="90" max-vertical-offset="2235">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/frontpage.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="45" selection-start="550" selection-end="550" vertical-scroll-proportion="-9.375" vertical-offset="0" max-vertical-offset="4695">
+        <state line="18" column="21" selection-start="687" selection-end="687" vertical-scroll-proportion="-11.25" vertical-offset="0" max-vertical-offset="4725">
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
@@ -586,23 +599,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/frontpage_controller.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="0" selection-start="469" selection-end="469" vertical-scroll-proportion="-3.745098" vertical-offset="49" max-vertical-offset="810">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/models/welcome_m.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="0" selection-start="1171" selection-end="1171" vertical-scroll-proportion="-4.9215684" vertical-offset="454" max-vertical-offset="3645">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/alchemy_processing.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="5" selection-start="1934" selection-end="1934" vertical-scroll-proportion="0.45840406" vertical-offset="885" max-vertical-offset="2310">
+        <state line="235" column="26" selection-start="6121" selection-end="6121" vertical-scroll-proportion="0.78647685" vertical-offset="3083" max-vertical-offset="4140">
           <folding />
         </state>
       </provider>

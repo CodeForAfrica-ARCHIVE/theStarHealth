@@ -11,9 +11,7 @@ class Frontpage_controller extends CI_Controller {
 		$data['featured'] = $this->welcome_m->get_featured();
 		$data['overview'] = $data['featured']['0']['description'];
 
-		$featured_theme = 	$data['featured'][0]['theme'];
-
-		$data['sofar'] = $this->welcome_m->get_story_sofar($featured_theme);
+		$data['sofar'] = $data['featured']['so_far'];
 
 		$data['more_news'] = $this->welcome_m->get_all('All');
 		$data['tags'] = $this->welcome_m->get_tags();

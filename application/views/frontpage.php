@@ -13,9 +13,11 @@
 				<h5>The story so far</h5>
                 <?php
                     print "<ul>";
-                    foreach($sofar as $item){
+
+                    foreach($sofar as $id=>$item){
                         print '<li><a href="'.$item['link'].'" target="_blank">'.$item['title'].'</a></li>';
                     }
+
                     print "</ul>";
 
                 ?>
