@@ -1,7 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 class Welcome_m extends CI_Model {
 
-    public function get_specialties(){
+public function get_specialties(){
         	$this->db->select("*");
         	$this->db->from("abbr");
         	$result = $this->db->get();
