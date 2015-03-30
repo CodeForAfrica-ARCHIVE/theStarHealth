@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eb075555-a541-4e3b-a7bf-683aa88a8594" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/alchemy_processing.php" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/feed.json" afterPath="$PROJECT_DIR$/assets/feed.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/run_cron.php" afterPath="$PROJECT_DIR$/assets/run_cron.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="StarHealth.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,10 +35,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="run_cron.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="run_cron.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/run_cron.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="14" selection-start="20" selection-end="20" vertical-scroll-proportion="-1.5391304" vertical-offset="900" max-vertical-offset="1710">
+            <state line="20" column="0" selection-start="469" selection-end="469" vertical-scroll-proportion="-5.882353" vertical-offset="0" max-vertical-offset="1950">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="oldsha.txt" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/assets/oldsha.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="604">
               <folding />
             </state>
           </provider>
@@ -252,6 +259,23 @@
     <list size="0" />
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="all">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="eb075555-a541-4e3b-a7bf-683aa88a8594" name="Default" comment="" />
@@ -262,14 +286,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="43" y="24" width="1323" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23419204" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23419204" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -572,7 +596,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/run_cron.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="14" selection-start="20" selection-end="20" vertical-scroll-proportion="-1.5391304" vertical-offset="900" max-vertical-offset="1710">
+        <state line="20" column="0" selection-start="469" selection-end="469" vertical-scroll-proportion="-5.882353" vertical-offset="0" max-vertical-offset="1950">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/oldsha.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="604">
           <folding />
         </state>
       </provider>
