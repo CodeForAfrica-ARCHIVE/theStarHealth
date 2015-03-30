@@ -9,118 +9,126 @@ class Welcome_m extends CI_Model {
         	return $specialties;
 
 }
+  public function get_tags(){
+      $feed_url = base_url().'assets/feed.json';//$this->config->item('feed_url');
+      $feed = json_decode(file_get_contents($feed_url, true));
 
-  public function get_all($section=null){
+      $items = $feed->tags;
+      $items = (array)$items;
+
+      arsort($items);
+
+      return $items;
+  }
+
+  public function get_all($section){
 	$feed_url = base_url().'assets/feed.json';//$this->config->item('feed_url');
 	$news = array();	
-		$feed = json_decode(file_get_contents($feed_url, true));
-		$items = $feed->nodes;
-		
-		foreach($items as $item){
-			$item = $item->node;
-			
-			$newitem = $this->format_item($item);
-			$tags = explode(',', $newitem['tags']);	
-			
-			if(($section==null)||($section==0)){
-				if(in_array('Major', $tags)){
-					
-				}elseif(in_array('Featured', $tags)){
-					
-				}else{
-					$news[] = $newitem;
-				}
-			}else{
-				
-				//all sections	
-				$sections = array("Latest", "Features", "Opinion", "News");
-				//selected section in array
-				$sel_section = $sections[$section];
-				//tags in article
-				if(in_array('Major', $tags)){
-					
-				}elseif(in_array($sel_section, $tags)){
-						$news[] = $newitem;
-				}
-			}	
-		}
-	
-	return $news;
+    $feed = json_decode(file_get_contents($feed_url, true));
+    $items = $feed->nodes;
+
+    foreach($items as $item){
+        $item = $item->node;
+
+        $newitem = $this->format_item($item);
+
+        $tags = $newitem['tags'];
+
+
+        if(($section=="All")){
+            $news[] = $newitem;
+
+        }else{
+
+            if(in_array($section, $tags)){
+                $news[] = $newitem;
+            }
+
+        }
+
+    }
+
+    return $news;
  }	
   public function format_item($item){
-  	$newitem = array();
+  	        $newitem = array();
 
-			$newitem['link'] = str_replace('/news/', 'http://the-star.co.ke/news/', $item->path);
+            $newitem['id'] = $item->nid;
+
+            $newitem['relevance'] = 0;
+
+            $newitem['similar_tags'] = 0;
+
+			$newitem['link'] = "http://the-star.co.ke" . $item->path;//str_replace('/news/', 'http://the-star.co.ke/news/', $item->path);
 			
 			$newitem['title'] = $item->title;
 			
-			$newitem['tags'] = $item->Tag;
+			$newitem['tags'] = $item->sorted_tags;
+
 			$newitem['description'] = $this->first_paragraph($item->body);
 			
 			$newitem['timestamp'] = $item->created;
  
 			$newitem['author'] =$item->field_author;
-			
+
+            $newitem['theme'] = $item->theme;
+
 			if(isset($item->field_image)){
-				if(trim($item->field_image)!=''){
-					$newitem['thumb'] = $this->get_thumbnail($item->field_image); 
-				}else{
-					$newitem['thumb'] = null;
-				}
+
+                    $field_image = $item->field_image;
+
+                    //check if is array
+                    if(is_array($field_image)){
+                        $field_image = $field_image[0];
+                    }
+
+                    if(property_exists($field_image, "src")){
+
+                        $newitem['thumb'] = $field_image->src;
+
+                    }else{
+
+                        $newitem['thumb'] = null;
+                    }
+
+
 			}else{
+
 				$newitem['thumb'] = null;
+
 			}
 			return $newitem;
   }
   public function get_featured(){
 	$feed_url = base_url().'assets/feed.json';//$this->config->item('feed_url');
 	$news = array();	
-		$feed = json_decode(file_get_contents($feed_url, true));
-		$items = $feed->nodes;
-		
+	$feed = json_decode(file_get_contents($feed_url, true));
+	$items = $feed->nodes;
 
-		foreach($items as $item){
-		
+        $i = 0;
+
+        foreach($items as $item){
 				$item = $item->node;
-					$newitem = $this->format_item($item);		
-					$tags = explode(',', $newitem['tags']);	
-				
-					if(in_array('Major', $tags)){
+					$newitem = $this->format_item($item);
 						if($newitem['thumb']!=null){
-							$news[] = $newitem;
-						}
-					}
-				
-			
-		}
-	
-	return $news;
- }	
-public function get_major(){
-	$feed_url = base_url().'assets/feed.json';//$this->config->item('feed_url');
-	$news = array();	
-		$feed = json_decode(file_get_contents($feed_url, true));
-		$items = $feed->nodes;
-		
-		foreach($items as $item){
-			$item = $item->node;
-				$newitem = $this->format_item($item);		
-				$tags = explode(',', $newitem['tags']);	
-			
-				if(in_array('Major', $tags)){
 
-					$news[] = $newitem;
-				}
-			
+							$news[] = $newitem;
+
+                            if($i ==0 ){
+                                $news['so_far'] = $this->get_story_so_far($newitem['theme'], $newitem['id']);
+                            }
+                            $i++;
+						}
 		}
 	
 	return $news;
  }	
+
 	public function get_thumbnail($thumb){
 		$thumb = explode(',', $thumb);
 		return $thumb[0];
 	}
-	public function get_tags($s){
+	public function get_tags_old($s){
 		$s = strip_tags(urldecode($s));
 		$s = str_replace('http://www.the-star.co.ke/', '', $s);
 		$s = str_replace('http://the-star.co.ke/', '', $s);
@@ -189,17 +197,53 @@ public function get_major(){
 	$result = $this->db->get();
 	return $result->result_array();
    }
-   public function get_story_sofar($parent){
-   	$this->db->select("*, UNIX_TIMESTAMP() - timestamp AS TimeSpent, timestamp");
-	$this->db->from("news");
 
-	$this->db->where("parent", $parent);
-	
-	
-	$result = $this->db->get();
-	return $result->result_array();
+   public function get_story_so_far($theme, $featured_id){
+       $stories = $this->get_all('All');
 
+       $articles = array();
+
+       $total_tags = count((array)$theme);
+
+       foreach($theme as $key=>$value){
+
+           foreach($stories as $item){
+               //skip the featured one itself
+               if(($featured_id != $item['id'])){
+
+                   //check if story has theme
+                   if(property_exists($item['theme'], $key)){
+
+                       //check if article already added
+                       if(!array_key_exists($item['id'], $articles)){
+                           //if not added else, add article, set closeness
+                           $articles[$item['id']] = $item;
+                           $articles[$item['id']]['similar_tags'] = 0;
+                           $articles[$item['id']]['relevance'] = 0;
+                       }
+
+                       //edit closeness(average or sum?)
+                       $articles[$item['id']]['relevance'] = $articles[$item['id']]['relevance'] + $item['theme']->$key;
+
+                   }
+               }
+           }
+
+           $total_tags--;
+
+       }
+       //sort articles by closeness
+
+       $closeness = array();
+       foreach ($articles as $key => $row)
+       {
+           $closeness[$key] = $row['relevance'];
+       }
+       array_multisort($closeness, SORT_DESC, $articles);
+
+       return $articles;
    }
+
    public function get_helplines(){
 	/*$this->db->select("h_story.*, helplines.*");
 	$this->db->from("h_story");
