@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eb075555-a541-4e3b-a7bf-683aa88a8594" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/feed.json" afterPath="$PROJECT_DIR$/assets/feed.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/oldsha.txt" afterPath="$PROJECT_DIR$/assets/oldsha.txt" />
-    </list>
+    <list default="true" id="eb075555-a541-4e3b-a7bf-683aa88a8594" name="Default" comment="" />
     <ignored path="StarHealth.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,53 +22,7 @@
     <favorites_list name="StarHealth" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="welcome_m.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/models/welcome_m.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="183" column="2" selection-start="4767" selection-end="4767" vertical-scroll-proportion="0.0" vertical-offset="2745" max-vertical-offset="4215">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="run_cron.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/run_cron.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="123" column="0" selection-start="2857" selection-end="2857" vertical-scroll-proportion="0.0" vertical-offset="1845" max-vertical-offset="1950">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="frontpage.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/frontpage.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="34" selection-start="817" selection-end="817" vertical-scroll-proportion="0.0" vertical-offset="330" max-vertical-offset="4755">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="feed.json" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/feed.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="6457" selection-start="0" selection-end="215731" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="90">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="frontpage_controller.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/controllers/frontpage_controller.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="34" selection-start="1156" selection-end="1156" vertical-scroll-proportion="0.8222591" vertical-offset="0" max-vertical-offset="780">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -289,13 +240,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/frontpage_controller.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="22" selection-start="518" selection-end="552" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="1260">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/layout/header.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="36" column="65" selection-start="2687" selection-end="2687" vertical-scroll-proportion="0.0" vertical-offset="430" max-vertical-offset="1680" />
@@ -319,13 +263,6 @@
     <entry file="file://$PROJECT_DIR$/assets/css/bootstrap.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4362" column="19" selection-start="83330" selection-end="83330" vertical-scroll-proportion="0.0" vertical-offset="65049" max-vertical-offset="93135" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/frontpage_controller.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="14" selection-start="1232" selection-end="1232" vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="1095">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/models/welcome_m.php">
@@ -365,13 +302,6 @@
         <state line="4422" column="13" selection-start="84147" selection-end="84147" vertical-scroll-proportion="0.0" vertical-offset="66174" max-vertical-offset="93165" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/frontpage_controller.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="0" selection-start="862" selection-end="862" vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="1095">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/models/welcome_m.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="0" selection-start="336" selection-end="336" vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="3555">
@@ -407,13 +337,6 @@
     <entry file="file://$PROJECT_DIR$/assets/css/bootstrap.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6163" column="21" selection-start="126385" selection-end="126385" vertical-scroll-proportion="0.0" vertical-offset="92242" max-vertical-offset="93165" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/frontpage_controller.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="0" selection-start="862" selection-end="862" vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="1095">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/models/welcome_m.php">
@@ -513,13 +436,6 @@
     <entry file="file://$PROJECT_DIR$/application/views/frontpage.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="22" column="34" selection-start="817" selection-end="817" vertical-scroll-proportion="0.0" vertical-offset="330" max-vertical-offset="4755">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/frontpage_controller.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="34" selection-start="1156" selection-end="1156" vertical-scroll-proportion="0.8222591" vertical-offset="0" max-vertical-offset="780">
           <folding />
         </state>
       </provider>
