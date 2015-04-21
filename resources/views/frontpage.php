@@ -152,12 +152,12 @@
         session_start();
         ?>
         <link rel="stylesheet" type="text/css" href="<?php echo asset("css/jquery.autocomplete.css");?>">
-        <script type="text/javascript" src="<?php echo asset("ajax-autocomplete/jquery.js");?>></script>
+        <script type="text/javascript" src="<?php echo asset("ajax-autocomplete/jquery.js");?>"></script>
 
-        <script type='text/javascript' src="<?php echo asset("js/jquery.autocomplete.js");?>></script>
+        <script type='text/javascript' src="<?php echo asset("js/jquery.autocomplete.js");?>"></script>
         <script type="text/javascript">
             $().ready(function() {
-                $("#course").autocomplete("dodgy/data", {
+                $("#doctorName").autocomplete("getDoctors", {
                     width: 260,
                     matchContains: true,
                     //mustMatch: true,
@@ -167,10 +167,28 @@
                     //multipleSeparator: ",",
                     selectFirst: false
                 });
+                $("#grabDetails").click(function(){
+                    var name = $("#doctorName").val();
+
+                    $("#dname").html("<h4>Results for: " + name + "</h4>");
+
+                    $("#mybox").html("");
+
+                    $("#loading").show();
+
+                    $.ajax({url:"singleDoctor?q=" + name,success:function(result){
+                        $("#doctorName").val("");
+
+                        $("#mybox").html(result);
+
+                        $("#loading").hide();
+                    }});
+                });
             });
         </script>
-        <input type="text" placeholder="Start typing doctor's name" class="search" name="course" id="course" />
+        <input type="text" placeholder="Start typing doctor's name" class="search" name="course" id="doctorName" />
         <script>
+
             function get_XmlHttp() {
 
                 var xmlHttp = null;
@@ -185,24 +203,6 @@
                 return xmlHttp;
             }
 
-            function ajaxrequest(file) {
-                var request =  get_XmlHttp();
-                document.getElementById("mybox").innerHTML = "";
-                document.getElementById("loading").style.display = 'block';
-                var the_data = 'name='+document.getElementById("course").value;
-                request.open("POST", file, true);
-
-                request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-                request.send(the_data);
-
-                request.onreadystatechange = function() {
-                    if (request.readyState == 4) {
-                        document.getElementById("mybox").innerHTML = request.responseText;
-                        document.getElementById("loading").style.display='none';
-                    }
-                }
-
-            }
             function specialists_request(file){
                 var request = get_XmlHttp();
                 document.getElementById("mybox").innerHTML = "";
@@ -291,7 +291,7 @@
                 }
             }
         </script>
-        <button class='btn add-on red_button' href="#myModal" role="button" class="btn" data-toggle="modal" onclick="ajaxrequest('dodgy/search')">
+        <button class='btn add-on red_button' href="#myModal" role="button" class="btn" data-toggle="modal" id="grabDetails">
             <i class="icon-search"></i>
         </button>
 
@@ -301,7 +301,7 @@
     <div id="myModal" style="text-align:justify !important;" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-            <h3 id="myModalLabel"></h3>
+            <h3 id="dname"></h3>
         </div>
         <div class="modal-body">
             <p>
@@ -583,7 +583,7 @@
                   </div>
                 </div>
               </div>';
-			  
+
 			  }
 			     $total++;
 			  }
@@ -592,33 +592,31 @@
 
 		  	<br /><br />
 			<div class="row-header"><h4>Feed Filters</h4></div>
-			<script>        
-					                  
+			<script>
                 function filter_feed(section) {
                 	document.getElementById("filtered").innerHTML = "";
                     /*
                 	document.getElementById("chev0").style.display='none';
 					document.getElementById("chev"+section_id).style.display='block';*/
                    var file = "<?php echo asset('');?>index.php/frontpage_controller/filter_feed";
-				
+
 				  var request =  get_XmlHttp();
 				  document.getElementById("filtered").innerHTML = "";
-				 
+
 				  var the_data = 'section='+section;
 
 				  request.open("POST", file, true);
-					
+
 				  request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 				  request.send(the_data);
-				  document.getElementById("filtered").innerHTML = "<div style='text-align:center'><img src='<?php echo asset('');?>img/preloader.gif'></div>";	
+				  document.getElementById("filtered").innerHTML = "<div style='text-align:center'><img src='<?php echo asset('');?>img/preloader.gif'></div>";
 				  request.onreadystatechange = function() {
-					
+
 				  if (request.readyState == 4) {
 				      document.getElementById("filtered").innerHTML = request.responseText;
 				    }
 				  }
                 }
-             
         </script>
 			<table class="table table-striped feed-filters">
 				<tbody>
@@ -639,19 +637,19 @@
 		<script>
 		document.getElementById("chev1").style.display='none';
 		document.getElementById("chev2").style.display='none';
-		document.getElementById("chev3").style.display='none';		
+		document.getElementById("chev3").style.display='none';
 		</script>
 		<div class="span6 newsfeed" id="filtered">
 			<div class="row-header"><h4>Other Health News</h4></div>
 			<h6>A round-up of the all the latest health news from theStar <i class="icon-arrow-down" style="margin-left: 10px"></i></h6>
 			<br />
 			<?php
-			
+
 			$items=0;
 			  	foreach($more_news as $item){
 			  		if($items<40){
                     $thumb = str_replace("http://the-star.co.ke", "http://www.the-star.co.ke", $item['thumb']);
-					
+
 			  		print "<h4><a href='".$item['link']."' target='_blank'>".$item['title']."</a></h4>";
 					if($item['thumb']!=null){
 						print "<img src='".$thumb."' style='width:100px;float:left; margin:10px'><br />";
@@ -659,13 +657,13 @@
 					print "<div>".$item['description']."</div><br />";
 
 
-						print '<div class="article-meta">Posted '.$item['timestamp'].' | '; print ucwords(strtolower($item['author'])); 
+						print '<div class="article-meta">Posted '.$item['timestamp'].' | '; print ucwords(strtolower($item['author']));
 //print ' | Posted under '.$item['tags'];
 					print '</div>';
 					print "<hr />";
 
 					$items++;
-					
+
 					}
 			  	}
 				?>
@@ -673,7 +671,7 @@
 		<div class="span3 sidebar_widget2">
 			<div class="row-header"><h4>App Store</h4></div>
 			<p>Download the Star's mobile Apps, eBooks, and other tools.</p>
-			<a href="https://play.google.com/store/apps/details?id=org.codeforafrica.starreports" target="_blank"><img src="<?php echo public_path()?>img/android-icon.png"></a>
+			<a href="https://play.google.com/store/apps/details?id=org.codeforafrica.starreports" target="_blank"><img src="<?php echo asset('');?>img/android-icon.png"></a>
 			<hr />
 			<a href="http://code4kenya.org" target="_blank"><img style="height: 80px" src="<?php echo asset('');?>img/c4k_logo.png" id="c4k_partner"></a>
 			<br />

@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\DoctorsController;
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -12,6 +12,37 @@
 */
 
 Route::get('/', 'WelcomeController@index');
+
+
+Route::get('getDoctors', function()
+{
+    $term = Request::input('q');
+
+    $result = '';
+
+    if(isset($term)){
+        $result = DoctorsController::getData($term);
+    }
+
+    return $result;
+});
+Route::get('singleDoctor', function()
+{
+    $term = Request::input('q');
+
+    $result = '';
+
+    if(isset($term)){
+        $result = DoctorsController::singleDoctor($term);
+    }
+
+    return $result;
+});
+
+Route::get('profile', [
+    'middleware' => 'auth',
+    'uses' => 'UserController@showProfile'
+]);
 
 Route::get('home', 'HomeController@index');
 
