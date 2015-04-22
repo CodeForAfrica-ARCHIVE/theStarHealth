@@ -188,8 +188,13 @@
                     var min = $("#min").val();
                     var max = $("#max").val();
                     var town = $("#town").val();
+                    var ctown = town;
 
-                    $("#dname").html("<h4>Coverage in " + town + "</h4>");
+                    if(town == "Select town"){
+                        ctown = "all towns";
+                    }
+
+                    $("#dname").html("<h4>Coverage in " + ctown + "</h4>");
 
                     $("#mybox").html("");
 
@@ -206,7 +211,19 @@
                     var specialty = $("#specialist").val();
                     var county = $("#county_s").val();
 
-                    $("#dname").html("<h4>"+specialty+" in " + county + " county</h4>");
+                    var ccounty = county;
+                    var cspecialty = specialty;
+
+                    if(county == "Select county"){
+                        ccounty = "all counties";
+                    }
+
+                    if(specialty == "Select specialty"){
+                        cspecialty = "All specialties"
+                    }
+
+
+                    $("#dname").html("<h4>"+cspecialty+" in " + ccounty + "</h4>");
 
                     $("#mybox").html("");
 
