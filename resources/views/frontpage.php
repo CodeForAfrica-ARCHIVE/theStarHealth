@@ -202,6 +202,23 @@
                         $("#loading").hide();
                     }});
                 });
+                $("#grabSpecialists").click(function(){
+                    var specialty = $("#specialist").val();
+                    var county = $("#county_s").val();
+
+                    $("#dname").html("<h4>"+specialty+" in " + county + " county</h4>");
+
+                    $("#mybox").html("");
+
+                    $("#loading").show();
+
+                    $.ajax({url:"specialty?specialty=" + specialty + "&county=" + county,success:function(result){
+
+                        $("#mybox").html(result);
+
+                        $("#loading").hide();
+                    }});
+                });
             });
         </script>
         <input type="text" placeholder="Start typing doctor's name" class="search" name="course" id="doctorName" />
@@ -371,7 +388,7 @@
             }
             ?>
         </select>
-        <button class='btn add-on red_button red_button_round' href="#myModal" role="button" class="btn" data-toggle="modal" onclick="specialists_request('facilities/search')">
+        <button class='btn add-on red_button red_button_round' href="#myModal" role="button" class="btn" data-toggle="modal" id="grabSpecialists">
             <i class="icon-search"></i>
         </button>
     </div>

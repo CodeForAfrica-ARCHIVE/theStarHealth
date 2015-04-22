@@ -1,6 +1,7 @@
 <?php
 use App\Http\Controllers\DoctorsController;
 use App\Http\Controllers\NHIFController;
+use App\Http\Controllers\HospitalsController;
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -47,7 +48,13 @@ Route::get('nhifcoverage', function()
 
     return NHIFController::coverage($min, $max, $town);
 });
+Route::get('specialty', function()
+{
+    $specialty = Request::input('specialty');
+    $town = Request::input('town');
 
+    return HospitalsController::specialty($specialty, $town);
+});
 Route::get('profile', [
     'middleware' => 'auth',
     'uses' => 'UserController@showProfile'
