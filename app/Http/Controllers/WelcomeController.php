@@ -44,8 +44,11 @@ class WelcomeController extends Controller {
         $data['helplines'] = array();
         $data['supportgroups'] = array();
         $data['socialmedias'] = array();
-        $data['counties'] = array("KIAMBU", "KIRINYAGA", "MARAGUA", "MURANGA", "NYANDARUA", "NYERI", "THIKA", "KILIFI", "KWALE", "LAMU", "MALINDI", "MOMBASA", "TAITA TAVETA", "TANA RIVER", "CENTRAL MERU", "EMBU", "ISIOLO", "KITUI", "MACHAKOS", "MAKUENI", "MARSABIT", "MBEERE", "MOYALE", "MWINGI", "NORTH MERU", "SOUTH MERU", "THARAKA", "GARISSA", "MANDERA", "WAJIR", "NAIROBI", "BONDO", "GUCHA", "HOMA BAY", "KISII CENTRAL", "KISII NORTH", "KISUMU", "KURIA", "MIGORI", "NYANDO", "RACHUONYO", "SIAYA", "SUBA", "BARINGO", "BOMET", "BURET", "KAJIADO", "KEIYO", "KERICHO", "KOIBATEK", "LAIKIPIA", "MARAKWET", "NAKURU", "NANDI", "NAROK", "SAMBURU", "TRANS MARA", "TRANS-NZOIA", "TURKANA", "UASIN GISHU", "WEST POKOT", "BUNGOMA", "BUSIA", "BUTERE/MUMIAS", "KAKAMEGA", "LUGARI/MALAVA", "MOUNT ELGON", "TESO", "VIHIGA", "DIST", "DISTRICT", "TRANSMARA");
-        $data['towns'] = array("NAIROBI",
+        $counties = array("KIAMBU", "KIRINYAGA", "MARAGUA", "MURANGA", "NYANDARUA", "NYERI", "THIKA", "KILIFI", "KWALE", "LAMU", "MALINDI", "MOMBASA", "TAITA TAVETA", "TANA RIVER", "CENTRAL MERU", "EMBU", "ISIOLO", "KITUI", "MACHAKOS", "MAKUENI", "MARSABIT", "MBEERE", "MOYALE", "MWINGI", "NORTH MERU", "SOUTH MERU", "THARAKA", "GARISSA", "MANDERA", "WAJIR", "NAIROBI", "BONDO", "GUCHA", "HOMA BAY", "KISII CENTRAL", "KISII NORTH", "KISUMU", "KURIA", "MIGORI", "NYANDO", "RACHUONYO", "SIAYA", "SUBA", "BARINGO", "BOMET", "BURET", "KAJIADO", "KEIYO", "KERICHO", "KOIBATEK", "LAIKIPIA", "MARAKWET", "NAKURU", "NANDI", "NAROK", "SAMBURU", "TRANS MARA", "TRANS-NZOIA", "TURKANA", "UASIN GISHU", "WEST POKOT", "BUNGOMA", "BUSIA", "BUTERE/MUMIAS", "KAKAMEGA", "LUGARI/MALAVA", "MOUNT ELGON", "TESO", "VIHIGA", "DIST", "DISTRICT", "TRANSMARA");
+        sort($counties);
+        $data['counties'] = $counties;
+
+        $towns = array("NAIROBI",
             "KAWANGWARE",
             "KISERIAN",
             "RIRUTA",
@@ -71,6 +74,8 @@ class WelcomeController extends Controller {
             "MWEIGA",
             "OL'KALOU",
             "OTHAYA", "KIWAMBA", "THIKA", "GATUNDU", "RUIRU", "SAGANA", "MARAGUA", "MARALAL", "WAMBA VIA MARALAL", "ISIOLO", "TIMAU", "MOMBASA", "KALOLENI", "RABAI", "MTWAPA", "KWALE", "WUNDANYI", "TAVETA", "VOI", "MWATATE", "DIANI BEACH", "KINANGO", "LIKONI", "MSAMBWENI", "DIANI-MOMBASA", "UKUNDA", "MALINDI", "HOLA", "KILIFI", "KIPINI", "LAMU", "MPEKETONI", "TARASAA", "EMBU", "KERUGOYA", "WANGURU", "RUNYENJE'S", "ISHIARA", "KERUGUYA", "SIAKAGO", "RUNYENJES");
+        sort($towns);
+        $data['towns'] = $towns;
         $data['specialties'] = array("Antenatal Care (care of mother while pregnant)", "Anteretroviral Therapy ( drugs for HIV)", "Beoc", "Blood", "Caeserean section", "Ceoc", "C-IMCI", "Epidemiology ( study of disease spread and distribution)", "Family planning", "GROWM", "Heamogram ( blood test checking all blood parameters)", "Heamatocrit ( simple blood test to analyse anaemia)", "In- patient department", "Out -patient department", "Outreach programs ie. go out and give treatment in the villages", "Prevention of mother to child transmission ( of HIV/AIDS)", "Radiology/ x-ray", "Reproductive health treatment center/diagnostic center ( I think need to confirm)", "Tuberculosis diagnosis", "Tuberculosis treatment", "Youth", "Tuberculosis laboratory work up");
 
         /*

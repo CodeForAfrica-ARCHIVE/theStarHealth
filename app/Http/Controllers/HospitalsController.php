@@ -8,7 +8,7 @@ class HospitalsController extends Controller {
 
         $result = "";
 
-        if($name==''){
+        if($name=='Select specialty'){
 
             $result .= "You didn't enter a facility type";
 
@@ -17,11 +17,18 @@ class HospitalsController extends Controller {
             $county = strtoupper($county);
 
             $key = config('custom_config.google_api_key');
+
             $table = config('custom_config.facilities_table');
 
             $url = "https://www.googleapis.com/fusiontables/v1/query?";
 
-            $sql = "SELECT * FROM ".$table." where facility_full='$name' AND County='$county'";
+            if($county == "SELECT COUNTY"){
+                $sql = "SELECT * FROM ".$table." where facility_full='$name'";
+
+            }else{
+                $sql = "SELECT * FROM ".$table." where facility_full='$name' AND County='$county'";
+
+            }
 
             $options = array("sql"=>$sql, "key"=>$key, "sensor"=>"false");
 
