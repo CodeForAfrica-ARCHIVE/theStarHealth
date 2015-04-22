@@ -51,9 +51,9 @@ Route::get('nhifcoverage', function()
 Route::get('specialty', function()
 {
     $specialty = Request::input('specialty');
-    $town = Request::input('town');
+    $county = Request::input('county');
 
-    return HospitalsController::specialty($specialty, $town);
+    return HospitalsController::specialty($specialty, $county);
 });
 Route::get('profile', [
     'middleware' => 'auth',

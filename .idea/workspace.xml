@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eb075555-a541-4e3b-a7bf-683aa88a8594" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/frontpage.php" afterPath="$PROJECT_DIR$/resources/views/frontpage.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/custom_config.php" afterPath="$PROJECT_DIR$/config/custom_config.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="StarHealth.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,7 +30,7 @@
       <file leaf-file-name="routes.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="34" selection-start="1210" selection-end="1210" vertical-scroll-proportion="-9.791667" vertical-offset="515" max-vertical-offset="1095">
+            <state line="53" column="39" selection-start="1298" selection-end="1298" vertical-scroll-proportion="-11.666667" vertical-offset="515" max-vertical-offset="1095">
               <folding>
                 <element signature="e#6#49#0" expanded="true" />
               </folding>
@@ -75,10 +77,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HospitalsController.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="HospitalsController.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HospitalsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="0" selection-start="851" selection-end="851" vertical-scroll-proportion="-9.25" vertical-offset="288" max-vertical-offset="855">
+            <state line="27" column="37" selection-start="713" selection-end="713" vertical-scroll-proportion="0.6825397" vertical-offset="18" max-vertical-offset="855">
               <folding>
                 <marker date="1429700980765" expanded="true" signature="97:148" placeholder="select DISTI..sh_facilities..." />
               </folding>
@@ -89,16 +91,16 @@
       <file leaf-file-name="custom_config.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/custom_config.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="25" selection-start="176" selection-end="192" vertical-scroll-proportion="-3.125" vertical-offset="0" max-vertical-offset="225">
+            <state line="9" column="2" selection-start="317" selection-end="317" vertical-scroll-proportion="-5.625" vertical-offset="0" max-vertical-offset="225">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="frontpage.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="frontpage.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/frontpage.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="746" column="0" selection-start="31875" selection-end="31875" vertical-scroll-proportion="0.4722222" vertical-offset="10935" max-vertical-offset="11475">
+            <state line="214" column="77" selection-start="10727" selection-end="10733" vertical-scroll-proportion="-5.0" vertical-offset="2955" max-vertical-offset="11475">
               <folding>
                 <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -158,11 +160,11 @@
         <option value="$PROJECT_DIR$/storage/logs/laravel-2015-04-21.log" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/DoctorsController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php" />
-        <option value="$PROJECT_DIR$/config/custom_config.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/NHIFController.php" />
-        <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/HospitalsController.php" />
+        <option value="$PROJECT_DIR$/config/custom_config.php" />
         <option value="$PROJECT_DIR$/resources/views/frontpage.php" />
+        <option value="$PROJECT_DIR$/app/Http/routes.php" />
       </list>
     </option>
   </component>
@@ -267,6 +269,60 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="logs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="StarHealth" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="StarHealth" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="old_CI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="StarHealth" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="StarHealth" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="old_CI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="StarHealth" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="StarHealth" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="old_CI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -720,13 +776,6 @@
         <state line="21" column="5" selection-start="482" selection-end="482" vertical-scroll-proportion="0.5344828" vertical-offset="5" max-vertical-offset="855" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/old_CI/application/controllers/facilities.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="47" selection-start="533" selection-end="533" vertical-scroll-proportion="0.63492066" vertical-offset="0" max-vertical-offset="1785">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/old_CI/application/controllers/nhif.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="60" column="61" selection-start="1839" selection-end="1839" vertical-scroll-proportion="1.5517242" vertical-offset="0" max-vertical-offset="1215">
@@ -761,15 +810,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="34" selection-start="1210" selection-end="1210" vertical-scroll-proportion="-9.791667" vertical-offset="515" max-vertical-offset="1095">
-          <folding>
-            <element signature="e#6#49#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2015-04-22.log">
       <provider selected="true" editor-type-id="text-editor">
         <state line="575" column="126" selection-start="80204" selection-end="80204" vertical-scroll-proportion="-11.923077" vertical-offset="8315" max-vertical-offset="9105">
@@ -787,25 +827,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/custom_config.php">
+    <entry file="file://$PROJECT_DIR$/old_CI/application/controllers/facilities.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="25" selection-start="176" selection-end="192" vertical-scroll-proportion="-3.125" vertical-offset="0" max-vertical-offset="225">
-          <folding />
+        <state line="17" column="37" selection-start="410" selection-end="410" vertical-scroll-proportion="-0.105820104" vertical-offset="315" max-vertical-offset="1785">
+          <folding>
+            <marker date="1427709189713" expanded="true" signature="-1:-1" placeholder="select DISTI..." />
+            <marker date="1427709189713" expanded="true" signature="-1:-1" placeholder="select DISTI..sh_facilities..." />
+            <marker date="1427709189713" expanded="true" signature="-1:-1" placeholder="select DISTI..sh_facilities..." />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HospitalsController.php">
+    <entry file="file://$PROJECT_DIR$/config/custom_config.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="0" selection-start="851" selection-end="851" vertical-scroll-proportion="-9.25" vertical-offset="288" max-vertical-offset="855">
-          <folding>
-            <marker date="1429700980765" expanded="true" signature="97:148" placeholder="select DISTI..sh_facilities..." />
-          </folding>
+        <state line="9" column="2" selection-start="317" selection-end="317" vertical-scroll-proportion="-5.625" vertical-offset="0" max-vertical-offset="225">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/frontpage.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="746" column="0" selection-start="31875" selection-end="31875" vertical-scroll-proportion="0.4722222" vertical-offset="10935" max-vertical-offset="11475">
+        <state line="214" column="77" selection-start="10727" selection-end="10733" vertical-scroll-proportion="-5.0" vertical-offset="2955" max-vertical-offset="11475">
           <folding>
             <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -821,6 +863,24 @@
             <element signature="n#style#0;n#img#0;n#div#2;n#div#2;n#div#1;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#a#0;n#div#2;n#div#2;n#div#1;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#1;n#div#2;n#div#2;n#div#1;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="39" selection-start="1298" selection-end="1298" vertical-scroll-proportion="-11.666667" vertical-offset="515" max-vertical-offset="1095">
+          <folding>
+            <element signature="e#6#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HospitalsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="37" selection-start="713" selection-end="713" vertical-scroll-proportion="0.6825397" vertical-offset="18" max-vertical-offset="855">
+          <folding>
+            <marker date="1429700980765" expanded="true" signature="97:148" placeholder="select DISTI..sh_facilities..." />
           </folding>
         </state>
       </provider>
