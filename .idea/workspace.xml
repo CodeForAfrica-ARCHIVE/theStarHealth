@@ -2,8 +2,340 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eb075555-a541-4e3b-a7bf-683aa88a8594" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/custom_config.php" afterPath="$PROJECT_DIR$/config/custom_config.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/cron/alchemyapi.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/cron/oldsha.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/cron/run_cron.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/application/.htaccess" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/application/cache/.htaccess" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/application/cache/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/application/config/autoload.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/application/config/config.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/application/config/constants.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/application/config/database.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/application/config/doctypes.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/application/config/feed.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/application/config/foreign_chars.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/application/config/hooks.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/application/config/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/application/config/migration.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/application/config/mimes.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/application/config/profiler.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/application/config/routes.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/application/config/smileys.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/application/config/user_agents.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/application/controllers/about.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/application/controllers/api.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/application/controllers/archive.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/application/controllers/article.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/application/controllers/dodgy.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/application/controllers/facilities.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/application/controllers/frontpage_controller.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/application/controllers/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/application/controllers/nhif.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/application/core/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/application/errors/error_404.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/application/errors/error_db.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/application/errors/error_general.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/application/errors/error_php.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/application/errors/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/application/helpers/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/application/hooks/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/application/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/application/language/english/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/application/libraries/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/application/logs/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/application/models/api_m.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/application/models/article_m.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/application/models/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/application/models/welcome_m.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/application/third_party/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/application/views/about.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/application/views/api/show_full_news.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/application/views/api/show_news.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/application/views/api/show_nhif.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/application/views/api/show_specialists.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/application/views/archive.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/application/views/article.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/application/views/dodgy.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/application/views/filtered.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/application/views/frontpage.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/application/views/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/application/views/layout/footer.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/application/views/layout/header.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/application/views/layout/header_widgets.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/ajax-autocomplete/config.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/ajax-autocomplete/get_course_list.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/ajax-autocomplete/indicator.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/ajax-autocomplete/jquery.autocomplete.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/ajax-autocomplete/jquery.autocomplete.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/ajax-autocomplete/jquery.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/ajax-autocomplete/test.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/alchemyapi.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/css/bootstrap-responsive.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/css/bootstrap-rowlink.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/css/bootstrap-rowlink.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/css/bootstrap.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/css/docs.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/css/indicator.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/css/jquery.autocomplete.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/css/main.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/feed.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/ico/apple-touch-icon-114-precomposed.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/ico/apple-touch-icon-144-precomposed.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/ico/apple-touch-icon-57-precomposed.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/ico/apple-touch-icon-72-precomposed.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/ico/favicon.ico" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/ico/favicon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/ico/starhealth-favicon-114.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/ico/starhealth-favicon-144.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/ico/starhealth-favicon-32.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/ico/starhealth-favicon-57.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/ico/starhealth-favicon-72.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/ico/starhealth-favicon.ico" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/icons/facebook.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/icons/rss.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/icons/twitter.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/img/GitHub-Mark-32px.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/img/android-icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/img/bootstrap-docs-readme.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/img/bootstrap-mdo-sfmoma-01.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/img/bootstrap-mdo-sfmoma-02.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/img/bootstrap-mdo-sfmoma-03.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/img/bs-docs-bootstrap-features.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/img/bs-docs-masthead-pattern.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/img/bs-docs-responsive-illustrations.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/img/bs-docs-twitter-github.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/img/c4k_logo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/img/ckan.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/img/data.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/img/example-sites/8020select.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/img/example-sites/adoptahydrant.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/img/example-sites/breakingnews.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/img/example-sites/fleetio.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/img/example-sites/gathercontent.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/img/example-sites/jshint.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/img/example-sites/kippt.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/img/example-sites/soundready.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/img/examples/bootstrap-example-carousel.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/img/examples/bootstrap-example-fluid.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/img/examples/bootstrap-example-justified-nav.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/img/examples/bootstrap-example-marketing-narrow.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/img/examples/bootstrap-example-marketing.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/img/examples/bootstrap-example-signin.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/img/examples/bootstrap-example-starter.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/img/examples/bootstrap-example-sticky-footer.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/img/examples/browser-icon-chrome.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/img/examples/browser-icon-firefox.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/img/examples/browser-icon-safari.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/img/examples/slide-01.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/img/examples/slide-02.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/img/examples/slide-03.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/img/facebook.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/img/github.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/img/glyphicons-halflings-white.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/img/glyphicons-halflings.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/img/grid-baseline-20px.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/img/indicator.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/img/less-logo-large.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/img/logo (copy).png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/img/logo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/img/logo2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/img/preloader.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/img/responsive-illustrations.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/img/rss.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/img/star_reports.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/img/topbar.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/img/twitter.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/js/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/js/application.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/js/bootstrap-affix.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/js/bootstrap-alert.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/js/bootstrap-button.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/js/bootstrap-carousel.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/js/bootstrap-collapse.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/js/bootstrap-dropdown.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/js/bootstrap-modal.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/js/bootstrap-popover.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/js/bootstrap-rowlink.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/js/bootstrap-rowlink.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/js/bootstrap-scrollspy.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/js/bootstrap-tab.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/js/bootstrap-tooltip.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/js/bootstrap-transition.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/js/bootstrap-typeahead.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/js/bootstrap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/js/bootstrap.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/js/google-code-prettify/prettify.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/js/google-code-prettify/prettify.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/js/holder/holder.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/js/html5shiv.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/js/jquery.autocomplete.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/js/jquery.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/js/jquery17.min" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/js/jquery17.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/oldsha.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/run_cron.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/thumbs/cholera.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/thumbs/fake_doctor.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/thumbs/flood.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/thumbs/malaria.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/thumbs/maternity.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/thumbs/medicine.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/thumbs/mental.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/thumbs/refugee.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/assets/thumbs/uhuru.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/db.sql" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/index.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/.htaccess" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/core/Benchmark.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/core/CodeIgniter.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/core/Common.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/core/Config.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/core/Controller.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/core/Exceptions.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/core/Hooks.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/core/Input.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/core/Lang.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/core/Loader.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/core/Model.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/core/Output.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/core/Router.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/core/Security.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/core/URI.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/core/Utf8.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/core/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/database/DB.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/database/DB_active_rec.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/database/DB_cache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/database/DB_driver.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/database/DB_forge.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/database/DB_result.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/database/DB_utility.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/database/drivers/cubrid/cubrid_driver.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/database/drivers/cubrid/cubrid_forge.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/database/drivers/cubrid/cubrid_result.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/database/drivers/cubrid/cubrid_utility.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/database/drivers/cubrid/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/database/drivers/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/database/drivers/mssql/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/database/drivers/mssql/mssql_driver.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/database/drivers/mssql/mssql_forge.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/database/drivers/mssql/mssql_result.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/database/drivers/mssql/mssql_utility.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/database/drivers/mysql/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/database/drivers/mysql/mysql_driver.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/database/drivers/mysql/mysql_forge.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/database/drivers/mysql/mysql_result.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/database/drivers/mysql/mysql_utility.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/database/drivers/mysqli/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/database/drivers/mysqli/mysqli_driver.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/database/drivers/mysqli/mysqli_forge.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/database/drivers/mysqli/mysqli_result.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/database/drivers/mysqli/mysqli_utility.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/database/drivers/oci8/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/database/drivers/oci8/oci8_driver.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/database/drivers/oci8/oci8_forge.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/database/drivers/oci8/oci8_result.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/database/drivers/oci8/oci8_utility.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/database/drivers/odbc/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/database/drivers/odbc/odbc_driver.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/database/drivers/odbc/odbc_forge.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/database/drivers/odbc/odbc_result.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/database/drivers/odbc/odbc_utility.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/database/drivers/pdo/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/database/drivers/pdo/pdo_driver.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/database/drivers/pdo/pdo_forge.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/database/drivers/pdo/pdo_result.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/database/drivers/pdo/pdo_utility.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/database/drivers/postgre/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/database/drivers/postgre/postgre_driver.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/database/drivers/postgre/postgre_forge.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/database/drivers/postgre/postgre_result.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/database/drivers/postgre/postgre_utility.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/database/drivers/sqlite/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/database/drivers/sqlite/sqlite_driver.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/database/drivers/sqlite/sqlite_forge.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/database/drivers/sqlite/sqlite_result.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/database/drivers/sqlite/sqlite_utility.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/database/drivers/sqlsrv/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/database/drivers/sqlsrv/sqlsrv_driver.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/database/drivers/sqlsrv/sqlsrv_forge.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/database/drivers/sqlsrv/sqlsrv_result.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/database/drivers/sqlsrv/sqlsrv_utility.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/database/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/fonts/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/fonts/texb.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/helpers/array_helper.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/helpers/captcha_helper.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/helpers/cookie_helper.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/helpers/date_helper.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/helpers/directory_helper.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/helpers/download_helper.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/helpers/email_helper.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/helpers/file_helper.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/helpers/form_helper.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/helpers/html_helper.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/helpers/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/helpers/inflector_helper.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/helpers/language_helper.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/helpers/number_helper.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/helpers/path_helper.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/helpers/security_helper.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/helpers/smiley_helper.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/helpers/string_helper.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/helpers/text_helper.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/helpers/typography_helper.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/helpers/url_helper.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/helpers/xml_helper.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/language/english/calendar_lang.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/language/english/date_lang.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/language/english/db_lang.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/language/english/email_lang.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/language/english/form_validation_lang.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/language/english/ftp_lang.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/language/english/imglib_lang.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/language/english/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/language/english/migration_lang.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/language/english/number_lang.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/language/english/profiler_lang.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/language/english/unit_test_lang.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/language/english/upload_lang.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/language/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/libraries/Cache/Cache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/libraries/Cache/drivers/Cache_apc.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/libraries/Cache/drivers/Cache_dummy.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/libraries/Cache/drivers/Cache_file.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/libraries/Cache/drivers/Cache_memcached.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/libraries/Calendar.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/libraries/Cart.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/libraries/Driver.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/libraries/Email.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/libraries/Encrypt.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/libraries/Form_validation.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/libraries/Ftp.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/libraries/Image_lib.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/libraries/Javascript.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/libraries/Log.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/libraries/Migration.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/libraries/Pagination.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/libraries/Parser.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/libraries/Profiler.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/libraries/Session.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/libraries/Sha1.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/libraries/Table.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/libraries/Trackback.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/libraries/Typography.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/libraries/Unit_test.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/libraries/Upload.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/libraries/User_agent.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/libraries/Xmlrpc.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/libraries/Xmlrpcs.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/libraries/Zip.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/libraries/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_CI/system/libraries/javascript/Jquery.php" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/feed.json" afterPath="$PROJECT_DIR$/public/cron/feed.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="StarHealth.iws" />
@@ -38,10 +370,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WelcomeController.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="WelcomeController.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="73" column="766" selection-start="3887" selection-end="3887" vertical-scroll-proportion="-11.75" vertical-offset="813" max-vertical-offset="4335">
+            <state line="96" column="41" selection-start="4511" selection-end="4511" vertical-scroll-proportion="0.33333334" vertical-offset="1260" max-vertical-offset="4335">
               <folding />
             </state>
           </provider>
@@ -50,7 +382,7 @@
       <file leaf-file-name="laravel-2015-04-22.log" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2015-04-22.log">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="575" column="126" selection-start="80204" selection-end="80204" vertical-scroll-proportion="-11.923077" vertical-offset="8315" max-vertical-offset="9105">
+            <state line="775" column="126" selection-start="109158" selection-end="109158" vertical-scroll-proportion="-18.846153" vertical-offset="11135" max-vertical-offset="12105">
               <folding />
             </state>
           </provider>
@@ -77,13 +409,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HospitalsController.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="HospitalsController.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HospitalsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="37" selection-start="713" selection-end="713" vertical-scroll-proportion="0.6825397" vertical-offset="18" max-vertical-offset="855">
+            <state line="27" column="37" selection-start="713" selection-end="713" vertical-scroll-proportion="-16.125" vertical-offset="18" max-vertical-offset="855">
               <folding>
                 <marker date="1429700980765" expanded="true" signature="97:148" placeholder="select DISTI..sh_facilities..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="alchemyapi.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/cron/alchemyapi.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="11850">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -100,7 +441,7 @@
       <file leaf-file-name="frontpage.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/frontpage.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="214" column="77" selection-start="10727" selection-end="10733" vertical-scroll-proportion="-5.0" vertical-offset="2955" max-vertical-offset="11475">
+            <state line="212" column="41" selection-start="10654" selection-end="10654" vertical-scroll-proportion="-10.5" vertical-offset="2928" max-vertical-offset="11475">
               <folding>
                 <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -159,12 +500,12 @@
         <option value="$PROJECT_DIR$/public/js/jquery.autocomplete.js" />
         <option value="$PROJECT_DIR$/storage/logs/laravel-2015-04-21.log" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/DoctorsController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/NHIFController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/HospitalsController.php" />
         <option value="$PROJECT_DIR$/config/custom_config.php" />
         <option value="$PROJECT_DIR$/resources/views/frontpage.php" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php" />
       </list>
     </option>
   </component>
@@ -226,174 +567,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StarHealth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StarHealth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tests" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StarHealth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StarHealth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="storage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StarHealth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StarHealth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="storage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="logs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StarHealth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StarHealth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="old_CI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StarHealth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StarHealth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="old_CI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StarHealth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StarHealth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="old_CI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StarHealth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StarHealth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StarHealth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StarHealth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StarHealth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StarHealth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Http" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StarHealth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StarHealth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Http" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -405,6 +578,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/cron" />
       <recent name="$PROJECT_DIR$/app/Http/Controllers" />
       <recent name="$PROJECT_DIR$/config" />
       <recent name="$PROJECT_DIR$/resources/views" />
@@ -458,14 +632,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="43" y="24" width="1323" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924962" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26385635" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26385635" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -473,7 +648,6 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32924962" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -562,16 +736,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/old_CI/application/models/welcome_m.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="259" column="41" selection-start="7113" selection-end="7113" vertical-scroll-proportion="0.0" vertical-offset="3885" max-vertical-offset="4215" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/old_CI/application/views/frontpage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="53" selection-start="1395" selection-end="1395" vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="4755" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/frontpage.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="682" column="32" selection-start="29109" selection-end="29109" vertical-scroll-proportion="0.0" vertical-offset="9989" max-vertical-offset="11325">
@@ -616,16 +780,6 @@
       </provider>
       <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/old_CI/application/models/welcome_m.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="259" column="41" selection-start="7113" selection-end="7113" vertical-scroll-proportion="0.0" vertical-offset="3626" max-vertical-offset="4215" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/old_CI/application/views/frontpage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="53" selection-start="1395" selection-end="1395" vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="4755" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/frontpage.php">
@@ -711,42 +865,12 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="810" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/old_CI/application/controllers/frontpage_controller.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="56" selection-start="981" selection-end="981" vertical-scroll-proportion="0.6976744" vertical-offset="0" max-vertical-offset="780" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/old_CI/application/models/welcome_m.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="259" column="41" selection-start="7113" selection-end="7113" vertical-scroll-proportion="0.0" vertical-offset="3626" max-vertical-offset="4215" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/old_CI/application/views/layout/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="143" column="0" selection-start="0" selection-end="7606" vertical-scroll-proportion="-19.875" vertical-offset="1668" max-vertical-offset="2235" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/old_CI/application/views/layout/header_widgets.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="9305" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3705" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2015-03-30.log">
       <provider selected="true" editor-type-id="text-editor">
         <state line="360" column="117" selection-start="51225" selection-end="51225" vertical-scroll-proportion="0.0" vertical-offset="5150" max-vertical-offset="5715" />
       </provider>
       <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/old_CI/application/views/layout/footer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="0" selection-end="2690" vertical-scroll-proportion="0.23275863" vertical-offset="0" max-vertical-offset="870" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/old_CI/application/views/frontpage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="53" selection-start="1395" selection-end="1395" vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="4755" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2015-03-31.log">
@@ -771,24 +895,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/old_CI/application/controllers/dodgy.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="5" selection-start="482" selection-end="482" vertical-scroll-proportion="0.5344828" vertical-offset="5" max-vertical-offset="855" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/old_CI/application/controllers/nhif.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="61" selection-start="1839" selection-end="1839" vertical-scroll-proportion="1.5517242" vertical-offset="0" max-vertical-offset="1215">
-          <folding>
-            <marker date="1411559498408" expanded="true" signature="-1:-1" placeholder="select * fro..nhif..." />
-            <marker date="1411559498408" expanded="true" signature="-1:-1" placeholder="select * fro..nhif..." />
-            <marker date="1411559498408" expanded="true" signature="-1:-1" placeholder="select DISTI..nhif..." />
-            <marker date="1411559498408" expanded="true" signature="-1:-1" placeholder="select * fro..nhif..." />
-            <marker date="1411559498408" expanded="true" signature="-1:-1" placeholder="select DISTI..nhif..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DoctorsController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="33" column="23" selection-start="169" selection-end="814" vertical-scroll-proportion="-20.625" vertical-offset="0" max-vertical-offset="1455">
@@ -803,38 +909,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="766" selection-start="3887" selection-end="3887" vertical-scroll-proportion="-11.75" vertical-offset="813" max-vertical-offset="4335">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2015-04-22.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="575" column="126" selection-start="80204" selection-end="80204" vertical-scroll-proportion="-11.923077" vertical-offset="8315" max-vertical-offset="9105">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/NHIFController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="38" column="0" selection-start="145" selection-end="1034" vertical-scroll-proportion="-18.125" vertical-offset="135" max-vertical-offset="720">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/old_CI/application/controllers/facilities.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="37" selection-start="410" selection-end="410" vertical-scroll-proportion="-0.105820104" vertical-offset="315" max-vertical-offset="1785">
-          <folding>
-            <marker date="1427709189713" expanded="true" signature="-1:-1" placeholder="select DISTI..." />
-            <marker date="1427709189713" expanded="true" signature="-1:-1" placeholder="select DISTI..sh_facilities..." />
-            <marker date="1427709189713" expanded="true" signature="-1:-1" placeholder="select DISTI..sh_facilities..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -845,9 +923,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="39" selection-start="1298" selection-end="1298" vertical-scroll-proportion="-11.666667" vertical-offset="515" max-vertical-offset="1095">
+          <folding>
+            <element signature="e#6#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HospitalsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="37" selection-start="713" selection-end="713" vertical-scroll-proportion="-16.125" vertical-offset="18" max-vertical-offset="855">
+          <folding>
+            <marker date="1429700980765" expanded="true" signature="97:148" placeholder="select DISTI..sh_facilities..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/cron/alchemyapi.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="11850">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/frontpage.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="214" column="77" selection-start="10727" selection-end="10733" vertical-scroll-proportion="-5.0" vertical-offset="2955" max-vertical-offset="11475">
+        <state line="212" column="41" selection-start="10654" selection-end="10654" vertical-scroll-proportion="-10.5" vertical-offset="2928" max-vertical-offset="11475">
           <folding>
             <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -867,21 +970,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+    <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2015-04-22.log">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="39" selection-start="1298" selection-end="1298" vertical-scroll-proportion="-11.666667" vertical-offset="515" max-vertical-offset="1095">
-          <folding>
-            <element signature="e#6#49#0" expanded="true" />
-          </folding>
+        <state line="775" column="126" selection-start="109158" selection-end="109158" vertical-scroll-proportion="-18.846153" vertical-offset="11135" max-vertical-offset="12105">
+          <folding />
         </state>
       </provider>
+      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HospitalsController.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="37" selection-start="713" selection-end="713" vertical-scroll-proportion="0.6825397" vertical-offset="18" max-vertical-offset="855">
-          <folding>
-            <marker date="1429700980765" expanded="true" signature="97:148" placeholder="select DISTI..sh_facilities..." />
-          </folding>
+        <state line="96" column="41" selection-start="4511" selection-end="4511" vertical-scroll-proportion="0.33333334" vertical-offset="1260" max-vertical-offset="4335">
+          <folding />
         </state>
       </provider>
     </entry>

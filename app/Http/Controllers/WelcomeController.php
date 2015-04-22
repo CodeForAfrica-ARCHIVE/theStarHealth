@@ -94,7 +94,7 @@ class WelcomeController extends Controller {
     }
 
     public function get_tags(){
-        $feed_url = public_path().'/feed.json';//$this->config->item('feed_url');
+        $feed_url = public_path().'/cron/feed.json';//$this->config->item('feed_url');
         $feed = json_decode(file_get_contents($feed_url, true));
 
         $items = $feed->tags;
@@ -106,7 +106,7 @@ class WelcomeController extends Controller {
     }
 
     public function get_all($section){
-        $feed_url = public_path().'/feed.json';//$this->config->item('feed_url');
+        $feed_url = public_path().'/cron/feed.json';//$this->config->item('feed_url');
         $news = array();
         $feed = json_decode(file_get_contents($feed_url, true));
         $items = $feed->nodes;
@@ -186,7 +186,7 @@ class WelcomeController extends Controller {
     }
 
     public function get_featured(){
-        $feed_url = public_path().'/feed.json';//$this->config->item('feed_url');
+        $feed_url = public_path().'/cron/feed.json';//$this->config->item('feed_url');
         $news = array();
         $feed = json_decode(file_get_contents($feed_url, true));
         $items = $feed->nodes;
