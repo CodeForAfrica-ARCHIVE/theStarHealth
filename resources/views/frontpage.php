@@ -184,6 +184,24 @@
                         $("#loading").hide();
                     }});
                 });
+                $("#grabNHIFDetails").click(function(){
+                    var min = $("#min").val();
+                    var max = $("#max").val();
+                    var town = $("#town").val();
+
+                    $("#dname").html("<h4>Coverage in " + town + "</h4>");
+
+                    $("#mybox").html("");
+
+                    $("#loading").show();
+
+                    $.ajax({url:"nhifcoverage?min=" + min + "&max=" + max + "&town=" + town,success:function(result){
+
+                        $("#mybox").html(result);
+
+                        $("#loading").hide();
+                    }});
+                });
             });
         </script>
         <input type="text" placeholder="Start typing doctor's name" class="search" name="course" id="doctorName" />
@@ -222,29 +240,7 @@
                     }
                 }
             }
-            function nhif(file){
-                var request = get_XmlHttp();
-                document.getElementById("mybox").innerHTML = "";
-                document.getElementById("loading").style.display = 'block';
 
-                var max = document.getElementById("max").value;
-                var min = document.getElementById("min").value;
-                var county = document.getElementById("town").selectedOptions[0].text;
-
-                var the_data = "max="+max+"&min="+min+"&town="+county;
-
-                request.open("POST", file, true);
-
-                request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-                request.send(the_data);
-
-                request.onreadystatechange = function() {
-                    if (request.readyState == 4) {
-                        document.getElementById("mybox").innerHTML = request.responseText;
-                        document.getElementById("loading").style.display='none';
-                    }
-                }
-            }
             function filter_location(facility){
                 var request = get_XmlHttp();
                 var file = "facilities/filter_county";
@@ -335,11 +331,11 @@
         <option>Select town</option>
         <?php
         foreach($towns as $town){
-            print "<option>".$town['Town']."</option>";
+            print "<option>".$town."</option>";
         }
         ?>
     </select>
-    <button class='btn add-on red_button red_button_round' href="#myModal" role="button" class="btn" data-toggle="modal" onclick="nhif('nhif')">
+    <button class='btn add-on red_button red_button_round' href="#myModal" role="button" class="btn" data-toggle="modal" id="grabNHIFDetails">
         <i class="icon-search"></i>
     </button>
 </div>
@@ -363,7 +359,7 @@
             <option>Select specialty</option>
             <?php
             foreach($specialties as $sp){
-                print "<option>".$sp['full']."</option>";
+                print "<option>".$sp."</option>";
             }
             ?>
         </select>
@@ -371,7 +367,7 @@
             <option>Select county</option>
             <?php
             foreach($counties as $county){
-                print "<option>".$county['county']."</option>";
+                print "<option>".$county."</option>";
             }
             ?>
         </select>

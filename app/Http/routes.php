@@ -1,5 +1,6 @@
 <?php
 use App\Http\Controllers\DoctorsController;
+use App\Http\Controllers\NHIFController;
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -37,6 +38,14 @@ Route::get('singleDoctor', function()
     }
 
     return $result;
+});
+Route::get('nhifcoverage', function()
+{
+    $min = Request::input('min');
+    $max = Request::input('max');
+    $town = Request::input('town');
+
+    return NHIFController::coverage($min, $max, $town);
 });
 
 Route::get('profile', [
