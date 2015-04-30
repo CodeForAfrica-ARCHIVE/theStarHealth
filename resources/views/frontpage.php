@@ -559,7 +559,8 @@
 			</div>
 		</div>
 	</div>
-	<div class="row-fluid" style="min-height:600px;">
+
+    <div class="row-fluid" style="min-height:600px;">
 		<div class="span3 sidebar_widget2">
 			<div class="row-header"><h4>Major Stories</h4></div>
 			<style type="text/css">
