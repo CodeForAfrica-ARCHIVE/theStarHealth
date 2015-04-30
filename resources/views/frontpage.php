@@ -58,7 +58,7 @@
     <div class="brand_header">
         <div class="row">
             <div class="span6">
-                <a class="brand" href="http://health.the-star.co.ke/"><img src="<?php echo asset("img/logo.png");?>"></a>
+                <a class="brand" href="http://health.the-star.co.ke/"><img src="<?php echo asset("img/logo.png");?>"> <img src="<?php echo asset("img/health.png");?>"></a>
             </div>
             <div class="span4" style="float:right;width:280px !important;">
 
@@ -657,11 +657,16 @@
 						<td><a onclick="filter_feed('All');">All</a></td>
 					</tr>
                     <?php
+                    $i = 0;
                     foreach($tags as $k=>$v){
+                        if($i<10){
 
-                        print "<tr>
+                            print "<tr>
 						<td><a onclick=\"filter_feed('".$k."');\">".$k." (".$v.")</td>
 					</tr>";
+
+                            $i++;
+                        }
                     }
                     ?>
 				</tbody>
