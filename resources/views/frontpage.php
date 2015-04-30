@@ -416,94 +416,96 @@
 
 <div class="container container-outline" style="margin-top: 5px; margin-bottom: 5px;">
 	<div class="row-fluid">
-		<div class="span3">
-			<div class="sidebar_widget row-header">
-				<h4>Backstory</h4>
-			</div>
-			<div class="sidebar_widget down backstory">
-				<h5>Overview</h5>
-				<?php
-					//print "<img src='".public_path()."/thumbs/".$news[0]['sofar_thumbnail']."' width='100%'>";
-					print $overview;
-				?>
-				<h5>The story so far</h5>
+		<div class="span9">
+            <div class="row-fluid">
                 <?php
-                    print "<ul>";
-                    $i = 0;
-                    foreach($sofar as $id=>$item){
-                        if($i<3)
-                            print '<li><a href="'.$item['link'].'" target="_blank">'.$item['title'].'</a></li>';
-                        $i++;
-                    }
-
-                    print "</ul>";
-
+                    print '<h3 class="story_title" style="font-size:2em"><a href="'.$featured[0]['link'].'" target="_blank">'.$featured[0]['title'].'</a></h3>';
                 ?>
-			</div>
-			<br />
-			<div class="sidebar_widget bottom evidence">
-				<h5>Evidence Dossier</h5>
-				<a href="http://africaopendata.org/dataset?q=kenya+health">Data repository</a>
-			</div>
-		</div>
-		<div class="span6">
-            <?php
+            </div>
+            <div class="row-fluid" style="margin-top: -20px;">
+            <div class="span4">
+                <div class="sidebar_widget down backstory">
+                    <?php
+                        //print "<img src='".public_path()."/thumbs/".$news[0]['sofar_thumbnail']."' width='100%'>";
+                        print $overview;
+                    ?>
+                    <h5>The story so far</h5>
+                    <?php
+                        print "<ul>";
+                        $i = 0;
+                        foreach($sofar as $id=>$item){
+                            if($i<3)
+                                print '<li><a href="'.$item['link'].'" target="_blank">'.$item['title'].'</a></li>';
+                            $i++;
+                        }
 
-            print '<h3 class="story_title"><a href="'.$featured[0]['link'].'" target="_blank">'.$featured[0]['title'].'</a></h3>';
-            ?>
-			<div id="myCarousel" class="carousel slide">
-                <ol class="carousel-indicators">
-                	<?php
-                	//TODO: Show multiple featured stories + accompanying back stories
-                		$item = 0;
-						print '<li data-target="#myCarousel" data-slide-to="'.$item.'" class="active"></li>';
-						$item++;
-						$total = 0;
-                		foreach($featured as $news_label){
-	                		if($total>0){
-	            			//print '<li data-target="#myCarousel" data-slide-to="'.$item.'" class=""></li>';
-							$item++;
-							}
-							$total++;
-                		}
-                	?>
-                </ol>
-                <div class="carousel-inner" align="center" style="background-color:#000">
+                        print "</ul>";
 
-                	<?php
-                    $thumb = str_replace("http://the-star.co.ke", "http://www.the-star.co.ke", $featured[0]['thumb']);
-                    print '<div class="item active"><img src="'.$thumb.'" alt="">
+                    ?>
+                </div>
+                <br />
+                <div class="sidebar_widget bottom evidence">
+                    <h5>Evidence Dossier</h5>
+                    <a href="http://africaopendata.org/dataset?q=kenya+health">Data repository</a>
+                </div>
+            </div>
+            <div class="span8">
+                <div id="myCarousel" class="carousel slide">
+                    <ol class="carousel-indicators">
+                        <?php
+                        //TODO: Show multiple featured stories + accompanying back stories
+                        $item = 0;
+                        print '<li data-target="#myCarousel" data-slide-to="'.$item.'" class="active"></li>';
+                        $item++;
+                        $total = 0;
+                        foreach($featured as $news_label){
+                            if($total>0){
+                                //print '<li data-target="#myCarousel" data-slide-to="'.$item.'" class=""></li>';
+                                $item++;
+                            }
+                            $total++;
+                        }
+                        ?>
+                    </ol>
+                    <div class="carousel-inner" align="center" style="background-color:#000">
+
+                        <?php
+                        $thumb = str_replace("http://the-star.co.ke", "http://www.the-star.co.ke", $featured[0]['thumb']);
+                        print '<div class="item active"><img src="'.$thumb.'" alt="">
 
 				                    <div class="carousel-caption style="display:none;"">
 				                      <h6><a href="'.$featured[0]['link'].'" target="_blank">'.$featured[0]['title'].'</a></h6>
 
 				                    </div>
 				                </div>';
-				  	$item = 0;
-						$item++;
-						$total = 0;
-                		foreach($featured as $news_item){
-	                		if($total>0){
-                		/*print '<div class="item"><img src="'.$news_item['thumb'].'" alt="">
-				                    <div class="carousel-caption">
-				                      <h6>'.$news_item['title'].'</h6>
-				                    </div>
-		                	 	</div>';*/
-	                		$item++;
+                        $item = 0;
+                        $item++;
+                        $total = 0;
+                        foreach($featured as $news_item){
+                            if($total>0){
+                                /*print '<div class="item"><img src="'.$news_item['thumb'].'" alt="">
+                                            <div class="carousel-caption">
+                                              <h6>'.$news_item['title'].'</h6>
+                                            </div>
+                                         </div>';*/
+                                $item++;
 
-							}
-						$total++;
-                		}
-                	?>
+                            }
+                            $total++;
+                        }
+                        ?>
 
+                    </div>
+                    <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
+                    <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
                 </div>
-                <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
-                <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
-              </div>
-              <div style="text-align: center;font-size: 0.9em">
-               <a href="http://www.the-star.co.ke/section/contact-details" target="_blank"><strong>Tell us more</strong><br/>Do you have more information? Help us improve this story by sharing your experiences/evidence.</a>
-              </div>
+                <div style="text-align: center;font-size: 0.9em">
+                    <a href="http://www.the-star.co.ke/section/contact-details" target="_blank"><strong>Tell us more</strong><br/>Do you have more information? Help us improve this story by sharing your experiences/evidence.</a>
+                </div>
+            </div>
+                </div>
 		</div>
+
 		<div class="span3" style='float:right'>
 			<div class="sidebar_widget row-header">
 				<h4>Help Desk</h4>
