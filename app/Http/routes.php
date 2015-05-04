@@ -2,6 +2,7 @@
 use App\Http\Controllers\DoctorsController;
 use App\Http\Controllers\NHIFController;
 use App\Http\Controllers\HospitalsController;
+use App\Http\Controllers\WelcomeController;
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -39,6 +40,11 @@ Route::get('singleDoctor', function()
     }
 
     return $result;
+});
+Route::get('/filter_feed', function()
+{
+    $tag = Request::input('tag');
+    return (new WelcomeController())->filter_feed($tag);
 });
 Route::get('nhifcoverage', function()
 {

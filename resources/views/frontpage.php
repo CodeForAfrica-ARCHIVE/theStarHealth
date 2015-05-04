@@ -236,6 +236,20 @@
                         $("#loading").hide();
                     }});
                 });
+                $(".filter_feed").click(function(){
+
+                    var tag = $(this).attr("data-tag");
+
+                    $("#filtered").html("");
+
+                    $.ajax({url:"filter_feed?tag=" + tag,success:function(result){
+
+                        $("#filtered").html(result);
+
+                        $("#loading").hide();
+                    }});
+
+                });
             });
         </script>
         <input type="text" placeholder="Start typing doctor's name" class="search" name="course" id="doctorName" />
@@ -631,7 +645,7 @@
                     /*
                 	document.getElementById("chev0").style.display='none';
 					document.getElementById("chev"+section_id).style.display='block';*/
-                   var file = "<?php echo asset('');?>index.php/frontpage_controller/filter_feed";
+                   var file = "<?php echo asset('');?>/filter_feed";
 
 				  var request =  get_XmlHttp();
 				  document.getElementById("filtered").innerHTML = "";
@@ -654,20 +668,20 @@
 			<table class="table table-striped feed-filters">
 				<tbody>
 					<tr>
-						<td><a onclick="filter_feed('All');">All</a></td>
+						<td><a  class='filter_feed' data-tag='All'>All</a></td>
 					</tr>
                     <?php
-                    $i = 0;
-                    foreach($tags as $k=>$v){
-                        if($i<10){
+                        $i = 0;
+                        foreach($tags as $k=>$v){
 
-                            print "<tr>
-						<td><a onclick=\"filter_feed('".$k."');\">".$k." (".$v.")</td>
-					</tr>";
+                            if($i<10){
 
-                            $i++;
+                                print "<tr><td><a class='filter_feed' data-tag='".$k."'>".$k." (".$v.")</td></tr>";
+
+                                $i++;
+                            }
+
                         }
-                    }
                     ?>
 				</tbody>
 			</table>
@@ -694,9 +708,8 @@
 					}
 					print "<div>".$item['description']."</div><br />";
 
+                    print '<div class="article-meta">Posted '.$item['timestamp'].' | '; print ucwords(strtolower($item['author']));
 
-						print '<div class="article-meta">Posted '.$item['timestamp'].' | '; print ucwords(strtolower($item['author']));
-//print ' | Posted under '.$item['tags'];
 					print '</div>';
 					print "<hr />";
 

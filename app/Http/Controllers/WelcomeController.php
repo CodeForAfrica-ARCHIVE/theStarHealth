@@ -93,14 +93,40 @@ class WelcomeController extends Controller {
         return view('frontpage', $data);
     }
 
-    public function filter_feed(){
-        $section = $_POST['section'];
+    public function filter_feed($tag){
 
-        $this->load->model('welcome_m');
+        print '<div class="row-header"><h4>'.$tag.'</h4></div>';
 
-        $data['filtered_feed'] = $this->get_all($section);
-        $data['title'] = $section;
-        $this->load->view('filtered', $data);
+        $articles = $this->get_all($tag);
+        $result = $this->paginateArray($articles, 7, $page = null);
+             $items=0;
+                        foreach($result as $item){
+                            if($items<40){
+                                $thumb = str_replace("http://the-star.co.ke", "http://www.the-star.co.ke", $item['thumb']);
+
+                                print "<h4><a href='".$item['link']."' target='_blank'>".$item['title']."</a></h4>";
+                                if($item['thumb']!=null){
+                                    print "<img src='".$thumb."' style='width:100px;float:left; margin:10px'><br />";
+                                }
+                                print "<div>".$item['description']."</div><br />";
+
+
+                                print '<div class="article-meta">Posted '.$item['timestamp'].' | '; print ucwords(strtolower($item['author']));
+        //print ' | Posted under '.$item['tags'];
+                                print '</div>';
+                                print "<hr />";
+
+                                $items++;
+
+                            }
+                        }
+                        ?>
+        <div class="pagination" style="text-align: center">
+            <?php
+            //print $result->render();
+            ?>
+        </div>
+<?php
     }
 
     public function paginateArray($data, $perPage, $page = null)

@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eb075555-a541-4e3b-a7bf-683aa88a8594" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/frontpage.php" afterPath="$PROJECT_DIR$/resources/views/frontpage.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
     </list>
     <ignored path="StarHealth.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,32 +30,24 @@
       <file leaf-file-name="routes.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="53" column="39" selection-start="1298" selection-end="1298" vertical-scroll-proportion="-11.666667" vertical-offset="515" max-vertical-offset="1095">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WelcomeController.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="121" column="31" selection-start="5348" selection-end="5348" vertical-scroll-proportion="-11.875" vertical-offset="1530" max-vertical-offset="4725">
+            <state line="43" column="24" selection-start="1039" selection-end="1039" vertical-scroll-proportion="-2.3333333" vertical-offset="589" max-vertical-offset="1185">
               <folding>
-                <element signature="e#39#75#0" expanded="true" />
+                <element signature="e#6#49#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="laravel-2015-05-04.log" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2015-05-04.log">
+      <file leaf-file-name="WelcomeController.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="111" column="11" selection-start="15960" selection-end="15960" vertical-scroll-proportion="-12.230769" vertical-offset="1347" max-vertical-offset="1815">
-              <folding />
+            <state line="125" column="14" selection-start="5817" selection-end="5817" vertical-scroll-proportion="0.6952596" vertical-offset="1567" max-vertical-offset="5115">
+              <folding>
+                <element signature="e#39#75#0" expanded="true" />
+                <element signature="e#5757#5783#0" expanded="true" />
+                <marker date="1430747689173" expanded="true" signature="5783:5870" placeholder="..." />
+              </folding>
             </state>
-          </provider>
-          <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-            <state />
           </provider>
         </entry>
       </file>
@@ -78,7 +72,7 @@
       <file leaf-file-name="HospitalsController.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HospitalsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="44" selection-start="955" selection-end="955" vertical-scroll-proportion="0.0" vertical-offset="540" max-vertical-offset="960">
+            <state line="36" column="44" selection-start="955" selection-end="955" vertical-scroll-proportion="-22.5" vertical-offset="0" max-vertical-offset="960">
               <folding>
                 <marker date="1429707403659" expanded="true" signature="97:148" placeholder="select DISTI..sh_facilities..." />
               </folding>
@@ -86,19 +80,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="alchemyapi.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/cron/alchemyapi.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="6" selection-start="961" selection-end="961" vertical-scroll-proportion="0.0" vertical-offset="450" max-vertical-offset="12060">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="frontpage.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="frontpage.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/frontpage.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="707" column="61" selection-start="29725" selection-end="29725" vertical-scroll-proportion="0.5011287" vertical-offset="10383" max-vertical-offset="11925">
+            <state line="681" column="29" selection-start="28804" selection-end="28804" vertical-scroll-proportion="7.75" vertical-offset="10401" max-vertical-offset="12120">
               <folding>
                 <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -119,6 +104,18 @@
                 <element signature="n#style#0;n#img#1;n#div#2;n#div#2;n#div#1;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="laravel-2015-05-04.log" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2015-05-04.log">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="250" column="144" selection-start="23163" selection-end="23180" vertical-scroll-proportion="-16.26923" vertical-offset="3327" max-vertical-offset="3885">
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+            <state />
           </provider>
         </entry>
       </file>
@@ -161,14 +158,14 @@
         <option value="$PROJECT_DIR$/storage/logs/laravel-2015-04-21.log" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/DoctorsController.php" />
         <option value="$PROJECT_DIR$/config/custom_config.php" />
-        <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/NHIFController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/HospitalsController.php" />
         <option value="$PROJECT_DIR$/app/Console/Kernel.php" />
         <option value="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Pagination/Factory" />
         <option value="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Pagination/Factory.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php" />
+        <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/resources/views/frontpage.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php" />
       </list>
     </option>
   </component>
@@ -239,7 +236,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
+              <option name="myItemId" value="storage" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -253,79 +250,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
+              <option name="myItemId" value="storage" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="laravel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="framework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StarHealth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StarHealth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="laravel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="framework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Illuminate" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StarHealth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StarHealth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="laravel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="framework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Illuminate" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Pagination" />
+              <option name="myItemId" value="logs" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -478,7 +407,9 @@
     <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="53" column="39" selection-start="1298" selection-end="1298" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1095">
-          <folding />
+          <folding>
+            <element signature="e#6#49#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -487,6 +418,8 @@
         <state line="72" column="22" selection-start="2658" selection-end="2658" vertical-scroll-proportion="0.0" vertical-offset="1080" max-vertical-offset="4410">
           <folding>
             <element signature="e#39#75#0" expanded="true" />
+            <element signature="e#5757#5783#0" expanded="true" />
+            <marker date="1430747689173" expanded="true" signature="5783:5870" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -606,7 +539,9 @@
     <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="34" selection-start="411" selection-end="428" vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="405">
-          <folding />
+          <folding>
+            <element signature="e#6#49#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -615,6 +550,8 @@
         <state line="56" column="0" selection-start="1563" selection-end="1563" vertical-scroll-proportion="0.0" vertical-offset="840" max-vertical-offset="3960">
           <folding>
             <element signature="e#39#75#0" expanded="true" />
+            <element signature="e#5757#5783#0" expanded="true" />
+            <marker date="1430747689173" expanded="true" signature="5783:5870" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -647,7 +584,9 @@
     <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="34" selection-start="411" selection-end="428" vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="405">
-          <folding />
+          <folding>
+            <element signature="e#6#49#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -656,6 +595,8 @@
         <state line="56" column="0" selection-start="1563" selection-end="1563" vertical-scroll-proportion="0.0" vertical-offset="840" max-vertical-offset="3960">
           <folding>
             <element signature="e#39#75#0" expanded="true" />
+            <element signature="e#5757#5783#0" expanded="true" />
+            <marker date="1430747689173" expanded="true" signature="5783:5870" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -776,13 +717,6 @@
         <state line="9" column="2" selection-start="317" selection-end="317" vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="225" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="39" selection-start="1298" selection-end="1298" vertical-scroll-proportion="-11.666667" vertical-offset="515" max-vertical-offset="1095">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2015-04-22.log">
       <provider selected="true" editor-type-id="text-editor">
         <state line="890" column="126" selection-start="125177" selection-end="125177" vertical-scroll-proportion="0.0" vertical-offset="12860" max-vertical-offset="13830">
@@ -807,15 +741,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HospitalsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="44" selection-start="955" selection-end="955" vertical-scroll-proportion="0.0" vertical-offset="18" max-vertical-offset="960">
-          <folding>
-            <marker date="1429707403659" expanded="true" signature="97:148" placeholder="select DISTI..sh_facilities..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Console/Kernel.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="25" column="28" selection-start="561" selection-end="561" vertical-scroll-proportion="-15.0" vertical-offset="0" max-vertical-offset="510" />
@@ -826,16 +751,6 @@
         <state line="30" column="6" selection-start="961" selection-end="961" vertical-scroll-proportion="0.0" vertical-offset="450" max-vertical-offset="12060">
           <folding />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2015-05-04.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="111" column="11" selection-start="15960" selection-end="15960" vertical-scroll-proportion="-12.230769" vertical-offset="1347" max-vertical-offset="1815">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Pagination/Paginator.php">
@@ -854,18 +769,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HospitalsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="121" column="31" selection-start="5348" selection-end="5348" vertical-scroll-proportion="-11.875" vertical-offset="1530" max-vertical-offset="4725">
+        <state line="36" column="44" selection-start="955" selection-end="955" vertical-scroll-proportion="-22.5" vertical-offset="0" max-vertical-offset="960">
           <folding>
-            <element signature="e#39#75#0" expanded="true" />
+            <marker date="1429707403659" expanded="true" signature="97:148" placeholder="select DISTI..sh_facilities..." />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2015-05-04.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="250" column="144" selection-start="23163" selection-end="23180" vertical-scroll-proportion="-16.26923" vertical-offset="3327" max-vertical-offset="3885">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/frontpage.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="707" column="61" selection-start="29725" selection-end="29725" vertical-scroll-proportion="0.5011287" vertical-offset="10383" max-vertical-offset="11925">
+        <state line="681" column="29" selection-start="28804" selection-end="28804" vertical-scroll-proportion="7.75" vertical-offset="10401" max-vertical-offset="12120">
           <folding>
             <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -884,6 +809,26 @@
             <element signature="n#style#0;n#img#0;n#div#2;n#div#2;n#div#1;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#a#0;n#div#2;n#div#2;n#div#1;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#1;n#div#2;n#div#2;n#div#1;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="24" selection-start="1039" selection-end="1039" vertical-scroll-proportion="-2.3333333" vertical-offset="589" max-vertical-offset="1185">
+          <folding>
+            <element signature="e#6#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="125" column="14" selection-start="5817" selection-end="5817" vertical-scroll-proportion="0.6952596" vertical-offset="1567" max-vertical-offset="5115">
+          <folding>
+            <element signature="e#39#75#0" expanded="true" />
+            <element signature="e#5757#5783#0" expanded="true" />
+            <marker date="1430747689173" expanded="true" signature="5783:5870" placeholder="..." />
           </folding>
         </state>
       </provider>
