@@ -1,5 +1,8 @@
 <?php namespace App\Http\Controllers;
 
+use Illuminate\Pagination\Paginator;
+use Illuminate\Pagination\LengthAwarePaginator;
+
 class WelcomeController extends Controller {
 
 	/*
@@ -37,7 +40,9 @@ class WelcomeController extends Controller {
 
         $data['sofar'] = $data['featured']['so_far'];
 
-        $data['more_news'] = $this->get_all('All');
+        $more_news = $this->get_all('All');
+        $data['more_news'] = $this->paginateArray($more_news, 7, $page = null);
+
         $data['tags'] = $this->get_tags();
         $data['major'] = array_slice($data['featured'], 1);
 
@@ -96,6 +101,22 @@ class WelcomeController extends Controller {
         $data['filtered_feed'] = $this->get_all($section);
         $data['title'] = $section;
         $this->load->view('filtered', $data);
+    }
+
+    public function paginateArray($data, $perPage, $page = null)
+    {
+        $page = $page ? (int) $page * 1 : (isset($_REQUEST['page']) ? (int) $_REQUEST['page'] * 1 : 1);
+        $offset = ($page * $perPage) - $perPage;
+        return $this->make(array_slice($data, $offset, $perPage, true), count($data), $perPage);
+    }
+
+    public static function make(array $items, $totalItems, $itemsPerPage)
+    {
+        $page = Paginator::resolveCurrentPage();
+
+        return new LengthAwarePaginator($items, $totalItems, $itemsPerPage, $page, [
+            'path' => Paginator::resolveCurrentPath()
+        ]);
     }
 
     public function get_tags(){
