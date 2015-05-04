@@ -21,8 +21,14 @@ background-position: 0 -5px;
     font-size: 1.2em;
     margin-left: 5px;
 }
+.widget_body{
+    margin-bottom: 20px;
+}
+.widget_body p{
+    font-size: 0.8em;
+}
 .icon-2x{
-    font-size: 1.3em;
+    font-size: 0.8em;
 }
 .container-outline{
 

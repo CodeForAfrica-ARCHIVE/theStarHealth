@@ -46,9 +46,10 @@ class WelcomeController extends Controller {
         $data['tags'] = $this->get_tags();
         $data['major'] = array_slice($data['featured'], 1);
 
-        $data['helplines'] = array();
-        $data['supportgroups'] = array();
-        $data['socialmedias'] = array();
+        $data['helplines'] = $this->get_helplines();
+        $data['supportgroups'] = $this->get_support_groups();
+        $data['socialmedias'] = $this->get_social_media();
+
         $counties = array("KIAMBU", "KIRINYAGA", "MARAGUA", "MURANGA", "NYANDARUA", "NYERI", "THIKA", "KILIFI", "KWALE", "LAMU", "MALINDI", "MOMBASA", "TAITA TAVETA", "TANA RIVER", "CENTRAL MERU", "EMBU", "ISIOLO", "KITUI", "MACHAKOS", "MAKUENI", "MARSABIT", "MBEERE", "MOYALE", "MWINGI", "NORTH MERU", "SOUTH MERU", "THARAKA", "GARISSA", "MANDERA", "WAJIR", "NAIROBI", "BONDO", "GUCHA", "HOMA BAY", "KISII CENTRAL", "KISII NORTH", "KISUMU", "KURIA", "MIGORI", "NYANDO", "RACHUONYO", "SIAYA", "SUBA", "BARINGO", "BOMET", "BURET", "KAJIADO", "KEIYO", "KERICHO", "KOIBATEK", "LAIKIPIA", "MARAKWET", "NAKURU", "NANDI", "NAROK", "SAMBURU", "TRANS MARA", "TRANS-NZOIA", "TURKANA", "UASIN GISHU", "WEST POKOT", "BUNGOMA", "BUSIA", "BUTERE/MUMIAS", "KAKAMEGA", "LUGARI/MALAVA", "MOUNT ELGON", "TESO", "VIHIGA", "DIST", "DISTRICT", "TRANSMARA");
         sort($counties);
         $data['counties'] = $counties;
@@ -127,6 +128,19 @@ class WelcomeController extends Controller {
             ?>
         </div>
 <?php
+    }
+
+    public function get_helplines(){
+        return array("Kenya Police"=>"053801053", "Kenya Medical Board"=>"+254 20 2724938", "Ministry of Health"=>"+254 20 2717077", "Nursing Council of Kenya"=>"+254 20 3873556");
+    }
+    public function get_social_media(){
+        return array("Medical Practitioners and Dentists Board"=>"http://twitter.com/kmpdu",
+            "Kenya Red Cross"=>"http://twitter.com/EMS_Kenya",
+            "St John's Ambulance"=>"http://twitter.com/StJohnsKenya",
+            "Nairobi Women's Hospital"=>"http://twitter.com/NairobiWomens_H");
+    }
+    public function get_support_groups(){
+        return array();
     }
 
     public function paginateArray($data, $perPage, $page = null)

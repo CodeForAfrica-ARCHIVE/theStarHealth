@@ -521,46 +521,38 @@
 		</div>
 
 		<div class="span3" style='float:right'>
-			<div class="sidebar_widget row-header">
-				<h4>Help Desk</h4>
-			</div>
+
 			<div class="sidebar_widget down helpline">
 				<?php
-
 				//if(count($helplines)>0){
-					print "<div><h5>Help lines</h5>";
-					foreach($helplines as $helpline){
-					print $helpline['h_name'];
-					print "<p>
-					<i class='icon-phone icon-2x' style='margin-right:5px'></i>
-					<a href='tel:".$helpline['h_number']."'>".$helpline['h_number']."</a>
-					</p>";
-				}
-				if(count($helplines)<1){
-					print "No pages listed";
-				}
-				print "</div>";
+                    print '<div class="widget_body"><div class="row-header"><h4><i class="icon-phone icon-2x" style="margin-right:5px"></i>Help Lines</h4></div>';
+
+					foreach($helplines as $k=>$v){
+                        print "<p><a href='tel:".$v."'>".$k." (".$v.")</a></p>";
+				    }
+
+                    if(count($helplines)<1){
+                        print "No pages listed";
+                    }
+				    print "</div>";
 				//}
 				//if(count($supportgroups)>0){
-					print "<div><h5>Support Groups</h5>";
-					foreach($supportgroups as $supportgroup){
-					print "<h2>".$supportgroup['sg_name']."</h2>";
-					print "<p>
-					<i class='icon-phone icon-2x' style='margin-right:5px'></i>
-					<a href='tel:".$supportgroup['sg_number']."'>".$supportgroup['sg_number']."</a>
-					</p>";
-				}
+                print '<div class="widget_body"><div class="row-header"><h4><i class="icon-anchor icon-2x" style="margin-right:5px"></i>Support Groups</h4></div>';
+
+                foreach($supportgroups as $k=>$v){
+					    print "<p><a href='tel:".$v."'>".$k." (".$v.")</a></p>";
+				    }
 				if(count($supportgroups)<1){
 					print "No groups listed";
 				}
 				print "</div>";
 				//}
 				//if(count($socialmedias)>0){
-					print "<div><h5>Social Media</h5>";
-				foreach($socialmedias as $socialmedia){
+                print '<div class="widget_body"><div class="row-header"><h4><i class="icon-user icon-2x" style="margin-right:5px"></i>Social Media</h4></div>';
+
+                foreach($socialmedias as $k=>$v){
 					print "<p>
-					<i class='icon-link icon-2x' style='margin-right:5px'></i>
-					<a href='".$socialmedia['sm_link']."'>".$socialmedia['sm_name']."</a>
+					<a href='".$v."'>".$k."</a>
 					</p>";
 				}
 				if(count($socialmedias)<1){
@@ -686,18 +678,14 @@
 				</tbody>
 			</table>
 		</div>
-		<script>
-		document.getElementById("chev1").style.display='none';
-		document.getElementById("chev2").style.display='none';
-		document.getElementById("chev3").style.display='none';
-		</script>
 		<div class="span6 newsfeed" id="filtered">
 			<div class="row-header"><h4>Other Health News</h4></div>
 			<h6>A round-up of the all the latest health news from theStar <i class="icon-arrow-down" style="margin-left: 10px"></i></h6>
 			<br />
 			<?php
 
-            $items=0;
+                $items=0;
+
 			  	foreach($more_news as $item){
 			  		if($items<40){
                     $thumb = str_replace("http://the-star.co.ke", "http://www.the-star.co.ke", $item['thumb']);
@@ -740,9 +728,9 @@
 			<br />
 			<div class="row-header"><h4>Stay in Touch</h4></div>
 			<div class="social_media_icons">
-				<img src="<?php echo asset('');?>img/facebook.png" style="height:32px;width:32px">
-				<a href="https://twitter.com/TheStarKenya"><img src="<?php echo asset('');?>img/twitter.png" style="height:32px;width:32px"></a>
-				<img src="<?php echo asset('');?>img/rss.png" style="height:32px;width:32px">
+				<a href="https://www.facebook.com/thestarkenya" target="_blank"><img src="<?php echo asset('');?>img/facebook.png" style="height:32px;width:32px"></a>
+				<a href="https://twitter.com/TheStarKenya" target="_blank"><img src="<?php echo asset('');?>img/twitter.png" style="height:32px;width:32px"></a>
+				<a href="http://www.the-star.co.ke/rss.xml" target="_blank"><img src="<?php echo asset('');?>img/rss.png" style="height:32px;width:32px"></a>
 			</div>
 			<!-- <a class="twitter-timeline" href="https://twitter.com/TheStarKenya" data-widget-id="336091571755827200">Tweets by @TheStarKenya</a> -->
             <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
