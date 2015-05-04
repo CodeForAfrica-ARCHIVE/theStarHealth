@@ -222,3 +222,121 @@ margin-bottom: 5px;
     font-family: "Vollkorn", serif;
     margin-top:-5px;
 }
+
+#footer {
+    background-color: #184B99;
+    color: #FFFFFF;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    overflow: hidden;
+}
+.bcolumn {
+    margin: 5px;
+    min-height: 230px;
+    padding-left: 10px;
+    background-image: url(../img/bcoumnbg.png);
+    background-repeat: repeat;
+    overflow: hidden;
+}
+.bcolumn a{
+    color: #fff !important;
+    font-size: 0.8em;
+}
+.col-md-12 {
+    width: 100%;
+}
+.col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+    float: left;
+}
+#footer{
+    background-color: #184B99;
+}
+.col-md-2 {
+    width: 16.66666667%;
+}
+#copyright{
+    font-size: 0.9em;
+    text-align: center;
+}
+#copyright a {
+    color: #FFDD17;
+    text-decoration: underline;
+}
+.beside-thumb img{
+    height: 172px !important;
+}
+.content-area{
+    padding:12px;
+}
+.single-thumb img{
+    width: 400px !important;
+}
+.assignment-icons.fa{
+    font-size: 3em !important;
+    margin-right: 20px !important;
+}
+.single-thumb {
+    width: 400px !important;
+    margin-right: 30px !important;
+}
+.assignment-icons{
+    padding: 10px;
+    overflow: hidden;
+}
+.icons-bit{
+    background: #d1d1d1;
+    float:left;
+    width: 30%;
+    margin-right: 10px;
+    padding: 10px;
+    text-align: center;
+}
+.header-wrapper .menu li a {
+    padding: 0 15px;
+}
+.credit{
+    border-top: 1px solid rgb(226, 226, 226);
+    text-align: center;
+    padding: 5px;
+    background-color: #fff;
+    height: 80px;
+    margin: 10px;
+}
+.credit img{
+    height:70px;
+    vertical-align:middle
+}
+.credit-text{
+    font-size: 1.4em;
+    color: #184B99;
+}
+.credit a{
+    text-decoration: none !important;
+}
+.contrib_button{
+    border-radius: 5px;
+    background: #D82C2D;
+    padding: 8px;
+    text-align: center;
+    margin-bottom: 20px;
+    width: 400px;
+    margin: 0 auto;
+}
+.contrib_button a{
+    color: #fff;
+}
+.contrib_button a:hover{
+    color: #bbbbbb !important;
+}
+.contrib_button img{
+    height:15px;
+}
+ul, ol {
+    padding: 0 !important;
+    margin: 0 !important;
+    list-style-type: none !important;
+}
+.site-footer{
+    padding: 0 !important;
+    width: 100% !important;
+}
