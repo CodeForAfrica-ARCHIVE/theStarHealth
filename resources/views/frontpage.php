@@ -683,7 +683,7 @@
 			<br />
 			<?php
 
-			$items=0;
+            $items=0;
 			  	foreach($more_news as $item){
 			  		if($items<40){
                     $thumb = str_replace("http://the-star.co.ke", "http://www.the-star.co.ke", $item['thumb']);
@@ -705,6 +705,11 @@
 					}
 			  	}
 				?>
+            <div class="pagination" style="text-align: center">
+                <?php
+                print $more_news->render();
+                ?>
+            </div>
 		</div>
 		<div class="span3 sidebar_widget2">
 			<div class="row-header"><h4>App Store</h4></div>
