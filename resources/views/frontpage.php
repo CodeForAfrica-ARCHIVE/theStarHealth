@@ -58,7 +58,7 @@
     <div class="brand_header">
         <div class="row">
             <div class="span6">
-                <a class="brand" href="http://health.the-star.co.ke/"><img src="<?php echo asset("img/logo.png");?>"> <img src="<?php echo asset("img/health.png");?>"></a>
+                <a class="brand" href="http://starhealth.the-star.co.ke/"><img src="<?php echo asset("img/logo.png");?>"> <img src="<?php echo asset("img/health.png");?>"></a>
             </div>
             <div class="span4" style="float:right;width:280px !important;">
 
@@ -129,7 +129,7 @@
                         <a href="http://www.the-star.co.ke/sections/starlife" target="_blank">StarLife</a>
                     </li>
                     <li class="">
-                        <a href="http://health.the-star.co.ke">StarHealth</a>
+                        <a href="http://starhealth.the-star.co.ke">StarHealth</a>
                     </li>
                     <li class="">
                         <a href="http://www.the-star.co.ke/sections/weekend-star" target="_blank">Weekend Star</a>
@@ -870,8 +870,8 @@
 
 
     <div class="credit">
-        <a href="http://codeforafrica.org" target="_blank"><span class="credit-text">Built by </span>
-            <img src="http://localhost/wordpress/wp-content/themes/profitmag/images/cfafrica.png"></a>
+        <a href="http://code4kenya.org" target="_blank"><span class="credit-text">Built by </span>
+            <img src="<?php echo asset('');?>img/c4k_logo.png"></a>
     </div>
 
     <div class="region region-footer-bottom">
