@@ -340,3 +340,15 @@ ul, ol {
     padding: 0 !important;
     width: 100% !important;
 }
+.contribution{
+    text-align: center;
+    font-size: 0.8em;
+    color: #959595;
+}
+.contribution a{
+    color: #959595;
+}
+.self_employed_notification{
+    font-size: 0.8em;
+    text-align: left;
+}

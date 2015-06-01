@@ -8,7 +8,8 @@ $content = file_get_contents($feed_url, true);
 
 $feed = json_decode($content);
 
-if(property_exists($feed, "nodes") && isFresh($content)){
+
+if(property_exists($feed, "nodes")&& isFresh($content)){
 
     //first dump raw content to file to check if new in subsequent pulls
     file_put_contents("oldsha.txt", sha1($content));

@@ -250,6 +250,67 @@
                     }});
 
                 });
+
+                $("#whatsMyContribution").click(function(){
+                    $("#myContribution").html("");
+                });
+
+                $("#calculate").click(function(){
+
+                    var income = $("#income").val();
+
+                    if(income == ""){
+                        $("#myContribution").html("You did not enter your income!");
+                    }else{
+                        if(!jQuery.isNumeric(income)){
+                            $("#myContribution").html("Only numbers allowed!");
+                        }else{
+                            //do the calculations
+                            var result;
+
+                            if(income<6000){
+                                result = "150";
+                            }else if(income<8000){
+                                result = "300";
+                            }else if(income<12000){
+                                result = "400";
+                            }else if(income<15000){
+                                result = "500";
+                            }else if(income<20000){
+                                result = "600";
+                            }else if(income<25000){
+                                result = "750";
+                            }else if(income<30000){
+                                result = "850";
+                            }else if(income<35000){
+                                result = "900";
+                            }else if(income<40000){
+                                result = "950";
+                            }else if(income<45000){
+                                result = "1000";
+                            }else if(income<50000){
+                                result = "1100";
+                            }else if(income<60000){
+                                result = "1200";
+                            }else if(income<70000){
+                                result = "1300";
+                            }else if(income<80000){
+                                result = "1400";
+                            }else if(income<90000){
+                                result = "1500";
+                            }else if(income<100000){
+                                result = "1600";
+                            }else{
+                                result = "1700";
+                            }
+
+                            $("#myContribution").html(result + " KSH per month");
+                        }
+                    }
+
+                    $("#income").val("")
+
+                });
             });
         </script>
         <input type="text" placeholder="Start typing doctor's name" class="search" name="course" id="doctorName" />
@@ -386,6 +447,35 @@
     <button class='btn add-on red_button red_button_round' href="#myModal" role="button" class="btn" data-toggle="modal" id="grabNHIFDetails">
         <i class="icon-search"></i>
     </button>
+    <div class="contribution"><a href="#premiumRatesModal" data-toggle="modal" id="whatsMyContribution">What's my contribution?</a></div>
+    <!-- Modal -->
+    <div id="premiumRatesModal" style="text-align:justify !important;" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="dname">Premium Rates</h3>
+        </div>
+        <div class="modal-body">
+            <p>
+            Enter your gross income to find out how much you should pay*
+
+            <div class="search_menu input-append">
+                <input type="text" name="income" placeholder="Gross income" id="income">
+                <button class='btn add-on' id="calculate">
+                    <i class="icon-search"></i>
+                </button>
+            </div>
+
+            <div class="myContribution" id="myContribution">
+
+            </div>
+            <div class="self_employed_notification">*Self-employed individuals have a constant rate of KSH 500</div>
+            </p>
+        </div>
+        <div class="modal-footer">
+
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+        </div>
+    </div>
 </div>
 <!-- <div class="span3 header_widget">
 <i class="icon-money icon-4x"></i>
