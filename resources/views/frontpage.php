@@ -465,11 +465,31 @@
     <br />
     <select id="hospital">
         <option>All hospital types</option>
-        <option>Category A: Government Hospitals</option>
-        <option>Category B: Private and Mission Hospitals</option>
-        <option>Category A: Private Hospitals</option>
+        <option value="A">Category A: Government Hospitals</option>
+        <option value="B">Category B: Private and Mission Hospitals</option>
+        <option value="C">Category C: Private Hospitals</option>
     </select>
-    <i class="icon-question-sign"></i>
+    <a href="#nhifInfoModal" data-toggle="modal"><i class="icon-question-sign"></i></a>
+    <!-- Modal -->
+    <div id="nhifInfoModal" style="text-align:justify !important;" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h4>NHIF has divided the accredited hospitals in to 3 categories:</h4>
+        </div>
+        <div class="modal-body">
+            <p>
+            <ul>
+                <li><b>Category A - Government Hospitals.</b> Members enjoy full and comprehensive for maternity and medical diseases including surgery. Therefore, if you are a member, you do not pay anything to be admitted.</li>
+                <li><b>Category B - Private and Mission.</b> Members get a full comprehensive cover but if surgery is required, the member pays for that.</li>
+                <li><b>Category C – Private</b>. NHIF only pays for specified daily benefits and the member pays everything else.</li>
+            </ul>
+            </p>
+        </div>
+        <div class="modal-footer">
+
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+        </div>
+    </div>
     <button class='btn add-on red_button red_button_round' href="#myModal" role="button" class="btn" data-toggle="modal" id="grabNHIFDetails">
         <i class="icon-search"></i>
     </button>
