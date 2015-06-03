@@ -46,6 +46,11 @@ Route::get('/filter_feed', function()
     $tag = Request::input('tag');
     return (new WelcomeController())->filter_feed($tag);
 });
+Route::get('/reverse_geocode', function()
+{
+    $q = Request::input('q');
+    return (new HospitalsController())->reverse_geocode($q);
+});
 Route::get('nhifcoverage', function()
 {
     $min = Request::input('min');

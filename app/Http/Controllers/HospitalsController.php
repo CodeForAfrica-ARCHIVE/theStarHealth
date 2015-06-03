@@ -55,5 +55,17 @@ class HospitalsController extends Controller {
 
         return $result;
 	}
+    public function reverse_geocode($q){
+        $geocode_url = "https://maps.googleapis.com/maps/api/geocode/json?latlng=".$q."&key=".config("custom_config.google_api_key");
+
+        $response = json_decode(file_get_contents($geocode_url));
+
+        if($response->status =="OK"){
+            return $response->results[0]->formatted_address;
+        }else{
+            return null;
+        }
+
+    }
 
 }

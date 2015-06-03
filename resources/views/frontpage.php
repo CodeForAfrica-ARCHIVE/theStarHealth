@@ -311,7 +311,28 @@
                     $("#income").val("")
 
                 });
+
+                jQuery(".near_me").click(initiate_geolocation);
             });
+            function initiate_geolocation() {
+                $("#hospital_location").css("background", "white url('ajax-autocomplete/indicator.gif') right center no-repeat");
+                navigator.geolocation.getCurrentPosition(handle_geolocation_query);
+            }
+
+            function handle_geolocation_query(position){
+                //Get cordinates on complete
+                var autoCords = position.coords.latitude + ',' + position.coords.longitude;
+
+                //make ajax request to reverse geocode coordinates
+                $.ajax({url:"reverse_geocode?q=" + autoCords,success:function(result){
+
+                    $("#hospital_location").val(result);
+
+                    //$("#loading_hospitals").hide();
+                    $("#hospital_location").css("background", "none");
+
+                }});
+            }
         </script>
         <input type="text" placeholder="Start typing doctor's name" class="search" name="course" id="doctorName" />
         <script>
@@ -434,16 +455,21 @@
         		<i class="icon-search"></i>
     		</button>
           	</div> -->
+    <!--
     <input type="text" placeholder="Minimum rate" class="rate" id="min">
     <input type="text" placeholder="Maximum rate" class="rate" id="max">
-    <select id="town">
-        <option>Select town</option>
-        <?php
-        foreach($towns as $town){
-            print "<option>".$town."</option>";
-        }
-        ?>
+    -->
+    <input type="text" id="hospital_location" placeholder="Eg. Kisumu, Kariobangi" />
+    <span class="near_me" style="cursor: pointer; padding:3px;"><i class="icon-location-arrow"></i> <span id="get_location_text" style=""></span></span>
+
+    <br />
+    <select id="hospital">
+        <option>All hospital types</option>
+        <option>Category A: Government Hospitals</option>
+        <option>Category B: Private and Mission Hospitals</option>
+        <option>Category A: Private Hospitals</option>
     </select>
+    <i class="icon-question-sign"></i>
     <button class='btn add-on red_button red_button_round' href="#myModal" role="button" class="btn" data-toggle="modal" id="grabNHIFDetails">
         <i class="icon-search"></i>
     </button>
