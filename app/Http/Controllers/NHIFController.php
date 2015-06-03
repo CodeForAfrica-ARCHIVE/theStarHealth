@@ -3,25 +3,23 @@ namespace App\Http\Controllers;
 
 class NHIFController extends Controller {
 
-	public static function coverage($min, $max, $town)
+	public static function coverage($type, $gps)
 	{
         $result = "";
 
-        if($min=='' || $max==''){
-            $result = 'You have to specify both maximum and minimum values!';
+        if($gps==''){
+            $result = 'You have to set location!';
         }else{
-            $town = strtoupper($town);
-
             $key = config('custom_config.google_api_key');
             $table = config('custom_config.nhif_table');
 
             $url = "https://www.googleapis.com/fusiontables/v1/query?";
 
-            if($town == "SELECT TOWN"){
+            if($type == "0"){
 
-                $sql = "SELECT * FROM ".$table." where Rate<=$max AND Rate>=$min";
+                $sql = "SELECT * FROM ".$table." ORDER BY ST_DISTANCE(gps, LATLNG(". $gps .")) LIMIT 10";
             }else{
-                $sql = "SELECT * FROM ".$table." where Rate<=$max AND Rate>=$min AND Town LIKE '%$town%'";
+                $sql = "SELECT * FROM ".$table." WHERE Category='".$type."' ORDER BY ST_DISTANCE(gps, LATLNG(". $gps .")) LIMIT 10";
             }
 
 
@@ -38,13 +36,13 @@ class NHIFController extends Controller {
             }else{
                 $rows = $data['rows'];
 
-
                 foreach($rows as $row){
-                    $cname = $row['2'];
-                    $cname .= " KSH ".$row['8'];
+                    $cname = $row['1'];
+                    //$cname .= " KSH ".$row['8'];
                     $result .= $cname . "<br/>";
                 }
             }
+
         }
 
 

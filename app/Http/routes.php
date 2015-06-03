@@ -53,11 +53,10 @@ Route::get('/reverse_geocode', function()
 });
 Route::get('nhifcoverage', function()
 {
-    $min = Request::input('min');
-    $max = Request::input('max');
-    $town = Request::input('town');
+    $type = Request::input('type');
+    $gps = Request::input('gps');
 
-    return NHIFController::coverage($min, $max, $town);
+    return NHIFController::coverage($type, $gps);
 });
 Route::get('specialty', function()
 {

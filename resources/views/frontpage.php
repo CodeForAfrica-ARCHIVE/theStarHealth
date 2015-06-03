@@ -185,22 +185,18 @@
                     }});
                 });
                 $("#grabNHIFDetails").click(function(){
-                    var min = $("#min").val();
-                    var max = $("#max").val();
-                    var town = $("#town").val();
-                    var ctown = town;
+                    var hospital_location_gps = $("#hospital_location_gps").val();
+                    var hospital_location = $("#hospital_location").val();
 
-                    if(town == "Select town"){
-                        ctown = "all towns";
-                    }
+                    var hospital_type = $("#hospital_type").val();
 
-                    $("#dname").html("<h4>Coverage in " + ctown + "</h4>");
+                    $("#dname").html("<h4>"+hospital_location+"</h4>");
 
                     $("#mybox").html("");
 
                     $("#loading").show();
 
-                    $.ajax({url:"nhifcoverage?min=" + min + "&max=" + max + "&town=" + town,success:function(result){
+                    $.ajax({url:"nhifcoverage?type=" + hospital_type + "&gps=" + hospital_location_gps,success:function(result){
 
                         $("#mybox").html(result);
 
@@ -322,6 +318,8 @@
             function handle_geolocation_query(position){
                 //Get cordinates on complete
                 var autoCords = position.coords.latitude + ',' + position.coords.longitude;
+
+                $("#hospital_location_gps").val(autoCords);
 
                 //make ajax request to reverse geocode coordinates
                 $.ajax({url:"reverse_geocode?q=" + autoCords,success:function(result){
@@ -460,11 +458,12 @@
     <input type="text" placeholder="Maximum rate" class="rate" id="max">
     -->
     <input type="text" id="hospital_location" placeholder="Eg. Kisumu, Kariobangi" />
+    <input type="hidden" id="hospital_location_gps" />
     <span class="near_me" style="cursor: pointer; padding:3px;"><i class="icon-location-arrow"></i> <span id="get_location_text" style=""></span></span>
 
     <br />
-    <select id="hospital">
-        <option>All hospital types</option>
+    <select id="hospital_type">
+        <option value="0">All hospital types</option>
         <option value="A">Category A: Government Hospitals</option>
         <option value="B">Category B: Private and Mission Hospitals</option>
         <option value="C">Category C: Private Hospitals</option>

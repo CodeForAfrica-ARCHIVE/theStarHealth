@@ -2,9 +2,9 @@
 
     return array(
         'dodgy_docs_table'=>'1gKphvWyeJY5TSX9AbBnz9zVgztukI_EHJySWy-cS',
-        'google_api_key'=>'AIzaSyBNhfmqCPpeM913ouoO_eZE6JZQDnluxq8',
+        'google_api_key'=>'AIzaSyDxl1fw59sPuU4tgqeHmDhPf3KFTJVJe1k',
         'facilities_table'=>'1S5G4mtQ5UaJRWFC0aYdiUmn7ROX8jnqcLzlZW3bc',
-        'nhif_table'=>'1NqHdw73ipdvztDmhezyz6OCBXFN1G8bq9nkZz0Go',
+        'nhif_table'=>'14iZ8NRGqgf3xvV9M-Axjqcp8xCb9wGn3TDSxDV52',
     );
 
 ?>
