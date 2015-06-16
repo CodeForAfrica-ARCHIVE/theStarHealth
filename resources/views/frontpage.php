@@ -1027,18 +1027,11 @@
                     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
                     ga('create', 'UA-44795600-11', 'auto');
+                    ga('create', 'UA-21433057-1', 'auto', {'name': 'theStar'});
+                    ga('create', 'UA-33350783-4', 'auto', {'name': 'CfAFRICA'});
                     ga('send', 'pageview');
-
-                </script>
-                <!--The Star Analytics-->
-                <script>
-                    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-                    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-                    ga('create', 'UA-21433057-1', 'auto');
-                    ga('send', 'pageview');
+                    ga('theStar.send', 'pageview');
+                    ga('CfAFRICA.send', 'pageview');
 
                 </script>
             </div>
@@ -1100,16 +1093,5 @@
 <script src="<?php echo asset('');?>js/google-code-prettify/prettify.js"></script>
 
 <script src="<?php echo asset('');?>js/application.js"></script>
-
-<script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-33350783-4', 'auto');
-    ga('send', 'pageview');
-
-</script>
 </body>
 </html>
