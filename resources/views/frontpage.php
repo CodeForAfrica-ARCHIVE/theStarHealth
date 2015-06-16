@@ -1029,9 +1029,11 @@
 
                     ga('create', 'UA-44795600-11', 'auto');
                     ga('create', 'UA-21433057-1', 'auto', {'name': 'theStar'});
+                    ga('create', 'UA-21433057-5', 'auto', {'name': 'theStarHealth'});
                     ga('create', 'UA-33350783-4', 'auto', {'name': 'CfAFRICA'});
                     ga('send', 'pageview');
                     ga('theStar.send', 'pageview');
+                    ga('theStarHealth.send', 'pageview');
                     ga('CfAFRICA.send', 'pageview');
 
                 </script>
