@@ -146,7 +146,7 @@
 <div class="span4 header_widget">
     <i class="icon-user-md icon-2x"></i>
     <h4>Dodgy Doctors</h4>
-    <div class="description">Check to see if your doctor is registered.<br/><small>Can't find a name? Send us an email <a href="mailto:starhealth@codeforafrica.org" target="_blank">starhealth@codeforafrica.org</a></small>
+    <div class="description">Check to see if your doctor is registered.<br/><small><em>Can't find a name? Send us an email <a href="mailto:starhealth@codeforafrica.org" target="_blank">starhealth@codeforafrica.org</a></em></small>
 </div>
     <div class="search_menu input-append" style="margin-top:45px;">
         <?php
