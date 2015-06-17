@@ -665,7 +665,7 @@
 				print "</div>";
 				//}
 				//if(count($socialmedias)>0){
-                print '<div class="widget_body"><div class="row-header"><h4><i class="icon-user icon-2x" style="margin-right:5px"></i>Social Media</h4></div>';
+                print '<div class="widget_body"><div class="row-header"><h4><i class="icon-user icon-2x" style="margin-right:5px"></i> Links</h4></div>';
 
                 foreach($socialmedias as $k=>$v){
 					print "<p>
