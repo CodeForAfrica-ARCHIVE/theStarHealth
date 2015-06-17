@@ -134,7 +134,7 @@ class WelcomeController extends Controller {
         return array("Kenya Police"=>"053801053", "Kenya Medical Board"=>"+254 20 2724938", "Ministry of Health"=>"+254 20 2717077", "Nursing Council of Kenya"=>"+254 20 3873556");
     }
     public function get_social_media(){
-        return array("Medical Practitioners and Dentists Board"=>"http://twitter.com/kmpdu",
+        return array("Medical Practitioners and Dentists Board"=>"http://medicalboard.co.ke/",
             "Kenya Red Cross"=>"http://twitter.com/EMS_Kenya",
             "St John's Ambulance"=>"http://twitter.com/StJohnsKenya",
             "Nairobi Women's Hospital"=>"http://twitter.com/NairobiWomens_H");
