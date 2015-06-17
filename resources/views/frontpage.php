@@ -316,7 +316,7 @@
                 jQuery(".near_me").click(initiate_geolocation);
             });
             function initiate_geolocation() {
-                $("#hospital_location").css("background", "white url('ajax-autocomplete/indicator.gif') right center no-repeat");
+                $("#town").css("background", "white url('ajax-autocomplete/indicator.gif') right center no-repeat");
                 navigator.geolocation.getCurrentPosition(handle_geolocation_query);
             }
 
@@ -327,10 +327,10 @@
                 //make ajax request to reverse geocode coordinates
                 $.ajax({url:"reverse_geocode?q=" + autoCords,success:function(result){
 
-                    $("#hospital_location").val(result);
+                    $("#town").val(result);
 
                     //$("#loading_hospitals").hide();
-                    $("#hospital_location").css("background", "none");
+                    $("#town").css("background", "none");
 
                 }});
             }
@@ -460,7 +460,7 @@
     <input type="text" placeholder="Minimum rate" class="rate" id="min">
     <input type="text" placeholder="Maximum rate" class="rate" id="max">
     -->
-    <input type="text" id="hospital_location" placeholder="Eg. Kisumu, Kariobangi" />
+    <input type="text" id="town" placeholder="Eg. Kisumu, Kariobangi" />
     <span class="near_me" style="cursor: pointer; padding:3px;"><i class="icon-location-arrow"></i> <span id="get_location_text" style=""></span></span>
 
     <br />
