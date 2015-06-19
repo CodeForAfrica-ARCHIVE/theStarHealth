@@ -3,13 +3,29 @@ namespace App\Http\Controllers;
 
 class NHIFController extends Controller {
 
-	public static function coverage($type, $gps)
+	public static function coverage($type, $gps, $address)
 	{
         $result = "";
 
-        if($gps==''){
+        if($address==''){
             $result = 'You have to set location!';
         }else{
+
+            if($gps==""){
+                //reverse geocode address
+                $q = urlencode($address);
+
+                $geocode_url = "https://maps.googleapis.com/maps/api/geocode/json?address=".$q."&key=".config('custom_config.google_api_key');
+
+                $response = json_decode(file_get_contents($geocode_url));
+
+                if($response->status =="OK"){
+                    $gps = $response->results[0]->geometry->location;
+                    $gps = $gps->lat.",".$gps->lng;
+                }else{
+                    $gps = "0,0";
+                }
+            }
             $key = config('custom_config.google_api_key');
             $table = config('custom_config.nhif_table');
 
@@ -37,7 +53,7 @@ class NHIFController extends Controller {
                 $rows = $data['rows'];
 
                 foreach($rows as $row){
-                    $cname = $row['1'];
+                    $cname = ucwords(strtolower($row['1']));
                     //$cname .= " KSH ".$row['8'];
                     $result .= $cname . "<br/>";
                 }
@@ -49,4 +65,19 @@ class NHIFController extends Controller {
         return $result;
 
 	}
+    public static function reverseGeocode($q){
+
+        $q = urlencode($q);
+
+        $geocode_url = "https://maps.googleapis.com/maps/api/geocode/json?address=".$q."&key=".Config::get('custom_config.google_api_key');
+
+        $response = json_decode(file_get_contents($geocode_url));
+
+        if($response->status =="OK"){
+            return $response->results[0]->geometry->location;
+        }else{
+            return "0,0";
+        }
+
+    }
 }

@@ -196,9 +196,13 @@
 
                     $("#loading").show();
 
-                    $.ajax({url:"nhifcoverage?type=" + hospital_type + "&gps=" + hospital_location_gps,success:function(result){
+                    $.ajax({url:"nhifcoverage?type=" + hospital_type + "&gps=" + hospital_location_gps + "&address=" + hospital_location,success:function(result){
 
                         $("#mybox").html(result);
+
+                        $("#hospital_location_gps").val("");
+
+                        $("#hospital_location").val("");
 
                         $("#loading").hide();
                     }});

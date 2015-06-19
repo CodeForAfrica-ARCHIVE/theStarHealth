@@ -55,8 +55,9 @@ Route::get('nhifcoverage', function()
 {
     $type = Request::input('type');
     $gps = Request::input('gps');
+    $address = Request::input('address');
 
-    return NHIFController::coverage($type, $gps);
+    return NHIFController::coverage($type, $gps, $address);
 });
 Route::get('specialty', function()
 {
