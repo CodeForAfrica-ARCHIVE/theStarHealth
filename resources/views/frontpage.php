@@ -146,7 +146,8 @@
 <div class="span4 header_widget">
     <i class="icon-user-md icon-2x"></i>
     <h4>Dodgy Doctors</h4>
-    <div class="description">Check to see if your doctor is registered, their certified area of practice and whether they are free from malpractice</div>
+    <div class="description">Check to see if your doctor is registered.<br/><small><em>Can't find a name? Send us an email <a href="mailto:starhealth@codeforafrica.org" target="_blank">starhealth@codeforafrica.org</a></em></small>
+</div>
     <div class="search_menu input-append" style="margin-top:45px;">
         <?php
         session_start();
@@ -315,7 +316,7 @@
                 jQuery(".near_me").click(initiate_geolocation);
             });
             function initiate_geolocation() {
-                $("#hospital_location").css("background", "white url('ajax-autocomplete/indicator.gif') right center no-repeat");
+                $("#town").css("background", "white url('ajax-autocomplete/indicator.gif') right center no-repeat");
                 navigator.geolocation.getCurrentPosition(handle_geolocation_query);
             }
 
@@ -328,10 +329,10 @@
                 //make ajax request to reverse geocode coordinates
                 $.ajax({url:"reverse_geocode?q=" + autoCords,success:function(result){
 
-                    $("#hospital_location").val(result);
+                    $("#town").val(result);
 
                     //$("#loading_hospitals").hide();
-                    $("#hospital_location").css("background", "none");
+                    $("#town").css("background", "none");
 
                 }});
             }
@@ -463,6 +464,7 @@
     -->
     <input type="text" id="hospital_location" placeholder="Eg. Kisumu, Kariobangi" />
     <input type="hidden" id="hospital_location_gps" />
+
     <span class="near_me" style="cursor: pointer; padding:3px;"><i class="icon-location-arrow"></i> <span id="get_location_text" style=""></span></span>
 
     <br />
@@ -687,7 +689,7 @@
 				print "</div>";
 				//}
 				//if(count($socialmedias)>0){
-                print '<div class="widget_body"><div class="row-header"><h4><i class="icon-user icon-2x" style="margin-right:5px"></i>Social Media</h4></div>';
+                print '<div class="widget_body"><div class="row-header"><h4><i class="icon-user icon-2x" style="margin-right:5px"></i> Links</h4></div>';
 
                 foreach($socialmedias as $k=>$v){
 					print "<p>
@@ -1050,18 +1052,13 @@
                     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
                     ga('create', 'UA-44795600-11', 'auto');
+                    ga('create', 'UA-21433057-1', 'auto', {'name': 'theStar'});
+                    ga('create', 'UA-21433057-5', 'auto', {'name': 'theStarHealth'});
+                    ga('create', 'UA-33350783-4', 'auto', {'name': 'CfAFRICA'});
                     ga('send', 'pageview');
-
-                </script>
-                <!--The Star Analytics-->
-                <script>
-                    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-                    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-                    ga('create', 'UA-21433057-1', 'auto');
-                    ga('send', 'pageview');
+                    ga('theStar.send', 'pageview');
+                    ga('theStarHealth.send', 'pageview');
+                    ga('CfAFRICA.send', 'pageview');
 
                 </script>
             </div>
@@ -1123,16 +1120,5 @@
 <script src="<?php echo asset('');?>js/google-code-prettify/prettify.js"></script>
 
 <script src="<?php echo asset('');?>js/application.js"></script>
-
-<script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-33350783-4', 'auto');
-    ga('send', 'pageview');
-
-</script>
 </body>
 </html>
