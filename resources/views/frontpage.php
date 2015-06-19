@@ -316,7 +316,7 @@
                 jQuery(".near_me").click(initiate_geolocation);
             });
             function initiate_geolocation() {
-                $("#town").css("background", "white url('ajax-autocomplete/indicator.gif') right center no-repeat");
+                $("#hospital_location").css("background", "white url('ajax-autocomplete/indicator.gif') right center no-repeat");
                 navigator.geolocation.getCurrentPosition(handle_geolocation_query);
             }
 
@@ -329,10 +329,10 @@
                 //make ajax request to reverse geocode coordinates
                 $.ajax({url:"reverse_geocode?q=" + autoCords,success:function(result){
 
-                    $("#town").val(result);
+                    $("#hospital_location").val(result);
 
                     //$("#loading_hospitals").hide();
-                    $("#town").css("background", "none");
+                    $("#hospital_location").css("background", "none");
 
                 }});
             }
