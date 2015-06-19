@@ -27,7 +27,7 @@ class DoctorsController extends Controller {
         $result = "";
 
         foreach($rows as $row){
-            $cname = $row['2'];
+            $cname = $row['1'];
             $result .= "$cname\n";
         }
 
@@ -64,23 +64,26 @@ class DoctorsController extends Controller {
 
             $result = '';
 
-            foreach($rows as $doc){
 
+
+            if(sizeof($rows)==0){
+
+                $result .= "No registered doctor found with that name!";
+
+            }else{
+                //foreach($rows as $doc){
+
+                $doc = $rows[0];
                 $total++;
                 $result .= "<p>";
-                $result .= "Name: ".$doc['1'].' '.$doc['2'];
+                $result .= "Name: ".$doc['1'];
                 $result .= "<br />";
-                $result .= "Reg No: ".$doc['4'];
+                $result .= "Reg No: ".$doc['3'];
                 $result .= "<br />";
                 $result .= "Specialty :".$doc['6'];
                 $result .= "</p>";
 
-            }
-
-            if($total<1){
-
-                $result .= "No registered doctor found with that name!";
-
+                //}
             }
 
         }
