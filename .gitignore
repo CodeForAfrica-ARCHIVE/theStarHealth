@@ -1,4 +1,10 @@
-application/config/database.php
+app/config/database.php
+app/config/custom_config.php
 #ignore vim temporary files
 *~
-.idea/
+/.idea
+/vendor
+/node_modules
+Homestead.yaml
+Homestead.json
+.env
