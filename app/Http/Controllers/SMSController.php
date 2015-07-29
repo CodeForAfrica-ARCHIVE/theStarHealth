@@ -46,17 +46,24 @@ class SMSController extends Controller
                 if (count($found_entities) == 0) {
                     $response = $this->error_message();
                 } else {
+
+                    $found = false;
+
                     foreach ($found_entities as $item){
                         if ($item["type"] == "Person"){
                             $response = $this->find_doctor_by_name($item["text"]);
+                            $found = true;
                             break;
                         }else if(in_array($item["type"], $this->location_tags())){
                             //if has location return nearest facilities
                             $response = $this->find_facilities_by_location($item["text"]);
-                        }else{
-                            $response = $this->error_message();
+                            $found = true;
                             break;
                         }
+                    }
+                    //if nothing found, error
+                    if($found == false){
+                        $response = $this->error_message();
                     }
                 }
             } else {
