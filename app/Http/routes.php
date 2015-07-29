@@ -3,6 +3,7 @@ use App\Http\Controllers\DoctorsController;
 use App\Http\Controllers\NHIFController;
 use App\Http\Controllers\HospitalsController;
 use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\SMSController;
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -16,6 +17,17 @@ use App\Http\Controllers\WelcomeController;
 
 Route::get('/', 'WelcomeController@index');
 
+Route::get('sms', function()
+{
+
+    $phone = Request::input('phoneNumber');
+
+    $message = Request::input('message');
+
+    $result = SMSController::process_received($phone, $message);
+
+    return $result;
+});
 
 Route::get('getDoctors', function()
 {
