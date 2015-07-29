@@ -22,14 +22,26 @@ class DoctorsController extends Controller {
 
         $data = json_decode($page, TRUE);
 
-        $rows = $data['rows'];
+        if(array_key_exists('rows', $data)){
+            $rows = $data['rows'];
 
-        $result = "";
+            $result = "Found:\n";
 
-        foreach($rows as $row){
-            $cname = $row['1'];
-            $result .= "$cname\n";
+            foreach($rows as $row){
+                $cname = $row['1'];
+                $result .= "$cname\n";
+                $result .= " - ". $cname['6']."\n";
+            }
+            if (sizeof($rows) == 0) {
+
+                $result .= "No registered doctor found with that name!";
+
+            }
+
+        }else{
+            $result = "No doctor with that name. Check for spelling mistakes.";
         }
+
 
         return $result;
     }
@@ -58,32 +70,34 @@ class DoctorsController extends Controller {
 
             $data = json_decode($page, TRUE);
 
-            $rows = $data['rows'];
-
-            $total = 0;
-
             $result = '';
-
-
-
-            if(sizeof($rows)==0){
-
+            if(!array_key_exists('rows')){
                 $result .= "No registered doctor found with that name!";
+            }else {
 
-            }else{
-                //foreach($rows as $doc){
+                $rows = $data['rows'];
 
-                $doc = $rows[0];
-                $total++;
-                $result .= "<p>";
-                $result .= "Name: ".$doc['1'];
-                $result .= "<br />";
-                $result .= "Reg No: ".$doc['3'];
-                $result .= "<br />";
-                $result .= "Specialty :".$doc['6'];
-                $result .= "</p>";
+                $total = 0;
 
-                //}
+                if (sizeof($rows) == 0) {
+
+                    $result .= "No registered doctor found with that name!";
+
+                } else {
+                    //foreach($rows as $doc){
+
+                    $doc = $rows[0];
+                    $total++;
+                    $result .= "<p>";
+                    $result .= "Name: " . $doc['1'];
+                    $result .= "<br />";
+                    $result .= "Reg No: " . $doc['3'];
+                    $result .= "<br />";
+                    $result .= "Specialty :" . $doc['6'];
+                    $result .= "</p>";
+
+                    //}
+                }
             }
 
         }

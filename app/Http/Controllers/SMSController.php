@@ -105,6 +105,11 @@ class SMSController extends Controller
         }
 
     }
+    public function find_doctor($message){
+        $name = $this->process_for_doctor_name($message);
+
+        return $this->find_doctor_by_name($name);
+    }
 
     public function get_location($message){
 
@@ -143,16 +148,21 @@ class SMSController extends Controller
 
 
 
-    public function find_doctor($message){
 
-    }
 
     public function find_facilities($message){
+
 
     }
 
     public function find_doctor_by_name($name){
 
+        if($name == null){
+            return $this->error_message("Could not find doctor with that name");
+        }else{
+            //Get NHIF coverage
+            return DoctorsController::getData($name);
+        }
     }
 
     public function find_facilities_by_location($address){
@@ -237,15 +247,33 @@ class SMSController extends Controller
 
     public function process_for_location($message){
         //Hopefully it doesn't come to this
-        for($i=0; $i<count($this->location_adjectives()); $i++){
-            $separator = $this->location_adjectives()[$i];
+        $response = $this->find_string_after_keyword($message, $this->location_adjectives(), "location");
+
+        return $response;
+    }
+
+    public function process_for_doctor_name($message){
+        $response = $this->find_string_after_keyword($message, $this->doctor_keywords(), "doctor");
+
+        return $response;
+    }
+
+    public function find_string_after_keyword($message, $array_of_keywords, $type){
+        $response = null;
+        for($i=0; $i<count($array_of_keywords); $i++){
+            $separator = $array_of_keywords[$i];
             if($this->string_in_string($message, $separator)){
-                $location = explode(" ".$separator." ", $message);
-                if(count($location)>0){
-                    return $location[1];
+                if($type == "location"){
+                    $parts = explode(" ".$separator." ", $message);
+                }else{
+                    //parts is doc
+                    $parts = explode($separator." ", $message);
+                }
+                if(count($parts)>0){
+                    $response = $parts[1];
                 }
             }
         }
-        return null;
+        return $response;
     }
 }

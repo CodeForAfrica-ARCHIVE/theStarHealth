@@ -55,7 +55,7 @@ class NHIFController extends Controller {
                 foreach($rows as $row){
                     $cname = ucwords(strtolower($row['1']));
                     //$cname .= " KSH ".$row['8'];
-                    $result .= $cname . "<br/>";
+                    $result .= $cname . "\n";
                 }
             }
 
