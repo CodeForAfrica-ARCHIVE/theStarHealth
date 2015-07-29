@@ -31,6 +31,8 @@ Route::get('sms', function()
         return null;
     }
 
+
+
     return $result;
 });
 

@@ -8,12 +8,22 @@ class SMSController extends Controller
 
         //log message
 
-        //check if values exist
-        if($phone==""){
+        //check if has phone number
+        if($phone=="") {
             return null;
         }
 
         //clean message
+        $trimmed_message = trim($message);
+
+        //check if message is empty
+        if(strlen($trimmed_message)<1){
+            $response = "Allowed message formats:\n";
+            $response .= "1. Doctor James Gicheru for registration info\n";
+            $response .= "2. XRay in Kiambu for health services";
+
+            return $response;
+        }
 
         //check for keywords
         //process according to keyword
