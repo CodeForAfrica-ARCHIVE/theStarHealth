@@ -1,5 +1,6 @@
 <?php
 namespace App\Http\Controllers;
+use App\Http\Controllers\NHIFController;
 
 class SMSController extends Controller
 {
@@ -25,7 +26,7 @@ class SMSController extends Controller
         if($this->has_nhif_keywords(strtolower($message))){
 
             $response = $this->find_nhif_coverage($message);
-            
+
         }else if($this->has_doctor_keywords(strtolower($message))){
 
             $response = $this->find_doctor($message);
@@ -101,7 +102,7 @@ class SMSController extends Controller
             return $this->error_message("Could not decode location");
         }else{
             //Get NHIF coverage
-            return App::make('NHIFController')->coverage("0", "", $location);
+            return NHIFController::coverage("0", "", $location);
         }
 
     }
@@ -116,10 +117,9 @@ class SMSController extends Controller
 
             if (count($found_location) != 0) {
                 foreach ($found_location as $item) {
-
                     if (in_array($item["type"], $this->location_tags())) {
                         //return first location
-                        $response = $this->find_facilities_by_location($item["text"]);
+                        $response = $item["text"];
                         $found = true;
                         break;
                     }
@@ -131,6 +131,7 @@ class SMSController extends Controller
         if($found==false && $this->has_location_adj($message)){
 
                 $response = $this->process_for_location($message);
+                return $response;
 
         }else if($found == false) {
 
