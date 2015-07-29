@@ -24,7 +24,7 @@ Route::get('sms', function()
 
     $message = Request::input('message');
 
-    $result = SMSController::process_received($phone, $message);
+    $result = (new SMSController())->process_received($phone, $message);
 
     if($result==null){
         //do nothing

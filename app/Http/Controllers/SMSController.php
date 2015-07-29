@@ -3,7 +3,7 @@ namespace App\Http\Controllers;
 
 class SMSController extends Controller
 {
-    public static function process_received($phone, $message)
+    public function process_received($phone, $message)
     {
 
         //log message
@@ -14,10 +14,10 @@ class SMSController extends Controller
         }
 
         //clean message
-        $trimmed_message = trim($message);
+        $message = trim($message);
 
         //check if message is empty
-        if(strlen($trimmed_message)<1){
+        if(strlen($message)<1){
             $response = "Allowed message formats:\n";
             $response .= "1. Doctor James Gicheru for registration info\n";
             $response .= "2. XRay in Kiambu for health services";
@@ -26,9 +26,46 @@ class SMSController extends Controller
         }
 
         //check for keywords
+        //TODO: What if message has both keywords?
+        if($this->has_doctor_keywords(strtolower($message))){
+
+            $response = $this->check_if_registered($message);
+
+        }else if($this->has_health_keywords($message)){
+
+            $response = $this->check_for_health_services($message);
+
+        }else{
+
+            $response = "Could not understand your request. Please go to http://health.the-star.co.ke for the web services.";
+
+        }
+
         //process according to keyword
         //return response
         return $response;
+
+    }
+
+    public function has_doctor_keywords($message){
+
+        $doctor_keywords = array("doctor", "daktari", "laktar", "DR", "dr.", "Dr.", "DR.", "daktar");
+
+        foreach($doctor_keywords as $key){
+
+            if (strpos($key, $message) !== false){
+                return true;
+            }
+
+        }
+
+        return false;
+
+    }
+    public function has_health_keywords($message){
+
+    }
+    public function check_for_health_services($message){
 
     }
 }
