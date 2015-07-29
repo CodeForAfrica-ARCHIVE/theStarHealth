@@ -25,7 +25,7 @@ class SMSController extends Controller
         if($this->has_nhif_keywords(strtolower($message))){
 
             $response = $this->find_nhif_coverage($message);
-
+            
         }else if($this->has_doctor_keywords(strtolower($message))){
 
             $response = $this->find_doctor($message);
@@ -100,7 +100,8 @@ class SMSController extends Controller
         if($location == null){
             return $this->error_message("Could not decode location");
         }else{
-
+            //Get NHIF coverage
+            return App::make('NHIFController')->coverage("0", "", $location);
         }
 
     }
@@ -212,8 +213,9 @@ class SMSController extends Controller
 
         foreach($array as $key){
 
-            if (strpos($key, $string) !== false){
+            if (strpos($string, $key) !== false){
                 return true;
+                break;
             }
 
         }
@@ -233,7 +235,6 @@ class SMSController extends Controller
                 $location = explode(" ".$separator." ", $message);
                 if(count($location)>0){
                     return $location[1];
-                    break;
                 }
             }
         }
