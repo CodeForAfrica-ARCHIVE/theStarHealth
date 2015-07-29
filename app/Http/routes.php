@@ -26,6 +26,11 @@ Route::get('sms', function()
 
     $result = SMSController::process_received($phone, $message);
 
+    if($result==null){
+        //do nothing
+        return null;
+    }
+
     return $result;
 });
 
