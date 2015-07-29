@@ -1,6 +1,5 @@
 <?php
 namespace App\Http\Controllers;
-use App\Http\Controllers\NHIFController;
 
 class SMSController extends Controller
 {
@@ -214,7 +213,7 @@ class SMSController extends Controller
 
         foreach($array as $key){
 
-            if (strpos($string, $key) !== false){
+            if($this->string_in_string($string, $key)){
                 return true;
                 break;
             }
@@ -222,6 +221,14 @@ class SMSController extends Controller
         }
         return false;
 
+    }
+
+    public function string_in_string($string, $key){
+        if (strpos($string, $key) !== false){
+            return true;
+        }else{
+            return false;
+        }
     }
 
     public function location_adjectives(){
@@ -232,7 +239,7 @@ class SMSController extends Controller
         //Hopefully it doesn't come to this
         for($i=0; $i<count($this->location_adjectives()); $i++){
             $separator = $this->location_adjectives()[$i];
-            if($this->array_element_in_string($message, $separator)){
+            if($this->string_in_string($message, $separator)){
                 $location = explode(" ".$separator." ", $message);
                 if(count($location)>0){
                     return $location[1];
