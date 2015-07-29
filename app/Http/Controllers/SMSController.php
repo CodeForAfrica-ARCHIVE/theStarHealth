@@ -4,10 +4,6 @@ namespace App\Http\Controllers;
 class SMSController extends Controller
 {
 
-    public function send_response(){
-
-    }
-
     public function process_received($phone, $message){
         //log message
 
@@ -287,5 +283,26 @@ class SMSController extends Controller
             }
         }
         return $response;
+    }
+
+    public function send_response($phoneNumber, $message){
+
+        $url = config('custom_config.sms_send_url');
+
+        $user = config('custom_config.sms_user');
+        $pass = config('custom_config.sms_pass');
+        $messageID = "";
+        $shortCode = config('custom_config.sms_shortCode');
+
+        $options = array("user"=>$user, "pass"=>$pass, "messageID"=>$messageID, "shortcode"=>$shortCode, "MSISDN"=>$phoneNumber, "message"=>$message);
+
+        $url .= http_build_query($options,'','&');
+
+
+        $page = file_get_contents($url);
+
+        //$data = json_decode($page, TRUE);
+
+        //TODO:log & do something with result
     }
 }
