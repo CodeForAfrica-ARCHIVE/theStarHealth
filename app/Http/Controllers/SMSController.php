@@ -25,26 +25,51 @@ class SMSController extends Controller
             return $response;
         }
 
-        //check for keywords
-        //TODO: What if message has both keywords?
-        if($this->has_doctor_keywords(strtolower($message))){
+         if($this->find_keywords($message)!=null){
 
-            $response = $this->check_if_registered($message);
+             
 
-        }else if($this->has_health_keywords($message)){
+         }else {
 
-            $response = $this->check_for_health_services($message);
+             //check for keywords
+             //TODO: What if message has both keywords?
+             if ($this->has_doctor_keywords(strtolower($message))) {
 
-        }else{
+                 $response = $this->check_if_registered($message);
 
-            $response = "Could not understand your request. Please go to http://health.the-star.co.ke for the web services.";
+             } else if ($this->has_health_keywords($message)) {
 
-        }
+                 $response = $this->check_for_health_services($message);
 
+             } else {
+
+                 $response = "Could not understand your request. Please go to http://health.the-star.co.ke for the web services.";
+
+             }
+
+         }
         //process according to keyword
         //return response
         return $response;
 
+    }
+
+    public function find_keywords($message){
+        $alchemyapi = new \AlchemyAPI();
+
+        $response = $alchemyapi->entities("text", $message, null);
+
+        if ($response['status'] == 'OK') {
+
+            foreach ($response['entities'] as $entity) {
+
+            }
+
+        }else{
+            return null;
+        }
+
+        return $response;
     }
 
     public function has_doctor_keywords($message){
