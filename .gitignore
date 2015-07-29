@@ -1,5 +1,5 @@
 app/config/database.php
-app/config/custom_config.php
+config/custom_config.php
 #ignore vim temporary files
 *~
 /.idea

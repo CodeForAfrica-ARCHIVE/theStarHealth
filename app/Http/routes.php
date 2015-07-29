@@ -26,14 +26,13 @@ Route::get('sms', function()
 
     $result = (new SMSController())->process_received($phone, $message);
 
-    if($result==null){
-        //do nothing
-        return null;
+    if($result==null || $result==""){
+        (new SMSController())->send_response($phone, $result);
+    }else{
+        //send response to user
+        (new SMSController())->send_response($phone, $result);
     }
-
-
-
-    return $result;
+    //return $result;
 });
 
 Route::get('getDoctors', function()

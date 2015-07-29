@@ -3,6 +3,11 @@ namespace App\Http\Controllers;
 
 class SMSController extends Controller
 {
+
+    public function send_response(){
+
+    }
+
     public function process_received($phone, $message){
         //log message
 
@@ -78,16 +83,17 @@ class SMSController extends Controller
     }
 
     public function error_message($message=null, $isEmpty=false){
+        $examples = "Example query formats:\n";
+        $examples .= "1. Doctor James Gicheru\n";
+        $examples .= "2. X-Ray in Kiambu\n";
+        $examples .= "3. NHIF in Karatina\n";
 
         if($isEmpty){
-            $response = "Example query formats:\n";
-            $response .= "1. Doctor James Gicheru\n";
-            $response .= "2. X-Ray in Kiambu\n";
-            $response .= "3. NHIF in Karatina\n";
+            $response = $examples;
         }else if($message != null){
             $response = $message;
         }else{
-            $response = "Could not understand your request. Please try the web services at http://health.the-star.co.ke";
+            $response = "Could not understand your request. Please try the web services at http://health.the-star.co.ke\n".$examples;
         }
 
         return $response;
@@ -170,7 +176,13 @@ class SMSController extends Controller
     }
 
     public function has_medical_service_tags($message){
+        $services_keywords = $this->services_keywords();
 
+        return $this->array_element_in_string($message, $services_keywords);
+    }
+
+    public function services_keywords(){
+        return array("doctor", "daktari", "laktar", "dr.", "daktar");
     }
 
     public function find_entities($message){
@@ -266,7 +278,7 @@ class SMSController extends Controller
                 if($type == "location"){
                     $parts = explode(" ".$separator." ", $message);
                 }else{
-                    //parts is doc
+                    //type is doc
                     $parts = explode($separator." ", $message);
                 }
                 if(count($parts)>0){
