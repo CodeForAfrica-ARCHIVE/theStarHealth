@@ -317,6 +317,7 @@
             });
             function initiate_geolocation() {
                 $("#hospital_location").css("background", "white url('ajax-autocomplete/indicator.gif') right center no-repeat");
+                $("#hospital_location_sp").css("background", "white url('ajax-autocomplete/indicator.gif') right center no-repeat");
                 navigator.geolocation.getCurrentPosition(handle_geolocation_query);
             }
 
@@ -325,14 +326,17 @@
                 var autoCords = position.coords.latitude + ',' + position.coords.longitude;
 
                 $("#hospital_location_gps").val(autoCords);
+                $("#hospital_location_gps_sp").val(autoCords);
 
                 //make ajax request to reverse geocode coordinates
                 $.ajax({url:"reverse_geocode?q=" + autoCords,success:function(result){
 
                     $("#hospital_location").val(result);
+                    $("#hospital_location_sp").val(result);
 
                     //$("#loading_hospitals").hide();
                     $("#hospital_location").css("background", "none");
+                    $("#hospital_location_sp").css("background", "none");
 
                 }});
             }
@@ -545,10 +549,10 @@
     <div class="description">Find the nearest specialist doctor or health facility</div>
     <div class="search_menu">
 
-        <input type="text" id="hospital_location" placeholder="Eg. Kisumu, Kariobangi" />
-        <input type="hidden" id="hospital_location_gps" />
+        <input type="text" id="hospital_location_sp" placeholder="Eg. Kisumu, Kariobangi" />
+        <input type="hidden" id="hospital_location_gps_sp" />
 
-        <span class="near_me" style="cursor: pointer; padding:3px;"><i class="icon-location-arrow"></i> <span id="get_location_text" style=""></span></span>
+        <span class="near_me" style="cursor: pointer; padding:3px;"><i class="icon-location-arrow"></i> <span id="get_location_text_sp" style=""></span></span>
         <select id="specialist" class="form-control specialist_select">
             <option>Select specialty</option>
             <?php
