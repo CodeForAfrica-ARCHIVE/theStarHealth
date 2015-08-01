@@ -178,7 +178,7 @@ class SMSController extends Controller
     }
 
     public function services_keywords(){
-        return array("doctor", "daktari", "laktar", "dr.", "daktar");
+        return array("x-ray", "blood", "");
     }
 
     public function find_entities($message){
@@ -294,10 +294,9 @@ class SMSController extends Controller
         $messageID = "";
         $shortCode = config('custom_config.sms_shortCode');
 
-        $options = array("user"=>$user, "pass"=>$pass, "messageID"=>$messageID, "shortcode"=>$shortCode, "MSISDN"=>$phoneNumber, "message"=>$message);
+        $options = array("user"=>$user, "pass"=>$pass, "messageID"=>$messageID, "shortCode"=>$shortCode, "MSISDN"=>$phoneNumber, "MESSAGE"=>$message);
 
         $url .= http_build_query($options,'','&');
-
 
         $page = file_get_contents($url);
 

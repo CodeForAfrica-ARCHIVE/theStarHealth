@@ -544,19 +544,16 @@
     <h4>Nearest Specialist</h4>
     <div class="description">Find the nearest specialist doctor or health facility</div>
     <div class="search_menu">
+
+        <input type="text" id="hospital_location" placeholder="Eg. Kisumu, Kariobangi" />
+        <input type="hidden" id="hospital_location_gps" />
+
+        <span class="near_me" style="cursor: pointer; padding:3px;"><i class="icon-location-arrow"></i> <span id="get_location_text" style=""></span></span>
         <select id="specialist" class="form-control specialist_select">
             <option>Select specialty</option>
             <?php
             foreach($specialties as $sp){
                 print "<option>".$sp."</option>";
-            }
-            ?>
-        </select>
-        <select id="county_s">
-            <option>Select county</option>
-            <?php
-            foreach($counties as $county){
-                print "<option>".$county."</option>";
             }
             ?>
         </select>
