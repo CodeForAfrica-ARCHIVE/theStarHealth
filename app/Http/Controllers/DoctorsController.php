@@ -71,7 +71,7 @@ class DoctorsController extends Controller {
             $data = json_decode($page, TRUE);
 
             $result = '';
-            if(!array_key_exists('rows')){
+            if(!array_key_exists('rows', $data)){
                 $result .= "No registered doctor found with that name!";
             }else {
 

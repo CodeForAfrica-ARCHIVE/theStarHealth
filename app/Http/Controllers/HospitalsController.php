@@ -3,7 +3,7 @@ namespace App\Http\Controllers;
 
 class HospitalsController extends Controller {
 
-
+/*
 	public static function specialty($name, $county){
 
         $result = "";
@@ -55,6 +55,71 @@ class HospitalsController extends Controller {
 
         return $result;
 	}
+*/
+    public static function specialty($specialty, $gps, $address)
+    {
+        $result = "";
+
+        if($address==''){
+            $result = 'You have to set location!';
+        }else{
+
+            if($gps==""){
+                //reverse geocode address
+                $q = urlencode($address);
+
+                $geocode_url = "https://maps.googleapis.com/maps/api/geocode/json?address=".$q."&key=".config('custom_config.google_api_key');
+
+                $response = json_decode(file_get_contents($geocode_url));
+
+                if($response->status =="OK"){
+                    $gps = $response->results[0]->geometry->location;
+                    $gps = $gps->lat.",".$gps->lng;
+                }else{
+                    $gps = "0,0";
+                }
+            }
+
+            $key = config('custom_config.google_api_key');
+
+            $table = config('custom_config.facilities_table');
+
+            $url = "https://www.googleapis.com/fusiontables/v1/query?";
+
+
+            if($specialty == "0"){
+
+                $sql = "SELECT * FROM ".$table." ORDER BY ST_DISTANCE(geo, LATLNG(". $gps .")) LIMIT 10";
+            }else{
+                $sql = "SELECT * FROM ".$table." WHERE $specialty='Y' ORDER BY ST_DISTANCE(geo, LATLNG(". $gps .")) LIMIT 10";
+            }
+
+            $options = array("sql"=>$sql, "key"=>$key, "sensor"=>"false");
+
+            $url .= http_build_query($options,'','&');
+
+            $page = file_get_contents($url);
+
+            $data = json_decode($page, TRUE);
+
+            if(!array_key_exists("rows", $data)){
+                $result .= "No hospitals found for those parameters.";
+            }else{
+                $rows = $data['rows'];
+
+                foreach($rows as $row){
+                    $cname = ucwords(strtolower($row['2']));
+                    //$cname .= " KSH ".$row['8'];
+                    $result .= $cname . "\n";
+                }
+            }
+
+        }
+
+
+        return $result;
+
+    }
     public function reverse_geocode($q){
         $geocode_url = "https://maps.googleapis.com/maps/api/geocode/json?latlng=".$q."&key=".config("custom_config.google_api_key");
 

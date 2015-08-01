@@ -50,7 +50,7 @@ Route::get('singleDoctor', function()
     $result = '';
 
     if(isset($term)){
-        $result = DoctorsController::singleDoctor($term);
+        $result = str_replace("\n", "<br />", DoctorsController::singleDoctor($term));
     }
 
     return $result;
@@ -71,14 +71,15 @@ Route::get('nhifcoverage', function()
     $gps = Request::input('gps');
     $address = Request::input('address');
 
-    return NHIFController::coverage($type, $gps, $address);
+    return str_replace("\n", "<br />", NHIFController::coverage($type, $gps, $address));
 });
 Route::get('specialty', function()
 {
     $specialty = Request::input('specialty');
-    $county = Request::input('county');
+    $gps = Request::input('gps');
+    $address = Request::input('address');
 
-    return HospitalsController::specialty($specialty, $county);
+    return str_replace("\n", "<br />", HospitalsController::specialty($specialty, $gps, $address));
 });
 Route::get('profile', [
     'middleware' => 'auth',

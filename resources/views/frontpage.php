@@ -548,7 +548,7 @@
 
         <span class="near_me" style="cursor: pointer; padding:3px;"><i class="icon-location-arrow"></i> <span id="get_location_text_sp" style=""></span></span>
         <select id="specialist" class="form-control specialist_select">
-            <option value="All specialties">Select specialty</option>
+            <option value="0">Select service</option>
             <?php
             $i = 0;
             foreach($specialties as $sp){
