@@ -209,30 +209,24 @@
                     }});
                 });
                 $("#grabSpecialists").click(function(){
+                    var hospital_location_gps = $("#hospital_location_gps_sp").val();
+                    var hospital_location = $("#hospital_location_sp").val();
+
                     var specialty = $("#specialist").val();
-                    var county = $("#county_s").val();
 
-                    var ccounty = county;
-                    var cspecialty = specialty;
-
-                    if(county == "Select county"){
-                        ccounty = "all counties";
-                    }
-
-                    if(specialty == "Select specialty"){
-                        cspecialty = "All specialties"
-                    }
-
-
-                    $("#dname").html("<h4>"+cspecialty+" in " + ccounty + "</h4>");
+                    $("#dname").html("<h4>"+specialty+" in " + hospital_location + "</h4>");
 
                     $("#mybox").html("");
 
                     $("#loading").show();
 
-                    $.ajax({url:"specialty?specialty=" + specialty + "&county=" + county,success:function(result){
+                    $.ajax({url:"specialty?specialty=" + specialty + "&gps=" + hospital_location_gps + "&address=" + hospital_location,success:function(result){
 
                         $("#mybox").html(result);
+
+                        $("#hospital_location_gps_sp").val("");
+
+                        $("#hospital_location_sp").val("");
 
                         $("#loading").hide();
                     }});
@@ -554,10 +548,12 @@
 
         <span class="near_me" style="cursor: pointer; padding:3px;"><i class="icon-location-arrow"></i> <span id="get_location_text_sp" style=""></span></span>
         <select id="specialist" class="form-control specialist_select">
-            <option>Select specialty</option>
+            <option value="All specialties">Select specialty</option>
             <?php
+            $i = 0;
             foreach($specialties as $sp){
-                print "<option>".$sp."</option>";
+                print "<option value='".$sp_values[$i]."'>".$sp."</option>";
+                $i++;
             }
             ?>
         </select>
