@@ -17,6 +17,7 @@ background-position: 0 -5px;
 }
 .header_widget{
     padding: 10px;
+    min-width: 300px !important;
 }
 .header_widget h4 {
     font-size: 1.2em;
