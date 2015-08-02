@@ -71,7 +71,7 @@ Route::get('nhifcoverage', function()
     $gps = Request::input('gps');
     $address = Request::input('address');
 
-    return str_replace("\n", "<br />", NHIFController::coverage($type, $gps, $address));
+    return str_replace("\n", "<br />", NHIFController::coverage($type, $gps, $address, false));
 });
 Route::get('specialty', function()
 {
@@ -79,7 +79,7 @@ Route::get('specialty', function()
     $gps = Request::input('gps');
     $address = Request::input('address');
 
-    return str_replace("\n", "<br />", HospitalsController::specialty($specialty, $gps, $address));
+    return str_replace("\n", "<br />", HospitalsController::specialty($specialty, $gps, $address, false));
 });
 Route::get('profile', [
     'middleware' => 'auth',

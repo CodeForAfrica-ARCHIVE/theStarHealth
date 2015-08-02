@@ -4,12 +4,13 @@ use Illuminate\Support\Facades\DB;
 class SMSController extends Controller
 {
 
-    public $success = true;
-    public $found = true;
+    public $success = 1;
+    public $found = 1;
+    public $id = 0;
 
     public function process_received($phone, $message){
         //log message
-        $id = $this->log_received($phone, $message);
+        $this->id = $this->log_received($phone, $message);
 
         $response = null;
 
@@ -80,27 +81,16 @@ class SMSController extends Controller
 
         }
 
-        return $response;
+        return array("id"=>$this->id, "response"=>$response, "success"=>$this->success, "found"=>$this->found);
 
     }
 
-
-    public function log_received($phone, $message){
-
-        $now = date('Y-m-d H:i:s');//TODO: Find out why migration timestamps() doesn't work
-
-        $id = DB::table('sms')->insertGetId(
-            array('query' => $message, 'phone_number' => $phone, 'created_at' => $now)
-        );
-
-        return $id;
-    }
 
     public function location_tags(){
         return array("City");
     }
 
-    public function error_message($message=null, $isEmpty=false){
+    public function error_message($type=null, $isEmpty=false){
         $examples = "Example query formats:\n";
         $examples .= "1. Doctor James Gicheru\n";
         $examples .= "2. X-Ray in Kiambu\n";
@@ -108,11 +98,18 @@ class SMSController extends Controller
 
         if($isEmpty){
             $response = $examples;
-        }else if($message != null){
-            $response = $message;
+        }else if($type != null){
+            if($type == 1){
+                $response = "Could not find a doctor with that name.";
+            }else if($type == 2){
+                $response = "Location could not be understood. Check for spelling mistakes";
+            }else{
+                $response = "Location could not be understood. Check for spelling mistakes";
+            }
+
         }else{
             $response = "Could not understand your request. Please try the web services at http://health.the-star.co.ke\n".$examples;
-            $this->found = false;
+            $this->success = 0;
         }
 
         return $response;
@@ -123,11 +120,12 @@ class SMSController extends Controller
         $location = $this->get_location($message);
 
         if($location == null){
-            $this->found = false;
-            return $this->error_message("Location could not be understood. Check for spelling mistakes");
+            $this->success = 0;
+            return $this->error_message(2);
         }else{
             //Get NHIF coverage
-            return NHIFController::coverage("0", "", $location);
+            $result = NHIFController::coverage("0", "", $location, true);
+            return $this->process_result($result, 1);
         }
 
     }
@@ -177,8 +175,8 @@ class SMSController extends Controller
         $location = $this->get_location($message);
 
         if($location == null){
-            $this->found = false;
-            return $this->error_message("Location could not be understood. Check for spelling mistakes");
+            $this->success = 0;
+            return $this->error_message(3);
         }else{
             //we have location, so output results
             return $this->find_facilities_by_location($specialty, "", $location);
@@ -188,15 +186,27 @@ class SMSController extends Controller
     public function find_doctor_by_name($name){
 
         if($name == null){
-            $this->found = false;
-            return $this->error_message("Could not find a doctor with that name.");
+            $this->success = 0;
+            return $this->error_message(1);
         }else{
-            return DoctorsController::getData($name, true);
+            $result = DoctorsController::getData($name, true);
+            return $this->process_result($result, 1);
+        }
+    }
+
+    public function process_result($result, $type){
+
+        if($result == false){
+            $this->found = 0;
+            return $this->error_message($type);
+        }else{
+            return $result;
         }
     }
 
     public function find_facilities_by_location($specialty, $location){
-        return HospitalsController::specialty($specialty, "", $location);
+        $result = HospitalsController::specialty($specialty, "", $location, true);
+        return $this->process_result($result, 1);
     }
 
     public function has_medical_service_tags($message){
@@ -331,7 +341,9 @@ class SMSController extends Controller
         return $response;
     }
 
-    public function send_response($phoneNumber, $message){
+    public function send_response($phoneNumber, $result){
+
+        $message = $result["response"];
 
         $url = config('custom_config.sms_send_url');
 
@@ -348,6 +360,23 @@ class SMSController extends Controller
 
         //$data = json_decode($page, TRUE);
 
-        //TODO:log & do something with result
+        //log sent message
+        $this->log_sent($result);
+    }
+    public function log_received($phone, $message){
+
+        $now = date('Y-m-d H:i:s');//TODO: Find out why migration timestamps() doesn't work
+
+        $id = DB::table('sms')->insertGetId(
+            array('query' => $message, 'phone_number' => $phone, 'created_at' => $now)
+        );
+
+        return $id;
+    }
+
+    public function log_sent($result){
+        DB::table('sms')
+            ->where('id', $result["id"])
+            ->update(array('found' => $result["found"], "successfull"=>$result["success"], "responded"=>1));
     }
 }

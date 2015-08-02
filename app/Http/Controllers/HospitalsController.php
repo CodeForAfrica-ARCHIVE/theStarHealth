@@ -56,12 +56,15 @@ class HospitalsController extends Controller {
         return $result;
 	}
 */
-    public static function specialty($specialty, $gps, $address)
+    public static function specialty($specialty, $gps, $address, $isSMS)
     {
+        $found = true;
+
         $result = "";
 
         if($address=='' && $gps==''){
             $result = 'You have to set location!';
+            $found = false;
         }else{
 
             if($gps==""){
@@ -104,6 +107,7 @@ class HospitalsController extends Controller {
 
             if(!array_key_exists("rows", $data)){
                 $result .= "No hospitals found for those parameters.";
+                $found = false;
             }else{
                 $rows = $data['rows'];
 
@@ -116,6 +120,9 @@ class HospitalsController extends Controller {
 
         }
 
+        if($isSMS && !$found){
+            return false;
+        }
 
         return $result;
 

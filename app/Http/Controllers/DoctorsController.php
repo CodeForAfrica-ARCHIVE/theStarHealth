@@ -5,6 +5,7 @@ class DoctorsController extends Controller {
 
     public static function getData($q, $isSMS)
     {
+        $found = true;
         $q = strtoupper($q);
 
         $key = config('custom_config.google_api_key');
@@ -30,7 +31,7 @@ class DoctorsController extends Controller {
             if (sizeof($rows) == 0) {
 
                 $result .= "No registered doctor found with that name!";
-
+                $found = false;
             }else{
                 $result = "Found:\n";
 
@@ -45,9 +46,13 @@ class DoctorsController extends Controller {
 
         }else{
             $result = "No doctor with that name. Check for spelling mistakes.";
+            $found = false;
+
         }
 
-
+        if($isSMS && !$found){
+            return false;
+        }
         return $result;
     }
 

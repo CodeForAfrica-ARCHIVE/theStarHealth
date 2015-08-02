@@ -3,12 +3,15 @@ namespace App\Http\Controllers;
 
 class NHIFController extends Controller {
 
-	public static function coverage($type, $gps, $address)
+	public static function coverage($type, $gps, $address, $isSMS)
 	{
+        $found = true;
+
         $result = "";
 
         if($address=='' && $gps==""){
             $result = 'You have to set location!';
+            $found = false;
         }else{
 
             if($gps==""){
@@ -49,6 +52,7 @@ class NHIFController extends Controller {
 
             if(!array_key_exists("rows", $data)){
                 $result .= "No hospitals found for those parameters.";
+                $found = false;
             }else{
                 $rows = $data['rows'];
 
@@ -60,7 +64,9 @@ class NHIFController extends Controller {
             }
 
         }
-
+        if($isSMS && !$found){
+            return false;
+        }
 
         return $result;
 
