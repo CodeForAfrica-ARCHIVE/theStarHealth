@@ -84,9 +84,13 @@ class SMSController extends Controller
 
     public function log_received($phone, $message){
 
+        $now = date('Y-m-d H:i:s');//TODO: Find out why migration timestamps() doesn't work
 
-        DB::insert('insert into sms (query, phone_number) values (?, ?)', [$phone, $message]);
+        $id = DB::table('sms')->insertGetId(
+            array('query' => $message, 'phone_number' => $phone, 'created_at' => $now)
+        );
 
+        return $id;
     }
 
     public function location_tags(){

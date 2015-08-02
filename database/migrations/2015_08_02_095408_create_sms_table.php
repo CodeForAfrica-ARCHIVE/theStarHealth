@@ -10,6 +10,9 @@ class CreateSmsTable extends Migration {
 	 *
 	 * @return void
 	 */
+
+	public $timestamps = true;
+
 	public function up()
 	{
 		Schema::create('sms', function(Blueprint $table)
