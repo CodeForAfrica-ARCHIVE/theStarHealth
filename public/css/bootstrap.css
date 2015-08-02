@@ -4559,8 +4559,8 @@ input[type="submit"].btn.btn-mini {
 
 .navbar .nav > li {
   float: left;
-min-width: 12.065%;
-text-align: center;
+  min-width: 12.055%;
+  text-align: center;
 }
 
 .navbar .nav > li > a {

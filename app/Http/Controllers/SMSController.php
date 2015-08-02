@@ -352,13 +352,14 @@ class SMSController extends Controller
         $messageID = "";
         $shortCode = config('custom_config.sms_shortCode');
 
-        $options = array("user"=>$user, "pass"=>$pass, "messageID"=>$messageID, "shortCode"=>$shortCode, "MSISDN"=>$phoneNumber, "MESSAGE"=>$message);
+        $options = array("user"=>$user, "pass"=>$pass, "messageID"=>$this->id, "shortCode"=>$shortCode, "MSISDN"=>$phoneNumber, "MESSAGE"=>$message);
 
         $url .= http_build_query($options,'','&');
 
         $page = file_get_contents($url);
 
         //$data = json_decode($page, TRUE);
+        //TODO: Ask provider to provide json reponse
 
         //log sent message
         $this->log_sent($result);
