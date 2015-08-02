@@ -7,7 +7,7 @@ class NHIFController extends Controller {
 	{
         $result = "";
 
-        if($address==''){
+        if($address=='' && $gps==""){
             $result = 'You have to set location!';
         }else{
 

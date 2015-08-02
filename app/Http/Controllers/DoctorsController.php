@@ -3,7 +3,7 @@
 
 class DoctorsController extends Controller {
 
-    public static function getData($q)
+    public static function getData($q, $isSMS)
     {
         $q = strtoupper($q);
 
@@ -25,17 +25,22 @@ class DoctorsController extends Controller {
         if(array_key_exists('rows', $data)){
             $rows = $data['rows'];
 
-            $result = "Found:\n";
+            $result = "";
 
-            foreach($rows as $row){
-                $cname = $row['1'];
-                $result .= "$cname\n";
-                $result .= " - ". $cname['6']."\n";
-            }
             if (sizeof($rows) == 0) {
 
                 $result .= "No registered doctor found with that name!";
 
+            }else{
+                $result = "Found:\n";
+
+                foreach($rows as $row){
+                    if($isSMS){
+                        $result .= $row['1']." - ". $row['6']."\n";
+                    }else{
+                        $result .= $row['1']."\n";
+                    }
+                }
             }
 
         }else{
@@ -60,7 +65,7 @@ class DoctorsController extends Controller {
 
             $url = "https://www.googleapis.com/fusiontables/v1/query?";
 
-            $sql = "SELECT * FROM ".$table." WHERE Names = '".$name."'";
+            $sql = "SELECT * FROM ".$table." WHERE Names LIKE '%".$name."%'";
 
             $options = array("sql"=>$sql, "key"=>$key, "sensor"=>"false");
 
@@ -84,9 +89,9 @@ class DoctorsController extends Controller {
                     $result .= "No registered doctor found with that name!";
 
                 } else {
-                    //foreach($rows as $doc){
+                    foreach($rows as $doc){
 
-                    $doc = $rows[0];
+                    //$doc = $rows[0];
                     $total++;
                     $result .= "<p>";
                     $result .= "Name: " . $doc['1'];
@@ -96,7 +101,7 @@ class DoctorsController extends Controller {
                     $result .= "Specialty :" . $doc['6'];
                     $result .= "</p>";
 
-                    //}
+                    }
                 }
             }
 

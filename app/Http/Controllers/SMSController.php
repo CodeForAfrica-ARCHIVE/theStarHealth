@@ -6,6 +6,9 @@ class SMSController extends Controller
 
     public function process_received($phone, $message){
         //log message
+        $this->log_received($phone, $message);
+
+        $response = null;
 
         //check if has phone number
         if($phone=="") {
@@ -31,46 +34,57 @@ class SMSController extends Controller
 
             $response = $this->find_doctor($message);
 
-        }else if ($this->has_medical_service_tags($message)){
+        }else{
+            $specialty = $this->has_medical_service_tags($message);
 
-            $response = $this->find_facilities($message);
+            if($specialty!=false){
+                $response = $this->find_facilities($message, $specialty);
+            }else{
+                //If else fails try Artificial Intelligence
+                $found_entities = $this->find_entities($message);
 
-        }else {
-            //If else fails try Artificial Intelligence
-            $found_entities = $this->find_entities($message);
+                if ($found_entities != null) {
+                    //sort by relevance
+                    if (count($found_entities) == 0) {
+                        $response = $this->error_message();
+                    } else {
 
-            if ($found_entities != null) {
-                //sort by relevance
-                if (count($found_entities) == 0) {
-                    $response = $this->error_message();
-                } else {
+                        $found = false;
 
-                    $found = false;
-
-                    foreach ($found_entities as $item){
-                        if ($item["type"] == "Person"){
-                            $response = $this->find_doctor_by_name($item["text"]);
-                            $found = true;
-                            break;
-                        }else if(in_array($item["type"], $this->location_tags())){
-                            //if has location return nearest facilities
-                            $response = $this->find_facilities_by_location($item["text"]);
-                            $found = true;
-                            break;
+                        foreach ($found_entities as $item){
+                            if ($item["type"] == "Person"){
+                                $response = $this->find_doctor_by_name($item["text"]);
+                                $found = true;
+                                break;
+                            }else if(in_array($item["type"], $this->location_tags())){
+                                //if has location return nearest facilities
+                                $response = $this->find_facilities_by_location("", "", $item["text"]);
+                                $found = true;
+                                break;
+                            }
+                        }
+                        //if nothing found, error
+                        if($found == false){
+                            $response = $this->error_message();
                         }
                     }
-                    //if nothing found, error
-                    if($found == false){
-                        $response = $this->error_message();
-                    }
+                } else {
+
+                    $response = $this->error_message();
+
                 }
-            } else {
-
-                $response = $this->error_message();
-
             }
+
         }
+
         return $response;
+
+    }
+
+
+    public function log_received($phone, $message){
+
+        DB::insert('insert into sms_logs (query, phone_number) values (?, ?, ?)', [$phone, $message]);
 
     }
 
@@ -100,7 +114,7 @@ class SMSController extends Controller
         $location = $this->get_location($message);
 
         if($location == null){
-            return $this->error_message("Could not decode location");
+            return $this->error_message("Location could not be understood. Check for spelling mistakes");
         }else{
             //Get NHIF coverage
             return NHIFController::coverage("0", "", $location);
@@ -148,37 +162,57 @@ class SMSController extends Controller
 
     }
 
+    public function find_facilities($message, $specialty){
+        //medical service tag has been found, now find location
+        $location = $this->get_location($message);
 
-
-
-
-    public function find_facilities($message){
-
-
+        if($location == null){
+            return $this->error_message("Location could not be understood. Check for spelling mistakes");
+        }else{
+            //we have location, so output results
+            return $this->find_facilities_by_location($specialty, "", $location);
+        }
     }
 
     public function find_doctor_by_name($name){
 
         if($name == null){
-            return $this->error_message("Could not find doctor with that name");
+            return $this->error_message("Could not find a doctor with that name.");
         }else{
-            //Get NHIF coverage
-            return DoctorsController::getData($name);
+            return DoctorsController::getData($name, true);
         }
     }
 
-    public function find_facilities_by_location($address){
-
+    public function find_facilities_by_location($specialty, $location){
+        return HospitalsController::specialty($specialty, "", $location);
     }
 
     public function has_medical_service_tags($message){
         $services_keywords = $this->services_keywords();
 
-        return $this->array_element_in_string($message, $services_keywords);
+        //return $this->array_element_in_string($message, $services_keywords);
+
+        $i = 0;
+        foreach($services_keywords as $key){
+
+            if($this->string_in_string($message, $key)){
+                $service_abbr = $this->services_abbr()[$i];
+                return $service_abbr;
+                break;
+            }
+            $i++;
+
+        }
+        return false;
+    }
+
+    public function service_abbr(){
+        return array("ANC", "ART", "BEOC", "BLOOD", "CAES SEC", "CEOC", "C-IMCI", "EPI", "FP", "GROWM", "HBC", "HCT", "IPD", "OPD", "OUTREACH", "PMTCT", "RAD/XRAY", "RHTC/RHDC", "TB DIAG", "TB LABS", "TB TREAT", "YOUTH");
+
     }
 
     public function services_keywords(){
-        return array("x-ray", "blood", "");
+        return array("Antenatal Care (care of mother while pregnant)", "Anteretroviral Therapy ( drugs for HIV)", "Beoc", "Blood", "Caeserean section", "Ceoc", "C-IMCI", "Epidemiology ( study of disease spread and distribution)", "Family planning", "GROWM", "Heamogram ( blood test checking all blood parameters)", "Heamatocrit ( simple blood test to analyse anaemia)", "In- patient department", "Out -patient department", "Outreach programs ie. go out and give treatment in the villages", "Prevention of mother to child transmission ( of HIV/AIDS)", "Radiology/ x-ray", "Reproductive health treatment center/diagnostic center", "Tuberculosis diagnosis", "Tuberculosis laboratory work up", "Tuberculosis treatment", "Youth");
     }
 
     public function find_entities($message){

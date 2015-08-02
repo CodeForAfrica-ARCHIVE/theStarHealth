@@ -335,7 +335,7 @@
                 }});
             }
         </script>
-        <input type="text" placeholder="Start typing doctor's name" class="search" name="course" id="doctorName" />
+        <input type="text" placeholder="Start typing doctor's name" class="search" id="doctorName" />
         <script>
 
             function get_XmlHttp() {

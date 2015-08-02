@@ -38,7 +38,7 @@ Route::get('getDoctors', function()
     $result = '';
 
     if(isset($term)){
-        $result = DoctorsController::getData($term);
+        $result = DoctorsController::getData($term, false);
     }
 
     return $result;
