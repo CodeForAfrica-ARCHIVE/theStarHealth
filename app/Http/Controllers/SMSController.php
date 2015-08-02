@@ -1,6 +1,6 @@
 <?php
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\DB;
 class SMSController extends Controller
 {
 
@@ -84,7 +84,8 @@ class SMSController extends Controller
 
     public function log_received($phone, $message){
 
-        DB::insert('insert into sms_logs (query, phone_number) values (?, ?, ?)', [$phone, $message]);
+
+        DB::insert('insert into sms (query, phone_number) values (?, ?)', [$phone, $message]);
 
     }
 

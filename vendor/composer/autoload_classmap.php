@@ -8,6 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'AlchemyAPI' => $baseDir . '/app/library/alchemy.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
+    'CreateSmsTable' => $baseDir . '/database/migrations/2015_08_02_095408_create_sms_table.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
     'File_Iterator' => $vendorDir . '/phpunit/php-file-iterator/File/Iterator.php',
