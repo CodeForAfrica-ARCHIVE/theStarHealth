@@ -112,6 +112,7 @@ class SMSController extends Controller
             $response = $message;
         }else{
             $response = "Could not understand your request. Please try the web services at http://health.the-star.co.ke\n".$examples;
+            $this->found = false;
         }
 
         return $response;
@@ -122,6 +123,7 @@ class SMSController extends Controller
         $location = $this->get_location($message);
 
         if($location == null){
+            $this->found = false;
             return $this->error_message("Location could not be understood. Check for spelling mistakes");
         }else{
             //Get NHIF coverage
@@ -175,6 +177,7 @@ class SMSController extends Controller
         $location = $this->get_location($message);
 
         if($location == null){
+            $this->found = false;
             return $this->error_message("Location could not be understood. Check for spelling mistakes");
         }else{
             //we have location, so output results
@@ -185,6 +188,7 @@ class SMSController extends Controller
     public function find_doctor_by_name($name){
 
         if($name == null){
+            $this->found = false;
             return $this->error_message("Could not find a doctor with that name.");
         }else{
             return DoctorsController::getData($name, true);
