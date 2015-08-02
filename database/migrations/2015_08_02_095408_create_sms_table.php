@@ -22,6 +22,7 @@ class CreateSmsTable extends Migration {
 			$table->string('phone_number')->nullable();
 			$table->integer('responded')->default(0);
 			$table->integer('successfull')->default(0);
+			$table->integer('found')->default(0);
 			$table->rememberToken();
 			$table->timestamps();
 		});

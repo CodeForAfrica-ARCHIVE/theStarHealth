@@ -4,9 +4,12 @@ use Illuminate\Support\Facades\DB;
 class SMSController extends Controller
 {
 
+    public $success = true;
+    public $found = true;
+
     public function process_received($phone, $message){
         //log message
-        $this->log_received($phone, $message);
+        $id = $this->log_received($phone, $message);
 
         $response = null;
 
