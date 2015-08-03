@@ -4,6 +4,7 @@ use App\Http\Controllers\NHIFController;
 use App\Http\Controllers\HospitalsController;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\SMSController;
+use App\Http\Controllers\GenerateJSONController;
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -16,6 +17,16 @@ use App\Http\Controllers\SMSController;
 */
 
 Route::get('/', 'WelcomeController@index');
+
+/*
+ * Generate featured news
+ */
+Route::get('generateFeatured', function()
+{
+    $featured_news =(new WelcomeController())->get_featured();
+    (new GenerateJSONController())->generate_featured($featured_news);
+});
+
 
 Route::get('sms', function()
 {
