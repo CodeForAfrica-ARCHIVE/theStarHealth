@@ -21,10 +21,9 @@ Route::get('/', 'WelcomeController@index');
 /*
  * Generate featured news
  */
-Route::get('generateFeatured', function()
+Route::get('generateJSONFeed', function()
 {
-    $featured_news =(new WelcomeController())->get_featured();
-    (new GenerateJSONController())->generate_featured($featured_news);
+    (new GenerateJSONController())->index();
 });
 
 

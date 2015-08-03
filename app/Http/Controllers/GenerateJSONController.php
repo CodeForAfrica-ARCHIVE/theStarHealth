@@ -1,4 +1,6 @@
-<?php namespace App\Http\Controllers;
+<?php
+
+namespace App\Http\Controllers;
 
 class GenerateJSONController extends Controller {
 
@@ -11,6 +13,19 @@ class GenerateJSONController extends Controller {
     |Jekyll frontend
     |
     */
+
+    public function __construct(){
+
+    }
+
+    public function generateJSONFeed(){
+        $newsController = new WelcomeController();
+
+        //get featured news
+        $featured_news = $newsController->get_featured();
+        $this->generate_featured($featured_news);
+    }
+
     public function generate_featured($featured_news)
     {
         $file = public_path()."/feeds/featured.json";
