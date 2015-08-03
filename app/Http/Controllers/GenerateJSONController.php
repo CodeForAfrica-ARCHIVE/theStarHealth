@@ -15,15 +15,29 @@ class GenerateJSONController extends Controller {
     {
         $file = public_path()."/feeds/featured.json";
 
-        print "<pre>";
-        print_r($featured_news);
-        print "</pre>";
-
-        $this->write_to_file($featured_news, $file);
+        if(isFresh($featured_news, $file)){
+            $this->write_to_file($featured_news, $file);
+        }
     }
 
+    /*
+     * Write new content to file
+     */
     public function write_to_file($featured_news, $file){
         file_put_contents($file, json_encode($featured_news));
     }
 
+    /*
+     * Function to check if content is new
+     */
+    public function isFresh($content, $file){
+        $old = file_get_contents($file, true);
+        $new = sha1($content);
+
+        if($old == $new){
+            return false;
+        }else{
+            return true;
+        }
+    }
 }
