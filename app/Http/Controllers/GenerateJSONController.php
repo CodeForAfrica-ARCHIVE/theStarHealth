@@ -18,21 +18,31 @@ class GenerateJSONController extends Controller {
 
     }
 
-    public function generateJSONFeed(){
+    public function index(){
         $newsController = new WelcomeController();
 
         //get featured news
         $featured_news = $newsController->get_featured();
         $this->generate_featured($featured_news);
+
+        //get all news
+        $all_news = $newsController->get_all('All');
+        $this->generate_all_news($all_news);
     }
 
     public function generate_featured($featured_news)
     {
-        $file = public_path()."/feeds/featured.json";
+        $file = public_path()."/feeds/featured.yaml";
 
-        if(isFresh($featured_news, $file)){
-            $this->write_to_file($featured_news, $file);
-        }
+        yaml_emit_file ( $file , $featured_news );
+
+    }
+
+    public function generate_all_news($all_news)
+    {
+        $file = public_path()."/feeds/all_news.yaml";
+
+        yaml_emit_file ( $file , $all_news );
     }
 
     /*

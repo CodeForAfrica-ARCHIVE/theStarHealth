@@ -265,11 +265,12 @@ class WelcomeController extends Controller {
             $newitem = $this->format_item($item);
             if($newitem['thumb']!=null){
 
+                if($i ==0 ){
+                    $newitem['related_articles'] = $this->get_story_so_far($newitem['theme'], $newitem['id']);
+                }
+
                 $news[] = $newitem;
 
-                if($i ==0 ){
-                    $news['so_far'] = $this->get_story_so_far($newitem['theme'], $newitem['id']);
-                }
                 $i++;
             }
         }
