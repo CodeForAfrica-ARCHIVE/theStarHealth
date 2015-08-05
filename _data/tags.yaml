@@ -1,0 +1,668 @@
+---
+- tag: Jomo Kenyatta
+  relevance: 22
+- tag: World Health Organization
+  relevance: 20
+- tag: Africa
+  relevance: 20
+- tag: Medicine
+  relevance: 13
+- tag: Tobacco
+  relevance: 13
+- tag: Cancer
+  relevance: 12
+- tag: Health care
+  relevance: 12
+- tag: Infectious disease
+  relevance: 9
+- tag: AIDS
+  relevance: 9
+- tag: Tuberculosis
+  relevance: 8
+- tag: Immune system
+  relevance: 8
+- tag: HIV
+  relevance: 8
+- tag: Hospital
+  relevance: 8
+- tag: Nairobi
+  relevance: 7
+- tag: Alcohol
+  relevance: 6
+- tag: Public health
+  relevance: 6
+- tag: Vaccination
+  relevance: 6
+- tag: Childbirth
+  relevance: 6
+- tag: Streptococcus pneumoniae
+  relevance: 5
+- tag: Vaccine
+  relevance: 5
+- tag: Nutrition
+  relevance: 5
+- tag: Pneumonia
+  relevance: 5
+- tag: Obesity
+  relevance: 5
+- tag: Metastasis
+  relevance: 5
+- tag: Oncology
+  relevance: 5
+- tag: Sierra Leone
+  relevance: 5
+- tag: Patient
+  relevance: 5
+- tag: Antiretroviral drug
+  relevance: 4
+- tag: Food
+  relevance: 4
+- tag: Disease
+  relevance: 4
+- tag: Physician
+  relevance: 4
+- tag: Death
+  relevance: 4
+- tag: Obstetrics
+  relevance: 4
+- tag: Doctor
+  relevance: 4
+- tag: Nicotine
+  relevance: 4
+- tag: Blood
+  relevance: 4
+- tag: Bacteria
+  relevance: 4
+- tag: Infection
+  relevance: 4
+- tag: Lung cancer
+  relevance: 4
+- tag: Child mortality
+  relevance: 4
+- tag: Cigarette
+  relevance: 4
+- tag: Epidemiology
+  relevance: 4
+- tag: Smoking
+  relevance: 4
+- tag: Guinea
+  relevance: 3
+- tag: Liberia
+  relevance: 3
+- tag: Global warming
+  relevance: 3
+- tag: Pregnancy
+  relevance: 3
+- tag: Pharmacology
+  relevance: 3
+- tag: Margaret Chan
+  relevance: 3
+- tag: Family planning
+  relevance: 3
+- tag: Toilet
+  relevance: 3
+- tag: Demography
+  relevance: 3
+- tag: Infant
+  relevance: 3
+- tag: Breast cancer
+  relevance: 3
+- tag: Intern
+  relevance: 3
+- tag: United Nations
+  relevance: 3
+- tag: Millennium Development Goals
+  relevance: 3
+- tag: Bill & Melinda Gates Foundation
+  relevance: 3
+- tag: Poverty
+  relevance: 3
+- tag: Malaria
+  relevance: 3
+- tag: Condom
+  relevance: 3
+- tag: Climate change
+  relevance: 3
+- tag: Surgery
+  relevance: 3
+- tag: Gastrointestinal cancer
+  relevance: 2
+- tag: Viral load
+  relevance: 2
+- tag: Mobile phone
+  relevance: 2
+- tag: Birth control
+  relevance: 2
+- tag: Antibiotic resistance
+  relevance: 2
+- tag: Platelet
+  relevance: 2
+- tag: Red blood cell
+  relevance: 2
+- tag: Miscarriage
+  relevance: 2
+- tag: Water
+  relevance: 2
+- tag: Uhuru Kenyatta
+  relevance: 2
+- tag: Wildlife
+  relevance: 2
+- tag: Hygiene
+  relevance: 2
+- tag: Skull
+  relevance: 2
+- tag: Mother
+  relevance: 2
+- tag: Police brutality
+  relevance: 2
+- tag: Plasmodium falciparum
+  relevance: 2
+- tag: Drug
+  relevance: 2
+- tag: Pharmaceutical drug
+  relevance: 2
+- tag: Eating
+  relevance: 2
+- tag: Passive smoking
+  relevance: 2
+- tag: 2003 Cricket World Cup
+  relevance: 2
+- tag: Waste management
+  relevance: 2
+- tag: Aga Khan IV
+  relevance: 2
+- tag: Suicide
+  relevance: 2
+- tag: Mental health
+  relevance: 2
+- tag: Europe
+  relevance: 2
+- tag: Multi-drug-resistant tuberculosis
+  relevance: 2
+- tag: Government
+  relevance: 2
+- tag: Ministry
+  relevance: 2
+- tag: United States Cabinet
+  relevance: 2
+- tag: Cooking
+  relevance: 2
+- tag: Sociology
+  relevance: 2
+- tag: Carbon dioxide
+  relevance: 2
+- tag: Abortion
+  relevance: 2
+- tag: Respiratory disease
+  relevance: 2
+- tag: Ethiopia
+  relevance: 2
+- tag: Drink
+  relevance: 2
+- tag: Tropical diseases
+  relevance: 2
+- tag: Heart disease
+  relevance: 2
+- tag: Pain
+  relevance: 2
+- tag: School
+  relevance: 2
+- tag: Raila Odinga
+  relevance: 2
+- tag: Daniel arap Moi
+  relevance: 2
+- tag: Brachytherapy
+  relevance: 2
+- tag: Human papillomavirus
+  relevance: 2
+- tag: Pneumococcal conjugate vaccine
+  relevance: 2
+- tag: Brain tumor
+  relevance: 2
+- tag: Unincorporated area
+  relevance: 2
+- tag: Menstrual cycle
+  relevance: 2
+- tag: Radiation therapy
+  relevance: 2
+- tag: Mortality rate
+  relevance: 2
+- tag: Traditional birth attendant
+  relevance: 2
+- tag: Prostate cancer
+  relevance: 2
+- tag: Tumor
+  relevance: 1
+- tag: Healthcare
+  relevance: 1
+- tag: Joe Biden
+  relevance: 1
+- tag: Neoplasm
+  relevance: 1
+- tag: Nervous system
+  relevance: 1
+- tag: President of the United States
+  relevance: 1
+- tag: Bill Clinton
+  relevance: 1
+- tag: Benign tumor
+  relevance: 1
+- tag: Democratic Party
+  relevance: 1
+- tag: Prince
+  relevance: 1
+- tag: Barack Obama
+  relevance: 1
+- tag: Chimpanzee
+  relevance: 1
+- tag: HPV vaccine
+  relevance: 1
+- tag: Cost
+  relevance: 1
+- tag: Continent
+  relevance: 1
+- tag: Refugee
+  relevance: 1
+- tag: Ape
+  relevance: 1
+- tag: Hominidae
+  relevance: 1
+- tag: Viral hemorrhagic fever
+  relevance: 1
+- tag: Economics
+  relevance: 1
+- tag: Western blot
+  relevance: 1
+- tag: Pandemic
+  relevance: 1
+- tag: Health economics
+  relevance: 1
+- tag: Conservation biology
+  relevance: 1
+- tag: Animal
+  relevance: 1
+- tag: Fauna
+  relevance: 1
+- tag: Blindness
+  relevance: 1
+- tag: Eye
+  relevance: 1
+- tag: Meningitis
+  relevance: 1
+- tag: Haemophilus influenzae
+  relevance: 1
+- tag: Uhuru Park
+  relevance: 1
+- tag: Dialysis
+  relevance: 1
+- tag: Genetic pollution
+  relevance: 1
+- tag: Biodiversity
+  relevance: 1
+- tag: Monday
+  relevance: 1
+- tag: Bundestag
+  relevance: 1
+- tag: Empty set
+  relevance: 1
+- tag: Disability
+  relevance: 1
+- tag: Wheelchair
+  relevance: 1
+- tag: Lymphoma
+  relevance: 1
+- tag: Cardiac surgery
+  relevance: 1
+- tag: Universe
+  relevance: 1
+- tag: Postperfusion syndrome
+  relevance: 1
+- tag: Cardiothoracic surgery
+  relevance: 1
+- tag: Oxygenator
+  relevance: 1
+- tag: Cytomegalovirus
+  relevance: 1
+- tag: Freetown
+  relevance: 1
+- tag: Corps
+  relevance: 1
+- tag: British Army
+  relevance: 1
+- tag: Chronic obstructive pulmonary disease
+  relevance: 1
+- tag: Air pollution
+  relevance: 1
+- tag: Cough
+  relevance: 1
+- tag: Asthma
+  relevance: 1
+- tag: Health science
+  relevance: 1
+- tag: Estrogen
+  relevance: 1
+- tag: Osteoporosis
+  relevance: 1
+- tag: Sanitation
+  relevance: 1
+- tag: Pharmacist
+  relevance: 1
+- tag: Pharmacy
+  relevance: 1
+- tag: Woman
+  relevance: 1
+- tag: Indoor air quality
+  relevance: 1
+- tag: Meals
+  relevance: 1
+- tag: Cell nucleus
+  relevance: 1
+- tag: Primary school
+  relevance: 1
+- tag: Medical school
+  relevance: 1
+- tag: Pediatrics
+  relevance: 1
+- tag: Residency
+  relevance: 1
+- tag: Anatomy
+  relevance: 1
+- tag: Luhya
+  relevance: 1
+- tag: Acid
+  relevance: 1
+- tag: Commercial crimes
+  relevance: 1
+- tag: Authentication
+  relevance: 1
+- tag: Deception
+  relevance: 1
+- tag: Counterfeit medications
+  relevance: 1
+- tag: Serial number
+  relevance: 1
+- tag: Urination
+  relevance: 1
+- tag: Defecation
+  relevance: 1
+- tag: Menstruation
+  relevance: 1
+- tag: Kibera
+  relevance: 1
+- tag: Slum
+  relevance: 1
+- tag: Caesarean section
+  relevance: 1
+- tag: Lupus erythematosus
+  relevance: 1
+- tag: Systemic lupus erythematosus
+  relevance: 1
+- tag: Guidance
+  relevance: 1
+- tag: Advice
+  relevance: 1
+- tag: Immunology
+  relevance: 1
+- tag: President of Germany
+  relevance: 1
+- tag: Nigeria
+  relevance: 1
+- tag: Pneumococcal polysaccharide vaccine
+  relevance: 1
+- tag: Hormone
+  relevance: 1
+- tag: Attack!
+  relevance: 1
+- tag: Rheumatology
+  relevance: 1
+- tag: Ritual
+  relevance: 1
+- tag: Microbiology
+  relevance: 1
+- tag: Hot flash
+  relevance: 1
+- tag: Outhouse
+  relevance: 1
+- tag: Composting toilet
+  relevance: 1
+- tag: Ebola
+  relevance: 1
+- tag: The Streets
+  relevance: 1
+- tag: Glomerulonephritis
+  relevance: 1
+- tag: Rheumatoid arthritis
+  relevance: 1
+- tag: Inflammation
+  relevance: 1
+- tag: Female genital cutting
+  relevance: 1
+- tag: Circumcision
+  relevance: 1
+- tag: Bundesrat of Germany
+  relevance: 1
+- tag: Bill Gates
+  relevance: 1
+- tag: Overpopulation
+  relevance: 1
+- tag: Conspiracy theory
+  relevance: 1
+- tag: Greenhouse gas
+  relevance: 1
+- tag: Earth
+  relevance: 1
+- tag: Atmosphere
+  relevance: 1
+- tag: 21st century
+  relevance: 1
+- tag: Intestinal parasite
+  relevance: 1
+- tag: Weather
+  relevance: 1
+- tag: Arctic shrinkage
+  relevance: 1
+- tag: Breastfeeding
+  relevance: 1
+- tag: Fossil fuel
+  relevance: 1
+- tag: Industrial Revolution
+  relevance: 1
+- tag: Psychiatry
+  relevance: 1
+- tag: Psychology
+  relevance: 1
+- tag: Funeral director
+  relevance: 1
+- tag: Embalming
+  relevance: 1
+- tag: Undertaking
+  relevance: 1
+- tag: Body
+  relevance: 1
+- tag: Cadaver
+  relevance: 1
+- tag: Vitamin D
+  relevance: 1
+- tag: Bata Shoes
+  relevance: 1
+- tag: Mental disorder
+  relevance: 1
+- tag: Leishmaniasis
+  relevance: 1
+- tag: Clinical psychology
+  relevance: 1
+- tag: Schistosomiasis
+  relevance: 1
+- tag: Family therapy
+  relevance: 1
+- tag: Extreme weather
+  relevance: 1
+- tag: Malnutrition
+  relevance: 1
+- tag: Sex education
+  relevance: 1
+- tag: Hematology
+  relevance: 1
+- tag: Transfusion medicine
+  relevance: 1
+- tag: Apheresis
+  relevance: 1
+- tag: Nursing
+  relevance: 1
+- tag: Unsafe abortion
+  relevance: 1
+- tag: BRCA2
+  relevance: 1
+- tag: Waste-to-energy
+  relevance: 1
+- tag: Recycling
+  relevance: 1
+- tag: Protease inhibitor
+  relevance: 1
+- tag: Antiviral drug
+  relevance: 1
+- tag: Clinical officer
+  relevance: 1
+- tag: United Kingdom
+  relevance: 1
+- tag: Intensive care medicine
+  relevance: 1
+- tag: Energy development
+  relevance: 1
+- tag: Solar energy
+  relevance: 1
+- tag: Nuclear power
+  relevance: 1
+- tag: Sun
+  relevance: 1
+- tag: Spinal cord injury
+  relevance: 1
+- tag: Solar cell
+  relevance: 1
+- tag: Renewable energy
+  relevance: 1
+- tag: Illness
+  relevance: 1
+- tag: Herpes simplex
+  relevance: 1
+- tag: Penicillin
+  relevance: 1
+- tag: Clostridium difficile
+  relevance: 1
+- tag: Wind power
+  relevance: 1
+- tag: Human anatomy
+  relevance: 1
+- tag: Human body
+  relevance: 1
+- tag: Kenyan shilling
+  relevance: 1
+- tag: Uganda
+  relevance: 1
+- tag: Theme music
+  relevance: 1
+- tag: Mau Mau Uprising
+  relevance: 1
+- tag: Genetic disorder
+  relevance: 1
+- tag: Semitone
+  relevance: 1
+- tag: Autism
+  relevance: 1
+- tag: World Health Day
+  relevance: 1
+- tag: Codex Alimentarius
+  relevance: 1
+- tag: Names of large numbers
+  relevance: 1
+- tag: Leprosy
+  relevance: 1
+- tag: Soft palate
+  relevance: 1
+- tag: Hypertension
+  relevance: 1
+- tag: Childhood
+  relevance: 1
+- tag: Investment
+  relevance: 1
+- tag: Mayor of New York City
+  relevance: 1
+- tag: Thrombus
+  relevance: 1
+- tag: Coagulation
+  relevance: 1
+- tag: Ban Ki-moon
+  relevance: 1
+- tag: World Trade Organization
+  relevance: 1
+- tag: County
+  relevance: 1
+- tag: Pulmonology
+  relevance: 1
+- tag: The World Is Flat
+  relevance: 1
+- tag: Democratic Republic of the Congo
+  relevance: 1
+- tag: Addis Ababa University
+  relevance: 1
+- tag: Michael Bloomberg
+  relevance: 1
+- tag: Vacuum aspiration
+  relevance: 1
+- tag: Uterus
+  relevance: 1
+- tag: Beer
+  relevance: 1
+- tag: Reproductive rights
+  relevance: 1
+- tag: Human rights
+  relevance: 1
+- tag: Abortifacient
+  relevance: 1
+- tag: Pro-choice
+  relevance: 1
+- tag: Menopause
+  relevance: 1
+- tag: Post-Soviet states
+  relevance: 1
+- tag: Soviet Union
+  relevance: 1
+- tag: Russia
+  relevance: 1
+- tag: Yuri Gagarin
+  relevance: 1
+- tag: Organ transplant
+  relevance: 1
+- tag: Neglected diseases
+  relevance: 1
+- tag: Muscle
+  relevance: 1
+- tag: Central nervous system
+  relevance: 1
+- tag: Palatine uvula
+  relevance: 1
+- tag: Finance
+  relevance: 1
+- tag: Unemployment
+  relevance: 1
+- tag: Decision making
+  relevance: 1
+- tag: Dilation and curettage
+  relevance: 1
+- tag: Addiction
+  relevance: 1
+- tag: Welfare
+  relevance: 1
+- tag: Aga Khan Development Network
+  relevance: 1
+- tag: Agha
+  relevance: 1
+- tag: Extensively drug-resistant tuberculosis
+  relevance: 1
+- tag: Nick Herbert
+  relevance: 1
+- tag: Ethanol
+  relevance: 1
+- tag: Pneumococcal vaccine
+  relevance: 1
+...

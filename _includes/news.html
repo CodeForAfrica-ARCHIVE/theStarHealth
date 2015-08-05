@@ -178,19 +178,13 @@
             <tr>
                 <td><a  class='filter_feed' data-tag='All'>All</a></td>
             </tr>
-            <?php
-                        $i = 0;
-                        foreach($tags as $k=>$v){
 
-            if($i<10){
+            {% for tags in site.data.tags limit:10 %}
 
-            print "<tr><td><a class='filter_feed' data-tag='".$k."'>".$k." (".$v.")</td></tr>";
+                <tr><td><a class='filter_feed' data-tag='{{ tags.tag }}'>{{ tags.tag }} ({{ tags.relevance }})</td></tr>
 
-            $i++;
-            }
+            {% endfor %}
 
-            }
-            ?>
             </tbody>
         </table>
     </div>
@@ -198,34 +192,24 @@
         <div class="row-header"><h4>Other Health News</h4></div>
         <h6>A round-up of the all the latest health news from theStar <i class="icon-arrow-down" style="margin-left: 10px"></i></h6>
         <br />
-        <?php
 
-                $items=0;
+        {% for item in site.data.all_news %}
 
-			  	foreach($more_news as $item){
-			  		if($items<40){
-                    $thumb = str_replace("http://the-star.co.ke", "http://www.the-star.co.ke", $item['thumb']);
+        <h4><a href='{{ item.link }}' target='_blank'>{{ item.title }}</a></h4>
+        {% if item.thumb %}
+         <img src='{{ item.thumb }}' style='width:100px;float:left; margin:10px'><br />
+        {% endif %}
 
-			  		print "<h4><a href='".$item['link']."' target='_blank'>".$item['title']."</a></h4>";
-        if($item['thumb']!=null){
-        print "<img src='".$thumb."' style='width:100px;float:left; margin:10px'><br />";
-        }
-        print "<div>".$item['description']."</div><br />";
+        <div>{{ item.description }}</div><br />
+        <div class="article-meta">Posted {{ item.timestamp }} | {{ item.author }} </div><hr />
 
-        print '<div class="article-meta">Posted '.$item['timestamp'].' | '; print ucwords(strtolower($item['author']));
+        {% endfor %}
 
-        print '</div>';
-        print "<hr />";
 
-        $items++;
-
-        }
-        }
-        ?>
         <div class="pagination" style="text-align: center">
-            <?php
-                print $more_news->render();
-            ?>
+
+
+
         </div>
     </div>
     <div class="span3 sidebar_widget2">
