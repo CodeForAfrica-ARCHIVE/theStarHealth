@@ -53,6 +53,9 @@
         {% for h in site.data.helpdesk.helplines %}
             <p><a href='tel:{{ h.value }}'>{{ h.title }}({{ h.value }})</a></p>
         {% endfor %}
+            {% if site.data.helpdesk.helplines.size <1 %}
+                No items listed
+            {% endif %}
         </div>
 
         <div class="widget_body">
@@ -60,6 +63,9 @@
             {% for h in site.data.helpdesk.supportgroups %}
                 <p><a href='tel:{{ h.value }}'>{{ h.title }}({{ h.value }})</a></p>
             {% endfor %}
+            {% if site.data.helpdesk.supportgroups.size <1 %}
+                No items listed
+            {% endif %}
         </div>
 
         <div class="widget_body">
@@ -67,6 +73,9 @@
             {% for h in site.data.helpdesk.socialmedias %}
             <p><a href='tel:{{ h.value }}'>{{ h.title }}</a></p>
             {% endfor %}
+            {% if site.data.helpdesk.socialmedias.size <1 %}
+            No items listed
+            {% endif %}
         </div>
 
 
@@ -82,6 +91,11 @@
                 color:#000;
             }
         </style>
+
+
+
+
+
         <?php
 			$i = 0;
 			if(sizeof($major)>0){
