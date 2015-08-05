@@ -92,91 +92,58 @@
             }
         </style>
 
-        {% if site.data.featured.size > 2 %}
+        {% if site.data.featured.size > 1 %}
 
         {% assign first_major_story = site.data.featured[1] %}
 
-            <div class="accordion" id="accordion2">
-                <div class="accordion-group">
-                    <div class="accordion-heading">
-                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#1">{{ first_major_story.title }}<i class="icon-chevron-sign-down"></i>
-                        </a>
-                    </div>
-                    <div id="1" class="accordion-body in collapse" style="height: auto;">
-                        <div class="accordion-inner">
-                            <p>
-                                <img src="{{ first_major_story.thumb }}" width='100%'>
-                                <br />
-                                {{ first_major_story.description }}
-                                <br />
-                                <a href="{{ first_major_story.link }}" target="_blank">More</a></p>
-                        </div>
+        <div class="accordion" id="accordion2">
+            <div class="accordion-group">
+                <div class="accordion-heading">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#1">{{ first_major_story.title }}<i class="icon-chevron-sign-down"></i>
+                    </a>
+                </div>
+                <div id="1" class="accordion-body collapse" style="height: auto;">
+                    <div class="accordion-inner">
+                        <p>
+                            <img src="{{ first_major_story.thumb }}" width='100%'>
+                            <br />
+                            {{ first_major_story.description }}
+                            <br />
+                            <a href="{{ first_major_story.link }}" target="_blank">More</a></p>
                     </div>
                 </div>
             </div>
-        
+        </div>
+
+        {% for item in site.data.featured limit:10 offset:2 %}
+
+        <div class="accordion" id="accordion2">
+            <div class="accordion-group">
+                <div class="accordion-heading">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#{{ forloop.index }}">{{ item.title }}<i class="icon-chevron-sign-down"></i>
+                    </a>
+                </div>
+                <div id="{{ forloop.index }}" class="accordion-body in collapse" style="height: 0px;">
+                    <div class="accordion-inner">
+                        <p>
+                            <img src="{{ item.thumb }}" width='100%'>
+                            <br />
+                            {{ item.description }}
+                            <br />
+                            <a href="{{ item.link }}" target="_blank">More</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% endfor %}
 
         {% else %}
-           No items found
+
+        No items found
+
         {% endif %}
 
-
-
-
-        <?php
-			$i = 0;
-			if(sizeof($major)>0){
-        $first_one = $major[0];
-        print '<div class="accordion" id="accordion2">
-        <div class="accordion-group">
-            <div class="accordion-heading">
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#'.$i.'">
-                    '.$first_one['title'].'<i class="icon-chevron-sign-down"></i>
-                </a>
-            </div>
-            <div id="'.$i.'" class="accordion-body in collapse" style="height: auto;">
-                <div class="accordion-inner">
-                    <p>';
-                        if($first_one['thumb']!=null){
-                        $thumb = str_replace("http://the-star.co.ke", "http://www.the-star.co.ke", $first_one['thumb']);
-
-                        print "<img src='".$thumb."' width='100%'><br />";
-                        }
-                        print $first_one['description'].'<br /><a href="'.$first_one['link'].'" target="_blank">More</a></p>
-                </div>
-            </div>
-        </div>
-    </div>';
-        $total=0;
-        foreach($major as $featured_item){
-        if(($total>1)&&($total<6)){
-        $i++;
-        print '<div class="accordion" id="accordion2">
-        <div class="accordion-group">
-            <div class="accordion-heading">
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#'.$i.'">
-                    '.$featured_item['title'].'<i class="icon-chevron-sign-down"></i>
-                </a>
-            </div>
-            <div id="'.$i.'" class="accordion-body collapse" style="height: 0px;">
-                <div class="accordion-inner">
-                    <p>';
-                        if($featured_item['thumb']!=null){
-                        $thumb = str_replace("http://the-star.co.ke", "http://www.the-star.co.ke", $featured_item['thumb']);
-
-                        print "<img src='".$thumb."' width='100%'><br />";
-                        }
-                        print $featured_item['description'].'<br /><a href="'.$featured_item['link'].'" target="_blank">More</a></p>
-                </div>
-            </div>
-        </div>
-    </div>';
-
-        }
-        $total++;
-        }
-        }
-        ?>
 
         <br /><br />
         <div class="row-header"><h4>Feed Filters</h4></div>
