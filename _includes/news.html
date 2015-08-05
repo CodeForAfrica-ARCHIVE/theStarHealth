@@ -74,7 +74,7 @@
             <p><a href='tel:{{ h.value }}'>{{ h.title }}</a></p>
             {% endfor %}
             {% if site.data.helpdesk.socialmedias.size <1 %}
-            No items listed
+                No items listed
             {% endif %}
         </div>
 
@@ -92,6 +92,33 @@
             }
         </style>
 
+        {% if site.data.featured.size > 2 %}
+
+        {% assign first_major_story = site.data.featured[1] %}
+
+            <div class="accordion" id="accordion2">
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#1">{{ first_major_story.title }}<i class="icon-chevron-sign-down"></i>
+                        </a>
+                    </div>
+                    <div id="1" class="accordion-body in collapse" style="height: auto;">
+                        <div class="accordion-inner">
+                            <p>
+                                <img src="{{ first_major_story.thumb }}" width='100%'>
+                                <br />
+                                {{ first_major_story.description }}
+                                <br />
+                                <a href="{{ first_major_story.link }}" target="_blank">More</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+
+        {% else %}
+           No items found
+        {% endif %}
 
 
 
