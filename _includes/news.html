@@ -1,5 +1,6 @@
 <!--main content-->
-<div class="container container-outline" style="margin-top: 5px; margin-bottom: 5px;">
+<div class="container container-outline" style="margin-top: 5px; margin-bottom: 5px;"
+     xmlns:display="http://www.w3.org/1999/xhtml">
     <div class="row-fluid">
         <div class="span9">
             <div class="row-fluid">
@@ -33,58 +34,12 @@
                     </div>
                 </div>
                 <div class="span8">
-                    <div id="myCarousel" class="carousel slide">
-                        <ol class="carousel-indicators">
-                            <?php
-                        //TODO: Show multiple featured stories + accompanying back stories
-                        $item = 0;
-                        print '<li data-target="#myCarousel" data-slide-to="'.$item.'" class="active"></li>';
-                            $item++;
-                            $total = 0;
-                            foreach($featured as $news_label){
-                            if($total>0){
-                            //print '<li data-target="#myCarousel" data-slide-to="'.$item.'" class=""></li>';
-                            $item++;
-                            }
-                            $total++;
-                            }
-                            ?>
-                        </ol>
-                        <div class="carousel-inner" align="center" style="background-color:#000">
 
-                            <?php
-                        $thumb = str_replace("http://the-star.co.ke", "http://www.the-star.co.ke", $featured[0]['thumb']);
-                        print '<div class="item active"><img src="'.$thumb.'" alt="">
+                    <img src="{{ featuredItem.thumb }}">
 
-                            <div class="carousel-caption style="display:none;"">
-                            <h6><a href="'.$featured[0]['link'].'" target="_blank">'.$featured[0]['title'].'</a></h6>
-
-                        </div>
-                    </div>';
-                    $item = 0;
-                    $item++;
-                    $total = 0;
-                    foreach($featured as $news_item){
-                    if($total>0){
-                    /*print '<div class="item"><img src="'.$news_item['thumb'].'" alt="">
-                    <div class="carousel-caption">
-                        <h6>'.$news_item['title'].'</h6>
-                    </div>
-                </div>';*/
-                    $item++;
-
-                    }
-                    $total++;
-                    }
-                    ?>
-
+                <div style="text-align: center;font-size: 0.9em">
+                    <a href="http://www.the-star.co.ke/section/contact-details" target="_blank"><strong>Tell us more</strong><br/>Do you have more information? Help us improve this story by sharing your experiences/evidence.</a>
                 </div>
-                <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
-                <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
-            </div>
-            <div style="text-align: center;font-size: 0.9em">
-                <a href="http://www.the-star.co.ke/section/contact-details" target="_blank"><strong>Tell us more</strong><br/>Do you have more information? Help us improve this story by sharing your experiences/evidence.</a>
-            </div>
         </div>
     </div>
 </div>
