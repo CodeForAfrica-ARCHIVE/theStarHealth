@@ -16,8 +16,9 @@
                         {{ featuredItem.description }}
 
                         <h5>The story so far</h5>
-                        {% for related in featuredItem.related_articles %}
                         <ul>
+                        {% for related in featuredItem.related_articles %}
+
                         <li>
                             <a href="{{ related.link }}" target="_blank">
                                 {{ related.title }}
@@ -34,9 +35,9 @@
                     </div>
                 </div>
                 <div class="span8">
-
+                <div class="featured_image">
                     <img src="{{ featuredItem.thumb }}">
-
+                </div>
                 <div style="text-align: center;font-size: 0.9em">
                     <a href="http://www.the-star.co.ke/section/contact-details" target="_blank"><strong>Tell us more</strong><br/>Do you have more information? Help us improve this story by sharing your experiences/evidence.</a>
                 </div>
@@ -47,44 +48,27 @@
 <div class="span3" style='float:right'>
 
     <div class="sidebar_widget down helpline">
-        <?php
-				//if(count($helplines)>0){
-        print '<div class="widget_body"><div class="row-header"><h4><i class="icon-phone icon-2x" style="margin-right:5px"></i>Help Lines</h4></div>';
+		<div class="widget_body">
+            <div class="row-header"><h4><i class="icon-phone" style="margin-right:5px"></i>Help Lines</h4></div>
+        {% for h in site.data.helpdesk.helplines %}
+            <p><a href='tel:{{ h.value }}'>{{ h.title }}({{ h.value }})</a></p>
+        {% endfor %}
+        </div>
 
-        foreach($helplines as $k=>$v){
-        print "<p><a href='tel:".$v."'>".$k." (".$v.")</a></p>";
-        }
+        <div class="widget_body">
+            <div class="row-header"><h4><i class="icon-anchor" style="margin-right:5px"></i>Support Groups</h4></div>
+            {% for h in site.data.helpdesk.supportgroups %}
+                <p><a href='tel:{{ h.value }}'>{{ h.title }}({{ h.value }})</a></p>
+            {% endfor %}
+        </div>
 
-        if(count($helplines)<1){
-        print "No pages listed";
-        }
-        print "</div>";
-        //}
-        //if(count($supportgroups)>0){
-        print '<div class="widget_body"><div class="row-header"><h4><i class="icon-anchor icon-2x" style="margin-right:5px"></i>Support Groups</h4></div>';
+        <div class="widget_body">
+            <div class="row-header"><h4><i class="icon-user" style="margin-right:5px"></i>Links</h4></div>
+            {% for h in site.data.helpdesk.socialmedias %}
+            <p><a href='tel:{{ h.value }}'>{{ h.title }}</a></p>
+            {% endfor %}
+        </div>
 
-        foreach($supportgroups as $k=>$v){
-        print "<p><a href='tel:".$v."'>".$k." (".$v.")</a></p>";
-        }
-        if(count($supportgroups)<1){
-        print "No groups listed";
-        }
-        print "</div>";
-        //}
-        //if(count($socialmedias)>0){
-        print '<div class="widget_body"><div class="row-header"><h4><i class="icon-user icon-2x" style="margin-right:5px"></i> Links</h4></div>';
-
-        foreach($socialmedias as $k=>$v){
-        print "<p>
-            <a href='".$v."'>".$k."</a>
-        </p>";
-        }
-        if(count($socialmedias)<1){
-        print "No pages listed";
-        }
-        print "</div>";
-        //}
-        ?>
 
     </div>
 </div>

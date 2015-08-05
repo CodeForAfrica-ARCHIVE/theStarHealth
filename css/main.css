@@ -350,3 +350,6 @@ ul, ol {
     font-size: 0.8em;
     text-align: left;
 }
+.featured_image img{
+    height: 300px;
+}
