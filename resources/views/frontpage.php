@@ -665,8 +665,8 @@
 				//if(count($helplines)>0){
                     print '<div class="widget_body"><div class="row-header"><h4><i class="icon-phone icon-2x" style="margin-right:5px"></i>Help Lines</h4></div>';
 
-					foreach($helplines as $k=>$v){
-                        print "<p><a href='tel:".$v."'>".$k." (".$v.")</a></p>";
+					foreach($helplines as $helpline){
+                        print "<p><a href='tel:".$helpline['value']."'>".$helpline['title']." (".$helpline['value'].")</a></p>";
 				    }
 
                     if(count($helplines)<1){
@@ -677,8 +677,8 @@
 				//if(count($supportgroups)>0){
                 print '<div class="widget_body"><div class="row-header"><h4><i class="icon-anchor icon-2x" style="margin-right:5px"></i>Support Groups</h4></div>';
 
-                foreach($supportgroups as $k=>$v){
-					    print "<p><a href='tel:".$v."'>".$k." (".$v.")</a></p>";
+                foreach($supportgroups as $sg){
+					    print "<p><a href='tel:".$sg['value']."'>".$sg['title']." (".$sg['value'].")</a></p>";
 				    }
 				if(count($supportgroups)<1){
 					print "No groups listed";
@@ -688,9 +688,9 @@
 				//if(count($socialmedias)>0){
                 print '<div class="widget_body"><div class="row-header"><h4><i class="icon-user icon-2x" style="margin-right:5px"></i> Links</h4></div>';
 
-                foreach($socialmedias as $k=>$v){
+                foreach($socialmedias as $sm){
 					print "<p>
-					<a href='".$v."'>".$k."</a>
+					<a href='".$sm['value']."'>".$sm['title']."</a>
 					</p>";
 				}
 				if(count($socialmedias)<1){
@@ -802,11 +802,11 @@
 					</tr>
                     <?php
                         $i = 0;
-                        foreach($tags as $k=>$v){
+                        foreach($tags as $tag){
 
                             if($i<10){
 
-                                print "<tr><td><a class='filter_feed' data-tag='".$k."'>".$k." (".$v.")</td></tr>";
+                                print "<tr><td><a class='filter_feed' data-tag='".$tag['tag']."'>".$tag['tag']." (".$tag['count'].")</td></tr>";
 
                                 $i++;
                             }
