@@ -36,7 +36,7 @@ Route::get('sms', function()
 
     $result = (new SMSController())->process_received($phone, $message);
 
-    (new SMSController())->send_response($phone, $result);
+    $result = (new SMSController())->send_response($phone, $result);
 
     //return $result;
 });
@@ -53,6 +53,7 @@ Route::get('getDoctors', function()
 
     return $result;
 });
+
 Route::get('singleDoctor', function()
 {
     $term = Request::input('q');
@@ -65,6 +66,7 @@ Route::get('singleDoctor', function()
 
     return $result;
 });
+
 Route::get('/filter_feed', function()
 {
     $tag = Request::input('tag');

@@ -13,7 +13,17 @@ class DoctorsController extends Controller {
 
         $url = "https://www.googleapis.com/fusiontables/v1/query?";
 
-        $sql = "SELECT * FROM ".$table." WHERE Names LIKE '%".$q."%'";
+        //split name into different parts, and return rows that have all names
+        $raw_query_parts = explode(' ', $q);
+        $query_parts = array();
+        foreach($raw_query_parts as $part){
+
+            $query_parts[] = "Names LIKE '%".$part."%'";
+
+        }
+        $query_parts = implode(" AND ", $query_parts);
+
+        $sql = "SELECT * FROM ".$table." WHERE ".$query_parts;
 
         $options = array("sql"=>$sql, "key"=>$key, "sensor"=>"false");
 
@@ -23,37 +33,50 @@ class DoctorsController extends Controller {
 
         $data = json_decode($page, TRUE);
 
-        if(array_key_exists('rows', $data)){
+        if(array_key_exists(('rows'), $data)){
             $rows = $data['rows'];
 
-            $result = "";
+            $result = "Found:\n";
 
-            if (sizeof($rows) == 0) {
-
-                $result .= "No registered doctor found with that name!";
-                $found = false;
-            }else{
-                $result = "Found:\n";
-
-                foreach($rows as $row){
-                    if($isSMS){
-                        $result .= $row['1']." - ". $row['6']."\n";
-                    }else{
-                        $result .= $row['1']."\n";
-                    }
+            foreach($rows as $row){
+                if($isSMS){
+                    $result .= $row['1']." - ". $row['6']."\n";
+                }else{
+                    $result .= $row['1']."\n";
                 }
+            }
+
+            if(count($rows)<1){
+
+                $result = "No doctor with that name. Check for spelling mistakes.";
+                $found = false;
             }
 
         }else{
             $result = "No doctor with that name. Check for spelling mistakes.";
             $found = false;
-
         }
 
         if($isSMS && !$found){
             return false;
         }
         return $result;
+    }
+
+    public function process_rows($data, $isSMS){
+        $rows = $data['rows'];
+
+        $result = "Found:\n";
+
+        foreach($rows as $row){
+            if($isSMS){
+                $result .= $row['1']." - ". $row['6']."\n";
+            }else{
+                $result .= $row['1']."\n";
+            }
+        }
+        return $result;
+
     }
 
     public static function singleDoctor($name){
