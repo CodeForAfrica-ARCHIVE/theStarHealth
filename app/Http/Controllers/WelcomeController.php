@@ -38,7 +38,7 @@ class WelcomeController extends Controller {
         $data['featured'] = $this->get_featured();
         $data['overview'] = $data['featured']['0']['description'];
 
-        $data['sofar'] = $data['featured']['so_far'];
+        $data['sofar'] = $data['featured']['0']['related_articles'];
 
         $more_news = $this->get_all('All');
         $data['more_news'] = $this->paginateArray($more_news, 7, $page = null);
@@ -132,13 +132,25 @@ class WelcomeController extends Controller {
     }
 
     public function get_helplines(){
-        return array("Kenya Police"=>"053801053", "Kenya Medical Board"=>"+254 20 2724938", "Ministry of Health"=>"+254 20 2717077", "Nursing Council of Kenya"=>"+254 20 3873556");
+	$helplines = array();
+	$raw = array("Kenya Police"=>"053801053", "Kenya Medical Board"=>"+254 20 2724938", "Ministry of Health"=>"+254 20 2717077", "Nursing Council of Kenya"=>"+254 20 3873556");
+	foreach($raw as $k=>$v){
+		$helplines[] = array("title"=>$k, "value"=>$v);
+	}
+	//print_r(json_encode($helplines));
+	return $helplines;
     }
     public function get_social_media(){
-        return array("Medical Practitioners and Dentists Board"=>"http://medicalboard.co.ke/",
+	$helplines = array();
+        $raw = array("Medical Practitioners and Dentists Board"=>"http://medicalboard.co.ke/",
             "Kenya Red Cross"=>"http://twitter.com/EMS_Kenya",
             "St John's Ambulance"=>"http://twitter.com/StJohnsKenya",
             "Nairobi Women's Hospital"=>"http://twitter.com/NairobiWomens_H");
+	foreach($raw as $k=>$v){
+		$helplines[] = array("title"=>$k, "value"=>$v);
+	}
+	//print_r(json_encode($helplines));
+	return $helplines;
     }
     public function get_support_groups(){
         return array();
@@ -168,8 +180,16 @@ class WelcomeController extends Controller {
         $items = (array)$items;
 
         arsort($items);
+	
+	$tags = array();
 
-        return $items;
+	foreach($items as $k=>$v){
+		
+		$tags[] = array("tag"=>$k, "count"=>$v);
+	
+	}
+
+        return $tags;
     }
 
     public function get_all($section){

@@ -28,6 +28,26 @@ class GenerateJSONController extends Controller {
         //get all news
         $all_news = $newsController->get_all('All');
         $this->generate_all_news($all_news);
+	
+	
+	//get help desk
+	$helpdesk = array();
+	$helpdesk['helplines'] = $newsController->get_helplines();
+        $helpdesk['supportgroups'] = $newsController->get_support_groups();
+        $helpdesk['socialmedias'] = $newsController->get_social_media();
+	$this->generate_help_desk($helpdesk);
+
+	//get tags
+	$tags = $newsController->get_tags();
+	$this->generate_tags($tags);
+    }
+
+    public function generate_help_desk($helpdesk){
+
+        $file = public_path()."/feeds/helpdesk.yaml";
+	
+        yaml_emit_file ( $file , $helpdesk );
+
     }
 
     public function generate_featured($featured_news)
@@ -45,6 +65,13 @@ class GenerateJSONController extends Controller {
         yaml_emit_file ( $file , $all_news );
     }
 
+   public function generate_tags($tags)
+    {
+        $file = public_path()."/feeds/tags.yaml";
+
+        yaml_emit_file ( $file , $tags );
+
+    }
     /*
      * Write new content to file
      */

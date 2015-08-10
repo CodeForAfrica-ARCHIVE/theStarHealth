@@ -378,6 +378,6 @@ class SMSController extends Controller
     public function log_sent($result){
         DB::table('sms')
             ->where('id', $result["id"])
-            ->update(array('found' => $result["found"], "successfull"=>$result["success"], "responded"=>1));
+            ->update(array('found' => $result["found"], "successfull"=>$result["success"], "responded"=>1, "response"=>$result["response"]));
     }
 }

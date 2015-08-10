@@ -23,6 +23,7 @@ class CreateSmsTable extends Migration {
 			$table->integer('responded')->default(0);
 			$table->integer('successfull')->default(0);
 			$table->integer('found')->default(0);
+			$table->string('response')->nullable();
 			$table->rememberToken();
 			$table->timestamps();
 		});
