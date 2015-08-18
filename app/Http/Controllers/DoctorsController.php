@@ -36,13 +36,13 @@ class DoctorsController extends Controller {
         if(array_key_exists(('rows'), $data)){
             $rows = $data['rows'];
 
-            $result = "Found:\n";
+            $result = "Found:\r\n";
 
             foreach($rows as $row){
                 if($isSMS){
-                    $result .= $row['1']." - ". $row['6']."\n";
+                    $result .= $row['1']." - ". $row['6']."\r\n";
                 }else{
-                    $result .= $row['1']."\n";
+                    $result .= $row['1']."\r\n";
                 }
             }
 
@@ -70,9 +70,9 @@ class DoctorsController extends Controller {
 
         foreach($rows as $row){
             if($isSMS){
-                $result .= $row['1']." - ". $row['6']."\n";
+                $result .= $row['1']." - ". $row['6']."\r\n";
             }else{
-                $result .= $row['1']."\n";
+                $result .= $row['1']."\r\n";
             }
         }
         return $result;
