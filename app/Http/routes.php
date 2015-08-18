@@ -26,6 +26,14 @@ Route::get('generateJSONFeed', function()
     (new GenerateJSONController())->index();
 });
 
+/*
+ * Generate health services dictionary
+ */
+Route::get('generateJSONFeed', function()
+{
+    (new GenerateJSONController())->createServicesDictionary();
+});
+
 
 Route::get('sms', function()
 {

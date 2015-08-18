@@ -92,4 +92,31 @@ class GenerateJSONController extends Controller {
             return true;
         }
     }
+
+    /*
+     * Create JSON dictionary for list of health services
+     */
+
+    public function createServicesDictionary(){
+
+        $result = array();
+
+        foreach($this->service_abbr() as $abbr){
+            $service = array();
+            //add the other keywords
+            $service[] = $service
+
+            $result[$abbr] = $service;
+        }
+
+    }
+
+    public function service_abbr(){
+        return array("ANC", "ART", "BEOC", "BLOOD", "CAES SEC", "CEOC", "C-IMCI", "EPI", "FP", "GROWM", "HBC", "HCT", "IPD", "OPD", "OUTREACH", "PMTCT", "RAD/XRAY", "RHTC/RHDC", "TB DIAG", "TB LABS", "TB TREAT", "YOUTH");
+
+    }
+
+    public function services_keywords(){
+        return array("Antenatal Care (care of mother while pregnant)", "Anteretroviral Therapy ( drugs for HIV)", "Beoc", "Blood", "Caeserean section", "Ceoc", "C-IMCI", "Epidemiology ( study of disease spread and distribution)", "Family planning", "GROWM", "Heamogram ( blood test checking all blood parameters)", "Heamatocrit ( simple blood test to analyse anaemia)", "In- patient department", "Out -patient department", "Outreach programs ie. go out and give treatment in the villages", "Prevention of mother to child transmission ( of HIV/AIDS)", "Radiology/ x-ray", "Reproductive health treatment center/diagnostic center", "Tuberculosis diagnosis", "Tuberculosis laboratory work up", "Tuberculosis treatment", "Youth");
+    }
 }
