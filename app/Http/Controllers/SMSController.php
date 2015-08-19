@@ -35,7 +35,6 @@ class SMSController extends Controller
             $response = $this->find_nhif_coverage($message);
 
         }else if($this->has_doctor_keywords(strtolower($message))){
-
             $response = $this->find_doctor($message);
 
         }else{
@@ -204,14 +203,13 @@ class SMSController extends Controller
         }
     }
 
-    public function find_facilities_by_location($specialty, $location){
-        $result = HospitalsController::specialty($specialty, "", $location, true);
-        return $this->process_result($result, 1);
+    public function find_facilities_by_location($specialty, $address, $location){
+        $result = HospitalsController::specialty($specialty, $address, $location, true);
+        return $this->process_result($result, 3);
     }
 
     public function has_medical_service_tags($message){
         $services_keywords = $this->services_keywords();
-
         //return $this->array_element_in_string($message, $services_keywords);
 
         $i = 0;
@@ -272,7 +270,7 @@ class SMSController extends Controller
     }
 
     public function doctor_keywords(){
-        return array("doctor", "daktari", "laktar", "dr.", "daktar");
+        return array("doctor", "daktari", "laktar", "dr.", "daktar", "dr");
     }
 
     public function nhif_keywords(){
@@ -307,6 +305,10 @@ class SMSController extends Controller
     }
 
     public function string_in_string($string, $key){
+        $string = strtolower($string);
+        $key = strtolower($key);
+
+
         if (strpos($string, $key) !== false){
             return true;
         }else{
