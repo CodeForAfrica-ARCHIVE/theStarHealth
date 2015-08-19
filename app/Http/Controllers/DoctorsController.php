@@ -40,7 +40,7 @@ class DoctorsController extends Controller {
 
             foreach($rows as $row){
                 if($isSMS){
-                    $result .= $row['1']." - ". $row['6']."\r\n";
+                    $result .= $row['1']." - ". $row['3']." - ". $row['5']."\r\n";
                 }else{
                     $result .= $row['1']."\r\n";
                 }
@@ -70,7 +70,7 @@ class DoctorsController extends Controller {
 
         foreach($rows as $row){
             if($isSMS){
-                $result .= $row['1']." - ". $row['6']."\r\n";
+                $result .= $row['1']." - ". $row['3']." - ". $row['5']."\r\n";
             }else{
                 $result .= $row['1']."\r\n";
             }
@@ -126,7 +126,7 @@ class DoctorsController extends Controller {
                     $result .= "<br />";
                     $result .= "Reg No: " . $doc['3'];
                     $result .= "<br />";
-                    $result .= "Specialty :" . $doc['6'];
+                    $result .= "Qualification :" . $doc['5'];
                     $result .= "</p>";
 
                     }

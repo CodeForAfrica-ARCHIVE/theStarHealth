@@ -367,7 +367,17 @@ class SMSController extends Controller
 
         $url .= http_build_query($options,'','&');
 
-        $page = file_get_contents($url);
+        // create context
+        $context = stream_context_create(array(
+            'http' => array(
+                'method' => 'GET',
+                'header' => "Content-type: text/plain",
+                'content' => $url,
+            ),
+        ));
+
+
+        $page = file_get_contents($url, false, $context);
 
         //$data = json_decode($page, TRUE);
         //TODO: Ask provider to provide json reponse
