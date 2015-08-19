@@ -587,7 +587,7 @@
                         $i = 0;
                         foreach($sofar as $id=>$item){
                             if($i<3)
-                                print '<li><a href="'.$item['link'].'" target="_blank">'.$item['title'].'</a></li>';
+                                print '<li><i class="fa fa-chevron-circle-right"></i> <a href="'.$item['link'].'" target="_blank">'.$item['title'].'</a></li>';
                             $i++;
                         }
 

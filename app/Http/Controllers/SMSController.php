@@ -217,25 +217,30 @@ class SMSController extends Controller
         $i = 0;
         foreach($services_keywords as $key){
 
-            if($this->string_in_string($message, $key)){
-                $service_abbr = $this->services_abbr()[$i];
-                return $service_abbr;
-                break;
+            //explode by comma first
+            $keys = explode(", ", $key);
+            foreach($keys as $word) {
+
+                if($this->string_in_string($message, $word)){
+                    $service_abbr = $this->services_abbr()[$i];
+                    return $service_abbr;
+                    break;
+                }
+
             }
             $i++;
 
         }
-
         return false;
     }
 
-    public function service_abbr(){
+    public function services_abbr(){
         return array("ANC", "ART", "BEOC", "BLOOD", "CAES SEC", "CEOC", "C-IMCI", "EPI", "FP", "GROWM", "HBC", "HCT", "IPD", "OPD", "OUTREACH", "PMTCT", "RAD/XRAY", "RHTC/RHDC", "TB DIAG", "TB LABS", "TB TREAT", "YOUTH");
 
     }
 
     public function services_keywords(){
-        return array("Antenatal Care, antenatal, pregnant, pregnancy", "Anteretroviral, anteretrovials, ARV, ARvs", "Beoc", "Blood", "Caeserean section, Caeserean", "Ceoc", "C-IMCI", "Epidemiology", "Family planning", "GROWM", "Heamogram, blood test", "Heamatocrit, anaemia", "In-patient, inpatient", "Out-patient, outpatien", "Outreach", "Prevention of mother to child transmission HIV/AIDS", "Radiology, x-ray, xray", "Reproductive health, reproductive", "Tuberculosis diagnosis, TB", "Tuberculosis laboratory work up, TB", "Tuberculosis treatment, TB", "Youth");
+        return array("Antenatal Care (care of mother while pregnant)", "Anteretroviral Therapy ( drugs for HIV)", "Beoc", "Blood", "Caeserean section", "Ceoc", "C-IMCI", "Epidemiology ( study of disease spread and distribution)", "Family planning", "GROWM", "Heamogram ( blood test checking all blood parameters)", "Heamatocrit ( simple blood test to analyse anaemia)", "In- patient department", "Out -patient department", "Outreach programs ie. go out and give treatment in the villages", "Prevention of mother to child transmission ( of HIV/AIDS)", "Radiology/ x-ray", "Reproductive health treatment center/diagnostic center", "Tuberculosis diagnosis", "Tuberculosis laboratory work up", "Tuberculosis treatment", "Youth");
     }
 
     public function find_entities($message){
