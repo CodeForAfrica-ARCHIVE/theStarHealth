@@ -346,6 +346,8 @@ class SMSController extends Controller
                 }
                 if(count($parts)>0){
                     $response = $parts[1];
+                }else{
+                    $response = $parts[0];
                 }
             }
         }
@@ -367,17 +369,7 @@ class SMSController extends Controller
 
         $url .= http_build_query($options,'','&');
 
-        // create context
-        $context = stream_context_create(array(
-            'http' => array(
-                'method' => 'GET',
-                'header' => "Content-type: text/plain",
-                'content' => $url,
-            ),
-        ));
-
-
-        $page = file_get_contents($url, false, $context);
+        $page = file_get_contents($url);
 
         //$data = json_decode($page, TRUE);
         //TODO: Ask provider to provide json reponse
