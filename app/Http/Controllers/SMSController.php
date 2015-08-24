@@ -344,7 +344,7 @@ class SMSController extends Controller
                     //type is doc
                     $parts = explode($separator." ", $message);
                 }
-                if(count($parts)>0){
+                if(count($parts)>1){
                     $response = $parts[1];
                 }else{
                     $response = $parts[0];
