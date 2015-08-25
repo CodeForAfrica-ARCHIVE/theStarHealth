@@ -308,7 +308,6 @@ class SMSController extends Controller
         $string = strtolower($string);
         $key = strtolower($key);
 
-
         if (strpos($string, $key) !== false){
             return true;
         }else{

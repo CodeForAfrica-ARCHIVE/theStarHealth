@@ -119,15 +119,15 @@ class DoctorsController extends Controller {
                 } else {
                     foreach($rows as $doc){
 
-                    //$doc = $rows[0];
-                    $total++;
-                    $result .= "<p>";
-                    $result .= "Name: " . $doc['1'];
-                    $result .= "<br />";
-                    $result .= "Reg No: " . $doc['3'];
-                    $result .= "<br />";
-                    $result .= "Qualification :" . $doc['5'];
-                    $result .= "</p>";
+                        //$doc = $rows[0];
+                        $total++;
+                        $result .= "<p>";
+                        $result .= "Name: " . $doc['1'];
+                        $result .= "<br />";
+                        $result .= "Reg No: " . $doc['3'];
+                        $result .= "<br />";
+                        $result .= "Qualification :" . $doc['5'];
+                        $result .= "</p>";
 
                     }
                 }
