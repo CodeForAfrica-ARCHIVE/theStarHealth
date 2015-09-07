@@ -5,3 +5,17 @@ body {
     padding: 40px 15px;
     text-align: center;
 }
+/*
+spread out top menu items
+*/
+.navbar .nav > li {
+    float: left;
+    min-width: 12.055%;
+    text-align: center;
+}
+.navbar-nav {
+    float: none !important; ;
+}
+.nav > li > a {
+    padding: 10px 0px 10px 0px !important;
+}
