@@ -3,8 +3,10 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to HealthTools's documentation!
+Introduction
 =======================================
+StarHealth is a suite of data driven health applications and health related news curated from the Star’s platform.
+
 
 Contents:
 

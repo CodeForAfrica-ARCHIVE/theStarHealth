@@ -188,7 +188,7 @@ class SMSController extends Controller
             $this->success = 0;
             return $this->error_message(1);
         }else{
-            $result = DoctorsController::getData($name, true);
+            $result = (new DoctorsController())->getData($name, true);
             return $this->process_result($result, 1);
         }
     }

@@ -48,7 +48,7 @@ Route::get('getDoctors', function()
     $result = '';
 
     if(isset($term)){
-        $result = DoctorsController::getData($term, false);
+        $result = (new DoctorsController())->getData($term, false);
     }
 
     return $result;
@@ -61,7 +61,7 @@ Route::get('singleDoctor', function()
     $result = '';
 
     if(isset($term)){
-        $result = str_replace("\n", "<br />", DoctorsController::singleDoctor($term));
+        $result = str_replace("\n", "<br />", (new DoctorsController())->singleDoctor($term));
     }
 
     return $result;

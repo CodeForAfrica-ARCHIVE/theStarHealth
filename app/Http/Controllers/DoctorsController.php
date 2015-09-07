@@ -3,35 +3,11 @@
 
 class DoctorsController extends Controller {
 
-    public static function getData($q, $isSMS)
+    public function getData($name, $isSMS)
     {
         $found = true;
-        $q = strtoupper($q);
 
-        $key = config('custom_config.google_api_key');
-        $table = config('custom_config.dodgy_docs_table');
-
-        $url = "https://www.googleapis.com/fusiontables/v1/query?";
-
-        //split name into different parts, and return rows that have all names
-        $raw_query_parts = explode(' ', $q);
-        $query_parts = array();
-        foreach($raw_query_parts as $part){
-
-            $query_parts[] = "Names LIKE '%".$part."%'";
-
-        }
-        $query_parts = implode(" AND ", $query_parts);
-
-        $sql = "SELECT * FROM ".$table." WHERE ".$query_parts;
-
-        $options = array("sql"=>$sql, "key"=>$key, "sensor"=>"false");
-
-        $url .= http_build_query($options,'','&');
-
-        $page = file_get_contents($url);
-
-        $data = json_decode($page, TRUE);
+        $data = $this->get_list($name);
 
         if(array_key_exists(('rows'), $data)){
             $rows = $data['rows'];
@@ -79,7 +55,7 @@ class DoctorsController extends Controller {
 
     }
 
-    public static function singleDoctor($name){
+    public function singleDoctor($name){
 
         if($name==''){
 
@@ -87,55 +63,75 @@ class DoctorsController extends Controller {
 
         }else{
 
-            $key = config('custom_config.google_api_key');
 
-            $table = config('custom_config.dodgy_docs_table');
+        $data = $this->get_list($name);
 
-            $url = "https://www.googleapis.com/fusiontables/v1/query?";
+        $result = '';
+        if(!array_key_exists('rows', $data)){
+            $result .= "No registered doctor found with that name!";
+        }else {
 
-            $sql = "SELECT * FROM ".$table." WHERE Names LIKE '%".$name."%'";
+            $rows = $data['rows'];
 
-            $options = array("sql"=>$sql, "key"=>$key, "sensor"=>"false");
+            $total = 0;
 
-            $url .= http_build_query($options,'','&');
+            if (sizeof($rows) == 0) {
 
-            $page = file_get_contents($url);
-
-            $data = json_decode($page, TRUE);
-
-            $result = '';
-            if(!array_key_exists('rows', $data)){
                 $result .= "No registered doctor found with that name!";
-            }else {
 
-                $rows = $data['rows'];
+            } else {
+                foreach($rows as $doc){
 
-                $total = 0;
+                //$doc = $rows[0];
+                $total++;
+                $result .= "<p>";
+                $result .= "Name: " . $doc['1'];
+                $result .= "<br />";
+                $result .= "Reg No: " . $doc['3'];
+                $result .= "<br />";
+                $result .= "Qualification :" . $doc['5'];
+                $result .= "</p>";
 
-                if (sizeof($rows) == 0) {
-
-                    $result .= "No registered doctor found with that name!";
-
-                } else {
-                    foreach($rows as $doc){
-
-                        //$doc = $rows[0];
-                        $total++;
-                        $result .= "<p>";
-                        $result .= "Name: " . $doc['1'];
-                        $result .= "<br />";
-                        $result .= "Reg No: " . $doc['3'];
-                        $result .= "<br />";
-                        $result .= "Qualification :" . $doc['5'];
-                        $result .= "</p>";
-
-                    }
                 }
             }
+        }
 
         }
 
         return $result;
+    }
+
+	public function get_list($name){
+        $q = strtoupper($name);
+        $q = str_replace("DR ", "", $q);
+        $q = str_replace("DR. ", "", $q);
+
+        $key = config('custom_config.google_api_key');
+        $table = config('custom_config.dodgy_docs_table');
+
+        $url = "https://www.googleapis.com/fusiontables/v1/query?";
+
+        //split name into different parts, and return rows that have all names
+        $raw_query_parts = explode(' ', $q);
+        $query_parts = array();
+        foreach($raw_query_parts as $part){
+
+            $query_parts[] = "Names LIKE '%".$part."%'";
+
+        }
+        $query_parts = implode(" AND ", $query_parts);
+
+        $sql = "SELECT * FROM ".$table." WHERE ".$query_parts;
+
+        $options = array("sql"=>$sql, "key"=>$key, "sensor"=>"false");
+
+        $url .= http_build_query($options,'','&');
+
+        $page = file_get_contents($url);
+
+        $data = json_decode($page, TRUE);
+
+        return $data;
     }
 
 }
