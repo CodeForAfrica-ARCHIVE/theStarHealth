@@ -34,6 +34,7 @@ spread out top menu items
 }
 .navbar {
     height: 40px !important;
+    margin-bottom: 5px;
 }
 .container > .navbar-header, .container-fluid > .navbar-header, .container > .navbar-collapse, .container-fluid > .navbar-collapse {
     margin: 0px !important;
@@ -118,4 +119,25 @@ Topbar
     .date-search {
         display: none;
     }
+}
+
+/*
+    Apps section
+*/
+#apps{
+    margin: 0px !important;
+}
+
+#apps .col-md-4{
+    padding: 2px !important;
+}
+
+.app{
+    background: #fff;
+    height: 250px;
+    padding: 15px;
+    background-color: #fff;
+    transition: box-shadow .25s;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
