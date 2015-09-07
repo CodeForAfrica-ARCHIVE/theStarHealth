@@ -17,6 +17,8 @@
 
     <!-- Custom styles for this template -->
     <link href="<?php echo asset("bootstrap3/css/custom.css");?>" rel="stylesheet">
+    <!--Font awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="<?php echo asset('bootstrap3/js/ie8-responsive-file-warning.js');?>"></script><![endif]-->
@@ -128,25 +130,334 @@
         </div><!--/.container-fluid -->
     </nav>
     <div class="row" id="apps">
+        <?php
+        session_start();
+        ?>
+        <link rel="stylesheet" type="text/css" href="<?php echo asset("css/jquery.autocomplete.css");?>">
+        <script type="text/javascript" src="<?php echo asset("ajax-autocomplete/jquery.js");?>"></script>
+
+        <script type='text/javascript' src="<?php echo asset("js/jquery.autocomplete.js");?>"></script>
+        <script type="text/javascript">
+            $().ready(function() {
+                $("#doctorName").autocomplete("getDoctors", {
+                    width: 260,
+                    matchContains: true,
+                    //mustMatch: true,
+                    //minChars: 0,
+                    //multiple: true,
+                    //highlight: false,
+                    //multipleSeparator: ",",
+                    selectFirst: false
+                });
+                $("#grabDetails").click(function(){
+                    var name = $("#doctorName").val();
+
+                    $("#dname").html("<h4>Results for: " + name + "</h4>");
+
+                    $("#mybox").html("");
+
+                    $("#loading").show();
+
+                    $.ajax({url:"singleDoctor?q=" + name,success:function(result){
+                        $("#doctorName").val("");
+
+                        $("#mybox").html(result);
+
+                        $("#loading").hide();
+                    }});
+                });
+                $("#grabNHIFDetails").click(function(){
+                    var hospital_location_gps = $("#hospital_location_gps").val();
+                    var hospital_location = $("#hospital_location").val();
+
+                    var hospital_type = $("#hospital_type").val();
+
+                    $("#dname").html("<h4>"+hospital_location+"</h4>");
+
+                    $("#mybox").html("");
+
+                    $("#loading").show();
+
+                    $.ajax({url:"nhifcoverage?type=" + hospital_type + "&gps=" + hospital_location_gps + "&address=" + hospital_location,success:function(result){
+
+                        $("#mybox").html(result);
+
+                        $("#hospital_location_gps").val("");
+
+                        $("#hospital_location").val("");
+
+                        $("#loading").hide();
+                    }});
+                });
+                $("#grabSpecialists").click(function(){
+                    var hospital_location_gps = $("#hospital_location_gps_sp").val();
+                    var hospital_location = $("#hospital_location_sp").val();
+
+                    var specialty = $("#specialist").val();
+
+                    $("#dname").html("<h4>"+specialty+" in " + hospital_location + "</h4>");
+
+                    $("#mybox").html("");
+
+                    $("#loading").show();
+
+                    $.ajax({url:"specialty?specialty=" + specialty + "&gps=" + hospital_location_gps + "&address=" + hospital_location,success:function(result){
+
+                        $("#mybox").html(result);
+
+                        $("#hospital_location_gps_sp").val("");
+
+                        $("#hospital_location_sp").val("");
+
+                        $("#loading").hide();
+                    }});
+                });
+                $(".filter_feed").click(function(){
+
+                    var tag = $(this).attr("data-tag");
+
+                    $("#filtered").html("");
+
+                    $.ajax({url:"filter_feed?tag=" + tag,success:function(result){
+
+                        $("#filtered").html(result);
+
+                        $("#loading").hide();
+                    }});
+
+                });
+
+                $("#whatsMyContribution").click(function(){
+                    $("#myContribution").html("");
+                });
+
+                $("#calculate").click(function(){
+
+                    var income = $("#income").val();
+
+                    if(income == ""){
+                        $("#myContribution").html("You did not enter your income!");
+                    }else{
+                        if(!jQuery.isNumeric(income)){
+                            $("#myContribution").html("Only numbers allowed!");
+                        }else{
+                            //do the calculations
+                            var result;
+
+                            if(income<6000){
+                                result = "150";
+                            }else if(income<8000){
+                                result = "300";
+                            }else if(income<12000){
+                                result = "400";
+                            }else if(income<15000){
+                                result = "500";
+                            }else if(income<20000){
+                                result = "600";
+                            }else if(income<25000){
+                                result = "750";
+                            }else if(income<30000){
+                                result = "850";
+                            }else if(income<35000){
+                                result = "900";
+                            }else if(income<40000){
+                                result = "950";
+                            }else if(income<45000){
+                                result = "1000";
+                            }else if(income<50000){
+                                result = "1100";
+                            }else if(income<60000){
+                                result = "1200";
+                            }else if(income<70000){
+                                result = "1300";
+                            }else if(income<80000){
+                                result = "1400";
+                            }else if(income<90000){
+                                result = "1500";
+                            }else if(income<100000){
+                                result = "1600";
+                            }else{
+                                result = "1700";
+                            }
+
+                            $("#myContribution").html(result + " KSH per month");
+                        }
+                    }
+
+                    $("#income").val("")
+
+                });
+
+                jQuery(".near_me").click(initiate_geolocation);
+            });
+            function initiate_geolocation() {
+                $("#hospital_location").css("background", "white url('ajax-autocomplete/indicator.gif') right center no-repeat");
+                $("#hospital_location_sp").css("background", "white url('ajax-autocomplete/indicator.gif') right center no-repeat");
+                navigator.geolocation.getCurrentPosition(handle_geolocation_query);
+            }
+
+            function handle_geolocation_query(position){
+                //Get cordinates on complete
+                var autoCords = position.coords.latitude + ',' + position.coords.longitude;
+
+                $("#hospital_location_gps").val(autoCords);
+                $("#hospital_location_gps_sp").val(autoCords);
+
+                //make ajax request to reverse geocode coordinates
+                $.ajax({url:"reverse_geocode?q=" + autoCords,success:function(result){
+
+                    $("#hospital_location").val(result);
+                    $("#hospital_location_sp").val(result);
+
+                    //$("#loading_hospitals").hide();
+                    $("#hospital_location").css("background", "none");
+                    $("#hospital_location_sp").css("background", "none");
+
+                }});
+            }
+        </script>
         <div class="col-md-4">
             <div class="app">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+                <h4 class="app_title"><i class="fa fa-user-md"></i>Dodgy Doctors</h4>
+                <div class="description">Check to see if your doctor is registered.<br/><small><em>Can't find a name? Send us an email <a href="mailto:starhealth@codeforafrica.org" target="_blank">starhealth@codeforafrica.org</a></em></small>
                 </div>
+                <div class="search_menu input-append" style="margin-top:35px;">
+
+                    <input type="text" placeholder="Start typing doctor's name" class="search form-control" id="doctorName" />
+                    <button class='btn btn-primary red_button' href="#myModal" role="button" class="btn" data-toggle="modal" id="grabDetails">
+                        Submit
+                    </button>
+
+                </div>
+
+                <!-- Modal -->
+                <div id="myModal" style="text-align:justify !important;" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h3 id="dname"></h3>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                        <div class="loading" style="text-align:center" id="loading">
+                            <img src="<?php echo asset("img/indicator.gif");?>">
+                        </div>
+                        <div id="mybox">
+
+                        </div>
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+
+                    </div>
+                </div>
+        </div>
         </div>
         <div class="col-md-4">
             <div class="app">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+                <h4 class="app_title"><i class="fa fa-umbrella"></i>Am I Covered</h4>
+                <div class="description">Find out which hospitals your NHIF card will cover</div>
+                <!--<div class="search_menu input-append">
+                          <input type="text" placeholder="Enter NHIF payment" class="search" id="nhif">
+                          <button class='btn add-on' href="#myModal" role="button" class="btn" data-toggle="modal" onclick="nhif('nhif')">
+                            <i class="icon-search"></i>
+                        </button>
+                          </div> -->
+                <!--
+                <input type="text" placeholder="Minimum rate" class="rate" id="min">
+                <input type="text" placeholder="Maximum rate" class="rate" id="max">
+                -->
+                <input type="text" id="hospital_location" placeholder="Eg. Kisumu, Kariobangi" class="form-control" />
+                <input type="hidden" id="hospital_location_gps" />
+
+                <span class="near_me" style="cursor: pointer; padding:3px;"><i class="icon-location-arrow"></i> <span id="get_location_text" style=""></span></span>
+
+                <br />
+                <select id="hospital_type"  class="form-control">
+                    <option value="0">All hospital types</option>
+                    <option value="A">Category A: Government Hospitals</option>
+                    <option value="B">Category B: Private and Mission Hospitals</option>
+                    <option value="C">Category C: Private Hospitals</option>
+                </select>
+                <a href="#nhifInfoModal" data-toggle="modal"><i class="icon-question-sign"></i></a>
+                <!-- Modal -->
+                <div id="nhifInfoModal" style="text-align:justify !important;" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4>NHIF has divided the accredited hospitals in to 3 categories:</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                        <ul>
+                            <li><b>Category A - Government Hospitals.</b> Members enjoy full and comprehensive for maternity and medical diseases including surgery. Therefore, if you are a member, you do not pay anything to be admitted.</li>
+                            <li><b>Category B - Private and Mission.</b> Members get a full comprehensive cover but if surgery is required, the member pays for that.</li>
+                            <li><b>Category C – Private</b>. NHIF only pays for specified daily benefits and the member pays everything else.</li>
+                        </ul>
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+
+                        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+                    </div>
+                </div>
+                <button class='btn btn-primary ' href="#myModal" role="button" class="btn" data-toggle="modal" id="grabNHIFDetails">
+                    Submit
+                </button>
+                <div class="contribution"><a href="#premiumRatesModal" data-toggle="modal" id="whatsMyContribution">What's my contribution?</a></div>
+                <!-- Modal -->
+                <div id="premiumRatesModal" style="text-align:justify !important;" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h3 id="dname">Premium Rates</h3>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            Enter your gross income to find out how much you should pay*
+
+                        <div class="search_menu input-append">
+                            <input type="text" name="income" placeholder="Gross income" id="income">
+                            <button class='btn add-on' id="calculate">
+                                <i class="icon-search"></i>
+                            </button>
+                        </div>
+
+                        <div class="myContribution" id="myContribution">
+
+                        </div>
+                        <div class="self_employed_notification">*Self-employed individuals have a constant rate of KSH 500</div>
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+
+                        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="col-md-4">
             <div class="app">
-            <h2>Heading</h2>
-            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-            <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+                <h4 class="app_title"><i class="fa fa-hospital-o"></i>Nearest Specialist</h4>
+                <div class="description">Find the nearest specialist doctor or health facility</div>
+                <div class="search_menu">
+
+                    <input type="text" id="hospital_location_sp" placeholder="Eg. Kisumu, Kariobangi" class="form-control" />
+                    <input type="hidden" id="hospital_location_gps_sp" />
+
+                    <span class="near_me" style="cursor: pointer; padding:3px;"><i class="icon-location-arrow"></i> <span id="get_location_text_sp" style=""></span></span>
+                    <select id="specialist" class="form-control specialist_select">
+                        <option value="0">Select service</option>
+                        <?php
+                        $i = 0;
+                        foreach($specialties as $sp){
+                            print "<option value='".$sp_values[$i]."'>".$sp."</option>";
+                            $i++;
+                        }
+                        ?>
+                    </select>
+                    <button class='btn btn-primary ' href="#myModal" role="button" class="btn" data-toggle="modal" id="grabSpecialists">
+                        Submit
+                    </button>
+                </div>
             </div>
         </div>
     </div>
