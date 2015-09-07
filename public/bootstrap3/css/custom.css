@@ -29,7 +29,9 @@ spread out top menu items
 .navbar {
     height: 40px !important;
 }
-
+.container > .navbar-header, .container-fluid > .navbar-header, .container > .navbar-collapse, .container-fluid > .navbar-collapse {
+    margin: 0px !important;
+}
 /*
 container fixes
 */
