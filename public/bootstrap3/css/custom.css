@@ -120,8 +120,14 @@ Topbar
     .date-search {
         display: none;
     }
-}
 
+}
+@media only screen and (max-width: 450px) {
+
+    #topbar ul {
+        display: none;
+    }
+}
 /*
     Apps section
 */
