@@ -235,3 +235,22 @@ Featured Section
     border-radius: 2px;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
+
+/*major stories*/
+.accordion-heading, .accordion-toggle {
+    background-color: #FFCC66;
+}
+.accordion-heading a {
+    color: #515144;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 1.1em;
+}
+.accordion-heading .accordion-toggle {
+    display: block;
+    padding: 8px 15px;
+}
+.accordion-heading i{
+    float: right;
+    font-size: 0.9em;
+    margin: 20px 5px;
+}

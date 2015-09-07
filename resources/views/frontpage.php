@@ -569,10 +569,9 @@
                 $first_one = $major[0];
                 print '<div class="accordion" id="accordion2">
                 <div class="accordion-group">
-                  <div class="accordion-heading">
+                  <div class="accordion-heading"><i class="fa fa-chevron-circle-down"></i>
                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#'.$i.'">
-                    	'.$first_one['title'].'<i class="icon-chevron-sign-down"></i>
-                    </a>
+                    	'.$first_one['title'].'</a>
                   </div>
                   <div id="'.$i.'" class="accordion-body in collapse" style="height: auto;">
                     <div class="accordion-inner">
@@ -593,10 +592,9 @@
                         $i++;
                         print '<div class="accordion" id="accordion2">
                 <div class="accordion-group">
-                  <div class="accordion-heading">
+                  <div class="accordion-heading"><i class="fa fa-chevron-circle-down"></i>
                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#'.$i.'">
-                      '.$featured_item['title'].'<i class="icon-chevron-sign-down"></i>
-                    </a>
+                      '.$featured_item['title'].'</a>
                   </div>
                   <div id="'.$i.'" class="accordion-body collapse" style="height: 0px;">
                     <div class="accordion-inner">
