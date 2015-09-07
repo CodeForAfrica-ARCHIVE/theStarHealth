@@ -33,7 +33,41 @@
 
 
 <div class="container">
+    <div class="row">
+        <div class="col-md-3 logo">
+            <a class="brand" href="http://starhealth.the-star.co.ke/"><img src="<?php echo asset("img/logo.png");?>"> </a>
+        </div>
+        <div class="col-md-3 date-search">
+            <div class="date-section">
+                <?php date_default_timezone_set("Africa/Nairobi"); echo date('l, M j<\sup>S</\sup> Y');?>
+            </div>
+            <div class="input-group">
+                <input type="text" class="form-control search" placeholder="Enter text..." aria-describedby="site_search_submit">
+                <span class="input-group-addon" id="site_search_submit"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
+                <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+                <script>
+                    $(document).ready(function(){
+                        $('#main_search').keypress(function (e) {
+                            if (e.which == 13) {
+                                $('#site_search_submit').click();
+                                return false;    //<---- Add this line
+                            }
+                        });
 
+                        $('#site_search_submit').click(function(){
+
+                            if($('#main_search').val().length == 0){
+                                alert('Please enter a search query!');
+                            }else{
+                                window.location = "http://the-star.co.ke/search/node/" + $('#main_search').val();
+                            }
+
+                        });
+                    });
+                </script>
+            </div>
+        </div>
+    </div>
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header">

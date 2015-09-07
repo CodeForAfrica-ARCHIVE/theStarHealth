@@ -6,7 +6,6 @@
 spread out top menu items
 */
 .navbar .nav > li {
-    float: left;
     min-width: 12.5%;
     text-align: center;
     background-color: #404041;
@@ -41,3 +40,17 @@ container fixes
     padding: 0px !important;
 }
 
+/*
+    Pre-nav header
+*/
+.logo{
+    margin-left: 15px;
+    background-color: #213f8e;
+}
+.logo img{
+    max-width: 100% !important;
+    height: 64px;
+}
+.date-search{
+    float: right;
+}
