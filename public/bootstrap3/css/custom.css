@@ -1,3 +1,9 @@
+body{
+    background-color: #E5E4E3;
+    background-image: url('../img/topbar.jpg');
+    background-repeat: repeat-x;
+    background-position: 0 -5px;
+}
 .starter-template {
     padding: 40px 15px;
     text-align: center;
@@ -46,16 +52,15 @@ container fixes
     Pre-nav header
 */
 .logo{
-    margin-left: 15px;
-
     background-color: #213f8e;
 }
 .logo img{
     max-width: 100% !important;
-    height: 64px;
+    height: 82px;
 }
 .date-search{
     float: right;
+    padding-top: 10px;
 }
 /*
 Topbar
@@ -87,7 +92,7 @@ Topbar
     text-transform: uppercase;
     padding-bottom: 5px;
     padding-top: 5px;
-    padding-right: 4px;
+    padding-right: 9px;
     padding-left: 4px;
     color: #FECD8B;
     margin-left: 10px;
@@ -104,6 +109,13 @@ Topbar
     padding-right: 0px !important;
 }
 .brand_section{
-    padding-top: 10px;
-    padding-bottom: 10px;;
+    padding:5px 5px 5px 5px;
+    background: #fff;
+    margin-left: 0px !important;
+    height: 92px;
+}
+@media only screen and (max-width: 990px) {
+    .date-search {
+        display: none;
+    }
 }
