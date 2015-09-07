@@ -3,6 +3,7 @@ body{
     background-image: url('../img/topbar.jpg');
     background-repeat: repeat-x;
     background-position: 0 -5px;
+    font-family: 'Bitter', serif;
 }
 .starter-template {
     padding: 40px 15px;
@@ -26,7 +27,6 @@ spread out top menu items
     min-height: 50px;
     color: #fff !important;
     padding: 15px 0px 0px 0px !important;
-    font-size: 1.2em;
 }
 .navbar-collapse {
      padding-right: 0px !important;
@@ -161,4 +161,35 @@ Topbar
 }
 .contribution a{
     color: #b9b9b9;
+}
+/*
+    News Section
+*/
+.news_section{
+    min-height: 300px;
+    margin-top: 5px;
+    margin-left: 0px !important;
+    margin-bottom: 5px;
+    background-color: #fff;
+    transition: box-shadow .25s;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+.news_section_featured{
+    padding: 15px;
+}
+.news_section_featured h3 a{
+    font-family: "Vollkorn", serif;
+    color: #24408F;
+}
+
+/*
+Featured Section
+*/
+.featured_thumb{
+    width: 100%;
+}
+.story_title{
+    margin: 0px;
+    padding-left: 15px;
 }

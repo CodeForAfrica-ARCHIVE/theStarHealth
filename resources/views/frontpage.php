@@ -32,6 +32,7 @@
 
     <!-- Custom font -->
     <link href='http://fonts.googleapis.com/css?family=Vollkorn' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
@@ -464,6 +465,88 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <!-- begin news section -->
+    <div class="row news_section">
+
+        <div class="news_section_featured col-md-9">
+            <div class="row">
+                <?php
+                print '<h3 class="story_title" style="font-size:2em"><a href="'.$featured[0]['link'].'" target="_blank">'.$featured[0]['title'].'</a></h3>';
+                ?>
+                <div class="backstory col-md-3">
+                    <?php
+                    //print "<img src='".public_path()."/thumbs/".$news[0]['sofar_thumbnail']."' width='100%'>";
+                    print $overview;
+                    ?>
+                    <h5>The story so far</h5>
+                    <?php
+                    print "<ul>";
+                    $i = 0;
+                    foreach($sofar as $id=>$item){
+                        if($i<3)
+                            print '<li><i class="fa fa-chevron-circle-right"></i> <a href="'.$item['link'].'" target="_blank">'.$item['title'].'</a></li>';
+                        $i++;
+                    }
+
+                    print "</ul>";
+
+                    ?>
+                    <h5>Evidence Dossier</h5>
+                    <a href="http://africaopendata.org/dataset?q=kenya+health">Data repository</a>
+                </div>
+                <div class="col-md-9">
+                        <?php
+                        $thumb = str_replace("http://the-star.co.ke", "http://www.the-star.co.ke", $featured[0]['thumb']);
+                        print '<img src="'.$thumb.'" alt="" class="featured_thumb">';
+                        ?>
+                    </div>
+                </div>
+        </div>
+        <div class="col-md-3">
+            <?php
+            //if(count($helplines)>0){
+            print '<div class="widget_body"><div class="row-header"><h4><i class="icon-phone icon-2x" style="margin-right:5px"></i>Help Lines</h4></div>';
+
+            foreach($helplines as $helpline){
+                print "<p><a href='tel:".$helpline['value']."'>".$helpline['title']." (".$helpline['value'].")</a></p>";
+            }
+
+            if(count($helplines)<1){
+                print "No pages listed";
+            }
+            print "</div>";
+            //}
+            //if(count($supportgroups)>0){
+            print '<div class="widget_body"><div class="row-header"><h4><i class="icon-anchor icon-2x" style="margin-right:5px"></i>Support Groups</h4></div>';
+
+            foreach($supportgroups as $sg){
+                print "<p><a href='tel:".$sg['value']."'>".$sg['title']." (".$sg['value'].")</a></p>";
+            }
+            if(count($supportgroups)<1){
+                print "No groups listed";
+            }
+            print "</div>";
+            //}
+            //if(count($socialmedias)>0){
+            print '<div class="widget_body"><div class="row-header"><h4><i class="icon-user icon-2x" style="margin-right:5px"></i> Links</h4></div>';
+
+            foreach($socialmedias as $sm){
+                print "<p>
+					<a href='".$sm['value']."'>".$sm['title']."</a>
+					</p>";
+            }
+            if(count($socialmedias)<1){
+                print "No pages listed";
+            }
+            print "</div>";
+            //}
+            ?>
+
+
+        </div>
+
     </div>
 
 </div><!-- /.container -->
