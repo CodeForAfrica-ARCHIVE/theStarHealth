@@ -254,3 +254,91 @@ Featured Section
     font-size: 0.9em;
     margin: 20px 5px;
 }
+/*footer*/
+#footer {
+    background-color: #184B99;
+}
+#footer {
+    background-color: #184B99;
+    color: #FFFFFF;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    overflow: hidden;
+    margin-left: 0px !important;;
+}
+.credit{
+    border-top: 1px solid rgb(226, 226, 226);
+    text-align: center;
+    padding: 5px;
+    background-color: #fff;
+    height: 80px;
+    margin: 10px;
+}
+.credit img{
+    height:70px;
+    vertical-align:middle
+}
+.credit-text{
+    font-size: 1.4em;
+    color: #184B99;
+}
+.credit a{
+    text-decoration: none !important;
+}
+.contrib_button{
+    border-radius: 5px;
+    background: #D82C2D;
+    padding: 8px;
+    text-align: center;
+    margin-bottom: 20px;
+    width: 400px;
+    margin: 0 auto;
+}
+.contrib_button a{
+    color: #fff;
+}
+.contrib_button a:hover{
+    color: #bbbbbb !important;
+}
+.contrib_button img{
+    height:15px;
+}
+ul, ol {
+    padding: 0 !important;
+    margin: 0 !important;
+    list-style-type: none !important;
+}
+.site-footer{
+    padding: 0 !important;
+    width: 100% !important;
+}
+.contribution{
+    text-align: center;
+    font-size: 0.8em;
+    color: #959595;
+}
+.contribution a{
+    color: #959595;
+}
+.self_employed_notification{
+    font-size: 0.8em;
+    text-align: left;
+}
+.bcolumn {
+    margin: 5px;
+    min-height: 230px;
+    padding-left: 10px;
+    background-image: url(../img/bcoumnbg.png);
+    background-repeat: repeat;
+    overflow: hidden;
+}
+.bcolumn a{
+    color: #fff !important;
+    font-size: 0.8em;
+}
+.footer_inner{
+    margin-left: 0px !important;
+}
+.site-footer .col-md-12 .col-md-2{
+    padding: 5px;
+}
