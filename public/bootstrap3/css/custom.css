@@ -93,3 +93,15 @@ Topbar
 #topbar ul > li:last-child {
     border-right: 0px;
 }
+
+
+.row {
+    margin-right: 0px !important;
+}
+.col-md-3{
+    padding-right: 0px !important;
+}
+.brand_section{
+    padding-top: 10px;
+    padding-bottom: 10px;;
+}

@@ -50,10 +50,11 @@
             </div>
         </div>
     </header>
-    <div class="row">
+    <div class="row brand_section">
         <div class="col-md-3 logo">
             <a class="brand" href="http://starhealth.the-star.co.ke/"><img src="<?php echo asset("img/logo.png");?>"> </a>
         </div>
+        <div class="col-md-6"></div>
         <div class="col-md-3 date-search">
             <div class="date-section">
                 <?php date_default_timezone_set("Africa/Nairobi"); echo date('l, M j<\sup>S</\sup> Y');?>
