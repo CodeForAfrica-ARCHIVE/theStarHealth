@@ -33,10 +33,11 @@
     <!-- Custom font -->
     <link href='http://fonts.googleapis.com/css?family=Vollkorn' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 </head>
 
 <body>
-
 
 <div class="container">
     <header id="topbar">
@@ -66,10 +67,9 @@
                 <?php date_default_timezone_set("Africa/Nairobi"); echo date('l, M j<\sup>S</\sup> Y');?>
             </div>
             <div class="input-group">
-                <input type="text" class="form-control search" placeholder="Enter text..." aria-describedby="site_search_submit">
+                <input id="main_search" type="text" class="form-control search" placeholder="Enter text..." aria-describedby="site_search_submit">
                 <span class="input-group-addon" id="site_search_submit"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
             </div>
-            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
             <script>
                 $(document).ready(function(){
                     $('#main_search').keypress(function (e) {
@@ -334,27 +334,7 @@
 
                 </div>
 
-                <!-- Modal -->
-                <div id="myModal" style="text-align:justify !important;" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                        <h3 id="dname"></h3>
-                    </div>
-                    <div class="modal-body">
-                        <p>
-                        <div class="loading" style="text-align:center" id="loading">
-                            <img src="<?php echo asset("img/indicator.gif");?>">
-                        </div>
-                        <div id="mybox">
 
-                        </div>
-                        </p>
-                    </div>
-                    <div class="modal-footer">
-                        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-
-                    </div>
-                </div>
         </div>
         </div>
         <div class="col-md-4">
@@ -384,59 +364,15 @@
                     <option value="B">Category B: Private and Mission Hospitals</option>
                     <option value="C">Category C: Private Hospitals</option>
                 </select>
-                <a href="#nhifInfoModal" data-toggle="modal"><i class="icon-question-sign"></i></a>
-                <!-- Modal -->
-                <div id="nhifInfoModal" style="text-align:justify !important;" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                        <h4>NHIF has divided the accredited hospitals in to 3 categories:</h4>
-                    </div>
-                    <div class="modal-body">
-                        <p>
-                        <ul>
-                            <li><b>Category A - Government Hospitals.</b> Members enjoy full and comprehensive for maternity and medical diseases including surgery. Therefore, if you are a member, you do not pay anything to be admitted.</li>
-                            <li><b>Category B - Private and Mission.</b> Members get a full comprehensive cover but if surgery is required, the member pays for that.</li>
-                            <li><b>Category C – Private</b>. NHIF only pays for specified daily benefits and the member pays everything else.</li>
-                        </ul>
-                        </p>
-                    </div>
-                    <div class="modal-footer">
 
-                        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-                    </div>
-                </div>
+
                 <button class='btn btn-primary ' href="#myModal" role="button" class="btn" data-toggle="modal" id="grabNHIFDetails">
                     Submit
                 </button>
-                <div class="contribution"><a href="#premiumRatesModal" data-toggle="modal" id="whatsMyContribution">What's my contribution?</a></div>
-                <!-- Modal -->
-                <div id="premiumRatesModal" style="text-align:justify !important;" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                        <h3 id="dname">Premium Rates</h3>
-                    </div>
-                    <div class="modal-body">
-                        <p>
-                            Enter your gross income to find out how much you should pay*
-
-                        <div class="search_menu input-append">
-                            <input type="text" name="income" placeholder="Gross income" id="income">
-                            <button class='btn add-on' id="calculate">
-                                <i class="icon-search"></i>
-                            </button>
-                        </div>
-
-                        <div class="myContribution" id="myContribution">
-
-                        </div>
-                        <div class="self_employed_notification">*Self-employed individuals have a constant rate of KSH 500</div>
-                        </p>
-                    </div>
-                    <div class="modal-footer">
-
-                        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-                    </div>
+                <div class="contribution"><a href="#premiumRatesModal" data-toggle="modal" id="whatsMyContribution">What's my contribution?</a>
+                    <a href="#nhifInfoModal" data-toggle="modal"> | Hospital Types</a>
                 </div>
+
             </div>
         </div>
         <div class="col-md-4">
@@ -708,13 +644,15 @@
             <br />
             The data driven journalism + tools in StarHealth section were kickstarted by Code4Kenya
             <hr />
+            <div style="text-align: center;">
             <a href="http://github.com/CodeForAfrica/HealthTools"><img src="<?php echo asset(''); ?>img/GitHub-Mark-32px.png" id="cfa_icon"></a>
             <a href="http://africaopendata.org/dataset?q=kenya+health"><img style="height:32px;margin-left:25px" src="<?php echo asset(''); ?>img/data.png"></a>
-            <p>The code & data for this page are open source. You can re-use it by visiting the above repositories.</p>
+            </div>
+                <p>The code & data for this page are open source. You can re-use it by visiting the above repositories.</p>
             <br />
             <br />
             <div class="row-header"><h4>Stay in Touch</h4></div>
-            <div class="social_media_icons">
+            <div class="social_media_icons" style="text-align: center;">
                 <a href="https://www.facebook.com/thestarkenya" target="_blank"><img src="<?php echo asset('');?>img/facebook.png" style="height:32px;width:32px"></a>
                 <a href="https://twitter.com/TheStarKenya" target="_blank"><img src="<?php echo asset('');?>img/twitter.png" style="height:32px;width:32px"></a>
                 <a href="http://www.the-star.co.ke/rss.xml" target="_blank"><img src="<?php echo asset('');?>img/rss.png" style="height:32px;width:32px"></a>
@@ -940,12 +878,101 @@
 </div><!-- /.container -->
 
 
+<div class="the_modals">
+
+    <!-- Modal -->
+    <div id="myModal" style="text-align:justify !important;" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="dname"></h3>
+        </div>
+        <div class="modal-body">
+            <p>
+            <div class="loading" style="text-align:center" id="loading">
+                <img src="<?php echo asset("img/indicator.gif");?>">
+            </div>
+            <div id="mybox">
+
+            </div>
+            </p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+
+        </div></div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="nhifInfoModal" style="text-align:justify !important;" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h4>NHIF has divided the accredited hospitals in to 3 categories:</h4>
+        </div>
+        <div class="modal-body">
+            <p>
+            <ul>
+                <li><b>Category A - Government Hospitals.</b> Members enjoy full and comprehensive for maternity and medical diseases including surgery. Therefore, if you are a member, you do not pay anything to be admitted.</li>
+                <li><b>Category B - Private and Mission.</b> Members get a full comprehensive cover but if surgery is required, the member pays for that.</li>
+                <li><b>Category C – Private</b>. NHIF only pays for specified daily benefits and the member pays everything else.</li>
+            </ul>
+            </p>
+        </div>
+        <div class="modal-footer">
+
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+        </div>
+    </div></div>
+    </div>
+    <!-- Modal -->
+    <div id="premiumRatesModal" style="text-align:justify !important;" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="dname">Premium Rates</h3>
+        </div>
+        <div class="modal-body">
+            <p>
+                Enter your gross income to find out how much you should pay*
+
+
+            <div class="input-group">
+                <input id="income" type="text" class="form-control search" placeholder="Gross income" aria-describedby="calculate">
+                <span class="input-group-addon" id="calculate"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
+            </div>
+
+            <div class="myContribution" id="myContribution">
+
+            </div>
+            <div class="self_employed_notification">*Self-employed individuals have a constant rate of KSH 500</div>
+            </p>
+        </div>
+        <div class="modal-footer">
+
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+        </div>
+    </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="<?php echo asset('');?>js/jquery.js"></script>
+<script>
+    var jq191 = $.noConflict();
+</script>
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="<?php echo asset('bootstrap3/js/bootstrap.min.js');?>"></script>
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <script src="<?php echo asset('bootstrap3/js/ie10-viewport-bug-workaround.js');?>"></script>
+
 </body>
 </html>
