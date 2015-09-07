@@ -480,7 +480,7 @@
                     //print "<img src='".public_path()."/thumbs/".$news[0]['sofar_thumbnail']."' width='100%'>";
                     print $overview;
                     ?>
-                    <h5>The story so far</h5>
+                    <h4>The story so far</h4>
                     <?php
                     print "<ul>";
                     $i = 0;
@@ -493,14 +493,16 @@
                     print "</ul>";
 
                     ?>
-                    <h5>Evidence Dossier</h5>
-                    <a href="http://africaopendata.org/dataset?q=kenya+health">Data repository</a>
+                    <h4>Evidence Dossier</h4>
+                    <a style="padding-left: 10px;"href="http://africaopendata.org/dataset?q=kenya+health">Data repository</a>
                 </div>
                 <div class="col-md-9">
+                    <div class="featured_thumb_div">
                         <?php
                         $thumb = str_replace("http://the-star.co.ke", "http://www.the-star.co.ke", $featured[0]['thumb']);
                         print '<img src="'.$thumb.'" alt="" class="featured_thumb">';
                         ?>
+                    </div>
                     </div>
                 </div>
         </div>

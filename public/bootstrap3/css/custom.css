@@ -193,3 +193,12 @@ Featured Section
     margin: 0px;
     padding-left: 15px;
 }
+.featured_thumb_div{
+    background: rgba(10, 10, 14, 0.15);
+    padding: 20px 20px 70px;
+}
+/* backstory */
+.backstory ul{
+    list-style: none;
+    padding-left: 5px;
+}
