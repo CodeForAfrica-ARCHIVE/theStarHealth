@@ -9,16 +9,26 @@ spread out top menu items
     float: left;
     min-width: 12.5%;
     text-align: center;
+    background-color: #404041;
+}
+.navbar .nav > li:hover {
+    background-color: #d9534f;
 }
 .navbar-nav {
     float: none !important; ;
 }
 .nav > li > a {
-    padding: 10px !important;
+    min-height: 50px;
+    color: #fff !important;
+    padding: 15px 0px 0px 0px !important;
+    font-size: 1.2em;
 }
 .navbar-collapse {
      padding-right: 0px !important;
      padding-left: 0px !important;
+}
+.navbar {
+    height: 40px !important;
 }
 /*
 container fixes
