@@ -502,6 +502,9 @@
                         $thumb = str_replace("http://the-star.co.ke", "http://www.the-star.co.ke", $featured[0]['thumb']);
                         print '<img src="'.$thumb.'" alt="" class="featured_thumb">';
                         ?>
+                        <div class="feedback">
+                            <a href="http://www.the-star.co.ke/section/contact-details" target="_blank"><strong>Tell us more</strong><br/>Do you have more information? Help us improve this story by sharing your experiences/evidence.</a>
+                        </div>
                     </div>
                     </div>
                 </div>
@@ -509,7 +512,7 @@
         <div class="col-md-3">
             <?php
             //if(count($helplines)>0){
-            print '<div class="widget_body"><div class="row-header"><h4><i class="icon-phone icon-2x" style="margin-right:5px"></i>Help Lines</h4></div>';
+            print '<div class="widget_body"><div class="row-header"><h4><i class="fa fa-phone-square"></i>Help Lines</h4></div>';
 
             foreach($helplines as $helpline){
                 print "<p><a href='tel:".$helpline['value']."'>".$helpline['title']." (".$helpline['value'].")</a></p>";
@@ -521,7 +524,7 @@
             print "</div>";
             //}
             //if(count($supportgroups)>0){
-            print '<div class="widget_body"><div class="row-header"><h4><i class="icon-anchor icon-2x" style="margin-right:5px"></i>Support Groups</h4></div>';
+            print '<div class="widget_body"><div class="row-header"><h4><i class="fa fa-anchor"></i>Support Groups</h4></div>';
 
             foreach($supportgroups as $sg){
                 print "<p><a href='tel:".$sg['value']."'>".$sg['title']." (".$sg['value'].")</a></p>";
@@ -532,7 +535,7 @@
             print "</div>";
             //}
             //if(count($socialmedias)>0){
-            print '<div class="widget_body"><div class="row-header"><h4><i class="icon-user icon-2x" style="margin-right:5px"></i> Links</h4></div>';
+            print '<div class="widget_body"><div class="row-header"><h4><i class="fa fa-external-link"></i> Links</h4></div>';
 
             foreach($socialmedias as $sm){
                 print "<p>

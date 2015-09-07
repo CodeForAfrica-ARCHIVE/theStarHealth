@@ -195,10 +195,30 @@ Featured Section
 }
 .featured_thumb_div{
     background: rgba(10, 10, 14, 0.15);
-    padding: 20px 20px 70px;
+    padding: 20px 20px 20px;
 }
 /* backstory */
 .backstory ul{
     list-style: none;
     padding-left: 5px;
+}
+/*feedback*/
+.feedback {
+    text-align: center;
+    font-size: 0.9em;
+    padding-top: 20px;
+}
+.feedback a {
+    color: #6b6b6b;
+}
+.row-header {
+    border-bottom: 2px #bdc3c7 solid;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+}
+.row-header i{
+    margin-right: 5px;
+}
+.widget_body{
+    margin-bottom: 20px;
 }
