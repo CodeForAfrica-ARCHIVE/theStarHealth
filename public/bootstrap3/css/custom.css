@@ -223,3 +223,15 @@ Featured Section
 .widget_body{
     margin-bottom: 20px;
 }
+
+/*news feed*/
+.news_feed{
+    margin-top: 5px;
+    margin-left: 0px !important;
+    margin-bottom: 5px;
+    min-height:600px;
+    background-color: #fff;
+    transition: box-shadow .25s;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}

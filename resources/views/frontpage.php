@@ -554,6 +554,177 @@
 
     </div>
 
+    <!-- begin feed -->
+    <div class="row news_feed">
+        <div class="col-md-3 sidebar_widget2">
+            <div class="row-header"><h4>Major Stories</h4></div>
+            <style type="text/css">
+                .accordion-inner a{
+                    color:#000;
+                }
+            </style>
+            <?php
+            $i = 0;
+            if(sizeof($major)>0){
+                $first_one = $major[0];
+                print '<div class="accordion" id="accordion2">
+                <div class="accordion-group">
+                  <div class="accordion-heading">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#'.$i.'">
+                    	'.$first_one['title'].'<i class="icon-chevron-sign-down"></i>
+                    </a>
+                  </div>
+                  <div id="'.$i.'" class="accordion-body in collapse" style="height: auto;">
+                    <div class="accordion-inner">
+				<p>';
+                if($first_one['thumb']!=null){
+                    $thumb = str_replace("http://the-star.co.ke", "http://www.the-star.co.ke", $first_one['thumb']);
+
+                    print "<img src='".$thumb."' width='100%'><br />";
+                }
+                print $first_one['description'].'<br /><a href="'.$first_one['link'].'" target="_blank">More</a></p>
+                    </div>
+                  </div>
+                </div>
+              </div>';
+                $total=0;
+                foreach($major as $featured_item){
+                    if(($total>1)&&($total<6)){
+                        $i++;
+                        print '<div class="accordion" id="accordion2">
+                <div class="accordion-group">
+                  <div class="accordion-heading">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#'.$i.'">
+                      '.$featured_item['title'].'<i class="icon-chevron-sign-down"></i>
+                    </a>
+                  </div>
+                  <div id="'.$i.'" class="accordion-body collapse" style="height: 0px;">
+                    <div class="accordion-inner">
+			    <p>';
+                        if($featured_item['thumb']!=null){
+                            $thumb = str_replace("http://the-star.co.ke", "http://www.the-star.co.ke", $featured_item['thumb']);
+
+                            print "<img src='".$thumb."' width='100%'><br />";
+                        }
+                        print $featured_item['description'].'<br /><a href="'.$featured_item['link'].'" target="_blank">More</a></p>
+                    </div>
+                  </div>
+                </div>
+              </div>';
+
+                    }
+                    $total++;
+                }
+            }
+            ?>
+
+            <br /><br />
+            <div class="row-header"><h4>Feed Filters</h4></div>
+            <script>
+                function filter_feed(section) {
+                    document.getElementById("filtered").innerHTML = "";
+                    /*
+                     document.getElementById("chev0").style.display='none';
+                     document.getElementById("chev"+section_id).style.display='block';*/
+                    var file = "<?php echo asset('');?>/filter_feed";
+
+                    var request =  get_XmlHttp();
+                    document.getElementById("filtered").innerHTML = "";
+
+                    var the_data = 'section='+section;
+
+                    request.open("POST", file, true);
+
+                    request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                    request.send(the_data);
+                    document.getElementById("filtered").innerHTML = "<div style='text-align:center'><img src='<?php echo asset('');?>img/preloader.gif'></div>";
+                    request.onreadystatechange = function() {
+
+                        if (request.readyState == 4) {
+                            document.getElementById("filtered").innerHTML = request.responseText;
+                        }
+                    }
+                }
+            </script>
+            <table class="table table-striped feed-filters">
+                <tbody>
+                <tr>
+                    <td><a  class='filter_feed' data-tag='All'>All</a></td>
+                </tr>
+                <?php
+                $i = 0;
+                foreach($tags as $tag){
+
+                    if($i<10){
+
+                        print "<tr><td><a class='filter_feed' data-tag='".$tag['tag']."'>".$tag['tag']." (".$tag['count'].")</td></tr>";
+
+                        $i++;
+                    }
+
+                }
+                ?>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-6 newsfeed" id="filtered">
+            <div class="row-header"><h4>Other Health News</h4></div>
+            <h6>A round-up of the all the latest health news from theStar <i class="icon-arrow-down" style="margin-left: 10px"></i></h6>
+            <br />
+            <?php
+
+            $items=0;
+
+            foreach($more_news as $item){
+                if($items<40){
+                    $thumb = str_replace("http://the-star.co.ke", "http://www.the-star.co.ke", $item['thumb']);
+
+                    print "<h4><a href='".$item['link']."' target='_blank'>".$item['title']."</a></h4>";
+                    if($item['thumb']!=null){
+                        print "<img src='".$thumb."' style='width:100px;float:left; margin:10px'><br />";
+                    }
+                    print "<div>".$item['description']."</div><br />";
+
+                    print '<div class="article-meta">Posted '.$item['timestamp'].' | '; print ucwords(strtolower($item['author']));
+
+                    print '</div>';
+                    print "<hr />";
+
+                    $items++;
+
+                }
+            }
+            ?>
+            <div class="pagination" style="text-align: center">
+                <?php
+                print $more_news->render();
+                ?>
+            </div>
+        </div>
+        <div class="col-md-3 sidebar_widget2">
+            <div class="row-header"><h4>App Store</h4></div>
+            <p>Download the Star's mobile Apps, eBooks, and other tools.</p>
+            <a href="https://play.google.com/store/apps/details?id=org.codeforafrica.starreports" target="_blank"><img src="<?php echo asset('');?>img/android-icon.png"></a>
+            <hr />
+            <a href="http://code4kenya.org" target="_blank"><img style="height: 80px" src="<?php echo asset('');?>img/c4k_logo.png" id="c4k_partner"></a>
+            <br />
+            The data driven journalism + tools in StarHealth section were kickstarted by Code4Kenya
+            <hr />
+            <a href="http://github.com/CodeForAfrica"><img src="<?php echo asset(''); ?>img/GitHub-Mark-32px.png" id="cfa_icon"></a>
+            <a href="http://africaopendata.org/dataset?q=kenya+health"><img style="height:32px;margin-left:25px" src="<?php echo asset(''); ?>img/data.png"></a>
+            <p>The code & data for this page are open source. You can re-use it by visiting the above repositories.</p>
+            <br />
+            <br />
+            <div class="row-header"><h4>Stay in Touch</h4></div>
+            <div class="social_media_icons">
+                <a href="https://www.facebook.com/thestarkenya" target="_blank"><img src="<?php echo asset('');?>img/facebook.png" style="height:32px;width:32px"></a>
+                <a href="https://twitter.com/TheStarKenya" target="_blank"><img src="<?php echo asset('');?>img/twitter.png" style="height:32px;width:32px"></a>
+                <a href="http://www.the-star.co.ke/rss.xml" target="_blank"><img src="<?php echo asset('');?>img/rss.png" style="height:32px;width:32px"></a>
+            </div>
+            <!-- <a class="twitter-timeline" href="https://twitter.com/TheStarKenya" data-widget-id="336091571755827200">Tweets by @TheStarKenya</a> -->
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        </div>
+    </div>
 </div><!-- /.container -->
 
 
