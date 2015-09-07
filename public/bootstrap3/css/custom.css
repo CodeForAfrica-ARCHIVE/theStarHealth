@@ -45,6 +45,7 @@ container fixes
 */
 .logo{
     margin-left: 15px;
+
     background-color: #213f8e;
 }
 .logo img{
@@ -53,4 +54,42 @@ container fixes
 }
 .date-search{
     float: right;
+}
+/*
+Topbar
+*/
+#topbar{
+    background-color: #000000;
+    border-radius: 0;
+    border: none;
+    margin-bottom: 0;
+    height: 29px;
+}
+#topbar ul {
+    float: right !important;
+    padding-left: 0;
+    margin-bottom: 4px;
+    list-style: none;
+}
+#topbar ul > li {
+    float: left;
+    list-style: none;
+    line-height: 27px !important;
+
+    border-right: solid 1px #FECD8B;
+}
+#topbar ul > li > a {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    text-transform: uppercase;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    padding-right: 4px;
+    padding-left: 4px;
+    color: #FECD8B;
+    margin-left: 10px;
+}
+#topbar ul > li:last-child {
+    border-right: 0px;
 }
