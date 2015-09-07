@@ -145,6 +145,7 @@ Topbar
     border-bottom: 1px solid rgba(160, 160, 160, 0.2);
     padding: 5px;
     margin-bottom: 5px;
+    font-family: "Vollkorn", serif;
 }
 .app_title i{
     margin-right: 5px;

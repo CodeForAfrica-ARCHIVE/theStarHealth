@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Starter Template for Bootstrap</title>
+    <title>StarHealth</title>
 
     <!-- Bootstrap core CSS -->
     <link href="<?php echo asset("bootstrap3/css/bootstrap.css");?>" rel="stylesheet">
@@ -29,6 +29,9 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <!-- Custom font -->
+    <link href='http://fonts.googleapis.com/css?family=Vollkorn' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
@@ -64,28 +67,28 @@
             <div class="input-group">
                 <input type="text" class="form-control search" placeholder="Enter text..." aria-describedby="site_search_submit">
                 <span class="input-group-addon" id="site_search_submit"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
-                <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-                <script>
-                    $(document).ready(function(){
-                        $('#main_search').keypress(function (e) {
-                            if (e.which == 13) {
-                                $('#site_search_submit').click();
-                                return false;    //<---- Add this line
-                            }
-                        });
-
-                        $('#site_search_submit').click(function(){
-
-                            if($('#main_search').val().length == 0){
-                                alert('Please enter a search query!');
-                            }else{
-                                window.location = "http://the-star.co.ke/search/node/" + $('#main_search').val();
-                            }
-
-                        });
-                    });
-                </script>
             </div>
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+            <script>
+                $(document).ready(function(){
+                    $('#main_search').keypress(function (e) {
+                        if (e.which == 13) {
+                            $('#site_search_submit').click();
+                            return false;    //<---- Add this line
+                        }
+                    });
+
+                    $('#site_search_submit').click(function(){
+
+                        if($('#main_search').val().length == 0){
+                            alert('Please enter a search query!');
+                        }else{
+                            window.location = "http://the-star.co.ke/search/node/" + $('#main_search').val();
+                        }
+
+                    });
+                });
+            </script>
         </div>
     </div>
     <nav class="navbar navbar-default">
@@ -367,10 +370,11 @@
                 <input type="text" placeholder="Minimum rate" class="rate" id="min">
                 <input type="text" placeholder="Maximum rate" class="rate" id="max">
                 -->
-                <input type="text" id="hospital_location" placeholder="Eg. Kisumu, Kariobangi" class="form-control" />
+                <div class="input-group">
+                    <input type="text" id="hospital_location" placeholder="Eg. Kisumu, Kariobangi" class="form-control" aria-describedby="get_location_text"/>
+                    <span class="near_me input-group-addon" style="cursor: pointer;" id="get_location_text"><i class="fa fa-location-arrow"></i></span>
+                </div>
                 <input type="hidden" id="hospital_location_gps" />
-
-                <span class="near_me" style="cursor: pointer; padding:3px;"><i class="icon-location-arrow"></i> <span id="get_location_text" style=""></span></span>
 
                 <br />
                 <select id="hospital_type"  class="form-control">
@@ -439,11 +443,11 @@
                 <h4 class="app_title"><i class="fa fa-hospital-o"></i>Nearest Specialist</h4>
                 <div class="description">Find the nearest specialist doctor or health facility</div>
                 <div class="search_menu">
-
-                    <input type="text" id="hospital_location_sp" placeholder="Eg. Kisumu, Kariobangi" class="form-control" />
-                    <input type="hidden" id="hospital_location_gps_sp" />
-
-                    <span class="near_me" style="cursor: pointer; padding:3px;"><i class="icon-location-arrow"></i> <span id="get_location_text_sp" style=""></span></span>
+                    <div class="input-group">
+                        <input type="text" id="hospital_location_sp" placeholder="Eg. Kisumu, Kariobangi" class="form-control" aria-describedby="get_location_text_sp"/>
+                        <span class="near_me input-group-addon" style="cursor: pointer;" id="get_location_text_sp"><i class="fa fa-location-arrow"></i></span>
+                    </div>
+                    <br />
                     <select id="specialist" class="form-control specialist_select">
                         <option value="0">Select service</option>
                         <?php
