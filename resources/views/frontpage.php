@@ -494,7 +494,7 @@
 
                     ?>
                     <h4>Evidence Dossier</h4>
-                    <a style="padding-left: 10px;"href="http://africaopendata.org/dataset?q=kenya+health">Data repository</a>
+                    <a href="http://africaopendata.org/dataset?q=kenya+health"><i class="fa fa-database"></i> Data repository</a>
                 </div>
                 <div class="col-md-9">
                     <div class="featured_thumb_div">

@@ -16,6 +16,7 @@ spread out top menu items
     min-width: 12.5%;
     text-align: center;
     background-color: #404041;
+    z-index: 10;
 }
 .navbar .nav > li:hover {
     background-color: #d9534f;
