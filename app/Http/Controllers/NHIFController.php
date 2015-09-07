@@ -59,6 +59,9 @@ class NHIFController extends Controller {
                 foreach($rows as $row){
                     $cname = ucwords(strtolower($row['1']));
                     //$cname .= " KSH ".$row['8'];
+                    if(!$isSMS){
+                        $cname = "<a target='_blank' href='https://www.google.com/maps/?q=".$row[6]."'>".$cname."</a>";
+                    }
                     $result .= $cname . "\n";
                 }
             }
