@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>StarHealth</title>
+    <title>StarHealth | Kenya's Health Portal by the Star</title>
 
     <!-- Bootstrap core CSS -->
     <link href="<?php echo asset("bootstrap3/css/bootstrap.css");?>" rel="stylesheet">
@@ -35,6 +35,7 @@
     <link href='https://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link rel="shortcut icon" href="<?php echo asset(''); ?>/ico/starhealth-favicon-32.png">
 </head>
 
 <body>
@@ -59,7 +60,7 @@
     </header>
     <div class="row brand_section">
         <div class="col-md-4 logo">
-            <a class="brand" href="http://starhealth.the-star.co.ke/"><img src="<?php echo asset("img/logo.png");?>"> </a>
+            <a class="brand" href="http://health.the-star.co.ke/"><img src="<?php echo asset("img/logo.png");?>"> </a>
         </div>
         <div class="col-md-5"></div>
         <div class="col-md-3 date-search">
@@ -602,6 +603,7 @@
             </table>
         </div>
         <div class="col-md-6 newsfeed" id="filtered">
+            <a name="newsfeed"></a>
             <div class="row-header"><h3>Other Health News</h3></div>
             <h6>A round-up of the all the latest health news from theStar <i class="icon-arrow-down" style="margin-left: 10px"></i></h6>
             <br />
