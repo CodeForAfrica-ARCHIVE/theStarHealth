@@ -200,7 +200,12 @@
 
                     var specialty = $("#specialist").val();
 
-                    $("#dname").html("<h4>"+specialty+" in " + hospital_location + "</h4>");
+                    if(specialty == "0"){
+                        $("#dname").html("<h4>"+hospital_location + "</h4>");
+                    }else{
+                        $("#dname").html("<h4>"+specialty+" in " + hospital_location + "</h4>");
+                    }
+                    
 
                     $("#mybox").html("");
 
