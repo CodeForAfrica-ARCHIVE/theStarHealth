@@ -38,9 +38,9 @@
     <link rel="shortcut icon" href="<?php echo asset(''); ?>/ico/starhealth-favicon-32.png">
 </head>
 
-<body>
+<body <?php if(isset($_GET['embed'])) print "style='background:none;'";?>>
 
-<div class="container">
+<div class="container" <?php if(isset($_GET['embed'])) print "style='padding:3px !important'";?>>
     <header <?php if(isset($_GET['embed'])) print "style='display:none' ";?>id="topbar">
         <div class="container-fluid">
             <div class="region region-top-navigation">
@@ -145,7 +145,6 @@
         <script type="text/javascript">
             $().ready(function() {
                 $("#doctorName").autocomplete("getDoctors", {
-                    width: 260,
                     matchContains: true,
                     //mustMatch: true,
                     //minChars: 0,
@@ -327,7 +326,7 @@
                 }});
             }
         </script>
-        <div class="col-md-4">
+        <div <?php display_app(1)?>>
             <div class="app">
                 <h4 class="app_title"><i class="fa fa-user-md"></i>Dodgy Doctors</h4>
                 <div class="description">Check to see if your doctor is registered.<br/><small><em>Can't find a name? Send us an email <a href="mailto:starhealth@codeforafrica.org" target="_blank">starhealth@codeforafrica.org</a></em></small>
@@ -344,7 +343,7 @@
 
         </div>
         </div>
-        <div class="col-md-4">
+        <div <?php display_app(2)?>>
             <div class="app">
                 <h4 class="app_title"><i class="fa fa-umbrella"></i>Am I Covered</h4>
                 <div class="description">Find out which hospitals your NHIF card will cover</div>
@@ -382,7 +381,7 @@
 
             </div>
         </div>
-        <div class="col-md-4">
+        <div <?php display_app(3)?>>
             <div class="app">
                 <h4 class="app_title"><i class="fa fa-hospital-o"></i>Nearest Specialist</h4>
                 <div class="description">Find the nearest specialist doctor or health facility</div>
@@ -409,6 +408,22 @@
             </div>
         </div>
     </div>
+
+    <?php
+        //function to properly show embed
+        function display_app($app_position)
+        {
+            if (isset($_GET['embed']) && ($_GET['embed'] == $app_position)) {
+                print " class='col-md-12' style='margin-top: 10px; padding:0!important'";
+
+            } elseif (isset($_GET['embed']) && ($_GET['embed'] != $app_position)) {
+                print " style='display:none'";
+            }
+            else{
+                print " class='col-md-4'";
+            }
+        }
+    ?>
 
     <!-- begin news section -->
     <div  <?php if(isset($_GET['embed'])) print "style='display:none' ";?>class="row news_section">
