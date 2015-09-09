@@ -111,16 +111,26 @@ class HospitalsController extends Controller {
             }else{
                 $rows = $data['rows'];
 
+                $i = 0;
+                $result_array = array();
                 foreach($rows as $row){
                     $cname = ucwords(strtolower($row['2']));
                     //$cname .= " KSH ".$row['8'];
                     if(!$isSMS){
-                        $cname = "<a target='_blank' href='https://www.google.com/maps/?q=".$row[49]."'>".$cname."</a>";
+                        $result_array[] = "<p><a target='_blank' href='https://www.google.com/maps/?q=".$row[49]."'>".$cname."</a></p>";
+                    }else{
+                        $i++;
+                        $result_array[] = $i .". ". $cname . "\n";
                     }
-                    $result .= $cname . "\n";
                 }
-            }
+                $glue = "";
 
+                if($isSMS){
+                    $glue = ", ";
+                }
+
+                $result = implode($glue, $result_array);
+                }
         }
 
         if($isSMS && !$found){
