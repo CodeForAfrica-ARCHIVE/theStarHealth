@@ -50,23 +50,38 @@ class NHIFController extends Controller {
 
             $data = json_decode($page, TRUE);
 
+
+
             if(!array_key_exists("rows", $data)){
-                $result .= "No hospitals found for those parameters.";
+                $result = "No hospitals found for those parameters.";
                 $found = false;
             }else{
                 $rows = $data['rows'];
+
+                $i = 0;
+                $result_array = array();
 
                 foreach($rows as $row){
                     $cname = ucwords(strtolower($row['1']));
                     //$cname .= " KSH ".$row['8'];
                     if(!$isSMS){
-                        $cname = "<a target='_blank' href='https://www.google.com/maps/?q=".$row[6]."'>".$cname."</a>";
+                        $result_array[] = "<p><a target='_blank' href='https://www.google.com/maps/?q=".$row[6]."'>".$cname."</a></p>";
+                    }else{
+                        $i++;
+                        $result_array[] = $i .". ". $cname . "\n";
                     }
-                    $result .= $cname . "\n";
                 }
+                $glue = "";
+
+                if($isSMS){
+                    $glue = ", ";
+                }
+
+                $result = implode($glue, $result_array);
             }
 
         }
+
         if($isSMS && !$found){
             return false;
         }

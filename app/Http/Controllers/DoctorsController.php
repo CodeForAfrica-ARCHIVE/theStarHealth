@@ -13,8 +13,8 @@ class DoctorsController extends Controller {
             $rows = $data['rows'];
 
             $i = 0;
-
             $result_array = array();
+
             foreach($rows as $row){
                 if($isSMS){
                     $i++;
