@@ -12,13 +12,15 @@ class DoctorsController extends Controller {
         if(array_key_exists(('rows'), $data)){
             $rows = $data['rows'];
 
-            $result = "Found:\r\n";
+            $i = 0;
 
+            $result_array = array();
             foreach($rows as $row){
                 if($isSMS){
-                    $result .= $row[1]." - ". $row[2]." - ". $row[7]."\r\n";
+                    $i++;
+                    $result_array[] = $i .". ". $row[1]." - ". $row[2]." - ". $row[7]."\r\n";
                 }else{
-                    $result .= $row[1]."\r\n";
+                    $result_array[] = $row[1]."\r\n";
                 }
             }
 
@@ -26,6 +28,15 @@ class DoctorsController extends Controller {
 
                 $result = "No doctor with that name. Check for spelling mistakes.";
                 $found = false;
+            }else{
+                $glue = "";
+
+                if($isSMS){
+                    $glue = ", ";
+                }
+
+                $result = implode($glue, $result_array);
+
             }
 
         }else{
