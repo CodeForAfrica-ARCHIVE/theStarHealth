@@ -16,9 +16,9 @@ class DoctorsController extends Controller {
 
             foreach($rows as $row){
                 if($isSMS){
-                    $result .= $row['1']." - ". $row['3']." - ". $row['5']."\r\n";
+                    $result .= $row[1]." - ". $row[2]." - ". $row[7]."\r\n";
                 }else{
-                    $result .= $row['1']."\r\n";
+                    $result .= $row[1]."\r\n";
                 }
             }
 
@@ -46,9 +46,9 @@ class DoctorsController extends Controller {
 
         foreach($rows as $row){
             if($isSMS){
-                $result .= $row['1']." - ". $row['3']." - ". $row['5']."\r\n";
+                $result .= $row[1]." - ". $row[2]." - ". $row[7]."\r\n";
             }else{
-                $result .= $row['1']."\r\n";
+                $result .= $row[1]."\r\n";
             }
         }
         return $result;
@@ -85,11 +85,14 @@ class DoctorsController extends Controller {
                 //$doc = $rows[0];
                 $total++;
                 $result .= "<p>";
-                $result .= "Name: " . $doc['1'];
+                $result .= "Name: " . $doc[1];
                 $result .= "<br />";
-                $result .= "Reg No: " . $doc['3'];
+                $result .= "Reg No: " . $doc[2];
                 $result .= "<br />";
-                $result .= "Qualification :" . $doc['5'];
+                $result .= "Qualification :" . $doc[7];
+                    if($doc[5]!="NONE"){
+                        $result .= "Specialty :" . $doc[5];
+                    }
                 $result .= "</p>";
 
                 }
@@ -116,7 +119,7 @@ class DoctorsController extends Controller {
         $query_parts = array();
         foreach($raw_query_parts as $part){
 
-            $query_parts[] = "Names LIKE '%".$part."%'";
+            $query_parts[] = "Name LIKE '%".$part."%'";
 
         }
         $query_parts = implode(" AND ", $query_parts);

@@ -51,12 +51,16 @@ To configure the news feed, you will need to set up a cron job that points to pu
 
 
 **SMS Apps**
+
 If you are not running an SMS service you can ignore this section.
 This set up might be a little complicated and depends your SMS gateway provider. However SMS is handled as follows:
+
 1. Incoming query
+
 The requests are made as {your url to public}/sms?phoneNumber={the phone number}&message={the message}
 
 2. Response
+
 The response is a http request who's format you can modify according to your gateway provider on the send_response method of the SMSController.
 
 You can also modify the SMS settings accordingly on the config file. Or even create our own.
