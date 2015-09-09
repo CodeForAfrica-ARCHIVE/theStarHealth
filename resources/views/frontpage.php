@@ -41,7 +41,7 @@
 <body>
 
 <div class="container">
-    <header id="topbar">
+    <header <?php if(isset($_GET['embed'])) print "style='display:none' ";?>id="topbar">
         <div class="container-fluid">
             <div class="region region-top-navigation">
                 <div id="block-menu-menu-radiomenu" class="block block-menu block-odd">
@@ -58,7 +58,7 @@
             </div>
         </div>
     </header>
-    <div class="row brand_section">
+    <div  <?php if(isset($_GET['embed'])) print "style='display:none' ";?>class="row brand_section">
         <div class="col-md-4 logo">
             <a class="brand" href="http://health.the-star.co.ke/"><img src="<?php echo asset("img/logo.png");?>"> </a>
         </div>
@@ -93,7 +93,7 @@
             </script>
         </div>
     </div>
-    <nav class="navbar navbar-default">
+    <nav  <?php if(isset($_GET['embed'])) print "style='display:none' ";?>class="navbar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -411,7 +411,7 @@
     </div>
 
     <!-- begin news section -->
-    <div class="row news_section">
+    <div  <?php if(isset($_GET['embed'])) print "style='display:none' ";?>class="row news_section">
 
         <div class="news_section_featured col-md-9">
             <div class="row">
@@ -498,7 +498,7 @@
     </div>
 
     <!-- begin feed -->
-    <div class="row news_feed">
+    <div  <?php if(isset($_GET['embed'])) print "style='display:none' ";?>class="row news_feed">
         <div class="col-md-3 sidebar_widget2">
             <div class="row-header"><h3>Major Stories</h3></div>
             <style type="text/css">
@@ -670,7 +670,7 @@
         </div>
     </div>
 
-    <footer class="site-footer clearrfix row-fluid" role="contentinfo">
+    <footer  <?php if(isset($_GET['embed'])) print "style='display:none' ";?>class="site-footer clearrfix row-fluid" role="contentinfo">
 
         <div class="footer-wrapper clearfix">
             <div class="row" id="footer">
