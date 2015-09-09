@@ -337,6 +337,9 @@
                     <button class='btn btn-primary red_button' href="#myModal" role="button" class="btn" data-toggle="modal" id="grabDetails">
                         Submit
                     </button>
+                    <div class="contribution">
+                        <a href="#embed_1_modal" data-toggle="modal">Embed</a>
+                    </div>
 
                 </div>
 
@@ -375,7 +378,9 @@
                 <button class='btn btn-primary ' href="#myModal" role="button" class="btn" data-toggle="modal" id="grabNHIFDetails">
                     Submit
                 </button>
-                <div class="contribution"><a href="#premiumRatesModal" data-toggle="modal" id="whatsMyContribution">What's my contribution?</a>
+                <div class="contribution">
+                    <a href="#embed_2_modal" data-toggle="modal">Embed | </a>
+                    <a href="#premiumRatesModal" data-toggle="modal" id="whatsMyContribution">What's my contribution?</a>
                     <a href="#nhifInfoModal" data-toggle="modal"> | Hospital Types</a>
                 </div>
 
@@ -404,6 +409,9 @@
                     <button class='btn btn-primary ' href="#myModal" role="button" class="btn" data-toggle="modal" id="grabSpecialists">
                         Submit
                     </button>
+                    <div class="contribution">
+                        <a href="#embed_3_modal" data-toggle="modal">Embed</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -903,6 +911,7 @@
 
 <div class="the_modals">
 
+
     <!-- Modal -->
     <div id="myModal" style="text-align:justify !important;" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -982,6 +991,45 @@
     </div>
         </div>
     </div>
+
+    <!--embed modals -->
+    <?php
+        for($i=1; $i<4; $i++) {
+
+            $app_name = "Dodgy Doctors";
+            if($i==2){
+                $app_name = "Am I Covered";
+            }
+            if($i==3){
+                $app_name = "Nearest specialist";
+            }
+            ?>
+
+            <div id="embed_<?php echo $i;?>_modal" style="text-align:justify !important;" class="modal fade" tabindex="-1"
+                 role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <h3>Embed Code for <i><?php echo $app_name;?></i></h3>
+                        </div>
+                        <div class="modal-body">
+                            Copy and paste the following code inside within HTML code
+            <textarea class="form-control">
+                <iframe src="http://health.the-star.co.ke/?embed=<?php echo $i;?>" frameborder="0" scrolling="no" height="400px"
+                        width="100%"></iframe>
+            </textarea>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <?php
+        }
+    ?>
 </div>
 
 
