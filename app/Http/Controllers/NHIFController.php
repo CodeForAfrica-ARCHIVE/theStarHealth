@@ -9,12 +9,12 @@ class NHIFController extends Controller {
 
         $result = "";
 
-        if($address=='' && $gps==""){
+        if($address=='' && ($gps=="" || $gps=="undefined")){
             $result = 'You have to set location!';
             $found = false;
         }else{
 
-            if($gps==""){
+            if($gps=="" || $gps=="undefined"){
                 //reverse geocode address
                 $q = urlencode($address);
 
