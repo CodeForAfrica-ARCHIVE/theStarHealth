@@ -2,7 +2,7 @@
 namespace App\Http\Controllers;
 
 class HospitalsController extends Controller {
-
+    
     /**
      * Method to find facilities within location providing specific services
      * @param $specialty
@@ -107,5 +107,144 @@ class HospitalsController extends Controller {
         }
 
     }
+
+    /**
+     * @param $name
+     * @return string
+     */
+    public function singleClinic($name){
+
+        if($name==''){
+
+            $result = "Please enter a name!";
+
+        }else{
+
+
+            $data = $this->get_list($name);
+
+            $result = '';
+            if(!array_key_exists('rows', $data)){
+                $result .= "No registered clinic found with that name!";
+            }else {
+
+                $rows = $data['rows'];
+
+                $total = 0;
+
+                if (sizeof($rows) == 0) {
+
+                    $result .= "No registered clinic found with that name!";
+
+                } else {
+                    foreach($rows as $clinic){
+
+                        //$doc = $rows[0];
+                        $total++;
+                        $result .= "<p>";
+                        $result .= "Name: " . $clinic[1];
+                        $result .= "<br />";
+                        $result .= "Reg No: " . $clinic[0];
+                        $result .= "<br />";
+                        $result .= "County :" . $clinic[4];
+                        $result .= "</p>";
+
+                    }
+                }
+            }
+
+        }
+
+        return $result;
+    }
+
+    /**
+     * @param $name
+     * @param $isSMS
+     * @return bool|string
+     */
+    public function getClinic($name, $isSMS)
+    {
+        $found = true;
+
+        $data = $this->get_list($name);
+
+        if(array_key_exists(('rows'), $data)){
+            $rows = $data['rows'];
+
+            $i = 0;
+            $result_array = array();
+
+            foreach($rows as $row){
+                if($isSMS){
+                    $i++;
+                    $result_array[] = $i .". ". $row[1]." - ". $row[0]." - ". $row[4]."\r\n";
+                }else{
+                    $result_array[] = $row[1]."\r\n";
+                }
+            }
+
+            if(count($rows)<1){
+
+                $result = "No clinic with that name. Check for spelling mistakes.";
+                $found = false;
+            }else{
+                $glue = "";
+
+                if($isSMS){
+                    $glue = ", ";
+                }
+
+                $result = implode($glue, $result_array);
+
+            }
+
+        }else{
+            $result = "No clinic with that name. Check for spelling mistakes.";
+            $found = false;
+        }
+
+        if($isSMS && !$found){
+            return false;
+        }
+        return $result;
+    }
+
+
+    /**Get hospital name by
+     * @param $name
+     * @return mixed
+     */
+    public function get_list($name){
+        $q = strtoupper($name);
+
+        $key = config('custom_config.google_api_key');
+        $table = config('custom_config.dodgy_clinics_table');
+
+        $url = "https://www.googleapis.com/fusiontables/v1/query?";
+
+        //split name into different parts, and return rows that have all names
+        $raw_query_parts = explode(' ', $q);
+        $query_parts = array();
+        foreach($raw_query_parts as $part){
+
+            $query_parts[] = "Facility_Name LIKE '%".$part."%'";
+
+        }
+        $query_parts = implode(" AND ", $query_parts);
+
+        $sql = "SELECT * FROM ".$table." WHERE ".$query_parts;
+
+        $options = array("sql"=>$sql, "key"=>$key, "sensor"=>"false");
+
+        $url .= http_build_query($options,'','&');
+
+        $page = file_get_contents($url);
+
+        $data = json_decode($page, TRUE);
+
+        return $data;
+    }
+
 
 }
