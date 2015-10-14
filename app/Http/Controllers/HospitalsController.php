@@ -121,7 +121,7 @@ class HospitalsController extends Controller {
         }else{
 
 
-            $data = $this->get_list($name);
+            $data = $this->get_single($name);
 
             $result = '';
             if(!array_key_exists('rows', $data)){
@@ -142,9 +142,9 @@ class HospitalsController extends Controller {
                         //$doc = $rows[0];
                         $total++;
                         $result .= "<p>";
-                        $result .= "Name: " . $clinic[1];
+                        $result .= "Name: " . $clinic[2];
                         $result .= "<br />";
-                        $result .= "Reg No: " . $clinic[0];
+                        $result .= "Reg No: " . $clinic[1];
                         $result .= "<br />";
                         $result .= "County :" . $clinic[4];
                         $result .= "</p>";
@@ -234,6 +234,37 @@ class HospitalsController extends Controller {
         $query_parts = implode(" AND ", $query_parts);
 
         $sql = "SELECT * FROM ".$table." WHERE ".$query_parts;
+
+        $options = array("sql"=>$sql, "key"=>$key, "sensor"=>"false");
+
+        $url .= http_build_query($options,'','&');
+
+        $page = file_get_contents($url);
+
+        $data = json_decode($page, TRUE);
+        
+        return $data;
+    }
+
+    public function get_single($name){
+        $q = strtoupper($name);
+
+        $key = config('custom_config.google_api_key');
+        $table = config('custom_config.facilities_table');
+
+        $url = "https://www.googleapis.com/fusiontables/v1/query?";
+
+        //split name into different parts, and return rows that have all names
+        $raw_query_parts = explode(' ', $q);
+        $query_parts = array();
+        foreach($raw_query_parts as $part){
+
+            $query_parts[] = "FacilityName LIKE '%".$part."%'";
+
+        }
+        $query_parts = implode(" AND ", $query_parts);
+
+        $sql = "SELECT * FROM ".$table." WHERE FacilityName='".$name."'";
 
         $options = array("sql"=>$sql, "key"=>$key, "sensor"=>"false");
 
