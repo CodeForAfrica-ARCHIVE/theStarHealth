@@ -2,7 +2,7 @@
 namespace App\Http\Controllers;
 
 class HospitalsController extends Controller {
-    
+
     /**
      * Method to find facilities within location providing specific services
      * @param $specialty
@@ -219,7 +219,7 @@ class HospitalsController extends Controller {
         $q = strtoupper($name);
 
         $key = config('custom_config.google_api_key');
-        $table = config('custom_config.dodgy_clinics_table');
+        $table = config('custom_config.facilities_table');
 
         $url = "https://www.googleapis.com/fusiontables/v1/query?";
 
@@ -228,7 +228,7 @@ class HospitalsController extends Controller {
         $query_parts = array();
         foreach($raw_query_parts as $part){
 
-            $query_parts[] = "Facility_Name LIKE '%".$part."%'";
+            $query_parts[] = "FacilityName LIKE '%".$part."%'";
 
         }
         $query_parts = implode(" AND ", $query_parts);

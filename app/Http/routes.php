@@ -74,7 +74,7 @@ Route::get('getClinics', function()
     $result = '';
 
     if(isset($term)){
-        $result = HospitalsController::getClinic($term, false);
+        $result = (new HospitalsController())->getClinic($term, false);
     }
 
     return $result;
@@ -87,7 +87,7 @@ Route::get('singleClinic', function()
     $result = '';
 
     if(isset($term)){
-        $result = str_replace("\n", "<br />", HospitalsController::singleClinic($term));
+        $result = str_replace("\n", "<br />", (new HospitalsController())->singleClinic($term));
     }
 
     return $result;
