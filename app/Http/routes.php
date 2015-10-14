@@ -67,6 +67,32 @@ Route::get('singleDoctor', function()
     return $result;
 });
 
+Route::get('getClinics', function()
+{
+    $term = Request::input('q');
+
+    $result = '';
+
+    if(isset($term)){
+        $result = HospitalsController::getClinic($term, false);
+    }
+
+    return $result;
+});
+
+Route::get('singleClinic', function()
+{
+    $term = Request::input('q');
+
+    $result = '';
+
+    if(isset($term)){
+        $result = str_replace("\n", "<br />", HospitalsController::singleClinic($term);
+    }
+
+    return $result;
+});
+
 Route::get('/filter_feed', function()
 {
     $tag = Request::input('tag');
