@@ -169,6 +169,10 @@ Topbar
 .contribution a{
     color: #b9b9b9;
 }
+#apps .col-md-3{
+    padding-right: 2px !important;
+    padding-left: 0px !important;
+}
 /*
     News Section
 */

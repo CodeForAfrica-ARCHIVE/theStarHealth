@@ -331,7 +331,7 @@
                 <h4 class="app_title"><i class="fa fa-user-md"></i>Dodgy Doctors</h4>
                 <div class="description">Check to see if your doctor is registered.<br/><small><em>Can't find a name? Send us an email <a href="mailto:starhealth@codeforafrica.org" target="_blank">starhealth@codeforafrica.org</a></em></small>
                 </div>
-                <div class="search_menu input-append" style="margin-top:35px;">
+                <div class="search_menu input-append">
 
                     <input type="text" placeholder="Start typing doctor's name" class="search form-control" id="doctorName" />
                     <button class='btn btn-primary red_button' href="#myModal" role="button" class="btn" data-toggle="modal" id="grabDetails">
@@ -344,7 +344,7 @@
                 </div>
 
 
-        </div>
+            </div>
         </div>
         <div <?php display_app(2)?>>
             <div class="app">
@@ -415,6 +415,26 @@
                 </div>
             </div>
         </div>
+        <div <?php display_app(4)?>>
+            <div class="app">
+                <h4 class="app_title"><i class="fa fa-user-md"></i>Dodgy Clinics</h4>
+                <div class="description">Check if your medical facility is registered.<br/><small><em>Can't find a name? Send us an email <a href="mailto:starhealth@codeforafrica.org" target="_blank">starhealth@codeforafrica.org</a></em></small>
+                </div>
+                <div class="search_menu input-append">
+
+                    <input type="text" placeholder="Facility's name" class="search form-control" id="clinicName" />
+                    <button class='btn btn-primary red_button' href="#myModal" role="button" class="btn" data-toggle="modal" id="grabClinicDetails">
+                        Submit
+                    </button>
+                    <div class="contribution">
+                        <a href="#embed_4_modal" data-toggle="modal">Embed</a>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
     </div>
 
     <?php
@@ -428,7 +448,7 @@
                 print " style='display:none'";
             }
             else{
-                print " class='col-md-4'";
+                print " class='col-md-3'";
             }
         }
     ?>
