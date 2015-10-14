@@ -329,9 +329,10 @@
         <div <?php display_app(1)?>>
             <div class="app">
                 <h4 class="app_title"><i class="fa fa-user-md"></i>Dodgy Doctors</h4>
-                <div class="description">Check to see if your doctor is registered.<br/><small><em>Can't find a name? Send us an email <a href="mailto:starhealth@codeforafrica.org" target="_blank">starhealth@codeforafrica.org</a></em></small>
+                <div class="app_top">
+                    Check to see if your doctor is registered.<br/><small><em>Can't find a name? Send us an email <a href="mailto:starhealth@codeforafrica.org" target="_blank">starhealth@codeforafrica.org</a></em></small>
                 </div>
-                <div class="search_menu input-append">
+                <div class="app_bottom">
 
                     <input type="text" placeholder="Start typing doctor's name" class="search form-control" id="doctorName" />
                     <button class='btn btn-primary red_button' href="#myModal" role="button" class="btn" data-toggle="modal" id="grabDetails">
@@ -349,53 +350,46 @@
         <div <?php display_app(2)?>>
             <div class="app">
                 <h4 class="app_title"><i class="fa fa-umbrella"></i>Am I Covered</h4>
-                <div class="description">Find out which hospitals your NHIF card will cover</div>
-                <!--<div class="search_menu input-append">
-                          <input type="text" placeholder="Enter NHIF payment" class="search" id="nhif">
-                          <button class='btn add-on' href="#myModal" role="button" class="btn" data-toggle="modal" onclick="nhif('nhif')">
-                            <i class="icon-search"></i>
-                        </button>
-                          </div> -->
-                <!--
-                <input type="text" placeholder="Minimum rate" class="rate" id="min">
-                <input type="text" placeholder="Maximum rate" class="rate" id="max">
-                -->
-                <div class="input-group">
-                    <input type="text" id="hospital_location" placeholder="Eg. Kisumu, Kariobangi" class="form-control" aria-describedby="get_location_text"/>
-                    <span class="near_me input-group-addon" style="cursor: pointer;" id="get_location_text"><i class="fa fa-location-arrow"></i></span>
+                <div class="app_top">
+                    Find out which hospitals your NHIF card will cover
+                    <div class="input-group">
+                        <input type="text" id="hospital_location" placeholder="Eg. Kisumu, Kariobangi" class="form-control" aria-describedby="get_location_text"/>
+                        <span class="near_me input-group-addon" style="cursor: pointer;" id="get_location_text"><i class="fa fa-location-arrow"></i></span>
+                    </div>
+                    <input type="hidden" id="hospital_location_gps" />
                 </div>
-                <input type="hidden" id="hospital_location_gps" />
-
-                <br />
-                <select id="hospital_type"  class="form-control">
-                    <option value="0">All hospital types</option>
-                    <option value="A">Category A: Government Hospitals</option>
-                    <option value="B">Category B: Private and Mission Hospitals</option>
-                    <option value="C">Category C: Private Hospitals</option>
-                </select>
+                <div class="app_bottom">
+                    <select id="hospital_type"  class="form-control">
+                        <option value="0">All hospital types</option>
+                        <option value="A">Category A: Government Hospitals</option>
+                        <option value="B">Category B: Private and Mission Hospitals</option>
+                        <option value="C">Category C: Private Hospitals</option>
+                    </select>
 
 
-                <button class='btn btn-primary ' href="#myModal" role="button" class="btn" data-toggle="modal" id="grabNHIFDetails">
-                    Submit
-                </button>
-                <div class="contribution">
-                    <a href="#embed_2_modal" data-toggle="modal">Embed | </a>
-                    <a href="#premiumRatesModal" data-toggle="modal" id="whatsMyContribution">What's my contribution?</a>
-                    <a href="#nhifInfoModal" data-toggle="modal"> | Hospital Types</a>
+                    <button class='btn btn-primary ' href="#myModal" role="button" class="btn" data-toggle="modal" id="grabNHIFDetails">
+                        Submit
+                    </button>
+                    <div class="contribution">
+                        <a href="#embed_2_modal" data-toggle="modal">Embed | </a>
+                        <a href="#premiumRatesModal" data-toggle="modal" id="whatsMyContribution">What's my contribution?</a><br />
+                        <a href="#nhifInfoModal" data-toggle="modal">Hospital Types</a>
+                    </div>
                 </div>
-
             </div>
         </div>
         <div <?php display_app(3)?>>
             <div class="app">
-                <h4 class="app_title"><i class="fa fa-hospital-o"></i>Nearest Specialist</h4>
-                <div class="description">Find the nearest specialist doctor or health facility</div>
-                <div class="search_menu">
+                <h4 class="app_title"><i class="fa fa-map-marker"></i>Nearest Specialist</h4>
+                <div class="app_top">Find the nearest specialist doctor or health facility
+
                     <div class="input-group">
                         <input type="text" id="hospital_location_sp" placeholder="Eg. Kisumu, Kariobangi" class="form-control" aria-describedby="get_location_text_sp"/>
                         <span class="near_me input-group-addon" style="cursor: pointer;" id="get_location_text_sp"><i class="fa fa-location-arrow"></i></span>
                     </div>
                     <br />
+                    </div>
+                <div class="app_bottom">
                     <select id="specialist" class="form-control specialist_select">
                         <option value="0">Select service</option>
                         <?php
@@ -412,15 +406,16 @@
                     <div class="contribution">
                         <a href="#embed_3_modal" data-toggle="modal">Embed</a>
                     </div>
-                </div>
+                    </div>
+
             </div>
         </div>
         <div <?php display_app(4)?>>
             <div class="app">
-                <h4 class="app_title"><i class="fa fa-user-md"></i>Dodgy Clinics</h4>
-                <div class="description">Check if your medical facility is registered.<br/><small><em>Can't find a name? Send us an email <a href="mailto:starhealth@codeforafrica.org" target="_blank">starhealth@codeforafrica.org</a></em></small>
+                <h4 class="app_title"><i class="fa fa-hospital-o"></i>Dodgy Clinics</h4>
+                <div class="app_top">Check if your medical facility is registered.<br/><small><em>Can't find a name? Send us an email <a href="mailto:starhealth@codeforafrica.org" target="_blank">starhealth@codeforafrica.org</a></em></small>
                 </div>
-                <div class="search_menu input-append">
+                <div class="app_bottom">
 
                     <input type="text" placeholder="Facility's name" class="search form-control" id="clinicName" />
                     <button class='btn btn-primary red_button' href="#myModal" role="button" class="btn" data-toggle="modal" id="grabClinicDetails">
