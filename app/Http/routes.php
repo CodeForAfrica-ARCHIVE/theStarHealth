@@ -87,7 +87,7 @@ Route::get('singleClinic', function()
     $result = '';
 
     if(isset($term)){
-        $result = str_replace("\n", "<br />", HospitalsController::singleClinic($term);
+        $result = str_replace("\n", "<br />", HospitalsController::singleClinic($term));
     }
 
     return $result;
