@@ -170,6 +170,35 @@
                         $("#loading").hide();
                     }});
                 });
+
+                //Check if hospital is registered
+                $("#clinicName").autocomplete("getClinics", {
+                    matchContains: true,
+                    //mustMatch: true,
+                    //minChars: 0,
+                    //multiple: true,
+                    //highlight: false,
+                    //multipleSeparator: ",",
+                    selectFirst: false
+                });
+                $("#grabClinicDetails").click(function(){
+                    var name = $("#clinicName").val();
+
+                    $("#dname").html("<h4>Results for: " + name + "</h4>");
+
+                    $("#mybox").html("");
+
+                    $("#loading").show();
+
+                    $.ajax({url:"singleClinic?q=" + name,success:function(result){
+                        $("#clinicName").val("");
+
+                        $("#mybox").html(result);
+
+                        $("#loading").hide();
+                    }});
+                });
+
                 $("#grabNHIFDetails").click(function(){
                     var hospital_location_gps = $("#hospital_location_gps").val();
                     var hospital_location = $("#hospital_location").val();
@@ -417,7 +446,7 @@
                 </div>
                 <div class="app_bottom">
 
-                    <input type="text" placeholder="Facility's name" class="search form-control" id="clinicName" />
+                    <input type="text" placeholder="Start typing facility's name" class="search form-control" id="clinicName" />
                     <button class='btn btn-primary red_button' href="#myModal" role="button" class="btn" data-toggle="modal" id="grabClinicDetails">
                         Submit
                     </button>
