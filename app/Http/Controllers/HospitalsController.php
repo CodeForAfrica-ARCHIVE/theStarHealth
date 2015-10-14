@@ -178,9 +178,9 @@ class HospitalsController extends Controller {
             foreach($rows as $row){
                 if($isSMS){
                     $i++;
-                    $result_array[] = $i .". ". $row[1]." - ". $row[0]." - ". $row[4]."\r\n";
+                    $result_array[] = $i .". ". $row[2]." - ". $row[1]." - ". $row[4]."\r\n";
                 }else{
-                    $result_array[] = $row[1]."\r\n";
+                    $result_array[] = $row[2]."\r\n";
                 }
             }
 
