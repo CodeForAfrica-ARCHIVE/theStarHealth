@@ -186,7 +186,7 @@ class HospitalsController extends Controller {
 
             if(count($rows)<1){
 
-                $result = "No clinic with that name. Check for spelling mistakes.";
+                $result = "No facility found with that name. Check for spelling mistakes.";
                 $found = false;
             }else{
                 $glue = "";
@@ -200,7 +200,7 @@ class HospitalsController extends Controller {
             }
 
         }else{
-            $result = "No clinic with that name. Check for spelling mistakes.";
+            $result = "No facility with that name. Check for spelling mistakes.";
             $found = false;
         }
 
@@ -242,7 +242,7 @@ class HospitalsController extends Controller {
         $page = file_get_contents($url);
 
         $data = json_decode($page, TRUE);
-        
+
         return $data;
     }
 

@@ -59,6 +59,10 @@ class SMSController extends Controller
                                 $response = $this->find_doctor_by_name($item["text"]);
                                 $found = true;
                                 break;
+                            }else if (($item["type"] == "Facility") || ($item["type"] == "Organization") || ($item["type"] == "Company")){
+                                $response = $this->find_hospital_by_name($item["text"]);
+                                $found = true;
+                                break;
                             }else if(in_array($item["type"], $this->location_tags())){
                                 //if has location return nearest facilities
                                 $response = $this->find_facilities_by_location("", "", $item["text"]);
@@ -182,6 +186,10 @@ class SMSController extends Controller
         }
     }
 
+    /**
+     * @param $name
+     * @return string
+     */
     public function find_doctor_by_name($name){
 
         if($name == null){
@@ -189,6 +197,21 @@ class SMSController extends Controller
             return $this->error_message(1);
         }else{
             $result = (new DoctorsController())->getData($name, true);
+            return $this->process_result($result, 1);
+        }
+    }
+
+    /**
+     * @param $name
+     * @return string
+     */
+    public function find_facility_by_name($name){
+
+        if($name == null){
+            $this->success = 0;
+            return $this->error_message(1);
+        }else{
+            $result = (new HospitalsController())->getClinic($name, true);
             return $this->process_result($result, 1);
         }
     }
