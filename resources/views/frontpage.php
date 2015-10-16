@@ -441,7 +441,7 @@
         </div>
         <div <?php display_app(4)?>>
             <div class="app">
-                <h4 class="app_title"><i class="fa fa-hospital-o"></i>Dodgy Clinics</h4>
+                <h4 class="app_title"><i class="fa fa-hospital-o"></i>Registered Facilities</h4>
                 <div class="app_top">Check if your medical facility is registered.<br/><small><em>Can't find a name? Send us an email <a href="mailto:starhealth@codeforafrica.org" target="_blank">starhealth@codeforafrica.org</a></em></small>
                 </div>
                 <div class="app_bottom">
