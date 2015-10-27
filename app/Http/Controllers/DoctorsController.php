@@ -18,9 +18,9 @@ class DoctorsController extends Controller {
             foreach($rows as $row){
                 if($isSMS){
                     $i++;
-                    $result_array[] = $i .". ". $row[1]." - ". $row[2]." - ". $row[7]."\r\n";
+                    $result_array[] = $i .". ". $row[1]." - ". $row[2]." - ". $row[7]."\n";
                 }else{
-                    $result_array[] = $row[1]."\r\n";
+                    $result_array[] = $row[1]."\n";
                 }
             }
 
@@ -32,7 +32,7 @@ class DoctorsController extends Controller {
                 $glue = "";
 
                 if($isSMS){
-                    $glue = ", ";
+                    //$glue = ", ";
                 }
 
                 $result = implode($glue, $result_array);
@@ -57,9 +57,9 @@ class DoctorsController extends Controller {
 
         foreach($rows as $row){
             if($isSMS){
-                $result .= $row[1]." - ". $row[2]." - ". $row[7]."\r\n";
+                $result .= $row[1]." - ". $row[2]." - ". $row[7]."\n";
             }else{
-                $result .= $row[1]."\r\n";
+                $result .= $row[1]."\n";
             }
         }
         return $result;
