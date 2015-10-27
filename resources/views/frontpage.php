@@ -62,7 +62,11 @@
         <div class="col-md-4 logo">
             <a class="brand" href="http://health.the-star.co.ke/"><img src="<?php echo asset("img/logo.png");?>"> </a>
         </div>
-        <div class="col-md-5"></div>
+        <div class="col-md-5 sms-section">
+            <img src="<?php echo asset('');?>/img/sms.png">
+            <h4>Send query to 22495</h4>
+            Examples: 1.<span class="sms_example">Doctor James Gicheru</span>, 2.<span class="sms_example">X-Ray in Kiambu</span>, 3.<span class="sms_example">NHIF in Karatina</span>
+        </div>
         <div class="col-md-3 date-search">
             <div class="date-section">
                 <?php date_default_timezone_set("Africa/Nairobi"); echo date('l, M j<\sup>S</\sup> Y');?>

@@ -366,3 +366,16 @@ ul, ol {
     color: #FFDD17;
     text-decoration: underline;
 }
+
+.sms-section{
+    color: #bababa;
+    min-height: 80px;
+    font-size: 0.8em;
+}
+.sms-section img{
+    float:left;
+    height: 80px;
+}
+.sms_example{
+    text-decoration: underline;
+}
