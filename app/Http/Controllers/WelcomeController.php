@@ -224,7 +224,7 @@ class WelcomeController extends Controller {
 
         $newitem['similar_tags'] = 0;
 
-        $newitem['link'] = "/story/".$item->nid;
+        $newitem['link'] = "http://the-star.co.ke/node/".$item->nid;
 
         $newitem['title'] = $item->title;
 
