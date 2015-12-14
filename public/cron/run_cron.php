@@ -3,26 +3,23 @@ $base_url = dirname(__FILE__)."/" ;
 require_once $base_url.'alchemyapi.php';
 $alchemyapi = new AlchemyAPI();
 
-$feed_url = "http://www.the-star.co.ke/star-health";
+$feed_url = "http://www.the-star.co.ke/api/mobile/views/mobile_app?args[0]=24&limit=50";
 
 $content = file_get_contents($feed_url, true);
 
 $feed = json_decode($content);
 
-if(property_exists($feed, "nodes") && isFresh($content, $base_url)){
+if(!empty($feed) && isFresh($content, $base_url)){
 
     //first dump raw content to file to check if new in subsequent pulls
     file_put_contents($base_url."oldsha.txt", sha1($content));
-
-    $items = $feed->nodes;
 
     $articles = array();
 
     $concepts = array();
 
-    foreach($items as $d){
+    foreach($feed as $item){
 
-        $item = $d->node;
         $response = $alchemyapi->concepts('text',$item->body, null);
 
         $tags = array();
@@ -80,13 +77,11 @@ if(property_exists($feed, "nodes") && isFresh($content, $base_url)){
         $item->theme = $weighted_tags;
 
         $articles[] = array("node"=>$item);
-
     }
 
     file_put_contents($base_url."feed.json", json_encode(array("nodes"=>$articles, "tags"=>$concepts)));
 
 }
-
 
 function isFresh($content, $base_url){
     $old = file_get_contents($base_url."oldsha.txt", true);

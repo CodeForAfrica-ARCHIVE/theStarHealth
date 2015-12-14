@@ -224,7 +224,7 @@ class WelcomeController extends Controller {
 
         $newitem['similar_tags'] = 0;
 
-        $newitem['link'] = "http://the-star.co.ke" . $item->path;//str_replace('/news/', 'http://the-star.co.ke/news/', $item->path);
+        $newitem['link'] = "/story/".$item->nid;
 
         $newitem['title'] = $item->title;
 
@@ -232,30 +232,19 @@ class WelcomeController extends Controller {
 
         $newitem['description'] = $this->first_paragraph($item->body);
 
-        $newitem['timestamp'] = $item->created;
+        $newitem['timestamp'] = $item->date;
 
-        $newitem['author'] =$item->field_author;
+        $newitem['author'] =$item->byline;
 
         $newitem['theme'] = $item->theme;
 
-        if(isset($item->field_image)){
+        if($item->image!=null){
 
-            $field_image = $item->field_image;
+            $field_image = $item->image;
 
-            //check if is array
-            if(is_array($field_image)){
-                $field_image = $field_image[0];
-            }
+            $field_image = explode('|ALT|', $field_image);
 
-            if(property_exists($field_image, "src")){
-
-                $newitem['thumb'] = $field_image->src;
-
-            }else{
-
-                $newitem['thumb'] = null;
-            }
-
+            $newitem['thumb'] = $field_image[0];
 
         }else{
 
