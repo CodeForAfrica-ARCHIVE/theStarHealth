@@ -318,7 +318,7 @@ class WelcomeController extends Controller {
                 if(($featured_id != $item['id'])){
 
                     //check if story has theme
-                    if(property_exists($item['theme'], $key)){
+                    if(array_key_exists($key, $item['theme'])){
 
                         //check if article already added
                         if(!array_key_exists($item['id'], $articles)){
