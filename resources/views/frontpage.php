@@ -111,28 +111,31 @@
 
                 <ul class="nav navbar-nav">
                     <li class="">
-                        <a href="http://www.the-star.co.ke/sections/news" target="_blank">News</a>
+                        <a href="http://www.the-star.co.ke/sections/news" target="_blank">Latest News</a>
+                    </li>
+                    <li class="">
+                        <a href="http://www.the-star.co.ke/sections/business" target="_blank">Today's Paper</a>
                     </li>
                     <li class="">
                         <a href="http://www.the-star.co.ke/sections/business" target="_blank">Business</a>
                     </li>
                     <li class="">
-                        <a href="http://www.the-star.co.ke/sections/sports" target="_blank">Sports</a>
+                        <a href="http://www.the-star.co.ke/sections/sports" target="_blank">Sport</a>
                     </li>
                     <li class="">
-                        <a href="http://www.the-star.co.ke/sections/entertainment" target="_blank">Entertainment</a>
+                        <a href="http://www.the-star.co.ke/sections/sports" target="_blank">Opinion</a>
                     </li>
                     <li class="">
-                        <a href="http://www.the-star.co.ke/sections/opinions" target="_blank">Opinions</a>
+                        <a href="http://www.the-star.co.ke/sections/entertainment" target="_blank">Health</a>
                     </li>
                     <li class="">
-                        <a href="http://www.the-star.co.ke/sections/starlife" target="_blank">StarLife</a>
+                        <a href="http://www.the-star.co.ke/sections/starlife" target="_blank">Star Life</a>
                     </li>
                     <li class="">
-                        <a href="http://starhealth.the-star.co.ke">StarHealth</a>
+                        <a href="http://starhealth.the-star.co.ke">Weekend</a>
                     </li>
                     <li class="">
-                        <a href="http://www.the-star.co.ke/sections/weekend-star" target="_blank">Weekend Star</a>
+                        <a href="http://www.the-star.co.ke/sections/weekend-star" target="_blank">Classified</a>
                     </li>
                 </ul>
             </div><!--/.nav-collapse -->
