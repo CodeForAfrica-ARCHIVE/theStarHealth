@@ -55,6 +55,7 @@ class SMSController extends Controller
                         $found = false;
 
                         foreach ($found_entities as $item){
+
                             if ($item["type"] == "Person"){
                                 $response = $this->find_doctor_by_name($item["text"]);
                                 $found = true;
@@ -133,7 +134,7 @@ class SMSController extends Controller
 
     }
     public function find_doctor($message){
-        $name = $this->process_for_doctor_name($message);
+        $name = $this->process_for_doctor_name(strtolower($message));
 
         return $this->find_doctor_by_name($name);
     }
