@@ -25,8 +25,6 @@ class SMSController extends Controller
         //check if message is empty
         if(strlen($message)<1){
             $response = $this->error_message(null, true);
-
-            return $response;
         }
 
         //if has nhif keywords: get location
