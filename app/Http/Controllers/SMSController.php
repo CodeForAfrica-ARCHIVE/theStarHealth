@@ -52,17 +52,17 @@ class SMSController extends Controller
 
                         $found = false;
 
-                        foreach ($found_entities as $item){
+                        foreach ($found_entities as $item) {
 
-                            if ($item["type"] == "Person"){
+                            if ($item["type"] == "Person") {
                                 $response = $this->find_doctor_by_name($item["text"]);
                                 $found = true;
                                 break;
-                            }else if (($item["type"] == "Facility") || ($item["type"] == "Organization") || ($item["type"] == "Company")){
+                            } else if (($item["type"] == "Facility") || ($item["type"] == "Organization") || ($item["type"] == "Company")) {
                                 $response = $this->find_hospital_by_name($item["text"]);
                                 $found = true;
                                 break;
-                            }else if(in_array($item["type"], $this->location_tags())){
+                            } else if (in_array($item["type"], $this->location_tags())) {
                                 //if has location return nearest facilities
                                 $response = $this->find_facilities_by_location("", "", $item["text"]);
                                 $found = true;
@@ -70,7 +70,7 @@ class SMSController extends Controller
                             }
                         }
                         //if nothing found, error
-                        if($found == false){
+                        if ($found == false) {
                             $response = $this->error_message();
                         }
                     }
