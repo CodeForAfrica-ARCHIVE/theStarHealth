@@ -74,10 +74,6 @@ class NHIFController extends Controller {
                 }
                 $glue = "";
 
-                if($isSMS){
-                    $glue = ", ";
-                }
-
                 $result = implode($glue, $result_array);
                 if ($gps == "0,0") {
                     $result = 'Sorry, location could not be understood. Check for spelling mistakes.';

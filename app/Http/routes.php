@@ -35,7 +35,7 @@ Route::get('sms', function()
     $message = Request::input('message');
 
     $result = (new SMSController())->process_received($phone, $message);
-    
+
     $result = (new SMSController())->send_response($phone, $result);
 
     //return $result;
