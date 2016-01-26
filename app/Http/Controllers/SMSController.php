@@ -106,9 +106,9 @@ class SMSController extends Controller
             if($type == 1){
                 $response = "Could not find a doctor with that name.";
             }else if($type == 2){
-                $response = "Location could not be understood. Check for spelling mistakes";
+                $response = "Sorry, location could not be understood. Check for spelling mistakes.";
             }else{
-                $response = "Location could not be understood. Check for spelling mistakes";
+                $response = "Sorry, location could not be understood. Check for spelling mistakes.";
             }
 
         }else{
@@ -399,6 +399,8 @@ class SMSController extends Controller
 
         //log sent message
         $this->log_sent($result);
+
+        return $result;
     }
     public function log_received($phone, $message){
 
