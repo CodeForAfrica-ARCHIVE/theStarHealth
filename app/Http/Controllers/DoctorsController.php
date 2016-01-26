@@ -18,8 +18,11 @@ class DoctorsController extends Controller {
             foreach($rows as $row){
                 if($isSMS){
                     $i++;
-                    if($i < 5){
-                        $result_array[] = $i .". ". $row[1]." - ". $row[2]." - ". $row[7]."\n";
+                    if ($i < 6) {
+                        $result_array[$i] = $i .". ". $row[1]." - ". $row[2]." - ". $row[7]."\n";
+                    }
+                    if ($i == 6) {
+                        $result_array[$i] = "\n".'Find the full list at http://health.the-star.co.ke';
                     }
                 }else{
                     $result_array[] = $row[1]."\n";

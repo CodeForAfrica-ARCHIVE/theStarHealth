@@ -67,8 +67,11 @@ class NHIFController extends Controller {
                         $result_array[] = "<p><a target='_blank' href='https://www.google.com/maps/?q=".$row[6]."'>".$cname."</a></p>";
                     } else {
                         $i++;
-                        if ($i < 5) {
+                        if ($i < 6) {
                             $result_array[] = $i .". ". $cname . "\n";
+                        }
+                        if ($i == 6) {
+                            $result_array[$i] = "\n".'Find the full list at http://health.the-star.co.ke';
                         }
                     }
                 }
