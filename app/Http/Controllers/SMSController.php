@@ -106,7 +106,7 @@ class SMSController extends Controller
             } else if ($type == 2) {
                 $response = "Sorry, location could not be understood. Check for spelling mistakes.";
             } else if ($type == 3) {
-                $response = "No hospitals found for those parameters.";
+                $response = "No facility found matching your request.";
             } else {
                 $response = "Sorry, location could not be understood. Check for spelling mistakes.";
             }
