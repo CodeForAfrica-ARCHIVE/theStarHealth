@@ -46,10 +46,9 @@ class HospitalsController extends Controller {
 
 
             if($specialty == "0"){
-
                 $sql = "SELECT * FROM ".$table." ORDER BY ST_DISTANCE(geo, LATLNG(". $gps .")) LIMIT 10";
             }else{
-                $sql = "SELECT * FROM ".$table." WHERE $specialty='Y' ORDER BY ST_DISTANCE(geo, LATLNG(". $gps .")) LIMIT 10";
+                $sql = "SELECT * FROM ".$table." WHERE '$specialty'='Y' ORDER BY ST_DISTANCE(geo, LATLNG(". $gps .")) LIMIT 10";
             }
 
             $options = array("sql"=>$sql, "key"=>$key, "sensor"=>"false");
