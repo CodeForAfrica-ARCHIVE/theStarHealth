@@ -40,7 +40,7 @@ class SMSController extends Controller
 
             if($specialty!=false){
                 $response = $this->find_facilities($message, $specialty);
-            }else{
+            } else {
                 //If else fails try Artificial Intelligence
                 $found_entities = $this->find_entities($message);
 
@@ -95,17 +95,19 @@ class SMSController extends Controller
     public function error_message($type=null, $isEmpty=false){
         $examples = "Example query formats:\n";
         $examples .= "1. Doctor James Gicheru\n";
-        $examples .= "2. X-Ray in Kiambu\n";
+        $examples .= "2. Hospital in Kiambu\n";
         $examples .= "3. NHIF in Karatina\n";
 
         if($isEmpty){
             $response = $examples;
         }else if($type != null){
-            if($type == 1){
+            if ($type == 1) {
                 $response = "Could not find a doctor with that name.";
-            }else if($type == 2){
+            } else if ($type == 2) {
                 $response = "Sorry, location could not be understood. Check for spelling mistakes.";
-            }else{
+            } else if ($type == 3) {
+                $response = "No hospitals found for those parameters.";
+            } else {
                 $response = "Sorry, location could not be understood. Check for spelling mistakes.";
             }
 
@@ -168,6 +170,7 @@ class SMSController extends Controller
             return null;
 
         }
+
         return $response;
 
     }
@@ -178,7 +181,7 @@ class SMSController extends Controller
 
         if($location == null){
             $this->success = 0;
-            return $this->error_message(3);
+            return $this->error_message(4);
         }else{
             //we have location, so output results
             return $this->find_facilities_by_location($specialty, "", $location);
@@ -242,7 +245,7 @@ class SMSController extends Controller
 
             foreach($keys as $word) {
 
-                if($this->string_in_string($message, $word)){
+                if($this->string_in_string(strtolower($message), strtolower($word))){
                     $service_abbr = $this->services_abbr()[$i];
                     return $service_abbr;
                     break;
@@ -258,18 +261,18 @@ class SMSController extends Controller
     }
 
     public function services_abbr(){
-        return array("ANC", "ART", "BEOC", "BLOOD", "CAES SEC", "CEOC", "C-IMCI", "EPI", "FP", "GROWM", "HBC", "HCT", "IPD", "OPD", "OUTREACH", "PMTCT", "RAD/XRAY", "RHTC/RHDC", "TB DIAG", "TB LABS", "TB TREAT", "YOUTH");
+        return array("ANC", "ART", "BEOC", "BLOOD", "CAES SEC", "CEOC", "C-IMCI", "EPI", "FP", "GROWM", "HBC", "HCT", "IPD", "OPD", "OUTREACH", "PMTCT", "RAD/XRAY", "RHTC/RHDC", "TB DIAG", "TB LABS", "TB TREAT", "YOUTH", "ALL");
 
     }
 
     public function services_keywords(){
-        return array("Antenatal Care, antenatal, pregnant, pregnancy", "Anteretroviral, anteretrovials, ARV, ARvs", "Beoc", "Blood", "Caeserean section, Caeserean", "Ceoc", "C-IMCI", "Epidemiology", "Family planning", "GROWM", "Heamogram, blood test", "Heamatocrit, anaemia", "In-patient, inpatient", "Out-patient, outpatien", "Outreach", "Prevention of mother to child transmission HIV/AIDS", "Radiology, x-ray, xray", "Reproductive health, reproductive", "Tuberculosis diagnosis, TB", "Tuberculosis laboratory work up, TB", "Tuberculosis treatment, TB", "Youth");
+        return array("Antenatal Care, antenatal, pregnant, pregnancy", "Anteretroviral, anteretrovials, ARV, ARvs", "Beoc", "Blood", "Caeserean section, Caeserean", "Ceoc", "C-IMCI", "Epidemiology", "Family planning", "GROWM", "Heamogram, blood test", "Heamatocrit, anaemia", "In-patient, inpatient", "Out-patient, outpatien", "Outreach", "Prevention of mother to child transmission HIV/AIDS", "Radiology, x-ray, xray", "Reproductive health, reproductive", "Tuberculosis diagnosis, TB", "Tuberculosis laboratory work up, TB", "Tuberculosis treatment, TB", "Youth", "Hospital, clinic");
     }
 
     public function find_entities($message){
         $alchemyapi = new \AlchemyAPI();
 
-        $response = $alchemyapi->entities("text", $message, null);
+        $response = $alchemyapi->entities('text', 'There is '.$message, null);
 
         if ($response['status'] == 'OK') {
             /*//sort by relevance
@@ -279,7 +282,7 @@ class SMSController extends Controller
             */
             return $response['entities'];
 
-        }else{
+        } else {
             return null;
         }
     }

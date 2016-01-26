@@ -17,12 +17,12 @@ class HospitalsController extends Controller {
 
         $result = "";
 
-        if($address=='' && ($gps=='' || $gps=="undefined")){
+        if ($address=='' && ($gps=='' || $gps=="undefined")) {
             $result = 'You have to set location!';
             $found = false;
-        }else{
+        } else {
 
-            if($gps=='' || $gps=="undefined"){
+            if ($gps=='' || $gps=="undefined") {
                 //reverse geocode address
                 $q = urlencode($address);
 
@@ -30,11 +30,19 @@ class HospitalsController extends Controller {
 
                 $response = json_decode(file_get_contents($geocode_url));
 
-                if($response->status =="OK"){
+                if ($response->status =="OK") {
                     $gps = $response->results[0]->geometry->location;
                     $gps = $gps->lat.",".$gps->lng;
-                }else{
-                    $gps = "0,0";
+                } else {
+                    if ($isSMS) {
+                        $examples = "Example query formats:\n";
+                        $examples .= "1. Doctor James Gicheru\n";
+                        $examples .= "2. Hospital in Kiambu\n";
+                        $examples .= "3. NHIF in Karatina\n";
+                        $response = "Could not understand your request. Please try the web services at http://health.the-star.co.ke\n".$examples;
+                        return $response;
+                    }
+                    return "Sorry, location could not be understood. Check for spelling mistakes.";
                 }
             }
 
@@ -44,10 +52,9 @@ class HospitalsController extends Controller {
 
             $url = "https://www.googleapis.com/fusiontables/v1/query?";
 
-
-            if($specialty == "0"){
+            if ($specialty == "0" || $specialty == "ALL" || $specialty == '') {
                 $sql = "SELECT * FROM ".$table." ORDER BY ST_DISTANCE(geo, LATLNG(". $gps .")) LIMIT 10";
-            }else{
+            } else {
                 $sql = "SELECT * FROM ".$table." WHERE '$specialty'='Y' ORDER BY ST_DISTANCE(geo, LATLNG(". $gps .")) LIMIT 10";
             }
 
@@ -59,49 +66,50 @@ class HospitalsController extends Controller {
 
             $data = json_decode($page, TRUE);
 
-            if(!array_key_exists("rows", $data)){
+            if (!array_key_exists("rows", $data)) {
                 $result .= "No hospitals found for those parameters.";
                 $found = false;
-            }else{
+            } else {
                 $rows = $data['rows'];
 
                 $i = 0;
                 $result_array = array();
-                foreach($rows as $row){
+                foreach ($rows as $row) {
                     $cname = ucwords(strtolower($row['2']));
                     //$cname .= " KSH ".$row['8'];
-                    if(!$isSMS){
+                    if (!$isSMS) {
                         $result_array[] = "<p><a target='_blank' href='https://www.google.com/maps/?q=".$row[49]."'>".$cname."</a></p>";
-                    }else{
+                    } else {
                         $i++;
                         $result_array[] = $i .". ". $cname . "\n";
                     }
                 }
                 $glue = "";
 
-                if($isSMS){
+                if ($isSMS) {
                     $glue = ", ";
                 }
 
                 $result = implode($glue, $result_array);
-                }
+            }
         }
 
-        if($isSMS && !$found){
+        if ($isSMS && !$found) {
             return false;
         }
 
         return $result;
 
     }
+
     public function reverse_geocode($q){
         $geocode_url = "https://maps.googleapis.com/maps/api/geocode/json?latlng=".$q."&key=".config("custom_config.google_api_key");
 
         $response = json_decode(file_get_contents($geocode_url));
 
-        if($response->status =="OK"){
+        if ($response->status =="OK") {
             return $response->results[0]->formatted_address;
-        }else{
+        } else {
             return null;
         }
 
@@ -111,13 +119,13 @@ class HospitalsController extends Controller {
      * @param $name
      * @return string
      */
-    public function singleClinic($name){
+    public function singleClinic($name) {
 
-        if($name==''){
+        if ($name=='') {
 
             $result = "Please enter a name!";
 
-        }else{
+        } else {
 
 
             $data = $this->get_single($name);
