@@ -31,6 +31,7 @@ class SMSController extends Controller
         if($this->has_nhif_keywords(strtolower($message))){
 
             $response = $this->find_nhif_coverage($message);
+            var_dump($response);
 
         }else if($this->has_doctor_keywords(strtolower($message))){
             $response = $this->find_doctor($message);
@@ -96,7 +97,7 @@ class SMSController extends Controller
         $examples = "Example query formats:\n";
         $examples .= "1. Doctor James Gicheru\n";
         $examples .= "2. Hospital in Kiambu\n";
-        $examples .= "3. NHIF in Karatina\n";
+        $examples .= "3. NHIF in Nairobi\n";
 
         if($isEmpty){
             $response = $examples;
@@ -128,7 +129,7 @@ class SMSController extends Controller
             return $this->error_message(2);
         }else{
             //Get NHIF coverage
-            $result = NHIFController::coverage("0", "", $location, true);
+            $result = NHIFController::coverage(null, "", $location, true);
             return $this->process_result($result, 1);
         }
 

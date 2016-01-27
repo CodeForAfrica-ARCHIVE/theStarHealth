@@ -38,7 +38,7 @@ class HospitalsController extends Controller {
                         $examples = "Example query formats:\n";
                         $examples .= "1. Doctor James Gicheru\n";
                         $examples .= "2. Hospital in Kiambu\n";
-                        $examples .= "3. NHIF in Karatina\n";
+                        $examples .= "3. NHIF in Nairobi\n";
                         $response = "Could not understand your request. Please try the web services at http://health.the-star.co.ke\n".$examples;
                         return $response;
                     }

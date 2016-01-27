@@ -208,9 +208,9 @@
 
                 $("#grabNHIFDetails").click(function(){
                     var hospital_location_gps = $("#hospital_location_gps").val();
-                    var hospital_location = $("#hospital_location").val();
+                    var hospital_location = $("#county_select option:selected").text();
 
-                    var hospital_type = $("#hospital_type").val();
+                    var hospital_type = $("#county_select").val();
 
                     $("#dname").html("<h4>"+hospital_location+"</h4>");
 
@@ -387,29 +387,73 @@
             <div class="app">
                 <h4 class="app_title"><i class="fa fa-umbrella"></i>Am I Covered</h4>
                 <div class="app_top">
-                    Find out which hospitals your NHIF card will cover
-                    <div class="input-group">
-                        <input type="text" id="hospital_location" placeholder="Eg. Kisumu, Kariobangi" class="form-control" aria-describedby="get_location_text"/>
-                        <span class="near_me input-group-addon" style="cursor: pointer;" id="get_location_text"><i class="fa fa-location-arrow"></i></span>
-                    </div>
-                    <input type="hidden" id="hospital_location_gps" />
+                    Find out which facilities your NHIF card will cover in your county:<br/><small><em>Can't find a name? Send us an email <a href="mailto:starhealth@codeforafrica.org" target="_blank">starhealth@codeforafrica.org</a></em></small>
                 </div>
                 <div class="app_bottom">
-                    <select id="hospital_type"  class="form-control">
-                        <option value="0">All hospital types</option>
-                        <option value="A">Category A: Government Hospitals</option>
-                        <option value="B">Category B: Private and Mission Hospitals</option>
-                        <option value="C">Category C: Private Hospitals</option>
-                    </select>
+<!--                    <select id="hospital_type"  class="form-control">-->
+<!--                        <option value="0">All hospital types</option>-->
+<!--                        <option value="A">Category A: Government Hospitals</option>-->
+<!--                        <option value="B">Category B: Private and Mission Hospitals</option>-->
+<!--                        <option value="C">Category C: Private Hospitals</option>-->
+<!--                    </select>-->
 
+                    <select id="county_select" class="form-control">
+                        <option value="0">Select Your County</option>
+                        <option value="1">Baringo</option>
+                        <option value="2">Bomet</option>
+                        <option value="3">Bungoma</option>
+                        <option value="4">Busia</option>
+                        <option value="5">Elgeyo Marakwet</option>
+                        <option value="6">Embu</option>
+                        <option value="7">Garissa</option>
+                        <option value="8">Homa Bay</option>
+                        <option value="9">Isiolo</option>
+                        <option value="10">Kajiado</option>
+                        <option value="11">Kakamega</option>
+                        <option value="12">Kericho</option>
+                        <option value="13">Kiambu</option>
+                        <option value="14">Kilifi</option>
+                        <option value="15">Kirinyaga</option>
+                        <option value="16">Kisii</option>
+                        <option value="17">Kisumu</option>
+                        <option value="18">Kitui</option>
+                        <option value="19">Kwale</option>
+                        <option value="20">Laikipia</option>
+                        <option value="21">Lamu</option>
+                        <option value="22">Machakos</option>
+                        <option value="23">Makueni</option>
+                        <option value="24">Mandera</option>
+                        <option value="25">Marsabit</option>
+                        <option value="26">Meru</option>
+                        <option value="27">Migori</option>
+                        <option value="28">Mombasa</option>
+                        <option value="29">Murang’a</option>
+                        <option value="30">Nairobi</option>
+                        <option value="31">Nakuru</option>
+                        <option value="32">Nandi</option>
+                        <option value="33">Narok</option>
+                        <option value="34">Nyamira</option>
+                        <option value="35">Nyandarua</option>
+                        <option value="36">Nyeri</option>
+                        <option value="37">Samburu</option>
+                        <option value="38">Siaya</option>
+                        <option value="39">Taita Taveta</option>
+                        <option value="40">Tana River</option>
+                        <option value="41">Tharaka Nithi</option>
+                        <option value="42">Trans Nzoia</option>
+                        <option value="43">Turkana</option>
+                        <option value="44">Uasin Gishu</option>
+                        <option value="45">Vihiga</option>
+                        <option value="46">Wajir</option>
+                        <option value="47">West Pokot</option>
+                    </select>
 
                     <button class='btn btn-primary ' href="#myModal" role="button" class="btn" data-toggle="modal" id="grabNHIFDetails">
                         Submit
                     </button>
                     <div class="contribution">
-                        <a href="#embed_2_modal" data-toggle="modal">Embed | </a>
-                        <a href="#premiumRatesModal" data-toggle="modal" id="whatsMyContribution">What's my contribution?</a><br />
-                        <a href="#nhifInfoModal" data-toggle="modal">Hospital Types</a>
+                        <a href="#embed_2_modal" data-toggle="modal">Embed </a> |
+                        <a href="#premiumRatesModal" data-toggle="modal" id="whatsMyContribution">What's my contribution?</a>
                     </div>
                 </div>
             </div>
