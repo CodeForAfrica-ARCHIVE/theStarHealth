@@ -446,26 +446,26 @@
 
             </div>
         </div>
-        <div <?php display_app(4)?>>
-            <div class="app">
-                <h4 class="app_title"><i class="fa fa-hospital-o"></i>Registered Facilities</h4>
-                <div class="app_top">Check if your medical facility is registered.<br/><small><em>Can't find a name? Send us an email <a href="mailto:starhealth@codeforafrica.org" target="_blank">starhealth@codeforafrica.org</a></em></small>
-                </div>
-                <div class="app_bottom">
-
-                    <input type="text" placeholder="Start typing facility's name" class="search form-control" id="clinicName" />
-                    <button class='btn btn-primary red_button' href="#myModal" role="button" class="btn" data-toggle="modal" id="grabClinicDetails">
-                        Submit
-                    </button>
-                    <div class="contribution">
-                        <a href="#embed_4_modal" data-toggle="modal">Embed</a>
-                    </div>
-
-                </div>
-
-
-            </div>
-        </div>
+<!--        <div --><?php //display_app(4)?><!-->
+<!--            <div class="app">-->
+<!--                <h4 class="app_title"><i class="fa fa-hospital-o"></i>Registered Facilities</h4>-->
+<!--                <div class="app_top">Check if your medical facility is registered.<br/><small><em>Can't find a name? Send us an email <a href="mailto:starhealth@codeforafrica.org" target="_blank">starhealth@codeforafrica.org</a></em></small>-->
+<!--                </div>-->
+<!--                <div class="app_bottom">-->
+<!---->
+<!--                    <input type="text" placeholder="Start typing facility's name" class="search form-control" id="clinicName" />-->
+<!--                    <button class='btn btn-primary red_button' href="#myModal" role="button" class="btn" data-toggle="modal" id="grabClinicDetails">-->
+<!--                        Submit-->
+<!--                    </button>-->
+<!--                    <div class="contribution">-->
+<!--                        <a href="#embed_4_modal" data-toggle="modal">Embed</a>-->
+<!--                    </div>-->
+<!---->
+<!--                </div>-->
+<!---->
+<!---->
+<!--            </div>-->
+<!--        </div>-->
     </div>
 
     <?php
@@ -479,7 +479,7 @@
                 print " style='display:none'";
             }
             else{
-                print " class='col-md-3'";
+                print " class='col-md-4'";
             }
         }
     ?>
