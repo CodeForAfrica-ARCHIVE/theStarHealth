@@ -266,7 +266,7 @@ class SMSController extends Controller
     }
 
     public function services_keywords(){
-        return array("Antenatal Care, antenatal, pregnant, pregnancy", "Anteretroviral, anteretrovials, ARV, ARvs", "Beoc", "Blood", "Caeserean section, Caeserean", "Ceoc", "C-IMCI", "Epidemiology", "Family planning", "GROWM", "Heamogram, blood test", "Heamatocrit, anaemia", "In-patient, inpatient", "Out-patient, outpatien", "Outreach", "Prevention of mother to child transmission HIV/AIDS", "Radiology, x-ray, xray", "Reproductive health, reproductive", "Tuberculosis diagnosis, TB", "Tuberculosis laboratory work up, TB", "Tuberculosis treatment, TB", "Youth", "Hospital, clinic");
+        return array("Antenatal Care, antenatal, pregnant, pregnancy", "Anteretroviral, anteretrovials, ARV, ARvs", "Beoc", "Blood", "Caeserean section, Caeserean", "Ceoc", "C-IMCI", "Epidemiology", "Family planning", "GROWM", "Heamogram, blood test", "Heamatocrit, anaemia", "In-patient, inpatient", "Out-patient, outpatien", "Outreach", "Prevention of mother to child transmission HIV/AIDS", "Radiology, x-ray, xray, x ray", "Reproductive health, reproductive", "Tuberculosis diagnosis, TB, T.B, T.B.", "Tuberculosis laboratory work up, TB, T.B, T.B.", "Tuberculosis treatment, TB", "Youth", "Hospital, clinic");
     }
 
     public function find_entities($message){
