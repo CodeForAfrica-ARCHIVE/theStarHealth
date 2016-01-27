@@ -107,7 +107,7 @@ class DoctorsController extends Controller {
                 $result .= "<br />";
                 $result .= "Qualification :" . $doc[7];
                     if($doc[5]!="NONE"){
-                        $result .= "Specialty :" . $doc[5];
+                        $result .= "<br />Specialty :" . $doc[5];
                     }
                 $result .= "</p>";
 
