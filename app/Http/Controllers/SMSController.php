@@ -90,7 +90,7 @@ class SMSController extends Controller
 
 
     public function location_tags(){
-        return array("City");
+        return array("City", "GeographicFeature", "AdministrativeDivision","BodyOfWater", "Brand", "CityTown", "CompanyDivision", "CompanyShareholder", "Country", "Cuisine", "GeographicFeature", "GovernmentalJurisdiction", "HumanLanguage", "Island", "IslandGroup", "Kingdom", "Location", "MilitaryPost", "MountainRange", "Organization", "PoliticalDistrict", "Region", "USCounty", "USState");
     }
 
     public function error_message($type=null, $isEmpty=false){
@@ -153,6 +153,11 @@ class SMSController extends Controller
                     if (in_array($item["type"], $this->location_tags())) {
                         //return first location
                         $response = $item["text"];
+                        foreach ($this->services_keywords() as $service) {
+                            foreach (explode(",", $service) as $value) {
+                                $response = str_replace(trim($value)." ", "", $response);
+                            }
+                        };
                         $found = true;
                         break;
                     }
