@@ -59,7 +59,7 @@
         </div>
     </header>
     <div  <?php if(isset($_GET['embed'])) print "style='display:none' ";?>class="row brand_section">
-        <div class="col-md-3 logo">
+        <div class="col-md-3 logo text-center">
             <a class="brand" href="http://health.the-star.co.ke/"><img src="<?php echo asset("img/logo.png");?>"> </a>
         </div>
         <div class="col-md-6 sms-section">
