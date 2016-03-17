@@ -1,4 +1,4 @@
-body{
+body {
     background-color: #E5E4E3;
     background-image: url('../img/topbar.jpg');
     background-repeat: repeat-x;
@@ -56,7 +56,7 @@ container fixes
     Pre-nav header
 */
 .logo{
-    background-color: #213f8e;
+    background-color: #0645A5;
 }
 .logo img{
     max-width: 100% !important;
