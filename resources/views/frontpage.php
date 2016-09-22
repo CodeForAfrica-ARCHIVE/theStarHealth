@@ -372,7 +372,7 @@
 
                     <input type="text" placeholder="Start typing doctor's name" class="search form-control" id="doctorName" />
                     <button class='btn btn-primary red_button' href="#myModal" role="button" class="btn" data-toggle="modal" id="grabDetails">
-                        Search
+                        Submit
                     </button>
                     <div class="contribution">
                         <a href="#embed_1_modal" data-toggle="modal">Embed</a>
@@ -449,7 +449,7 @@
                     </select>
 
                     <button class='btn btn-primary ' href="#myModal" role="button" class="btn" data-toggle="modal" id="grabNHIFDetails">
-                        Search
+                        Submit
                     </button>
                     <div class="contribution">
                         <a href="#embed_2_modal" data-toggle="modal">Embed </a> |
@@ -461,20 +461,32 @@
         <div <?php display_app(3)?>>
             <div class="app">
                 <h4 class="app_title"><i class="fa fa-map-marker"></i>Nearest Specialist</h4>
-                <div class="app_top">
-                    <p>Find the nearest specialist doctor or health facility.</p>
-                    <p><small><em>Visit the Kenya Master Health Facility List (KMHFL) website now:</em></small></p>
+                <div class="app_top">Find the nearest specialist doctor or health facility
+
+                    <div class="input-group">
+                        <input type="text" id="hospital_location_sp" placeholder="Eg. Kisumu, Kariobangi" class="form-control" aria-describedby="get_location_text_sp"/>
+                        <span class="near_me input-group-addon" style="cursor: pointer;" id="get_location_text_sp"><i class="fa fa-location-arrow"></i></span>
+                    </div>
                     <br />
-                </div>
-                <div class="app_bottom text-center">
-                    
-                    <a class='btn btn-primary' href="http://kmhfl.health.go.ke/#/home" target="_blank">
-                        Visit KHMLF <i class="fa fa-external-link"></i>
-                    </a>
+                    </div>
+                <div class="app_bottom">
+                    <select id="specialist" class="form-control specialist_select">
+                        <option value="0">Select service</option>
+                        <?php
+                        $i = 0;
+                        foreach($specialties as $sp){
+                            print "<option value='".$sp_values[$i]."'>".$sp."</option>";
+                            $i++;
+                        }
+                        ?>
+                    </select>
+                    <button class='btn btn-primary ' href="#myModal" role="button" class="btn" data-toggle="modal" id="grabSpecialists">
+                        Submit
+                    </button>
                     <div class="contribution">
                         <a href="#embed_3_modal" data-toggle="modal">Embed</a>
                     </div>
-                </div>
+                    </div>
 
             </div>
         </div>
